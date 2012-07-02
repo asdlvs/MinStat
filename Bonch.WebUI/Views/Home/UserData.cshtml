@@ -1,0 +1,67 @@
+﻿@model Bonch.WebUI.Models.UserViewModel
+<div data-bind="visible: !identity(), visible: !save()">
+    Для начала работы с системой, необходимо ввести следующие данные:<br />
+    <br />
+    <table>
+        <tr>
+            <td>
+                Имя:
+            </td>
+            <td>
+                <input type="text" data-bind="value:firstName" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Фамилий:
+            </td>
+            <td>
+                <input type="text" data-bind="value:lastName" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Номер телефона:
+            </td>
+            <td>
+                <input type="text" data-bind="value:phone" />
+            </td>
+        </tr>
+    </table>
+    <div class="errorsummary">
+    </div>
+    <div data-bind="click: $root.saveCurrentUser" class="post">
+        <a class="links" href="#">Save</a></div>
+</div>
+<div data-bind="visible: identity(), visible: save()">
+    <table>
+        <tr>
+            <td>
+                <strong>Логин:</strong>
+            </td>
+            <td data-bind="text: login">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Имя</strong>
+            </td>
+            <td data-bind="text: firstName">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Фамилия</strong>
+            </td>
+            <td data-bind="text: lastName">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Номер телефона:</strong>
+            </td>
+            <td data-bind="text: phone">
+            </td>
+        </tr>
+    </table>
+</div>

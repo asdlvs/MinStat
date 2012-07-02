@@ -1,0 +1,53 @@
+﻿<script src="@Url.Content("~/Scripts/Bonch.Models.SummaryViewModel.js")" type="text/javascript"></script>
+@{
+    ViewBag.Title = "Index";
+}
+<div id="content" class="summary">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Дата создания
+                </th>
+                <th>
+                    Автор
+                </th>
+                <th>
+                    Название
+                </th>
+                <th>
+                    Количество персон
+                </th>
+                <th>
+                    Опубликовано
+                </th>
+                <th>S</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: summaries">
+            <tr data-bind="css: { 'odd': ($index() % 2 != 0) }">
+                <td data-bind="text: CreateDate">
+                </td>
+                <td data-bind="text:Title">
+                </td>
+                <td data-bind="text: AuthorName">
+                </td>
+                <td data-bind="text:PersonsCount">
+                </td>
+                <td data-bind="text:Published">
+                </td>
+                <td data-bind="css:{'local': Id == null, 'saved': Id != null}">
+                  
+                </td>
+            </tr>
+        </tbody>
+    </table>
+       
+       
+    <form data-bind="submit: showModalForActivities">
+        <input type="text" data-bind="value: newSummaryName">
+        <button type="submit">Создать</button>
+    </form>
+</div>
+
+@Html.Partial("ActivitiesPopup")

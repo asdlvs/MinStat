@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bonch.Domain", "Bonch.Domain\Bonch.Domain.csproj", "{DB5B82D6-A1B2-4E64-9DF5-66672D56E334}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bonch.WebUI", "Bonch.WebUI\Bonch.WebUI.csproj", "{1DB530BD-E1F6-481B-9F43-CAAB511E8E18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB5B82D6-A1B2-4E64-9DF5-66672D56E334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB5B82D6-A1B2-4E64-9DF5-66672D56E334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB5B82D6-A1B2-4E64-9DF5-66672D56E334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB5B82D6-A1B2-4E64-9DF5-66672D56E334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DB530BD-E1F6-481B-9F43-CAAB511E8E18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DB530BD-E1F6-481B-9F43-CAAB511E8E18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DB530BD-E1F6-481B-9F43-CAAB511E8E18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DB530BD-E1F6-481B-9F43-CAAB511E8E18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

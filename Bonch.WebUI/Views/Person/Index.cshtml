@@ -1,0 +1,41 @@
+﻿<script src="@Url.Content("~/Scripts/Bonch.Models.PersonViewModel.js")" type="text/javascript"></script>
+@{
+    ViewBag.Title = "Index";
+}
+<div class="btn-toolbar">
+<div class="btn-group">
+    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Блоки <span class="caret">
+    </span></a>
+    <ul class="dropdown-menu" data-bind="foreach: undeliveredSummaries">
+        <li>
+        <a href="#"  data-bind="text: Title, click: $root.selectSummary"></a>
+        </li>
+    </ul>
+</div>
+<div class="btn-group">
+    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Активности <span class="caret">
+    </span></a>
+    <ul class="dropdown-menu" data-bind="foreach: summaryActivities">
+        <li><a href="#"  data-bind="text: Title, click: $root.selectActivity"></a></li>
+    </ul>
+</div>
+<table>
+    <tbody data-bind="foreach: summaryPersons">
+        <tr>
+            <td data-bind="text: FirstName">
+            </td>
+            <td data-bind="text: LastName">
+            </td>
+            <td data-bind="text: Salary">
+            </td>
+            <td data-bind="text: Job">
+            </td>
+            <td data-bind="text: Age">
+            </td>
+            <td data-bind="text: EducationLevel">
+            </td>
+            <td data-bind="text: JobLevel">
+            </td>
+        </tr>
+    </tbody>
+</table>

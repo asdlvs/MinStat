@@ -1,0 +1,21 @@
+﻿<div class="modal hide" id="myModal">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+            ×</button>
+        <h3>
+            Выберите экономические активности для <strong><span data-bind="text:newSummaryName">
+            </span></strong>
+        </h3>
+    </div>
+    <div class="modal-body">
+        <ul data-bind="foreach: activities">
+            <li>
+                <input type="checkbox" data-bind="value: Id, checked: Checked" />
+                <span data-bind="text:Title"></span></li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">Отмена</a> <a href="#" class="btn btn-primary"
+            data-bind="click: addNewSummary">Сохранить</a>
+    </div>
+</div>
