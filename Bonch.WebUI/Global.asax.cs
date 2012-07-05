@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Bonch.WebUI.Models;
 using Bonch.WebUI.Infrustructure;
+using Bonch.Security.Concrete;
 
 namespace Bonch.WebUI
 {
@@ -30,6 +31,13 @@ namespace Bonch.WebUI
             );
 
         }
+
+        protected void Application_AuthenticateRequest(Object sender, EventArgs e)
+        {
+            SecurityHelper sh = new SecurityHelper();
+            Context.User = sh.GetAuthCookie();
+        } 
+
 
         protected void Application_Start()
         {

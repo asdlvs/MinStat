@@ -1,0 +1,6 @@
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.MinUI\bin\Bonch.MinUI.dll
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.MinUI\bin\Bonch.MinUI.pdb
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.MinUI\bin\EntityFramework.dll
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.MinUI\bin\EntityFramework.xml
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.MinUI\obj\Release\Bonch.MinUI.dll
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.MinUI\obj\Release\Bonch.MinUI.pdb

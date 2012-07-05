@@ -13,7 +13,15 @@ namespace Bonch.Security
     private IIdentity _identity;
     public MinStatPrincipal(User user)
     {
-      _identity = new MinStatIdentity { Id = user.Id, Mail = user.Mail, Enterprise = user.Enterprise };
+      _identity = new MinStatIdentity 
+      { 
+          Id = user.Id, 
+          Mail = user.Mail, 
+          EnterpriseId = user.EnterpriseId,
+          FirstName = user.FirstName,
+          LastName = user.LastName,
+          Phone = user.Phone
+      };
     }
 
     public IIdentity Identity

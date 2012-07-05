@@ -160,16 +160,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\SideBar.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Home\UserData.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\HistoryPoints.cshtml" />
@@ -187,26 +181,20 @@
     <Content Include="Views\Summary\ActivitiesPopup.cshtml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Content Include="Views\Person\Edit.cshtml" />
+    <Content Include="Views\Security\LogOn.cshtml" />
   </ItemGroup>
   <ItemGroup>
-=======
->>>>>>> c4c84d3cdc2503e968c7527b3dcc9fae6b0d1502
     <ProjectReference Include="..\Bonch.Domain\Bonch.Domain.csproj">
       <Project>{DB5B82D6-A1B2-4E64-9DF5-66672D56E334}</Project>
       <Name>Bonch.Domain</Name>
     </ProjectReference>
-<<<<<<< HEAD
-=======
     <ProjectReference Include="..\Bonch.Security\Bonch.Security.csproj">
       <Project>{B249F0E7-B639-4C58-A3F4-C582381E3A34}</Project>
       <Name>Bonch.Security</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Security\LogOn.cshtml" />
->>>>>>> c4c84d3cdc2503e968c7527b3dcc9fae6b0d1502
+    <Content Include="Views\Person\Edit.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -227,8 +215,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>1597</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://localhost/Bonch.WebUI</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

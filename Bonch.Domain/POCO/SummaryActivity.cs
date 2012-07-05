@@ -21,5 +21,7 @@ namespace Bonch.Domain.POCO
         public int ActivityId { get; set; }
         [InverseProperty("SummaryActivities")]
         public virtual Activity Activity { get; set; }
+
+
     }
 }

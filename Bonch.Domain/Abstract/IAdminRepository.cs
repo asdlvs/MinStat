@@ -1,34 +1,24 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="IAdminRepository.cs" company="Microsoft">
-// TODO: Update copyright text.
-// </copyright>
-// -----------------------------------------------------------------------
-
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Bonch.Domain.POCO;
 namespace Bonch.Domain.Abstract
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Text;
-using Bonch.Domain.POCO;
+    public interface IAdminRepository
+    {
+        IEnumerable<FederalDistrict> GetFederalDistricts();
 
-  /// <summary>
-  /// TODO: Update summary.
-  /// </summary>
-  public interface IAdminRepository
-  {
-    IEnumerable<FederalDistrict> GetFederalDistricts();
+        IEnumerable<FederationSubject> GetFederationSubjects(FederalDistrict federalDistrict);
 
-    IEnumerable<FederationSubject> GetFederationSubjects(FederalDistrict federalDistrict);
+        IEnumerable<Enterprise> GetEnterprises(FederationSubject federationSubject);
 
-    IEnumerable<Enterprise> GetEnterprises(FederationSubject federationSubject);
+        Enterprise AddEnterprise(Enterprise enterprise);
 
-    Enterprise AddEnterprise(Enterprise enterprise);
+        void DeleteEnterprise(Enterprise enterprise);
 
-    void DeleteEnterprise(Enterprise enterprise);
+        FederationSubject AddFederalSubject(FederationSubject federationSubject);
 
-    FederationSubject AddFederalSubject(FederationSubject federationSubject);
-
-    FederalDistrict AddFederalDistrict(FederalDistrict federalDistrict);
-  }
+        FederalDistrict AddFederalDistrict(FederalDistrict federalDistrict);
+    }
 }

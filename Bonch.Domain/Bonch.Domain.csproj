@@ -35,11 +35,8 @@
       <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-<<<<<<< HEAD
     <Reference Include="System.ComponentModel.DataAnnotations" />
-=======
     <Reference Include="System.Configuration" />
->>>>>>> c4c84d3cdc2503e968c7527b3dcc9fae6b0d1502
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
@@ -49,23 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="Abstract\IPersonsRepository.cs" />
     <Compile Include="Abstract\ISummariesRepository.cs" />
     <Compile Include="Concrete\MinStatDbContext.cs" />
+    <Compile Include="Concrete\MinStatIdentity.cs" />
     <Compile Include="Concrete\PersonsRepository.cs" />
     <Compile Include="Concrete\SummariesRepository.cs" />
     <Compile Include="POCO\Activity.cs" />
     <Compile Include="POCO\Person.cs" />
     <Compile Include="POCO\Summary.cs" />
     <Compile Include="POCO\SummaryActivity.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-=======
+  <ItemGroup>
     <Compile Include="Concrete\UserNotificator.cs" />
     <Compile Include="POCO\FederationSubject.cs" />
     <Compile Include="Abstract\IAdminRepository.cs" />
@@ -78,7 +74,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
->>>>>>> c4c84d3cdc2503e968c7527b3dcc9fae6b0d1502
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

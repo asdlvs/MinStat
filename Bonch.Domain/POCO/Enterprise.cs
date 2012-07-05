@@ -1,26 +1,20 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="Enterprise.cs" company="Microsoft">
-// TODO: Update copyright text.
-// </copyright>
-// -----------------------------------------------------------------------
-
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.ComponentModel.DataAnnotations;
 namespace Bonch.Domain.POCO
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Text;
+    [Serializable]
+    public class Enterprise
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public FederationSubject FederationSubject { get; set; }
+        [InverseProperty("Enterprise")]
+        public virtual ICollection<User> Users { get; set; }
+        [InverseProperty("Enterprise")]
+        public virtual ICollection<Summary> Summaries { get; set; }
 
-  /// <summary>
-  /// TODO: Update summary.
-  /// </summary>
-  public class Enterprise
-  {
-    public int Id { get; set; }
-
-    public string Title { get; set; }
-
-    public FederationSubject FederationSubject { get; set; }
-
-  }
+    }
 }

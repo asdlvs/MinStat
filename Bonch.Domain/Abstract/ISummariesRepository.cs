@@ -10,6 +10,8 @@ namespace Bonch.Domain.Abstract
     {
         List<Summary> List();
         Summary Save(Summary summary, List<Activity> activities);
+        void Publish(int summaryId);
+        Summary Copy(Summary oldSummaryId, Summary newSummary);
         List<Activity> Activities(Summary summary);
         List<Summary> Undelivered();
     }

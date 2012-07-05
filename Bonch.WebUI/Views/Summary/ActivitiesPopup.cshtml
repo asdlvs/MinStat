@@ -10,7 +10,7 @@
     <div class="modal-body">
         <ul data-bind="foreach: activities">
             <li>
-                <input type="checkbox" data-bind="value: Id, checked: Checked" />
+                <input type="checkbox" data-bind="value: Id, checked: Checked, disable: $root.published() == 'True'" />
                 <span data-bind="text:Title"></span></li>
         </ul>
     </div>

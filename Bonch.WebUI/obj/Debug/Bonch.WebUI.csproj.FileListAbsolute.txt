@@ -1,17 +1,3 @@
-D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Bonch.WebUI.dll
-D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Bonch.WebUI.pdb
-D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\EntityFramework.dll
-D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\EntityFramework.xml
-D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\obj\Debug\Bonch.WebUI.csprojResolveAssemblyReference.cache
-D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\obj\Debug\Bonch.WebUI.dll
-D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\obj\Debug\Bonch.WebUI.pdb
-<<<<<<< HEAD
-D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Bonch.Domain.dll
-D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Ninject.dll
-D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Bonch.Domain.pdb
-D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Ninject.pdb
-D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Ninject.xml
-=======
 F:\Repository\Trash\B\Bonch.WebUI\bin\Bonch.WebUI.dll
 F:\Repository\Trash\B\Bonch.WebUI\bin\Bonch.WebUI.pdb
 F:\Repository\Trash\B\Bonch.WebUI\bin\EntityFramework.dll
@@ -23,4 +9,17 @@ F:\Repository\Trash\B\Bonch.WebUI\bin\Bonch.Domain.dll
 F:\Repository\Trash\B\Bonch.WebUI\bin\Bonch.Security.dll
 F:\Repository\Trash\B\Bonch.WebUI\bin\Bonch.Domain.pdb
 F:\Repository\Trash\B\Bonch.WebUI\bin\Bonch.Security.pdb
->>>>>>> c4c84d3cdc2503e968c7527b3dcc9fae6b0d1502
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Bonch.WebUI.dll
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Bonch.WebUI.pdb
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Bonch.Domain.dll
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Bonch.Security.dll
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\EntityFramework.dll
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Ninject.dll
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Bonch.Domain.pdb
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Bonch.Security.pdb
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\EntityFramework.xml
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Ninject.pdb
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Ninject.xml
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\obj\Debug\Bonch.WebUI.csprojResolveAssemblyReference.cache
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\obj\Debug\Bonch.WebUI.dll
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\obj\Debug\Bonch.WebUI.pdb

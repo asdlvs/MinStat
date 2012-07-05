@@ -1,16 +1,22 @@
-﻿<div data-bind="foreach: historyPoints">
+﻿@using Bonch.WebUI.Models
+@model IEnumerable<HistoryPointViewModel>
+
+<div>
+@foreach (HistoryPointViewModel hp in Model)
+{
     <div class="post">
         <p class="meta">
-            <span class="date"  data-bind="text: Date"></span>&nbsp;<span data-bind="text: Author">Someone</span></p>
+            <span class="date">@hp.Date</span>&nbsp;<span>@hp.Author</span></p>
         <h2 class="title">
-            <span data-bind="text: ActionType"></span>
+            <span>@hp.ActionType</span>
         </h2>
         <div class="entry">
-            <p data-bind="text: Description">
+            <p>@hp.Description
                 </p>
-            <p data-bind="text: CustomDescription">
+            <p>@hp.CustomDescription
                 </p>
 
         </div>
     </div>
+}
 </div>

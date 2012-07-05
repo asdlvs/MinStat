@@ -20,5 +20,11 @@ namespace Bonch.Domain.Concrete
 
         public DbSet<Person> Peoples
         { get; set; }
+
+        public DbSet<Enterprise> Enterprises
+        { get; set; }
+
+        public DbSet<User> Users
+        { get; set; }
     }
 }

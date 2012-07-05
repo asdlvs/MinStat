@@ -1,0 +1,14 @@
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Bonch.WebUI.dll
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Bonch.WebUI.pdb
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Bonch.Domain.dll
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Bonch.Security.dll
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\EntityFramework.dll
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Ninject.dll
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Bonch.Domain.pdb
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Bonch.Security.pdb
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\EntityFramework.xml
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Ninject.pdb
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\bin\Ninject.xml
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\obj\Release\Bonch.WebUI.csprojResolveAssemblyReference.cache
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\obj\Release\Bonch.WebUI.dll
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.WebUI\obj\Release\Bonch.WebUI.pdb

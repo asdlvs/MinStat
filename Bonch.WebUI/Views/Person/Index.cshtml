@@ -21,20 +21,20 @@
 </div>
 <table class="table table-striped table-bordered table-condensed">
     <tbody data-bind="foreach: summaryPersons">
-        <tr  data-bind="click: $root.selectPersonToEdit">
-            <td data-bind="text: FirstName">
+        <tr>
+            <td data-bind="text: FirstName, click: $root.selectPersonToEdit">
             </td>
-            <td data-bind="text: LastName">
+            <td data-bind="text: LastName, click: $root.selectPersonToEdit">
             </td>
-            <td data-bind="text: Salary">
+            <td data-bind="text: Salary, click: $root.selectPersonToEdit">
             </td>
-            <td data-bind="text: Job">
+            <td data-bind="text: Job, click: $root.selectPersonToEdit">
             </td>
-            <td data-bind="text: Age">
+            <td data-bind="text: Age, click: $root.selectPersonToEdit">
             </td>
-            <td data-bind="text: EducationLevel">
+            <td data-bind="text: EducationLevel, click: $root.selectPersonToEdit">
             </td>
-            <td data-bind="text: JobLevel">
+            <td data-bind="text: JobLevel, click: $root.selectPersonToEdit">
             </td>
             <td data-bind="click: $root.deletePerson"> x
             </td>

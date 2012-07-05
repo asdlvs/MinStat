@@ -5,3 +5,12 @@ F:\Repository\Trash\B\Bonch.Security\bin\Debug\Bonch.Domain.pdb
 F:\Repository\Trash\B\Bonch.Security\obj\Debug\ResolveAssemblyReference.cache
 F:\Repository\Trash\B\Bonch.Security\obj\Debug\Bonch.Security.dll
 F:\Repository\Trash\B\Bonch.Security\obj\Debug\Bonch.Security.pdb
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.Security\bin\Debug\Bonch.Security.dll
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.Security\bin\Debug\Bonch.Security.pdb
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.Security\bin\Debug\Bonch.Domain.dll
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.Security\bin\Debug\EntityFramework.dll
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.Security\bin\Debug\Bonch.Domain.pdb
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.Security\bin\Debug\EntityFramework.xml
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.Security\obj\Debug\Bonch.Security.csprojResolveAssemblyReference.cache
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.Security\obj\Debug\Bonch.Security.dll
+D:\Work\Bonch\MinStat_3\Bonch\Bonch.Security\obj\Debug\Bonch.Security.pdb

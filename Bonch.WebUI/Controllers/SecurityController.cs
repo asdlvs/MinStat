@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
+using Bonch.Domain.POCO;
+using Bonch.Security;
+using Bonch.Security.Abstract;
+using Bonch.WebUI.Models;
+
 namespace Bonch.WebUI.Controllers
 {
-  using System.Web.Security;
-
-  using Bonch.Domain.POCO;
-  using Bonch.Security;
-  using Bonch.Security.Abstract;
-  using Bonch.WebUI.Models;
 
   public class SecurityController : Controller
   {
@@ -22,11 +22,15 @@ namespace Bonch.WebUI.Controllers
 
     private IUserRepository _userRepository;
 
-    public ActionResult LogOn(IValidate validator, ISecurityHelper helper, IUserRepository userRepository)
+    public SecurityController(IValidate validator, ISecurityHelper helper, IUserRepository userRepository)
     {
-      _validator = validator;
-      _helper = helper;
-      _userRepository = userRepository;
+        _validator = validator;
+        _helper = helper;
+        _userRepository = userRepository;
+    }
+
+    public ActionResult LogOn()
+    {
       return View();
     }
 

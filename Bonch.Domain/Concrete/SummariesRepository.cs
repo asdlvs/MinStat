@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Bonch.Domain.Abstract;
-using System.Data.Entity;
 using Bonch.Domain.POCO;
 
 namespace Bonch.Domain.Concrete
@@ -18,11 +15,13 @@ namespace Bonch.Domain.Concrete
 
         public List<Summary> List()
         {
-            return _context.Summaries.AsNoTracking().OrderByDescending(s => s.CreateDate).ToList();
+            return _context.Summaries.AsNoTracking().OrderByDescending(s => s.Id).ToList();
         }
 
         public Summary Save(Summary summary, List<Activity> activities)
         {
+            if (summary.Published)
+                return summary;
             if (summary.Id == 0)
             {
                 _context.Summaries.Add(summary);
@@ -61,6 +60,20 @@ namespace Bonch.Domain.Concrete
         public List<Summary> Undelivered()
         {
             return _context.Summaries.Where(s => !s.Published).ToList();
+        }
+
+
+        public void Publish(int summaryId)
+        {
+            Summary summary = _context.Summaries.Single(x => x.Id == summaryId);
+            summary.Published = true;
+            _context.SaveChanges();
+        }
+
+        public Summary Copy(Summary oldSummary, Summary newSummary)
+        {
+            var activities = oldSummary.SummaryActivities.Select(x => x.Activity);
+            return this.Save(newSummary, activities.ToList());
         }
     }
 }

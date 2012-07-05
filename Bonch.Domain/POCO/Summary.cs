@@ -13,9 +13,17 @@ namespace Bonch.Domain.POCO
         public DateTime CreateDate { get; set; }
         public string AuthorName { get; set; }
         public bool Published { get; set; }
-        public int PersonsCount { get; set; }
-
+        public int PersonsCount
+        {
+            get;
+            set;
+        }
         [InverseProperty("Summary")]
         public virtual ICollection<SummaryActivity> SummaryActivities { get; set; }
+        [ForeignKey("Enterprise")]
+        public int EnterpriseId { get; set; }
+        [InverseProperty("Summaries")]
+        public Enterprise Enterprise { get; set; }
+
     }
 }
