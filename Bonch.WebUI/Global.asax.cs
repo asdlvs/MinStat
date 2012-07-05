@@ -41,7 +41,10 @@ namespace Bonch.WebUI
 
             ModelBinders.Binders.Add(typeof(SummaryViewModel), new JavaScriptModelBinder<SummaryViewModel>("summary"));
             ModelBinders.Binders.Add(typeof(ActivityViewModel), new JavaScriptModelBinder<ActivityViewModel>("activity"));
+            ModelBinders.Binders.Add(typeof(PersonViewModel), new JavaScriptModelBinder<PersonViewModel>("person"));
             ModelBinders.Binders.Add(typeof(IEnumerable<ActivityViewModel>), new EnumOfActivityViewModelBinder());
+
+            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
             
 
         }

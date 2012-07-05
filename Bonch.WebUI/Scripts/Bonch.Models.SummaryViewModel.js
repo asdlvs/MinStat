@@ -17,6 +17,7 @@ $(document).ready(function () {
         self.summaries = ko.observableArray();
         self.activities = ko.observableArray();
         self.newSummaryName = ko.observable();
+        self.selectedSummary = ko.observable();
 
         self.loadSummaries = function () {
             $.get('Summary/Summaries', self.summaries);
@@ -26,10 +27,16 @@ $(document).ready(function () {
         }
 
         self.showModalForActivities = function () {
+            self.loadActivities();
+            self.selectedSummary('');
             $('#myModal').modal('show');
         }
-        self.addNewSummary = function () {
-            var newSummary = new Summary(
+        self.saveSummary = function () {
+            $('#savesumbtn').button('loading');
+            $('#cancelsumbtn').button('loading');
+            var summary;
+            if (self.selectedSummary() == null || self.selectedSummary() == '') {
+                summary = new Summary(
             {
                 Title: self.newSummaryName(),
                 CreateDate: '',
@@ -37,22 +44,31 @@ $(document).ready(function () {
                 Published: false,
                 PersonsCount: 0
 
-            })
-            self.summaries.unshift(newSummary);
-            //setTimeout(function () {)
-            $.post('Summary/Add', { summary: newSummary, activities: ko.toJSON(self.activities) }, function (savedSummary) {
-                self.summaries.remove(newSummary);
+            });
+            }
+            else {
+                summary = self.selectedSummary();
+            }
+            //setTimeout(function () {
+            $.post('Summary/Save', { summary: summary, activities: ko.toJSON(self.activities) }, function (savedSummary) {
+                self.summaries.remove(summary);
                 self.summaries.unshift(savedSummary);
                 self.newSummaryName('');
+                $('#savesumbtn').button('complete');
+                $('#cancelsumbtn').button('complete');
+                $('#myModal').modal('hide');
             });
             //}, 3000);
 
         }
 
-
+        self.selectSummary = function (summary) {
+            self.selectedSummary(summary);
+            $.get('Summary/Activities', { summary: summary }, self.activities);
+            $('#myModal').modal('show');
+        }
 
         self.loadSummaries();
-        self.loadActivities();
     }
 
     ko.applyBindings(new SummaryViewModel());

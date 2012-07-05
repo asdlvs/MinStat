@@ -15,7 +15,9 @@
         </ul>
     </div>
     <div class="modal-footer">
-        <a href="#" class="btn" data-dismiss="modal">Отмена</a> <a href="#" class="btn btn-primary"
-            data-bind="click: addNewSummary">Сохранить</a>
+        <a href="#" class="btn" data-dismiss="modal" data-loading-text="Отмена" data-complete-text="Отмена" id="cancelsumbtn">Отмена</a>  
+        <button  class="btn btn-primary" id="savesumbtn"
+            data-loading-text="Идет сохранение..." data-complete-text="Сохранить" data-bind="click: saveSummary">
+                Сохранить</button>
     </div>
 </div>

@@ -9,6 +9,6 @@ namespace Bonch.WebUI.Models
     {
         public string Id { get; set; }
         public string Title { get; set; }
-        public string Checked { get; set; }
+        public bool Checked { get; set; }
     }
 }

@@ -23,13 +23,16 @@ namespace Bonch.WebUI.Infrustructure
             if (request.Params.AllKeys.Contains(String.Format("{0}[{1}]", _jsVariableName, _defaultProperty)))
             {
 
-                T element = (T)typeof(T).GetConstructor(new Type[]{}).Invoke(null);
+                T element = (T)typeof(T).GetConstructor(new Type[] { }).Invoke(null);
                 foreach (PropertyInfo pi in typeof(T).GetProperties())
                 {
                     string key = String.Format("{0}[{1}]", _jsVariableName, pi.Name);
                     if (request.Params.AllKeys.Contains(key))
                     {
-                        pi.SetValue(element, request.Params[key], null);
+                        if (pi.PropertyType == typeof(string))
+                        {
+                            pi.SetValue(element, request.Params[key], null);
+                        }
                     }
                 }
                 return element;

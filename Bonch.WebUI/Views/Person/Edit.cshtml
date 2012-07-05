@@ -1,0 +1,84 @@
+﻿@model Bonch.WebUI.Models.PersonViewModel
+<div class="modal hide" id="myModal">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+            ×</button>
+        <h3 data-bind="text: fullName">
+        </h3>
+    </div>
+    <div class="modal-body">
+        <table>
+            <tbody data-bind="with: editingPerson">
+                <tr>
+                    <td>
+                        Имя:
+                    </td>
+                    <td>
+                        <input type="text" data-bind="value: FirstName">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Фамилия:
+                    </td>
+                    <td>
+                        <input type="text" data-bind="value: LastName">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Должность:
+                    </td>
+                    <td>
+                        <input type="text" data-bind="value: Job">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Зарплата:
+                    </td>
+                    <td>
+                        <input type="text" data-bind="value: Salary">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Возраст:
+                    </td>
+                    <td>
+                        <input type="text" data-bind="value: Age">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">Отмена</a> 
+        
+        <a href="#" class="btn btn-primary"
+            id="savepersonbtn" data-loading-text="Идет сохранение..." data-complete-text="Сохранить"
+            data-bind="click: savePerson">Применить</a> 
+            
+        <a href="#" class="btn btn-primary" id="savepersonbtn"
+            data-loading-text="Идет сохранение..." data-complete-text="Сохранить" data-bind="click: savePersonAndClose">
+                ОК</a>
+    </div>
+</div>
