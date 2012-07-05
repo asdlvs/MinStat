@@ -26,5 +26,9 @@ using Bonch.Domain.POCO;
     Enterprise AddEnterprise(Enterprise enterprise);
 
     void DeleteEnterprise(Enterprise enterprise);
+
+    FederationSubject AddFederalSubject(FederationSubject federationSubject);
+
+    FederalDistrict AddFederalDistrict(FederalDistrict federalDistrict);
   }
 }
