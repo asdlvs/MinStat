@@ -1,0 +1,5 @@
+<Modules>
+  <Module PersistentId="DB5B82D6-A1B2-4E64-9DF5-66672D56E334" ModuleId="Bonch.Domain" />
+  <Module PersistentId="B0AC6A79-6085-4E90-9C5E-3B11C414015C" ModuleId="Bonch.MinStatUI" />
+  <Module PersistentId="1DB530BD-E1F6-481B-9F43-CAAB511E8E18" ModuleId="Bonch.WebUI" />
+</Modules>
