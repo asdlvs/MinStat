@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bonch.Domain", "Bonch.Domai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bonch.WebUI", "Bonch.WebUI\Bonch.WebUI.csproj", "{1DB530BD-E1F6-481B-9F43-CAAB511E8E18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bonch.MinStatUI", "Bonch.MinStatUI\Bonch.MinStatUI.csproj", "{B0AC6A79-6085-4E90-9C5E-3B11C414015C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{1DB530BD-E1F6-481B-9F43-CAAB511E8E18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DB530BD-E1F6-481B-9F43-CAAB511E8E18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DB530BD-E1F6-481B-9F43-CAAB511E8E18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0AC6A79-6085-4E90-9C5E-3B11C414015C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0AC6A79-6085-4E90-9C5E-3B11C414015C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0AC6A79-6085-4E90-9C5E-3B11C414015C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0AC6A79-6085-4E90-9C5E-3B11C414015C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

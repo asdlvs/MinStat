@@ -40,12 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IEnterpriseRegistrator.cs" />
+    <Compile Include="Abstract\IUserNotificator.cs" />
+    <Compile Include="POCO\Enterprise.cs" />
+    <Compile Include="POCO\NotificationMessage.cs" />
+    <Compile Include="POCO\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Abstract\" />
     <Folder Include="Concrete\" />
-    <Folder Include="POCO\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
