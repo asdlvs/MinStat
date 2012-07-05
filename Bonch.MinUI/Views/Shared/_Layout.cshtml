@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/bootstrap-responsive.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/style.css")" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <div id="header">
+        <div id="menu">
+            @Html.Partial("Nav")
+        </div>
+        <!-- end #menu -->
+        <div id="logo">
+            <h1>
+                <a href="#">Министерство связи</a></h1>
+            <h2>
+                Система сбора статистики</h2>
+        </div>
+        <hr />
+    </div>
+    <!-- end #header -->
+    <!-- end #header-wrapper -->
+    <!-- end #logo -->
+    <div id="page">
+        <div id="page-bgtop">
+            <div id="page-bgbtm">
+                @RenderBody()
+                <!-- end #content -->
+                @RenderSection("sidebar", required: false)
+                <!-- end #sidebar -->
+                <div style="clear: both;">
+                    &nbsp;</div>
+            </div>
+            <!-- end #page -->
+        </div>
+    </div>
+    <div id="footer-bgcontent">
+        <div id="footer">
+            <p>
+                &copy; Санкт-Петербургский Государственный Университет Телекоммуникаций им. проф.
+                М.А.Бонч-Бруевича</p>
+        </div>
+        <!-- end #footer -->
+    </div>
+</body>
+</html>
