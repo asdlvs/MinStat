@@ -7,26 +7,45 @@ using Bonch.WebUI.Models;
 
 namespace Bonch.WebUI.Controllers
 {
+  using System.Security.Principal;
+
+  using Bonch.Domain.POCO;
+  using Bonch.Security;
+  using Bonch.Security.Abstract;
+
   [Authorize]
   public class HomeController : Controller
   {
     //
     // GET: /Home/
+    private IUserRepository _userRepository;
+    public HomeController(IUserRepository userRepository)
+    {
+      _userRepository = userRepository;
+    }
 
     public ActionResult Index()
     {
       return View();
     }
 
+
     [HttpGet]
     public JsonResult User()
     {
-      var user = new { Id = 1, Login = "asd@yandex.ru", FirstName = "Виталий", LastName = "Лебедев", Phone = "9217843487" };
-      return this.Json(user, JsonRequestBehavior.AllowGet);
+      //var user = new { Id = 1, Login = "asd@yandex.ru", FirstName = "Виталий", LastName = "Лебедев", Phone = "9217843487" };
+      MinStatIdentity identity = (MinStatIdentity)this.HttpContext.User.Identity;
+      return this.Json(identity, JsonRequestBehavior.AllowGet);
     }
     [HttpPost]
     public ActionResult UpdateUser(string firstName, string lastName, string phone)
     {
+      MinStatIdentity identity = (MinStatIdentity)this.HttpContext.User.Identity;
+      User user = _userRepository.GetUser(identity.Login);
+      user.FirstName = HttpUtility.HtmlEncode(firstName);
+      user.LastName = HttpUtility.HtmlEncode(lastName);
+      user.Phone = HttpUtility.HtmlEncode(phone);
+      _userRepository.SetUser(user);
       return null;
     }
 

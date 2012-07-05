@@ -18,5 +18,8 @@ using Bonch.Domain.POCO;
   public interface IUserRepository
   {
     User GetUser(string username);
+
+    void SetUser(User user);
+
   }
 }

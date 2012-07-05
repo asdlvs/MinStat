@@ -43,7 +43,6 @@ namespace Bonch.Security
       HttpContext.Current.Response.Cookies.Add(cookie);
     }
 
-
     public MinStatPrincipal GetAuthCookie()
     {
       HttpCookie authCookie = HttpContext.Current.Request.Cookies[FormsAuthentication.FormsCookieName];
@@ -69,6 +68,18 @@ namespace Bonch.Security
     public User GetUser(string username)
     {
       return new User { Id = 1, Mail = "admin@admin.ru", Enterprise = new Enterprise{Id = 1, FederationSubject = null, Title = "Агропром"}};
+    }
+
+    public void SetUser(User user)
+    {
+      if(true/*Пользователь существует*/)
+      {
+
+      }
+      else
+      {
+        
+      }
     }
   }
 }

@@ -22,5 +22,24 @@ namespace Bonch.Domain.POCO
     public string Mail { get; set; }
 
     public Enterprise Enterprise { get; set; }
+
+    public string FirstName { get; set; }
+
+    public string LastName { get; set; }
+
+    public string Phone { get; set; }
+
+    public string Login
+    {
+      get
+      {
+        return this.Mail;
+      }
+      set
+      {
+        this.Mail = value;
+      }
+
+    }
   }
 }
