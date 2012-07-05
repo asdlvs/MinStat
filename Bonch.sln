@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bonch.Domain", "Bonch.Domai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bonch.WebUI", "Bonch.WebUI\Bonch.WebUI.csproj", "{1DB530BD-E1F6-481B-9F43-CAAB511E8E18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bonch.Security", "Bonch.Security\Bonch.Security.csproj", "{B249F0E7-B639-4C58-A3F4-C582381E3A34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bonch.MinUI", "Bonch.MinUI\Bonch.MinUI.csproj", "{B10FE566-0C11-447E-9542-EFE3190D3F95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +23,14 @@ Global
 		{1DB530BD-E1F6-481B-9F43-CAAB511E8E18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DB530BD-E1F6-481B-9F43-CAAB511E8E18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DB530BD-E1F6-481B-9F43-CAAB511E8E18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B249F0E7-B639-4C58-A3F4-C582381E3A34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B249F0E7-B639-4C58-A3F4-C582381E3A34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B249F0E7-B639-4C58-A3F4-C582381E3A34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B249F0E7-B639-4C58-A3F4-C582381E3A34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B10FE566-0C11-447E-9542-EFE3190D3F95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B10FE566-0C11-447E-9542-EFE3190D3F95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B10FE566-0C11-447E-9542-EFE3190D3F95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B10FE566-0C11-447E-9542-EFE3190D3F95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

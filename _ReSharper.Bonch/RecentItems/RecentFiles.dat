@@ -1,0 +1,60 @@
+﻿<RecentFiles>
+  <RecentFiles>
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Abstract/f:IEnterpriseRegistrator.cs" caret="771" fromTop="26" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:FederationSubject.cs" caret="295" fromTop="6" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:FederalDistrict.cs" caret="622" fromTop="22" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:Enterprise.cs" caret="627" fromTop="23" />
+    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Concrete/f:MinStatPrincipal.cs" caret="512" fromTop="22" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Abstract/f:IAdminRepository.cs" caret="1032" fromTop="31" />
+    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Concrete/f:SecurityHelper.cs" caret="2202" fromTop="18" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:User.cs" caret="773" fromTop="22" />
+    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Concrete/f:MinStatIdentity.cs" caret="881" fromTop="32" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:HomeController.cs" caret="1420" fromTop="22" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Scripts/f:Bonch.Models.UserViewModel.js" caret="912" fromTop="22" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/f:Global.asax.cs" caret="1591" fromTop="25" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:SummaryController.cs" caret="3849" fromTop="35" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:PersonController.cs" caret="196" fromTop="10" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Views/d:Security/f:LogOn.cshtml" caret="719" fromTop="13" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/f:Web.config" caret="1167" fromTop="25" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Models/f:LogOnModel.cs" caret="435" fromTop="20" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:SecurityController.cs" caret="947" fromTop="22" />
+    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Abstract/f:IUserRepository.cs" caret="603" fromTop="22" />
+    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Abstract/f:IValidate.cs" caret="485" fromTop="16" />
+    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Abstract/f:ISecurityHelper.cs" caret="588" fromTop="16" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Abstract/f:IUserNotificator.cs" caret="0" fromTop="0" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:NotificationMessage.cs" caret="668" fromTop="23" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Concrete/f:UserNotificator.cs" caret="929" fromTop="23" />
+  </RecentFiles>
+  <RecentEdits>
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:PersonController.cs" caret="2251" fromTop="9" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:PersonController.cs" caret="196" fromTop="10" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:SummaryController.cs" caret="3843" fromTop="9" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:SummaryController.cs" caret="196" fromTop="10" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:SecurityController.cs" caret="1485" fromTop="28" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:SecurityController.cs" caret="1562" fromTop="30" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Scripts/f:Bonch.Models.UserViewModel.js" caret="1563" fromTop="32" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Scripts/f:Bonch.Models.UserViewModel.js" caret="920" fromTop="32" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Scripts/f:Bonch.Models.UserViewModel.js" caret="1369" fromTop="17" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Scripts/f:Bonch.Models.UserViewModel.js" caret="1518" fromTop="23" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Scripts/f:Bonch.Models.UserViewModel.js" caret="62" fromTop="3" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:HomeController.cs" caret="927" fromTop="20" />
+    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Concrete/f:MinStatIdentity.cs" caret="881" fromTop="32" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:User.cs" caret="884" fromTop="30" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:HomeController.cs" caret="549" fromTop="13" />
+    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Abstract/f:IUserRepository.cs" caret="603" fromTop="22" />
+    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Concrete/f:SecurityHelper.cs" caret="649" fromTop="4" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:HomeController.cs" caret="631" fromTop="15" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:HomeController.cs" caret="1420" fromTop="22" />
+    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Concrete/f:SecurityHelper.cs" caret="2541" fromTop="24" />
+    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Concrete/f:SecurityHelper.cs" caret="2501" fromTop="21" />
+    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Concrete/f:SecurityHelper.cs" caret="1444" fromTop="15" />
+    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Concrete/f:SecurityHelper.cs" caret="2404" fromTop="21" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Abstract/f:IAdminRepository.cs" caret="1032" fromTop="31" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:NotificationMessage.cs" caret="684" fromTop="31" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:NotificationMessage.cs" caret="598" fromTop="25" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Concrete/f:UserNotificator.cs" caret="771" fromTop="23" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:NotificationMessage.cs" caret="668" fromTop="23" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Concrete/f:UserNotificator.cs" caret="1393" fromTop="30" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Concrete/f:UserNotificator.cs" caret="929" fromTop="23" />
+  </RecentEdits>
+</RecentFiles>
