@@ -1,26 +1,24 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="User.cs" company="Microsoft">
+// <copyright file="ISecurityHelper.cs" company="Microsoft">
 // TODO: Update copyright text.
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace Bonch.Domain.POCO
+namespace Bonch.Security.Abstract
 {
   using System;
   using System.Collections.Generic;
   using System.Linq;
   using System.Text;
 
+  using Bonch.Domain.POCO;
+
   /// <summary>
   /// TODO: Update summary.
   /// </summary>
-  [Serializable]
-  public class User
+  public interface ISecurityHelper
   {
-    public int Id { get; set; }
-
-    public string Mail { get; set; }
-
-    public Enterprise Enterprise { get; set; }
+    void SetAuthCookie(User user, bool rememberMe);
+    MinStatPrincipal GetAuthCookie();
   }
 }

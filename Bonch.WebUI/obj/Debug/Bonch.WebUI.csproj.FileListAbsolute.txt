@@ -12,3 +12,7 @@ F:\Repository\Trash\B\Bonch.WebUI\bin\EntityFramework.xml
 F:\Repository\Trash\B\Bonch.WebUI\obj\Debug\ResolveAssemblyReference.cache
 F:\Repository\Trash\B\Bonch.WebUI\obj\Debug\Bonch.WebUI.dll
 F:\Repository\Trash\B\Bonch.WebUI\obj\Debug\Bonch.WebUI.pdb
+F:\Repository\Trash\B\Bonch.WebUI\bin\Bonch.Domain.dll
+F:\Repository\Trash\B\Bonch.WebUI\bin\Bonch.Security.dll
+F:\Repository\Trash\B\Bonch.WebUI\bin\Bonch.Domain.pdb
+F:\Repository\Trash\B\Bonch.WebUI\bin\Bonch.Security.pdb

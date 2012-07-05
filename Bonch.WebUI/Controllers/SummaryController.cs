@@ -7,20 +7,21 @@ using Bonch.WebUI.Models;
 
 namespace Bonch.WebUI.Controllers
 {
-    public class SummaryController : Controller
+  [Authorize]
+  public class SummaryController : Controller
+  {
+    //
+    // GET: /Summary/
+
+    public ActionResult Index()
     {
-        //
-        // GET: /Summary/
+      return View();
+    }
 
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        [HttpGet]
-        public JsonResult Summaries()
-        {
-            IEnumerable<SummaryViewModel> summaries = new List<SummaryViewModel> 
+    [HttpGet]
+    public JsonResult Summaries()
+    {
+      IEnumerable<SummaryViewModel> summaries = new List<SummaryViewModel> 
             { 
                 new SummaryViewModel{AuthorName="Vitaliy Lebedev", CreateDate=DateTime.Now.AddDays(-20).ToShortDateString(), Id="1", PersonsCount="500", Published="true", Title= "1 квартал 2010"},
                 new SummaryViewModel{AuthorName="Vitaliy Lebedev", CreateDate=DateTime.Now.AddDays(-19).ToShortDateString(), Id="2", PersonsCount="500", Published="true", Title= "2 квартал 2010"},
@@ -34,13 +35,13 @@ namespace Bonch.WebUI.Controllers
                 new SummaryViewModel{AuthorName="Vitaliy Lebedev", CreateDate=DateTime.Now.AddDays(-11).ToShortDateString(), Id="10", PersonsCount="500", Published="false", Title= "2 квартал 2012"}
             }.OrderByDescending(s => s.CreateDate);
 
-            return this.Json(summaries, JsonRequestBehavior.AllowGet);
-        }
+      return this.Json(summaries, JsonRequestBehavior.AllowGet);
+    }
 
-        [HttpGet]
-        public JsonResult Activities()
-        {
-            IEnumerable<ActivityViewModel> activities = new List<ActivityViewModel> 
+    [HttpGet]
+    public JsonResult Activities()
+    {
+      IEnumerable<ActivityViewModel> activities = new List<ActivityViewModel> 
             {
                 new ActivityViewModel{Id = "1", Title="Активность 1"},
                 new ActivityViewModel{Id = "2", Title="Активность 2"},
@@ -53,17 +54,17 @@ namespace Bonch.WebUI.Controllers
                 new ActivityViewModel{Id = "9", Title="Активность 9"},
                 new ActivityViewModel{Id = "10", Title="Активность 10"}
             };
-            return this.Json(activities, JsonRequestBehavior.AllowGet);
-        }
-
-
-        [HttpPost]
-        public JsonResult Add(SummaryViewModel newSummary, IEnumerable<ActivityViewModel> activities)
-        {
-            newSummary.Id = "11";
-            newSummary.CreateDate = DateTime.Now.ToShortDateString();
-
-            return this.Json(newSummary);
-        }
+      return this.Json(activities, JsonRequestBehavior.AllowGet);
     }
+
+
+    [HttpPost]
+    public JsonResult Add(SummaryViewModel newSummary, IEnumerable<ActivityViewModel> activities)
+    {
+      newSummary.Id = "11";
+      newSummary.CreateDate = DateTime.Now.ToShortDateString();
+
+      return this.Json(newSummary);
+    }
+  }
 }

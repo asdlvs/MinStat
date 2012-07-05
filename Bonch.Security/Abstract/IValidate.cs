@@ -1,26 +1,19 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="User.cs" company="Microsoft">
+// <copyright file="IValidate.cs" company="Microsoft">
 // TODO: Update copyright text.
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace Bonch.Domain.POCO
+namespace Bonch.Security.Abstract
 {
   using System;
   using System.Collections.Generic;
   using System.Linq;
   using System.Text;
 
-  /// <summary>
-  /// TODO: Update summary.
-  /// </summary>
-  [Serializable]
-  public class User
+
+  public interface IValidate
   {
-    public int Id { get; set; }
-
-    public string Mail { get; set; }
-
-    public Enterprise Enterprise { get; set; }
+    bool Validate(string username, string password);
   }
 }
