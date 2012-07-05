@@ -18,6 +18,8 @@ namespace Bonch.Domain.POCO
   {
     public int Id { get; set; }
 
-    public string mail { get; set; }
+    public string Mail { get; set; }
+
+    public Enterprise Enterprise { get; set; }
   }
 }

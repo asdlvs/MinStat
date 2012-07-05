@@ -26,9 +26,5 @@ using Bonch.Domain.POCO;
     Enterprise AddEnterprise(Enterprise enterprise);
 
     void DeleteEnterprise(Enterprise enterprise);
-
-    
-
-
   }
 }
