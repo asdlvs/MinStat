@@ -1,7 +1,0 @@
-F:\Repository\Trash\B\Bonch.MinStatUI\bin\Bonch.MinStatUI.dll
-F:\Repository\Trash\B\Bonch.MinStatUI\bin\Bonch.MinStatUI.pdb
-F:\Repository\Trash\B\Bonch.MinStatUI\bin\EntityFramework.dll
-F:\Repository\Trash\B\Bonch.MinStatUI\bin\EntityFramework.xml
-F:\Repository\Trash\B\Bonch.MinStatUI\obj\Debug\ResolveAssemblyReference.cache
-F:\Repository\Trash\B\Bonch.MinStatUI\obj\Debug\Bonch.MinStatUI.dll
-F:\Repository\Trash\B\Bonch.MinStatUI\obj\Debug\Bonch.MinStatUI.pdb
