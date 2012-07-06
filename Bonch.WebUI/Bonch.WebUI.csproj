@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PeopleController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\SecurityController.cs" />
     <Compile Include="Controllers\SummaryController.cs" />
@@ -122,6 +123,7 @@
     <Content Include="Scripts\Bonch.Models.PersonViewModel.js" />
     <Content Include="Scripts\Bonch.Models.SummaryViewModel.js" />
     <Content Include="Scripts\Bonch.Models.UserViewModel.js" />
+    <Content Include="Scripts\Bonch.People.js" />
     <Content Include="Scripts\bootstrap-button.js" />
     <Content Include="Scripts\bootstrap-modal.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -196,6 +198,15 @@
   <ItemGroup>
     <Content Include="Views\Person\Edit.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\People\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\People\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\People\SummaryAndActivitySelector.cshtml" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -213,7 +224,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>1597</DevelopmentServerPort>
+          <DevelopmentServerPort>58765</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost/Bonch.WebUI</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

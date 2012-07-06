@@ -49,10 +49,10 @@ namespace Bonch.WebUI.Controllers
                 {
                     Id = x.Id.ToString(),
                     Age = ((DateTime.Now - x.BirthDate).Days / 365).ToString(),
-                    EducationLevel = x.EducationLevel,
+                    EducationLevel = x.EducationLevelId.ToString(),
                     FirstName = x.FirstName,
                     Job = x.Job,
-                    JobLevel = x.JobLevel,
+                    JobLevel = x.JobLevelId.ToString(),
                     LastName = x.LastName,
                     Salary = x.Salary.ToString()
 
@@ -84,9 +84,9 @@ namespace Bonch.WebUI.Controllers
                     {
                         BirthDate = DateTime.Now.AddYears(-25),
                         FirstName = person.FirstName,
-                        EducationLevel = person.EducationLevel,
+                        EducationLevelId = Int32.Parse(person.EducationLevel),
                         Job = person.Job,
-                        JobLevel = person.JobLevel,
+                        JobLevelId =Int32.Parse(person.JobLevel),
                         LastName = person.LastName,
                         Salary = Decimal.Parse(person.Salary),
                         ActivityId = Int32.Parse(activity.Id),

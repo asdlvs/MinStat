@@ -12,7 +12,8 @@ namespace Bonch.Domain.POCO
         public string Title { get; set; }
         [InverseProperty("Activity")]
         public virtual ICollection<SummaryActivity> SummaryActivities { get; set; }
-
+        [InverseProperty("Activity")]
+        public virtual ICollection<Person> People { get; set; }
         [NotMapped]
         public bool Checked { get; set; }    
 

@@ -1,0 +1,50 @@
+﻿@using Bonch.WebUI.Models
+@model IEnumerable<PersonViewModel>
+@{
+  ViewBag.Title = "List";
+}
+<div id="content" class="summary">
+  @Html.Partial("SummaryAndActivitySelector")
+  <br />
+  @if (Model != null)
+  {
+    <table class="table table-striped table-bordered table-condensed">
+      <tbody>
+        @foreach (PersonViewModel person in Model)
+        {
+          <tr>
+            <td>
+              @person.LastName
+            </td>
+            <td>
+              @person.FirstName
+            </td>
+            <td>
+              @person.Salary
+            </td>
+            <td>
+              @person.Job
+            </td>
+            <td>
+              @person.Age
+            </td>
+            <td>
+              @Html.ActionLink("Р", "Edit", new { id = @person.Id })
+            </td>
+            <td>
+              @using (Html.BeginForm("Delete", "People"))
+              {
+                @Html.Hidden("id", person.Id)
+                @Html.Hidden("summaryId", person.SummaryId)
+                @Html.Hidden("activityId", person.ActivityId)
+                <input type="submit" value="X" />
+              }
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  
+    @Html.ActionLink("Добавить", "Edit", new { summaryId = ViewBag.SummaryId, activityId = ViewBag.ActivityId })
+  }
+</div>

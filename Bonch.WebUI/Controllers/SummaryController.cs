@@ -84,7 +84,7 @@ namespace Bonch.WebUI.Controllers
                 };
             }
 
-            summary = _summaryRep.Save(summary, acts);
+            this._summaryRep.Save(summary, acts);
             return RedirectToAction("Index");
         }
         [HttpPost]

@@ -6,24 +6,25 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Bonch.Domain.POCO
 {
-    public class Summary
-    {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public DateTime CreateDate { get; set; }
-        public string AuthorName { get; set; }
-        public bool Published { get; set; }
-        public int PersonsCount
-        {
-            get;
-            set;
-        }
-        [InverseProperty("Summary")]
-        public virtual ICollection<SummaryActivity> SummaryActivities { get; set; }
-        [ForeignKey("Enterprise")]
-        public int EnterpriseId { get; set; }
-        [InverseProperty("Summaries")]
-        public Enterprise Enterprise { get; set; }
+  public class Summary
+  {
+    public int Id { get; set; }
+    public string Title { get; set; }
+    public DateTime CreateDate { get; set; }
+    public string AuthorName { get; set; }
+    public bool Published { get; set; }
 
-    }
+    public int PersonsCount { get;set; }
+
+    [InverseProperty("Summary")]
+    public virtual ICollection<SummaryActivity> SummaryActivities { get; set; }
+    [ForeignKey("Enterprise")]
+    public int EnterpriseId { get; set; }
+    [InverseProperty("Summaries")]
+    public virtual Enterprise Enterprise { get; set; }
+    [InverseProperty("Summary")]
+    public virtual ICollection<Person> People { get; set; }
+
+
+  }
 }

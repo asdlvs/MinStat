@@ -1,60 +1,66 @@
 ﻿<RecentFiles>
   <RecentFiles>
-    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Abstract/f:IEnterpriseRegistrator.cs" caret="771" fromTop="26" />
-    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:FederationSubject.cs" caret="295" fromTop="6" />
-    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:FederalDistrict.cs" caret="622" fromTop="22" />
-    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:Enterprise.cs" caret="627" fromTop="23" />
-    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Concrete/f:MinStatPrincipal.cs" caret="512" fromTop="22" />
-    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Abstract/f:IAdminRepository.cs" caret="1032" fromTop="31" />
-    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Concrete/f:SecurityHelper.cs" caret="2202" fromTop="18" />
-    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:User.cs" caret="773" fromTop="22" />
-    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Concrete/f:MinStatIdentity.cs" caret="881" fromTop="32" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:HomeController.cs" caret="1420" fromTop="22" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Scripts/f:Bonch.Models.UserViewModel.js" caret="912" fromTop="22" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/f:Global.asax.cs" caret="1591" fromTop="25" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:SummaryController.cs" caret="3849" fromTop="35" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:PersonController.cs" caret="196" fromTop="10" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Views/d:Security/f:LogOn.cshtml" caret="719" fromTop="13" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/f:Web.config" caret="1167" fromTop="25" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Models/f:LogOnModel.cs" caret="435" fromTop="20" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:SecurityController.cs" caret="947" fromTop="22" />
     <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Abstract/f:IUserRepository.cs" caret="603" fromTop="22" />
     <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Abstract/f:IValidate.cs" caret="485" fromTop="16" />
     <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Abstract/f:ISecurityHelper.cs" caret="588" fromTop="16" />
     <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Abstract/f:IUserNotificator.cs" caret="0" fromTop="0" />
-    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:NotificationMessage.cs" caret="668" fromTop="23" />
     <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Concrete/f:UserNotificator.cs" caret="929" fromTop="23" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/f:Web.config" caret="710" fromTop="8" />
+    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Concrete/f:SecurityHelper.cs" caret="617" fromTop="21" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:SummaryActivity.cs" caret="0" fromTop="0" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:NotificationMessage.cs" caret="0" fromTop="0" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:FederationSubject.cs" caret="0" fromTop="0" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:FederalDistrict.cs" caret="0" fromTop="0" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Concrete/f:MinStatDbContext.cs" caret="333" fromTop="13" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/f:Global.asax.cs" caret="1723" fromTop="27" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Views/d:People/f:List.cshtml" caret="712" fromTop="13" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Models/f:LogOnModel.cs" caret="133" fromTop="4" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Models/f:PersonViewModel.cs" caret="668" fromTop="18" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Views/d:People/f:Edit.cshtml" caret="665" fromTop="25" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Views/d:Shared/f:_Layout.cshtml" caret="39" fromTop="3" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Views/f:_ViewStart.cshtml" caret="8" fromTop="1" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Views/d:Person/f:Index.cshtml" caret="1074" fromTop="16" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:User.cs" caret="537" fromTop="19" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Abstract/f:IPersonsRepository.cs" caret="341" fromTop="14" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:Person.cs" caret="773" fromTop="25" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:Activity.cs" caret="442" fromTop="14" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:PersonController.cs" caret="3196" fromTop="8" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:PeopleController.cs" caret="2493" fromTop="28" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Concrete/f:PersonsRepository.cs" caret="1772" fromTop="25" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:Summary.cs" caret="751" fromTop="26" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:Enterprise.cs" caret="0" fromTop="0" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Concrete/f:SummariesRepository.cs" caret="858" fromTop="17" />
   </RecentFiles>
   <RecentEdits>
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:PersonController.cs" caret="2251" fromTop="9" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:PersonController.cs" caret="196" fromTop="10" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:SummaryController.cs" caret="3843" fromTop="9" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:SummaryController.cs" caret="196" fromTop="10" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:SecurityController.cs" caret="1485" fromTop="28" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:SecurityController.cs" caret="1562" fromTop="30" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Scripts/f:Bonch.Models.UserViewModel.js" caret="1563" fromTop="32" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Scripts/f:Bonch.Models.UserViewModel.js" caret="920" fromTop="32" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Scripts/f:Bonch.Models.UserViewModel.js" caret="1369" fromTop="17" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Scripts/f:Bonch.Models.UserViewModel.js" caret="1518" fromTop="23" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Scripts/f:Bonch.Models.UserViewModel.js" caret="62" fromTop="3" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:HomeController.cs" caret="927" fromTop="20" />
-    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Concrete/f:MinStatIdentity.cs" caret="881" fromTop="32" />
-    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:User.cs" caret="884" fromTop="30" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:HomeController.cs" caret="549" fromTop="13" />
-    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Abstract/f:IUserRepository.cs" caret="603" fromTop="22" />
-    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Concrete/f:SecurityHelper.cs" caret="649" fromTop="4" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:HomeController.cs" caret="631" fromTop="15" />
-    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:HomeController.cs" caret="1420" fromTop="22" />
-    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Concrete/f:SecurityHelper.cs" caret="2541" fromTop="24" />
-    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Concrete/f:SecurityHelper.cs" caret="2501" fromTop="21" />
-    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Concrete/f:SecurityHelper.cs" caret="1444" fromTop="15" />
-    <File id="B249F0E7-B639-4C58-A3F4-C582381E3A34/d:Concrete/f:SecurityHelper.cs" caret="2404" fromTop="21" />
-    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Abstract/f:IAdminRepository.cs" caret="1032" fromTop="31" />
-    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:NotificationMessage.cs" caret="684" fromTop="31" />
-    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:NotificationMessage.cs" caret="598" fromTop="25" />
-    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Concrete/f:UserNotificator.cs" caret="771" fromTop="23" />
-    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:NotificationMessage.cs" caret="668" fromTop="23" />
-    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Concrete/f:UserNotificator.cs" caret="1393" fromTop="30" />
-    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Concrete/f:UserNotificator.cs" caret="929" fromTop="23" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:PeopleController.cs" caret="3037" fromTop="32" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/f:Global.asax.cs" caret="1723" fromTop="27" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:PeopleController.cs" caret="2640" fromTop="13" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:PeopleController.cs" caret="2640" fromTop="21" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Views/d:People/f:Edit.cshtml" caret="473" fromTop="16" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Views/d:People/f:Edit.cshtml" caret="697" fromTop="25" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:PeopleController.cs" caret="1297" fromTop="25" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:PeopleController.cs" caret="1535" fromTop="7" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Views/d:People/f:List.cshtml" caret="1311" fromTop="18" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:PeopleController.cs" caret="2625" fromTop="18" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:PeopleController.cs" caret="3120" fromTop="24" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:PeopleController.cs" caret="3314" fromTop="22" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:PeopleController.cs" caret="3519" fromTop="29" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Views/d:People/f:List.cshtml" caret="1201" fromTop="30" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Views/d:People/f:List.cshtml" caret="1065" fromTop="22" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Models/f:PersonViewModel.cs" caret="458" fromTop="15" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Models/f:PersonViewModel.cs" caret="1153" fromTop="25" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Models/f:PersonViewModel.cs" caret="1065" fromTop="21" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Models/f:PersonViewModel.cs" caret="1213" fromTop="29" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Models/f:PersonViewModel.cs" caret="668" fromTop="18" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:PeopleController.cs" caret="2856" fromTop="18" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:Summary.cs" caret="852" fromTop="27" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:Summary.cs" caret="755" fromTop="26" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:Person.cs" caret="550" fromTop="19" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Concrete/f:PersonsRepository.cs" caret="1517" fromTop="29" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:Person.cs" caret="773" fromTop="25" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:POCO/f:Activity.cs" caret="442" fromTop="14" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Concrete/f:PersonsRepository.cs" caret="524" fromTop="18" />
+    <File id="DB5B82D6-A1B2-4E64-9DF5-66672D56E334/d:Concrete/f:PersonsRepository.cs" caret="1772" fromTop="25" />
+    <File id="1DB530BD-E1F6-481B-9F43-CAAB511E8E18/d:Controllers/f:PeopleController.cs" caret="2207" fromTop="27" />
   </RecentEdits>
 </RecentFiles>

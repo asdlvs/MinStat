@@ -6,10 +6,15 @@ using Bonch.Domain.POCO;
 
 namespace Bonch.Domain.Abstract
 {
-    public interface IPersonsRepository
-    {
-        IEnumerable<Person> List(Summary summary, Activity activity);
-        void Set(Person person);
-        void Delete(Person person);
-    }
+  public interface IPersonsRepository
+  {
+    IEnumerable<Person> List(Summary summary, Activity activity);
+    void Set(Person person);
+    void Delete(Person person);
+    Person Get(int id);
+
+    IEnumerable<JobLevel> JobLevels();
+
+    IEnumerable<EducationLevel> EducationLevels();
+  }
 }

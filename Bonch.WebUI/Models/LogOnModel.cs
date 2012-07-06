@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
+using System.ComponentModel.DataAnnotations;
 namespace Bonch.WebUI.Models
 {
-  using System.ComponentModel.DataAnnotations;
+
 
   public class LogOnModel
   {
