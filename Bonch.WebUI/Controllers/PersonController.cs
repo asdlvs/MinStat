@@ -35,7 +35,6 @@ namespace Bonch.WebUI.Controllers
                 Id = x.Id.ToString(),
                 AuthorName = x.AuthorName,
                 CreateDate = x.CreateDate.ToShortDateString(),
-                PersonsCount = x.PersonsCount.ToString(),
                 Title = x.Title
             });
             return this.Json(summaries, JsonRequestBehavior.AllowGet);

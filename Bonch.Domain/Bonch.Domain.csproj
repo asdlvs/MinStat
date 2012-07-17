@@ -48,16 +48,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IPersonsRepository.cs" />
+    <Compile Include="Abstract\IStatisticDataRepository.cs" />
     <Compile Include="Abstract\ISummariesRepository.cs" />
     <Compile Include="Comparers\SummaryEqualityComparer.cs" />
     <Compile Include="Concrete\MinStatDbContext.cs" />
     <Compile Include="Concrete\MinStatIdentity.cs" />
     <Compile Include="Concrete\PersonsRepository.cs" />
+    <Compile Include="Concrete\StatisticDataRepository.cs" />
     <Compile Include="Concrete\SummariesRepository.cs" />
     <Compile Include="POCO\Activity.cs" />
     <Compile Include="POCO\EducationLevel.cs" />
     <Compile Include="POCO\JobLevel.cs" />
     <Compile Include="POCO\Person.cs" />
+    <Compile Include="POCO\StatisticDataItem.cs" />
     <Compile Include="POCO\Summary.cs" />
     <Compile Include="POCO\SummaryActivity.cs" />
   </ItemGroup>

@@ -296,37 +296,6 @@ hr
     background: #f3f7f5;
 }
 
-#content.summary table
-{
-    border-collapse: separate;
-    border-spacing: 2px;
-}
-#content.summary thead
-{
-    background: #bbbbff;
-}
-#content.summary td
-{
-    width: 200px;
-    height: 30px;
-}
-
-#content.summary td.local
-{
-    width: 30px;
-    background-color: #FF0000;
-}
-
-#content.summary td.saved
-{
-    width: 30px;
-    background-color: #00FF00;
-}
-
-#content.summary tr.odd
-{
-    background: #bbbbff;
-}
 
 /* Post */
 

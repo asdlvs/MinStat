@@ -13,8 +13,8 @@ namespace Bonch.Domain.POCO
     public DateTime CreateDate { get; set; }
     public string AuthorName { get; set; }
     public bool Published { get; set; }
-
-    public int PersonsCount { get;set; }
+    [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Computed)]
+    public int PersonsCount { get; set; }
 
     [InverseProperty("Summary")]
     public virtual ICollection<SummaryActivity> SummaryActivities { get; set; }
