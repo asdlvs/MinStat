@@ -40,6 +40,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,7 +61,7 @@
     <Compile Include="POCO\EducationLevel.cs" />
     <Compile Include="POCO\JobLevel.cs" />
     <Compile Include="POCO\Person.cs" />
-    <Compile Include="POCO\StatisticDataItem.cs" />
+    <Compile Include="POCO\EnterpriseStatisticDataItem.cs" />
     <Compile Include="POCO\Summary.cs" />
     <Compile Include="POCO\SummaryActivity.cs" />
   </ItemGroup>

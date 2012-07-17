@@ -37,6 +37,6 @@ namespace Bonch.Domain.Concrete
 
         public DbSet<EducationLevel> EducationLevels { get; set; }
 
-        public DbSet<StatisticDataItem> StatisticDataItems { get; set; }
+        public DbSet<EnterpriseStatisticDataItem> EnterpriseStatisticDataItems { get; set; }
     }
 }

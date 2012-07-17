@@ -13,16 +13,24 @@ namespace Bonch.MinUI.Controllers
     public class HomeController : Controller
     {
         IStatisticDataRepository _statisticRepository;
+        IPersonsRepository _personRepository;
 
-        public HomeController(IStatisticDataRepository statisticDataRepository)
+        public HomeController(IStatisticDataRepository statisticDataRepository, IPersonsRepository personRepository)
         {
             _statisticRepository = statisticDataRepository;
+            _personRepository = personRepository;
         }
 
-        public ActionResult List()
+        public ActionResult List(int summaryId = 51)
         {
-            IEnumerable<StatisticDataItem> statisticData = _statisticRepository.GetItems();
-            return View(statisticData);
+            List<EnterpriseStatisticDataItem> statisticData = _statisticRepository.GetItems().Where(x => x.SummaryId == summaryId).ToList();
+            List<Activity> activities = _statisticRepository.GetActivities().ToList();
+            var ss = activities
+                .GroupJoin(statisticData, x => x.Id, x => x.ActivityId, (x, y) => new { x, y })
+                .SelectMany(x => x.y.DefaultIfEmpty(), (x, y) => new { x, y }).ToList();
+
+           
+            return View();
         }
 
     }

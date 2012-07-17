@@ -21,6 +21,7 @@ namespace Bonch.MinUI.Infrustructure
         private void AddBindings()
         {
             _kernel.Bind<IStatisticDataRepository>().To<StatisticDataRepository>();
+            _kernel.Bind<IPersonsRepository>().To<PersonsRepository>();
         }
 
         protected override IController GetControllerInstance(System.Web.Routing.RequestContext requestContext, Type controllerType)

@@ -13,9 +13,15 @@ namespace Bonch.Domain.Concrete
         {
             context = new MinStatDbContext();
         }
-        IEnumerable<POCO.StatisticDataItem> IStatisticDataRepository.GetItems()
+        public IEnumerable<POCO.EnterpriseStatisticDataItem> GetItems()
         {
-            return context.StatisticDataItems;
+            return context.EnterpriseStatisticDataItems;
+        }
+
+
+        public IEnumerable<POCO.Activity> GetActivities()
+        {
+            return context.Activities;
         }
     }
 }
