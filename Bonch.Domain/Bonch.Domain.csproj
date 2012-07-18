@@ -31,8 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -52,6 +53,7 @@
     <Compile Include="Abstract\IStatisticDataRepository.cs" />
     <Compile Include="Abstract\ISummariesRepository.cs" />
     <Compile Include="Comparers\SummaryEqualityComparer.cs" />
+    <Compile Include="Concrete\InfraStructureRepository.cs" />
     <Compile Include="Concrete\MinStatDbContext.cs" />
     <Compile Include="Concrete\MinStatIdentity.cs" />
     <Compile Include="Concrete\PersonsRepository.cs" />
@@ -61,18 +63,18 @@
     <Compile Include="POCO\EducationLevel.cs" />
     <Compile Include="POCO\JobLevel.cs" />
     <Compile Include="POCO\Person.cs" />
-    <Compile Include="POCO\EnterpriseStatisticDataItem.cs" />
+    <Compile Include="POCO\StatisticDataItem.cs" />
     <Compile Include="POCO\Summary.cs" />
     <Compile Include="POCO\SummaryActivity.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Concrete\UserNotificator.cs" />
-    <Compile Include="POCO\FederationSubject.cs" />
-    <Compile Include="Abstract\IAdminRepository.cs" />
+    <Compile Include="POCO\FederalSubject.cs" />
+    <Compile Include="Abstract\IInfraStructureRepository.cs" />
     <Compile Include="Abstract\IEnterpriseRegistrator.cs" />
     <Compile Include="Abstract\IUserNotificator.cs" />
     <Compile Include="POCO\Enterprise.cs" />

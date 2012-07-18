@@ -14,23 +14,41 @@ namespace Bonch.MinUI.Controllers
     {
         IStatisticDataRepository _statisticRepository;
         IPersonsRepository _personRepository;
+        IInfraStructureRepository _infrastructureRepository;
 
-        public HomeController(IStatisticDataRepository statisticDataRepository, IPersonsRepository personRepository)
+        public HomeController(IStatisticDataRepository statisticDataRepository, IPersonsRepository personRepository, IInfraStructureRepository infrastructureRepository)
         {
             _statisticRepository = statisticDataRepository;
             _personRepository = personRepository;
+            _infrastructureRepository = infrastructureRepository;
         }
 
-        public ActionResult List(int summaryId = 51)
+        public ActionResult List(string enterpriseId, string subjectId, string districtId, string beginDate, string endDate)
         {
-            List<EnterpriseStatisticDataItem> statisticData = _statisticRepository.GetItems().Where(x => x.SummaryId == summaryId).ToList();
-            List<Activity> activities = _statisticRepository.GetActivities().ToList();
-            var ss = activities
-                .GroupJoin(statisticData, x => x.Id, x => x.ActivityId, (x, y) => new { x, y })
-                .SelectMany(x => x.y.DefaultIfEmpty(), (x, y) => new { x, y }).ToList();
+            ViewBag.Districts = _infrastructureRepository
+                .GetFederalDistricts()
+                .Select(x => new SelectListItem 
+                { 
+                    Text = x.Title, 
+                    Value = x.Id.ToString(), 
+                    Selected = x.Id.ToString() == districtId
+                })
+                .ToList();
+            IEnumerable<StatisticDataItem> statisticItems = new List<StatisticDataItem>();
 
-           
-            return View();
+            if (!String.IsNullOrWhiteSpace(districtId))
+            {
+                int dId = Int32.Parse(districtId);
+                //statisticItems = _statisticRepository.GetItems(dId, DateTime.Now.AddDays(-100), DateTime.Now);
+                ViewBag.Subjects = _infrastructureRepository.GetFederationSubjects(dId).ToList();
+            }
+            if (!String.IsNullOrEmpty(subjectId))
+            {
+                int sId = Int32.Parse(subjectId);
+                ViewBag.Enterprises = _infrastructureRepository.GetEnterprises(sId).ToList();
+            }
+
+            return View(statisticItems);
         }
 
     }

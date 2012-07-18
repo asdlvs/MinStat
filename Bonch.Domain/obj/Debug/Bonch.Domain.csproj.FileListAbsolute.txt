@@ -16,13 +16,6 @@ F:\Repository\Trash\B_2\Bonch.Domain\bin\Debug\EntityFramework.xml
 F:\Repository\Trash\B_2\Bonch.Domain\obj\Debug\ResolveAssemblyReference.cache
 F:\Repository\Trash\B_2\Bonch.Domain\obj\Debug\Bonch.Domain.dll
 F:\Repository\Trash\B_2\Bonch.Domain\obj\Debug\Bonch.Domain.pdb
-D:\Work\Bonch\MinStat_4\Bonch.Domain\bin\Debug\Bonch.Domain.dll
-D:\Work\Bonch\MinStat_4\Bonch.Domain\bin\Debug\Bonch.Domain.pdb
-D:\Work\Bonch\MinStat_4\Bonch.Domain\bin\Debug\EntityFramework.dll
-D:\Work\Bonch\MinStat_4\Bonch.Domain\bin\Debug\EntityFramework.xml
-D:\Work\Bonch\MinStat_4\Bonch.Domain\obj\Debug\Bonch.Domain.csprojResolveAssemblyReference.cache
-D:\Work\Bonch\MinStat_4\Bonch.Domain\obj\Debug\Bonch.Domain.dll
-D:\Work\Bonch\MinStat_4\Bonch.Domain\obj\Debug\Bonch.Domain.pdb
 E:\MinStat_4\Bonch.Domain\bin\Debug\Bonch.Domain.dll
 E:\MinStat_4\Bonch.Domain\bin\Debug\Bonch.Domain.pdb
 E:\MinStat_4\Bonch.Domain\bin\Debug\EntityFramework.dll
@@ -30,3 +23,11 @@ E:\MinStat_4\Bonch.Domain\bin\Debug\EntityFramework.xml
 E:\MinStat_4\Bonch.Domain\obj\Debug\Bonch.Domain.csprojResolveAssemblyReference.cache
 E:\MinStat_4\Bonch.Domain\obj\Debug\Bonch.Domain.dll
 E:\MinStat_4\Bonch.Domain\obj\Debug\Bonch.Domain.pdb
+D:\Work\Bonch\MinStat_4\Bonch.Domain\bin\Debug\Bonch.Domain.dll.config
+D:\Work\Bonch\MinStat_4\Bonch.Domain\bin\Debug\Bonch.Domain.dll
+D:\Work\Bonch\MinStat_4\Bonch.Domain\bin\Debug\Bonch.Domain.pdb
+D:\Work\Bonch\MinStat_4\Bonch.Domain\bin\Debug\EntityFramework.dll
+D:\Work\Bonch\MinStat_4\Bonch.Domain\bin\Debug\EntityFramework.xml
+D:\Work\Bonch\MinStat_4\Bonch.Domain\obj\Debug\Bonch.Domain.csprojResolveAssemblyReference.cache
+D:\Work\Bonch\MinStat_4\Bonch.Domain\obj\Debug\Bonch.Domain.dll
+D:\Work\Bonch\MinStat_4\Bonch.Domain\obj\Debug\Bonch.Domain.pdb

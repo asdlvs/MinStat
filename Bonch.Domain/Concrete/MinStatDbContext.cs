@@ -33,10 +33,13 @@ namespace Bonch.Domain.Concrete
         public DbSet<User> Users
         { get; set; }
 
+        public DbSet<FederalDistrict> FederalDistricts { get; set; }
+
+        public DbSet<FederalSubject> FederalSubjects { get; set; }
+
         public DbSet<JobLevel> JobLevels { get; set; }
 
         public DbSet<EducationLevel> EducationLevels { get; set; }
 
-        public DbSet<EnterpriseStatisticDataItem> EnterpriseStatisticDataItems { get; set; }
     }
 }

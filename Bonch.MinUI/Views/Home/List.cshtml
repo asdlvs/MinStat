@@ -1,6 +1,49 @@
-﻿@{
+﻿@using Bonch.Domain.POCO
+@model IEnumerable<StatisticDataItem>
+@{
     ViewBag.Title = "List";
 }
-<div id="content" class="summary">
-   
-</div>
+
+<table  class="table table-bordered">
+    @foreach (StatisticDataItem item in Model)
+    { 
+        <tr>
+            <td>@item.Part_1
+            </td>
+            <td>@item.Part_2
+            </td>
+            <td>@item.Part_3
+            </td>
+            <td>@item.Part_4
+            </td>
+            <td>@item.Part_5
+            </td>
+            <td style="width:550px;">@item.Title
+            </td>
+            <td style="width:30px;">@item.j1_e1
+            </td>
+            <td style="width:30px;">@item.j1_e2
+            </td>
+            <td style="width:30px;">@item.j1_e3
+            </td>
+            <td style="width:30px;">@item.j2_e1
+            </td>
+            <td style="width:30px;">@item.j2_e2
+            </td>
+            <td style="width:30px;">@item.j2_e3
+            </td>
+            <td style="width:30px;">@item.j3_e1
+            </td>
+            <td style="width:30px;">@item.j3_e2
+            </td>
+            <td style="width:30px;">@item.j3_e3
+            </td>
+            <td style="width:30px;">@item.j4_e1
+            </td>
+            <td style="width:30px;">@item.j4_e2
+            </td>
+            <td style="width:30px;">@item.j4_e3
+            </td>
+        </tr>
+    }
+</table>

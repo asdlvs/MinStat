@@ -12,7 +12,5 @@ namespace Bonch.Domain.POCO
         public int Id { get; set; }
 
         public string Title { get; set; }
-
-        public FederationSubject Type { get; set; }
     }
 }

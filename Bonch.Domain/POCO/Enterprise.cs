@@ -10,7 +10,7 @@ namespace Bonch.Domain.POCO
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        public FederationSubject FederationSubject { get; set; }
+        public int FederalSubjectId { get; set; }
         [InverseProperty("Enterprise")]
         public virtual ICollection<User> Users { get; set; }
         [InverseProperty("Enterprise")]
