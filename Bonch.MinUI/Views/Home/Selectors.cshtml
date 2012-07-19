@@ -1,0 +1,19 @@
+﻿@model Bonch.MinUI.Models.SelectorsViewModel
+@using (Html.BeginForm())
+{
+    @Html.DropDownList("districtId", new SelectList(Model.Districts, "Id", "Title"), new { onchange = "this.form.submit();" })
+
+    @Html.DropDownList("subjectId", new SelectList(Model.Subjects, "Id", "Title"), new { onchange = "this.form.submit();" })
+
+    @Html.DropDownList("enterpriseId", new SelectList(Model.Enterprises, "Id", "Title"), new { onchange = "this.form.submit();" });
+
+    <script type="text/javascript">
+        $(function () {
+            $("#beginDate").datepicker();
+            $("#endDate").datepicker();
+        });
+    </script> 
+    <input id="beginDate" type="text" style="width:50px" />                                                                                                                               
+    <input id="endDate" type="text" style="width:50px" />         
+                                                                                                                                  
+}

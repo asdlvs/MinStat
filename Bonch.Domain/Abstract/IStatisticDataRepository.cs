@@ -8,7 +8,7 @@ namespace Bonch.Domain.Abstract
 {
     public interface IStatisticDataRepository
     {
-        IEnumerable<StatisticDataItem> GetItems(int enterpriseId, DateTime startDate, DateTime endDate);
+        IEnumerable<StatisticDataItem> GetItems(int id, DateTime startDate, DateTime endDate, AreaType type);
 
         IEnumerable<Activity> GetActivities();
     }

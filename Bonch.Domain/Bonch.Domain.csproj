@@ -60,6 +60,7 @@
     <Compile Include="Concrete\StatisticDataRepository.cs" />
     <Compile Include="Concrete\SummariesRepository.cs" />
     <Compile Include="POCO\Activity.cs" />
+    <Compile Include="POCO\AreaType.cs" />
     <Compile Include="POCO\EducationLevel.cs" />
     <Compile Include="POCO\JobLevel.cs" />
     <Compile Include="POCO\Person.cs" />

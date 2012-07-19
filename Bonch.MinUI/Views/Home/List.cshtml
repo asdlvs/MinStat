@@ -4,7 +4,30 @@
     ViewBag.Title = "List";
 }
 
+@Html.Action("Selectors")
+
 <table  class="table table-bordered">
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><input type="checkbox" /></td>
+<td><input type="checkbox" /></td>
+<td><input type="checkbox" /></td>
+<td><input type="checkbox" /></td>
+<td><input type="checkbox" /></td>
+<td><input type="checkbox" /></td>
+<td><input type="checkbox" /></td>
+<td><input type="checkbox" /></td>
+<td><input type="checkbox" /></td>
+<td><input type="checkbox" /></td>
+<td><input type="checkbox" /></td>
+<td><input type="checkbox" /></td>
+<td></td>
+</tr>
     @foreach (StatisticDataItem item in Model)
     { 
         <tr>
@@ -44,6 +67,7 @@
             </td>
             <td style="width:30px;">@item.j4_e3
             </td>
+            <td><input type="checkbox" /></td>
         </tr>
     }
 </table>

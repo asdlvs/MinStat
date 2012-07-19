@@ -15,15 +15,28 @@ namespace Bonch.Domain.Concrete
         {
             context = new MinStatDbContext();
         }
-        public IEnumerable<POCO.StatisticDataItem> GetItems(int enterpriseId, DateTime startDate, DateTime endDate)
+        public IEnumerable<POCO.StatisticDataItem> GetItems(int id, DateTime startDate, DateTime endDate, AreaType type)
         {
             var parameters = new SqlParameter[] { 
-                new SqlParameter("@EnterpriseId", enterpriseId),
+                new SqlParameter("@Id", id),
                 new SqlParameter("@StartDate", startDate),
                 new SqlParameter("@EndDate", endDate)
             };
 
-            var result = context.Database.SqlQuery<StatisticDataItem>("Exec dbo.GetStatisticDataByEnterprise @EnterpriseId, @StartDate, @EndDate", parameters);
+            string procedureName = String.Empty;
+            switch (type)
+            { 
+                case AreaType.Enterprise:
+                    procedureName = "GetStatisticDataByEnterprise";
+                    break;
+                case AreaType.Subject:
+                    procedureName = "GetStatisticDataBySubject";
+                    break;
+                case AreaType.District:
+                    procedureName = "GetStatisticDataByDistrict";
+                    break;
+            }
+            var result = context.Database.SqlQuery<StatisticDataItem>(String.Format("Exec dbo.{0} @Id, @StartDate, @EndDate", procedureName), parameters);
             var data = result.ToList<StatisticDataItem>();
             return data;
         }
