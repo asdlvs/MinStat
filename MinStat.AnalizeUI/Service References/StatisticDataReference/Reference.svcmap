@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f4e31a12-3f56-4284-8d0d-b3aec5bef56b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/StatisticService/StatisticDataService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="StatisticDataService.wsdl" MetadataType="Wsdl" ID="6229d4eb-da54-465c-8a06-575c40ada5ea" SourceId="1" SourceUrl="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?wsdl" />
+    <MetadataFile FileName="StatisticDataService.disco" MetadataType="Disco" ID="7d14921c-beaa-45c5-8304-1c322cce94b0" SourceId="1" SourceUrl="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?disco" />
+    <MetadataFile FileName="StatisticDataService.xsd" MetadataType="Schema" ID="a7fb8164-e6f1-450b-b78e-6e8a471443d9" SourceId="1" SourceUrl="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd0" />
+    <MetadataFile FileName="StatisticDataService1.xsd" MetadataType="Schema" ID="f9e9cdb8-c80d-4521-b691-59074b98cbce" SourceId="1" SourceUrl="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd1" />
+    <MetadataFile FileName="StatisticDataService2.xsd" MetadataType="Schema" ID="4011aa72-78ff-4892-ab0e-63f37ad7c1ea" SourceId="1" SourceUrl="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd2" />
+    <MetadataFile FileName="StatisticDataService3.xsd" MetadataType="Schema" ID="5bf94089-6365-4af8-a470-97a2513d33e7" SourceId="1" SourceUrl="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd3" />
+    <MetadataFile FileName="StatisticDataService1.wsdl" MetadataType="Wsdl" ID="c44f3128-ed5d-4edf-9cd4-f4df325395a7" SourceId="1" SourceUrl="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO.ResultItems" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO.ResultItems" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfStatisticData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StatisticData" nillable="true" type="tns:StatisticData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatisticData" nillable="true" type="tns:ArrayOfStatisticData" />
+  <xs:complexType name="StatisticData">
+    <xs:sequence>
+      <xs:element name="_x003C_Lines_x003E_k__BackingField" nillable="true" type="tns:ArrayOfStatisticDataItem" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_Titles_x003E_k__BackingField" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatisticData" nillable="true" type="tns:StatisticData" />
+  <xs:complexType name="ArrayOfStatisticDataItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StatisticDataItem" nillable="true" type="tns:StatisticDataItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatisticDataItem" nillable="true" type="tns:ArrayOfStatisticDataItem" />
+  <xs:complexType name="StatisticDataItem">
+    <xs:sequence>
+      <xs:element name="_x003C_StrongLevel_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Title_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_Values_x003E_k__BackingField" nillable="true" type="q2:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatisticDataItem" nillable="true" type="tns:StatisticDataItem" />
+</xs:schema>

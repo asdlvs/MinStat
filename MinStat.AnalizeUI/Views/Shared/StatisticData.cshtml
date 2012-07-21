@@ -1,0 +1,27 @@
+﻿@using MinStat.AnalizeUI.Models
+@model StatisticDataModel
+@if (Model != null)
+{
+    <table class="table-striped table-bordered table-condensed">
+        <tr>
+            @foreach (string headItem in Model.Titles)
+            {
+                <th>@headItem
+                </th>
+            }
+        </tr>
+        @foreach (StatisticDataItemModel bodyItem in Model.Values)
+        {
+            <tr class="@String.Format("strong{0}", bodyItem.BoldLevel)">
+                <td>@bodyItem.Title
+                </td>
+                @foreach (string value in bodyItem.Values)
+                {
+                    @Html.Raw(value == "0" ? "<td class=\"muted\">" : "<td>");
+                    @value
+                    @Html.Raw("</td>");
+                }
+            </tr>
+        }
+    </table>
+}

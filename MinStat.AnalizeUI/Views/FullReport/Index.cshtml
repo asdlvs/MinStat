@@ -1,0 +1,53 @@
+﻿@using MinStat.AnalizeUI.Models
+@model IEnumerable<StatisticDataModel>
+@{
+    ViewBag.Title = "Index";
+}
+@using (Html.BeginForm())
+{
+    <input type="text" id="enterpriseId" name="enterpriseId" value="1" />
+    <input type="text" id="federalSubjectId" name="federalSubjectId" value="0" />
+    <input type="text" id="federalDistrictId" name="federalDistrictId" value="0" />
+    <input type="text" id="startDate" name="startDate" value="1900-01-01" />
+    <input type="text" id="endDate" name="endDate" value="2012-07-21" />
+    <input type="submit" value="show" />
+}
+@foreach (StatisticDataModel m in Model)
+{
+    <table class="table-striped table-bordered table-condensed">
+        <tr>
+            
+            @using (Html.BeginForm("CustomReport", "FullReport"))
+            {
+                <td><input type="submit" /></td>
+                for (int i = 0; i < m.Titles.Count() - 1; i++)
+                {
+                    <td>
+                        @Html.CheckBox(@String.Format("checkbox{0}", i))
+                    </td>
+                }
+            }
+        </tr>
+        <tr>
+            @foreach (string headItem in m.Titles)
+            {
+                <th>@headItem
+                </th>
+            }
+        </tr>
+        @foreach (StatisticDataItemModel bodyItem in m.Values)
+        {
+            <tr class="@String.Format("strong{0}", bodyItem.BoldLevel)">
+                <td>@bodyItem.Title
+                </td>
+                @foreach (string value in bodyItem.Values)
+                {
+                    @Html.Raw(value == "0" ? "<td class=\"muted\">" : "<td>");
+                    @value
+                    @Html.Raw("</td>");
+
+                }
+            </tr>
+        }
+    </table>
+}

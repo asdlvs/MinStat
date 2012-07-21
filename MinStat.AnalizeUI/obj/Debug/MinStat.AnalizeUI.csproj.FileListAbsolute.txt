@@ -1,0 +1,6 @@
+D:\Work\Bonch\MinStat_4\MinStat.AnalizeUI\bin\MinStat.AnalizeUI.dll
+D:\Work\Bonch\MinStat_4\MinStat.AnalizeUI\bin\MinStat.AnalizeUI.pdb
+D:\Work\Bonch\MinStat_4\MinStat.AnalizeUI\bin\EntityFramework.dll
+D:\Work\Bonch\MinStat_4\MinStat.AnalizeUI\bin\EntityFramework.xml
+D:\Work\Bonch\MinStat_4\MinStat.AnalizeUI\obj\Debug\MinStat.AnalizeUI.dll
+D:\Work\Bonch\MinStat_4\MinStat.AnalizeUI\obj\Debug\MinStat.AnalizeUI.pdb

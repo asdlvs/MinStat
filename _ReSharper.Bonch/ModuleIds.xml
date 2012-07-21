@@ -3,4 +3,8 @@
   <Module PersistentId="1DB530BD-E1F6-481B-9F43-CAAB511E8E18" ModuleId="Bonch.WebUI" />
   <Module PersistentId="B249F0E7-B639-4C58-A3F4-C582381E3A34" ModuleId="Bonch.Security" />
   <Module PersistentId="B10FE566-0C11-447E-9542-EFE3190D3F95" ModuleId="Bonch.MinUI" />
+  <Module PersistentId="93ECADCE-1F20-4F64-BFD5-2D96A6F8245E" ModuleId="MinStat.BLL" />
+  <Module PersistentId="E4F51377-987F-4326-BC66-538C8D1AD2E0" ModuleId="MinStat.DAL" />
+  <Module PersistentId="C3510B5B-840F-4651-8408-C0F85793321B" ModuleId="MinStat.BLL.IISHosting" />
+  <Module PersistentId="1BC73A96-6AC1-49E1-B9A5-B62772922F79" ModuleId="MinStat.AnalizeUI" />
 </Modules>
