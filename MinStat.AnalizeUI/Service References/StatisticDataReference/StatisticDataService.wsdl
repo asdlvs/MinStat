@@ -22,6 +22,51 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetQtyStaticReport">
+      <soap:operation soapAction="http://www.fem-sut.spb.ru/StatisticDataService/GetQtyStaticReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQtyDynamicReport">
+      <soap:operation soapAction="http://www.fem-sut.spb.ru/StatisticDataService/GetQtyDynamicReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFederalDistricts">
+      <soap:operation soapAction="http://www.fem-sut.spb.ru/StatisticDataService/GetFederalDistricts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFederalSubjects">
+      <soap:operation soapAction="http://www.fem-sut.spb.ru/StatisticDataService/GetFederalSubjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnterprises">
+      <soap:operation soapAction="http://www.fem-sut.spb.ru/StatisticDataService/GetEnterprises" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="StatisticDataService">
     <wsdl:port name="BasicHttpBinding_StatisticDataService" binding="tns:BasicHttpBinding_StatisticDataService">

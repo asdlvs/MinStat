@@ -27,6 +27,7 @@
     <MetadataFile FileName="StatisticDataService1.xsd" MetadataType="Schema" ID="f9e9cdb8-c80d-4521-b691-59074b98cbce" SourceId="1" SourceUrl="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd1" />
     <MetadataFile FileName="StatisticDataService2.xsd" MetadataType="Schema" ID="4011aa72-78ff-4892-ab0e-63f37ad7c1ea" SourceId="1" SourceUrl="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd2" />
     <MetadataFile FileName="StatisticDataService3.xsd" MetadataType="Schema" ID="5bf94089-6365-4af8-a470-97a2513d33e7" SourceId="1" SourceUrl="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd3" />
+    <MetadataFile FileName="StatisticDataService4.xsd" MetadataType="Schema" ID="f7f81133-13db-4b37-90a4-83ca6e85b537" SourceId="1" SourceUrl="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd4" />
     <MetadataFile FileName="StatisticDataService1.wsdl" MetadataType="Wsdl" ID="c44f3128-ed5d-4edf-9cd4-f4df325395a7" SourceId="1" SourceUrl="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?wsdl=wsdl0" />
   </Metadata>
   <Extensions>

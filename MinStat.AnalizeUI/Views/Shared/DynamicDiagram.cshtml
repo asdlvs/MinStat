@@ -1,0 +1,39 @@
+﻿@using MinStat.AnalizeUI.Models
+@model StatisticDataModel
+<script type="text/javascript" src="@Url.Content("~/Scripts//plugins/jqplot.barRenderer.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts//plugins/jqplot.categoryAxisRenderer.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts//plugins/jqplot.pointLabels.min.js")"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        
+        @helper Vars(IEnumerable<string> values)
+        {
+            @Html.Raw(values.Aggregate((x, y) => String.Format("{0},{1}", x, y)))
+        }
+        // Some simple loops to build up data arrays
+        @foreach (StatisticDataItemModel dataItem in Model.Values)
+        {
+            @Html.Raw(String.Format("var points{0} = [];", dataItem.Id));
+            foreach (var value in dataItem.Values)
+            {
+                @Html.Raw(String.Format("points{0}.push({1});", dataItem.Id, value));
+            }
+
+        }
+
+        var plot3 = $.jqplot('chart3', [@Vars(Model.Values.Select(x => "points"+x.Id))],
+    {
+        series: [
+          {
+              lineWidth: 2,
+              markerOptions: { style: 'dimaond' }
+          }
+      ]
+    }
+  );
+
+    });
+</script>
+
+<div id="chart3">
+</div>

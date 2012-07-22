@@ -24,6 +24,27 @@ namespace MinStat.DAL
             DateTime startDate,
             DateTime endDate);
 
-        IEnumerable<StatisticData> GetPeronaliesReportItem();
+        IEnumerable<StatisticData> GetPeronaliesReportData();
+
+        IEnumerable<StatisticData> GetQtyStaticReportData(int enterpriseId, 
+            int federalSubjectId, 
+            int federalDistrictId, 
+            DateTime startDate, 
+            DateTime endDate, 
+            List<int> verticalItems, 
+            List<KeyValuePair<int, int>> horizontalItems);
+
+        IEnumerable<StatisticData> GetQtyDynamicReportData(int enterpriseId,
+            int federalSubjectId,
+            int federalDistrictId,
+            DateTime startDate,
+            DateTime endDate,
+            List<int> verticalItems,
+            List<KeyValuePair<int, int>> horizontalItems);
+
+        IDictionary<int, string> GetFederalDistricts();
+        IDictionary<int, string> GetFederalSubjects(int districtId);
+        IDictionary<int, string> GetEnterprises(int sibjectId);
+
     }
 }

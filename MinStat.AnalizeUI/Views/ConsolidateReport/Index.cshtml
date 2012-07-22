@@ -18,6 +18,32 @@
 
 @foreach (StatisticDataModel m in Model)
 {
-    @Html.Partial("StatisticData", m)
+    if (m != null)
+    {
+        <table class="table-striped table-bordered table-condensed">
+            <tr>
+                @foreach (var headItem in m.Titles)
+                {
+                    <th>@headItem.Value
+                    </th>
+                }
+            </tr>
+            @foreach (StatisticDataItemModel bodyItem in m.Values)
+            {
+                <tr class="@String.Format("strong{0}", bodyItem.BoldLevel)">
+                    <td>@bodyItem.Title
+                    </td>
+                    @foreach (string value in bodyItem.Values)
+                    {
+                        @Html.Raw(value == "0" ? "<td class=\"muted\">" : "<td>")
+                   ;
+                        @value
+                        @Html.Raw("</td>")
+                   ;
+                    }
+                </tr>
+            }
+        </table>
+    }
 }
 

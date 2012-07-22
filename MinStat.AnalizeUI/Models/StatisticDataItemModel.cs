@@ -7,8 +7,9 @@ namespace MinStat.AnalizeUI.Models
 {
     public class StatisticDataItemModel
     {
+        public string Id { get; set; }
         public string Title { get; set; }
-        public IEnumerable<String> Values { get; set; }
+        public List<String> Values { get; set; }
         public int BoldLevel { get; set; }
     }
 }

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://www.fem-sut.spb.ru/" elementFormDefault="qualified" targetNamespace="http://www.fem-sut.spb.ru/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO.ResultItems" />
+  <xs:import schemaLocation="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
   <xs:element name="GetFullReport">
     <xs:complexType>
       <xs:sequence>
@@ -35,6 +37,86 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO.ResultItems" minOccurs="0" name="GetConsolidateReportResult" nillable="true" type="q2:ArrayOfStatisticData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQtyStaticReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="enterpriseId" type="xs:int" />
+        <xs:element minOccurs="0" name="federalSubjectId" type="xs:int" />
+        <xs:element minOccurs="0" name="federalDistrictId" type="xs:int" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="verticalChecks" nillable="true" type="q3:ArrayOfint" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="horizontalChecks" nillable="true" type="q4:ArrayOfKeyValuePairOfintint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQtyStaticReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO.ResultItems" minOccurs="0" name="GetQtyStaticReportResult" nillable="true" type="q5:ArrayOfStatisticData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQtyDynamicReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="enterpriseId" type="xs:int" />
+        <xs:element minOccurs="0" name="federalSubjectId" type="xs:int" />
+        <xs:element minOccurs="0" name="federalDistrictId" type="xs:int" />
+        <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="verticalChecks" nillable="true" type="q6:ArrayOfint" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="horizontalChecks" nillable="true" type="q7:ArrayOfKeyValuePairOfintint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQtyDynamicReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO.ResultItems" minOccurs="0" name="GetQtyDynamicReportResult" nillable="true" type="q8:ArrayOfStatisticData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFederalDistricts">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFederalDistrictsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetFederalDistrictsResult" nillable="true" type="q9:ArrayOfKeyValueOfintstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFederalSubjects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="districtId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFederalSubjectsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetFederalSubjectsResult" nillable="true" type="q10:ArrayOfKeyValueOfintstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEnterprises">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="subjectId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEnterprisesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetEnterprisesResult" nillable="true" type="q11:ArrayOfKeyValueOfintstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

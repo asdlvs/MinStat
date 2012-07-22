@@ -6,6 +6,7 @@
       <xsd:import schemaLocation="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO.ResultItems" />
       <xsd:import schemaLocation="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="StatisticDataService_GetFullReport_InputMessage">
@@ -20,6 +21,36 @@
   <wsdl:message name="StatisticDataService_GetConsolidateReport_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetConsolidateReportResponse" />
   </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetQtyStaticReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQtyStaticReport" />
+  </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetQtyStaticReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQtyStaticReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetQtyDynamicReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQtyDynamicReport" />
+  </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetQtyDynamicReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQtyDynamicReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetFederalDistricts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFederalDistricts" />
+  </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetFederalDistricts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFederalDistrictsResponse" />
+  </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetFederalSubjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFederalSubjects" />
+  </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetFederalSubjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFederalSubjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetEnterprises_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnterprises" />
+  </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetEnterprises_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnterprisesResponse" />
+  </wsdl:message>
   <wsdl:portType name="StatisticDataService">
     <wsdl:operation name="GetFullReport">
       <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetFullReport" message="tns:StatisticDataService_GetFullReport_InputMessage" />
@@ -28,6 +59,26 @@
     <wsdl:operation name="GetConsolidateReport">
       <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetConsolidateReport" message="tns:StatisticDataService_GetConsolidateReport_InputMessage" />
       <wsdl:output wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetConsolidateReportResponse" message="tns:StatisticDataService_GetConsolidateReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQtyStaticReport">
+      <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetQtyStaticReport" message="tns:StatisticDataService_GetQtyStaticReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetQtyStaticReportResponse" message="tns:StatisticDataService_GetQtyStaticReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQtyDynamicReport">
+      <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetQtyDynamicReport" message="tns:StatisticDataService_GetQtyDynamicReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetQtyDynamicReportResponse" message="tns:StatisticDataService_GetQtyDynamicReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFederalDistricts">
+      <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetFederalDistricts" message="tns:StatisticDataService_GetFederalDistricts_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetFederalDistrictsResponse" message="tns:StatisticDataService_GetFederalDistricts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFederalSubjects">
+      <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetFederalSubjects" message="tns:StatisticDataService_GetFederalSubjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetFederalSubjectsResponse" message="tns:StatisticDataService_GetFederalSubjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnterprises">
+      <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetEnterprises" message="tns:StatisticDataService_GetEnterprises_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetEnterprisesResponse" message="tns:StatisticDataService_GetEnterprises_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

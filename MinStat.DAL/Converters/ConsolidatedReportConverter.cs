@@ -26,11 +26,11 @@ namespace MinStat.DAL.Converters
 
             StatisticData statisticWorkersData = new StatisticData
                                               {
-                                                  Titles = new List<string>
+                                                  Titles = new Dictionary<string, string>()
                                                                {
-                                                                   "Число работников, всего, чел.",
-                                                                   avgPeopleCount.ToString(CultureInfo.InvariantCulture),
-                                                                   "100%"
+                                                                   {"1","Число работников, всего, чел."},
+                                                                   {"2",avgPeopleCount.ToString(CultureInfo.InvariantCulture)},
+                                                                   {"3","100%"}
                                                                }
                                               };
             statisticWorkersData.Lines = new List<StatisticDataItem>
@@ -53,11 +53,11 @@ namespace MinStat.DAL.Converters
 
             StatisticData statisticEducationData = new StatisticData
                                                        {
-                                                           Titles = new List<string>
+                                                           Titles = new Dictionary<string, string>()
                                                                {
-                                                                   "Образование:",
-                                                                   educationCount.ToString(CultureInfo.InvariantCulture),
-                                                                   "100%"
+                                                                  {"1","Образование:"},
+                                                                  {"2",educationCount.ToString(CultureInfo.InvariantCulture)},
+                                                                  {"3","100%"}
                                                                }
                                                        };
             statisticEducationData.Lines = new List<StatisticDataItem>
@@ -77,11 +77,11 @@ namespace MinStat.DAL.Converters
 
             StatisticData statisticPostData = new StatisticData
             {
-                Titles = new List<string>
+                Titles = new Dictionary<string, string>
                                                                {
-                                                                   "Категория::",
-                                                                   categoryCount.ToString(CultureInfo.InvariantCulture),
-                                                                   "100%"
+                                                                  {"1","Категория::"},
+                                                                  {"2",categoryCount.ToString(CultureInfo.InvariantCulture)},
+                                                                  {"3","100%"}
                                                                }
             };
             statisticPostData.Lines = new List<StatisticDataItem>

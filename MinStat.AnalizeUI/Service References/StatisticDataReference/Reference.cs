@@ -24,7 +24,7 @@ namespace MinStat.AnalizeUI.StatisticDataReference {
         
         private MinStat.AnalizeUI.StatisticDataReference.StatisticDataItem[] Linesk__BackingFieldField;
         
-        private string[] Titlesk__BackingFieldField;
+        private System.Collections.Generic.Dictionary<string, string> Titlesk__BackingFieldField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -50,7 +50,7 @@ namespace MinStat.AnalizeUI.StatisticDataReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Name="<Titles>k__BackingField", IsRequired=true)]
-        public string[] Titlesk__BackingField {
+        public System.Collections.Generic.Dictionary<string, string> Titlesk__BackingField {
             get {
                 return this.Titlesk__BackingFieldField;
             }
@@ -81,6 +81,8 @@ namespace MinStat.AnalizeUI.StatisticDataReference {
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
+        private string Idk__BackingFieldField;
+        
         private int StrongLevelk__BackingFieldField;
         
         private string Titlek__BackingFieldField;
@@ -94,6 +96,19 @@ namespace MinStat.AnalizeUI.StatisticDataReference {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Id>k__BackingField", IsRequired=true)]
+        public string Idk__BackingField {
+            get {
+                return this.Idk__BackingFieldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Idk__BackingFieldField, value) != true)) {
+                    this.Idk__BackingFieldField = value;
+                    this.RaisePropertyChanged("Idk__BackingField");
+                }
             }
         }
         
@@ -155,6 +170,21 @@ namespace MinStat.AnalizeUI.StatisticDataReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetConsolidateReport", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetConsolidateReportResponse")]
         MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetConsolidateReport(int enterpriseId, int federalSubjectId, int federalDistrictId, int subsectorId, System.DateTime startDate, System.DateTime endDate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetQtyStaticReport", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetQtyStaticReportResponse")]
+        MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetQtyStaticReport(int enterpriseId, int federalSubjectId, int federalDistrictId, System.DateTime startDate, System.DateTime endDate, int[] verticalChecks, System.Collections.Generic.KeyValuePair<int, int>[] horizontalChecks);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetQtyDynamicReport", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetQtyDynamicReportResponse")]
+        MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetQtyDynamicReport(int enterpriseId, int federalSubjectId, int federalDistrictId, System.DateTime startDate, System.DateTime endDate, int[] verticalChecks, System.Collections.Generic.KeyValuePair<int, int>[] horizontalChecks);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetFederalDistricts", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetFederalDistrictsResponse")]
+        System.Collections.Generic.Dictionary<int, string> GetFederalDistricts();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetFederalSubjects", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetFederalSubjectsResponse")]
+        System.Collections.Generic.Dictionary<int, string> GetFederalSubjects(int districtId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetEnterprises", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetEnterprisesResponse")]
+        System.Collections.Generic.Dictionary<int, string> GetEnterprises(int subjectId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -190,6 +220,26 @@ namespace MinStat.AnalizeUI.StatisticDataReference {
         
         public MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetConsolidateReport(int enterpriseId, int federalSubjectId, int federalDistrictId, int subsectorId, System.DateTime startDate, System.DateTime endDate) {
             return base.Channel.GetConsolidateReport(enterpriseId, federalSubjectId, federalDistrictId, subsectorId, startDate, endDate);
+        }
+        
+        public MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetQtyStaticReport(int enterpriseId, int federalSubjectId, int federalDistrictId, System.DateTime startDate, System.DateTime endDate, int[] verticalChecks, System.Collections.Generic.KeyValuePair<int, int>[] horizontalChecks) {
+            return base.Channel.GetQtyStaticReport(enterpriseId, federalSubjectId, federalDistrictId, startDate, endDate, verticalChecks, horizontalChecks);
+        }
+        
+        public MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetQtyDynamicReport(int enterpriseId, int federalSubjectId, int federalDistrictId, System.DateTime startDate, System.DateTime endDate, int[] verticalChecks, System.Collections.Generic.KeyValuePair<int, int>[] horizontalChecks) {
+            return base.Channel.GetQtyDynamicReport(enterpriseId, federalSubjectId, federalDistrictId, startDate, endDate, verticalChecks, horizontalChecks);
+        }
+        
+        public System.Collections.Generic.Dictionary<int, string> GetFederalDistricts() {
+            return base.Channel.GetFederalDistricts();
+        }
+        
+        public System.Collections.Generic.Dictionary<int, string> GetFederalSubjects(int districtId) {
+            return base.Channel.GetFederalSubjects(districtId);
+        }
+        
+        public System.Collections.Generic.Dictionary<int, string> GetEnterprises(int subjectId) {
+            return base.Channel.GetEnterprises(subjectId);
         }
     }
 }

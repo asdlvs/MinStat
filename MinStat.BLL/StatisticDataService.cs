@@ -21,7 +21,7 @@ namespace MinStat.BLL
 
         public IEnumerable<StatisticData> GetFullReport(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate)
         {
-            return _statisticDataRepository.GetFullReportData(enterpriseId, federalDistrictId, federalDistrictId, startDate, endDate);
+            return _statisticDataRepository.GetFullReportData(enterpriseId, federalSubjectId, federalDistrictId, startDate, endDate);
         }
 
 
@@ -29,6 +29,33 @@ namespace MinStat.BLL
         {
             return _statisticDataRepository.GetConsolidatedReportData(enterpriseId, federalSubjectId, federalDistrictId,
                                                                       subsectorId, startDate, endDate);
+        }
+
+        public IEnumerable<StatisticData> GetQtyStaticReport(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> verticalChecks, List<KeyValuePair<int, int>> horizontalChecks)
+        {
+            return _statisticDataRepository.GetQtyStaticReportData(enterpriseId, federalSubjectId, federalDistrictId, startDate, endDate, verticalChecks, horizontalChecks);
+
+        }
+
+        public IEnumerable<StatisticData> GetQtyDynamicReport(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> verticalChecks, List<KeyValuePair<int, int>> horizontalChecks)
+        {
+            return _statisticDataRepository.GetQtyDynamicReportData(enterpriseId, federalSubjectId, federalDistrictId, startDate, endDate, verticalChecks, horizontalChecks);
+        }
+
+
+        public IDictionary<int, string> GetFederalDistricts()
+        {
+            return _statisticDataRepository.GetFederalDistricts();
+        }
+
+        public IDictionary<int, string> GetFederalSubjects(int districtId)
+        {
+            return _statisticDataRepository.GetFederalSubjects(districtId);
+        }
+
+        public IDictionary<int, string> GetEnterprises(int subjectId)
+        {
+            return _statisticDataRepository.GetEnterprises(subjectId);
         }
     }
 }

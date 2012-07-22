@@ -7,7 +7,7 @@ namespace MinStat.AnalizeUI.Models
 {
     public class StatisticDataModel
     {
-        public IEnumerable<string> Titles { get; set; }
+        public IDictionary<string, string> Titles { get; set; }
         public IEnumerable<StatisticDataItemModel> Values { get; set; }
     }
 }

@@ -5,49 +5,102 @@
 }
 @using (Html.BeginForm())
 {
-    <input type="text" id="enterpriseId" name="enterpriseId" value="1" />
-    <input type="text" id="federalSubjectId" name="federalSubjectId" value="0" />
-    <input type="text" id="federalDistrictId" name="federalDistrictId" value="0" />
-    <input type="text" id="startDate" name="startDate" value="1900-01-01" />
+    <div class="alert alert-info">
+        <a class="close" data-dismiss="alert" href="#">×</a>
+        <h4 class="alert-heading">
+            Памятка!</h4>
+        Для того, чтобы отобразить таблицу укажите критерии отбора.
+    </div>
+    @Html.DropDownList("federalDistrictId", new SelectList(ViewBag.FederalDistricts, "Key", "Value"),
+        new { rel = "popover", data_content = "Если хотите отфильтровать данные по федеральному округу, то укажите один из округов ниже.", data_original_title = "Федеральный округ" })
+    <select id="federalSubjectId" name="federalSubjectId" rel="popover" data-content="Если хотите отфильтровать данные по субъекту федерации, то укажите один из субъектов ниже. Для отображения списка субъектов федерации необходимо указать федеральный округ."
+        data-original-title="Субъект федерации">
+    </select>
+    <input type="hidden" id="selectedFederalSubject" value="@ViewBag.SelectedFederalSubjectId"/>
+    <select id="enterpriseId" name="enterpriseId" rel="popover" data-content="Если хотите отфильтровать данные по предприятию, то укажите одно из предприятий ниже. Для отображения списка предприятий необходимо указать субъект федерации."
+        data-original-title="Предприятие">
+    </select>
+    <input type="hidden" id="selectedEnterprise" value="@ViewBag.SelectedEnterpriseId"/>
+    <input type="text" id="startDate" name="startDate" value="2012-01-01" />
     <input type="text" id="endDate" name="endDate" value="2012-07-21" />
-    <input type="submit" value="show" />
+    
+ <input type="submit" value="Таблица" class="btn btn-success" />
+    
+   
+    <div class="modal hide" id="myModal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+                ×</button>
+            <h3>
+                Выберите тип отчета</h3>
+        </div>
+        <div class="modal-body">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#static" data-toggle="tab">Статический отчет</a></li>
+                <li><a href="#dynamic" data-toggle="tab">Динамический отчет</a></li>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="static">
+              <p>В этом отчете вы сможете посмотреть статические количественные данные по указанным фильтрам.</p>
+            </div>
+            <div class="tab-pane fade" id="dynamic">
+              <p>В этом отчете вы сможете посмотреть динамичемие количественные данные по указаным фильтрам.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn" data-dismiss="modal">Отмена</a> 
+            <a href="#" id="createReport" class="btn btn-primary">Создать отчет</a>
+        </div>
+    </div>
+
 }
 @foreach (StatisticDataModel m in Model)
 {
+    using (Html.BeginForm("CustomReport", "FullReport"))
+    {
+     @Html.Hidden("reportType")
     <table class="table-striped table-bordered table-condensed">
         <tr>
-            
-            @using (Html.BeginForm("CustomReport", "FullReport"))
+            <td>
+            </td>
+            @foreach (var headItem in m.Titles)
             {
-                <td><input type="submit" /></td>
-                for (int i = 0; i < m.Titles.Count() - 1; i++)
+                if (!String.IsNullOrEmpty(headItem.Key))
                 {
-                    <td>
-                        @Html.CheckBox(@String.Format("checkbox{0}", i))
-                    </td>
+                <td>
+                    @Html.CheckBox(String.Format("horizontal_{0}", headItem.Key))
+                </td>
                 }
             }
+            <td>
+                 <a data-toggle="modal" href="#myModal"  class="btn btn-success">Отчет</a>
+            </td>
         </tr>
         <tr>
-            @foreach (string headItem in m.Titles)
+            @foreach (var headItem in m.Titles)
             {
-                <th>@headItem
+                <th>@headItem.Value
                 </th>
             }
+           <th></th>
         </tr>
         @foreach (StatisticDataItemModel bodyItem in m.Values)
         {
             <tr class="@String.Format("strong{0}", bodyItem.BoldLevel)">
                 <td>@bodyItem.Title
                 </td>
-                @foreach (string value in bodyItem.Values)
+                @foreach (var value in bodyItem.Values)
                 {
-                    @Html.Raw(value == "0" ? "<td class=\"muted\">" : "<td>");
+                    @Html.Raw(value == "0" ? "<td class=\"muted\">" : "<td>")
                     @value
-                    @Html.Raw("</td>");
-
+                    @Html.Raw("</td>")
                 }
+                <td>
+                    @Html.CheckBox(String.Format("vertical_{0}", bodyItem.Id))
+                </td>
             </tr>
         }
     </table>
+    }
 }

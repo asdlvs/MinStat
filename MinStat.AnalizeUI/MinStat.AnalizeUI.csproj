@@ -66,12 +66,15 @@
     <Compile Include="Binders\CustomReportBinder.cs" />
     <Compile Include="Controllers\ConsolidateReportController.cs" />
     <Compile Include="Controllers\FullReportController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RegionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\FullReportModel.cs" />
     <Compile Include="Models\StatisticDataItemModel.cs" />
     <Compile Include="Models\StatisticDataModel.cs" />
+    <Compile Include="O\SelectionChecks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\StatisticDataReference\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -80,7 +83,10 @@
     </Compile>
     <Compile Include="ServiceAdapters\ConsolidateReportAdapter.cs" />
     <Compile Include="ServiceAdapters\FullReportAdapter.cs" />
+    <Compile Include="ServiceAdapters\IInfoDataAdapter.cs" />
+    <Compile Include="ServiceAdapters\InfoDataAdapter.cs" />
     <Compile Include="ServiceAdapters\ReportAdapter.cs" />
+    <Compile Include="ServiceAdapters\SelectionReportAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-responsive.min.css" />
@@ -114,6 +120,14 @@
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\Bonch.AnalizeUI.Info.js" />
+    <Content Include="Scripts\Bonch.AnalizeUI.Reports.js" />
+    <Content Include="Scripts\bootstrap-alert.js" />
+    <Content Include="Scripts\bootstrap-modal.js" />
+    <Content Include="Scripts\bootstrap-popover.js" />
+    <Content Include="Scripts\bootstrap-tab.js" />
+    <Content Include="Scripts\bootstrap-tooltip.js" />
+    <Content Include="Scripts\excanvas.min.js" />
     <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.5.1.js" />
     <Content Include="Scripts\jquery-1.5.1.min.js" />
@@ -122,6 +136,7 @@
     <Content Include="Scripts\jquery-1.7.2.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.11.js" />
     <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
+    <Content Include="Scripts\jquery.jqplot.min.js" />
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -137,6 +152,64 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Scripts\plugins\jqplot.barRenderer.js" />
+    <Content Include="Scripts\plugins\jqplot.barRenderer.min.js" />
+    <Content Include="Scripts\plugins\jqplot.BezierCurveRenderer.js" />
+    <Content Include="Scripts\plugins\jqplot.BezierCurveRenderer.min.js" />
+    <Content Include="Scripts\plugins\jqplot.blockRenderer.js" />
+    <Content Include="Scripts\plugins\jqplot.blockRenderer.min.js" />
+    <Content Include="Scripts\plugins\jqplot.bubbleRenderer.js" />
+    <Content Include="Scripts\plugins\jqplot.bubbleRenderer.min.js" />
+    <Content Include="Scripts\plugins\jqplot.canvasAxisLabelRenderer.js" />
+    <Content Include="Scripts\plugins\jqplot.canvasAxisLabelRenderer.min.js" />
+    <Content Include="Scripts\plugins\jqplot.canvasAxisTickRenderer.js" />
+    <Content Include="Scripts\plugins\jqplot.canvasAxisTickRenderer.min.js" />
+    <Content Include="Scripts\plugins\jqplot.canvasOverlay.js" />
+    <Content Include="Scripts\plugins\jqplot.canvasOverlay.min.js" />
+    <Content Include="Scripts\plugins\jqplot.canvasTextRenderer.js" />
+    <Content Include="Scripts\plugins\jqplot.canvasTextRenderer.min.js" />
+    <Content Include="Scripts\plugins\jqplot.categoryAxisRenderer.js" />
+    <Content Include="Scripts\plugins\jqplot.categoryAxisRenderer.min.js" />
+    <Content Include="Scripts\plugins\jqplot.ciParser.js" />
+    <Content Include="Scripts\plugins\jqplot.ciParser.min.js" />
+    <Content Include="Scripts\plugins\jqplot.cursor.js" />
+    <Content Include="Scripts\plugins\jqplot.cursor.min.js" />
+    <Content Include="Scripts\plugins\jqplot.dateAxisRenderer.js" />
+    <Content Include="Scripts\plugins\jqplot.dateAxisRenderer.min.js" />
+    <Content Include="Scripts\plugins\jqplot.donutRenderer.js" />
+    <Content Include="Scripts\plugins\jqplot.donutRenderer.min.js" />
+    <Content Include="Scripts\plugins\jqplot.dragable.js" />
+    <Content Include="Scripts\plugins\jqplot.dragable.min.js" />
+    <Content Include="Scripts\plugins\jqplot.enhancedLegendRenderer.js" />
+    <Content Include="Scripts\plugins\jqplot.enhancedLegendRenderer.min.js" />
+    <Content Include="Scripts\plugins\jqplot.funnelRenderer.js" />
+    <Content Include="Scripts\plugins\jqplot.funnelRenderer.min.js" />
+    <Content Include="Scripts\plugins\jqplot.highlighter.js" />
+    <Content Include="Scripts\plugins\jqplot.highlighter.min.js" />
+    <Content Include="Scripts\plugins\jqplot.json2.js" />
+    <Content Include="Scripts\plugins\jqplot.json2.min.js" />
+    <Content Include="Scripts\plugins\jqplot.logAxisRenderer.js" />
+    <Content Include="Scripts\plugins\jqplot.logAxisRenderer.min.js" />
+    <Content Include="Scripts\plugins\jqplot.mekkoAxisRenderer.js" />
+    <Content Include="Scripts\plugins\jqplot.mekkoAxisRenderer.min.js" />
+    <Content Include="Scripts\plugins\jqplot.mekkoRenderer.js" />
+    <Content Include="Scripts\plugins\jqplot.mekkoRenderer.min.js" />
+    <Content Include="Scripts\plugins\jqplot.meterGaugeRenderer.js" />
+    <Content Include="Scripts\plugins\jqplot.meterGaugeRenderer.min.js" />
+    <Content Include="Scripts\plugins\jqplot.ohlcRenderer.js" />
+    <Content Include="Scripts\plugins\jqplot.ohlcRenderer.min.js" />
+    <Content Include="Scripts\plugins\jqplot.pieRenderer.js" />
+    <Content Include="Scripts\plugins\jqplot.pieRenderer.min.js" />
+    <Content Include="Scripts\plugins\jqplot.pointLabels.js" />
+    <Content Include="Scripts\plugins\jqplot.pointLabels.min.js" />
+    <Content Include="Scripts\plugins\jqplot.pyramidAxisRenderer.js" />
+    <Content Include="Scripts\plugins\jqplot.pyramidAxisRenderer.min.js" />
+    <Content Include="Scripts\plugins\jqplot.pyramidGridRenderer.js" />
+    <Content Include="Scripts\plugins\jqplot.pyramidGridRenderer.min.js" />
+    <Content Include="Scripts\plugins\jqplot.pyramidRenderer.js" />
+    <Content Include="Scripts\plugins\jqplot.pyramidRenderer.min.js" />
+    <Content Include="Scripts\plugins\jqplot.trendline.js" />
+    <Content Include="Scripts\plugins\jqplot.trendline.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -172,8 +245,15 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Views\FullReport\Index.cshtml" />
-    <Content Include="Views\Shared\StatisticData.cshtml" />
+    <Content Include="Views\Shared\StaticStatisticData.cshtml" />
     <Content Include="Views\ConsolidateReport\Index.cshtml" />
+    <None Include="Service References\StatisticDataReference\StatisticDataService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\Shared\StaticDiagram.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\DynamicDiagram.cshtml" />
+    <Content Include="Views\Shared\DynamicStatisticData.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

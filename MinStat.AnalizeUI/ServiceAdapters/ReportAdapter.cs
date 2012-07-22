@@ -18,8 +18,9 @@ namespace MinStat.AnalizeUI.ServiceAdapters
                 statisticDataModel.Values = data.Linesk__BackingField.Select(x => new StatisticDataItemModel
                 {
                     Title = x.Titlek__BackingField,
-                    Values = x.Valuesk__BackingField,
-                    BoldLevel = x.StrongLevelk__BackingField
+                    Values = x.Valuesk__BackingField.ToList(),
+                    BoldLevel = x.StrongLevelk__BackingField,
+                    Id = x.Idk__BackingField
                 });
                 statisticDataModelsCollection.Add(statisticDataModel);
             }

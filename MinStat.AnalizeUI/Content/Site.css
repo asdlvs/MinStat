@@ -81,6 +81,5 @@ textarea
 
 .strong2 {
     font-weight: bold;
-    background-color: black;
-    color: azure;
+    border: 1px solid black;
 }

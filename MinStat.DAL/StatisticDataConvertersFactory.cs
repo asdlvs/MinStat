@@ -23,6 +23,14 @@ namespace MinStat.DAL
             {
                 return (IStatisticDataConverter<T>) new PersonaliesReportConverter();
             }
+            if (typeof(T) == typeof(SelectionQtyStaticReportItem))
+            {
+                return (IStatisticDataConverter<T>)new SelectionQtyStaticConverter();
+            }
+            if (typeof(T) == typeof(SelectionQtyDynamicReportItem))
+            {
+                return (IStatisticDataConverter<T>)new SelectionQtyDynamicConverter();
+            }
             throw new ArgumentException("There is not converter for such type.");
         }
     }

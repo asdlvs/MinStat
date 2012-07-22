@@ -10,7 +10,7 @@
   <xs:complexType name="StatisticData">
     <xs:sequence>
       <xs:element name="_x003C_Lines_x003E_k__BackingField" nillable="true" type="tns:ArrayOfStatisticDataItem" />
-      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_Titles_x003E_k__BackingField" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_Titles_x003E_k__BackingField" nillable="true" type="q1:ArrayOfKeyValueOfstringstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="StatisticData" nillable="true" type="tns:StatisticData" />
@@ -22,6 +22,7 @@
   <xs:element name="ArrayOfStatisticDataItem" nillable="true" type="tns:ArrayOfStatisticDataItem" />
   <xs:complexType name="StatisticDataItem">
     <xs:sequence>
+      <xs:element name="_x003C_Id_x003E_k__BackingField" nillable="true" type="xs:string" />
       <xs:element name="_x003C_StrongLevel_x003E_k__BackingField" type="xs:int" />
       <xs:element name="_x003C_Title_x003E_k__BackingField" nillable="true" type="xs:string" />
       <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_Values_x003E_k__BackingField" nillable="true" type="q2:ArrayOfstring" />

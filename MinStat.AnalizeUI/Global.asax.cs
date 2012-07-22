@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using MinStat.AnalizeUI.Binders;
+using MinStat.AnalizeUI.O;
 
 namespace MinStat.AnalizeUI
 {
@@ -36,7 +37,7 @@ namespace MinStat.AnalizeUI
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
-            ModelBinders.Binders.Add(typeof(IEnumerable<int>), new CustomReportBinder());
+            ModelBinders.Binders.Add(typeof(SelectionChecks), new CustomReportBinder());
         }
     }
 }

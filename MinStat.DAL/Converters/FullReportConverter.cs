@@ -7,27 +7,27 @@ using MinStat.DAL.POCO.ResultItems;
 
 namespace MinStat.DAL.Converters
 {
-    class FullReportConverter : IStatisticDataConverter<FullReportItem>
+    public class FullReportConverter : IStatisticDataConverter<FullReportItem>
     {
         public IEnumerable<StatisticData> Convert(IEnumerable<FullReportItem> result)
         {
             var statisticData = new StatisticData
                                     {
-                                        Titles = new List<string>
+                                        Titles = new Dictionary<string, string>()
                                                      {
-                                                         "Код ОКВЭД / Название",
-                                                         "АУ_СО",
-                                                         "АУ_СПО",
-                                                         "АУ_ВО",
-                                                         "ИТРиС_СО",
-                                                         "ИТРиС_СПО",
-                                                         "ИТРиС_ВО",
-                                                         "ОР_СО",
-                                                         "ОР_СПО",
-                                                         "ОР_ВО",
-                                                         "ВП_СО",
-                                                         "ВП_СПО",
-                                                         "ВП_ВО"
+                                                         {"","Код ОКВЭД / Название"},
+                                                         {"1-1","АУ_СО"},
+                                                         {"1-2","АУ_СПО"},
+                                                         {"1-3","АУ_ВО"},
+                                                         {"2-1","ИТРиС_СО"},
+                                                         {"2-2","ИТРиС_СПО"},
+                                                         {"2-3","ИТРиС_ВО"},
+                                                         {"3-1","ОР_СО"},
+                                                         {"3-2","ОР_СПО"},
+                                                         {"3-3","ОР_ВО"},
+                                                         {"4-1","ВП_СО"},
+                                                         {"4-2","ВП_СПО"},
+                                                         {"4-3","ВП_ВО"}
                                                      },
                                         Lines = new List<StatisticDataItem>()
                                     };
@@ -47,6 +47,7 @@ namespace MinStat.DAL.Converters
                                                          groupedReportItem.Key.Part5,
                                                          groupedReportItem.Key.ActivityTitle
                                        ),
+                                   Id = groupedReportItem.Key.ActivityId.ToString(CultureInfo.InvariantCulture),
                                    Values = new List<string>(),
                                    StrongLevel = groupedReportItem.Key.Part4 == 0 && groupedReportItem.Key.Part5 == 0 ? 2 : groupedReportItem.Key.Part5 == 0 ? 1 : 0
                                };
@@ -56,7 +57,8 @@ namespace MinStat.DAL.Converters
                     {
                         var pointElement =
                             groupedReportItem.SingleOrDefault(x => x.PostLevelId == i && x.EducationLevelId == j);
-                        item.Values.Add(pointElement == null
+                        item.Values.Add(
+                            pointElement == null
                                             ? "0"
                                             : pointElement.PeoplesCount.ToString(CultureInfo.InvariantCulture));
                     }
