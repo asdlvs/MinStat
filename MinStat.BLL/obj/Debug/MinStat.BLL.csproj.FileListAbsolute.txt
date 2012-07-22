@@ -7,3 +7,12 @@ D:\Work\Bonch\MinStat_4\MinStat.BLL\bin\Debug\EntityFramework.xml
 D:\Work\Bonch\MinStat_4\MinStat.BLL\obj\Debug\MinStat.BLL.csprojResolveAssemblyReference.cache
 D:\Work\Bonch\MinStat_4\MinStat.BLL\obj\Debug\MinStat.BLL.dll
 D:\Work\Bonch\MinStat_4\MinStat.BLL\obj\Debug\MinStat.BLL.pdb
+E:\MinStat_4\MinStat.BLL\bin\Debug\MinStat.BLL.dll
+E:\MinStat_4\MinStat.BLL\bin\Debug\MinStat.BLL.pdb
+E:\MinStat_4\MinStat.BLL\bin\Debug\MinStat.DAL.dll
+E:\MinStat_4\MinStat.BLL\bin\Debug\EntityFramework.dll
+E:\MinStat_4\MinStat.BLL\bin\Debug\MinStat.DAL.pdb
+E:\MinStat_4\MinStat.BLL\bin\Debug\EntityFramework.xml
+E:\MinStat_4\MinStat.BLL\obj\Debug\MinStat.BLL.csprojResolveAssemblyReference.cache
+E:\MinStat_4\MinStat.BLL\obj\Debug\MinStat.BLL.dll
+E:\MinStat_4\MinStat.BLL\obj\Debug\MinStat.BLL.pdb

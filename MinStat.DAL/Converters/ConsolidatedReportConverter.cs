@@ -18,11 +18,11 @@ namespace MinStat.DAL.Converters
 
             #region WorkersData
             int mensCount = result.Count(x => x.Gender) / summariesCount;
-            int womensCount = avgPeopleCount = mensCount;
-            int hiringCount = result.Count(x => x.IsHiring);
-            int dismissedCount = result.Count(x => x.IsDissmissed);
-            int increaseQulificationCount = result.Count(x => x.WasQualificationIncrease);
-            int attestateCount = result.Count(x => x.WasValidate);
+            int womensCount = avgPeopleCount - mensCount;
+            int hiringCount = result.Count(x => x.IsHiring) / summariesCount; 
+            int dismissedCount = result.Count(x => x.IsDissmissed) / summariesCount; 
+            int increaseQulificationCount = result.Count(x => x.WasQualificationIncrease) / summariesCount; 
+            int attestateCount = result.Count(x => x.WasValidate) / summariesCount; 
 
             StatisticData statisticWorkersData = new StatisticData
                                               {
@@ -47,9 +47,9 @@ namespace MinStat.DAL.Converters
             #region Education Data
 
             int educationCount = avgPeopleCount;
-            int vpoCount = result.Count(x => x.EducationLevelId == 3);
-            int spoCount = result.Count(x => x.EducationLevelId == 2);
-            int soCount = result.Count(x => x.EducationLevelId == 1);
+            int vpoCount = result.Count(x => x.EducationLevelId == 3) / summariesCount;
+            int spoCount = result.Count(x => x.EducationLevelId == 2) / summariesCount;
+            int soCount = result.Count(x => x.EducationLevelId == 1) / summariesCount;
 
             StatisticData statisticEducationData = new StatisticData
                                                        {
@@ -70,10 +70,10 @@ namespace MinStat.DAL.Converters
 
             #region Post Data
             int categoryCount = avgPeopleCount;
-            int auCount = result.Count(x => x.PostLevelId == 1);
-            int itrisCount = result.Count(x => x.PostLevelId == 2);
-            int orCount = result.Count(x => x.PostLevelId == 3);
-            int vpCount = result.Count(x => x.PostLevelId == 4);
+            int auCount = result.Count(x => x.PostLevelId == 1) / summariesCount;
+            int itrisCount = result.Count(x => x.PostLevelId == 2) / summariesCount;
+            int orCount = result.Count(x => x.PostLevelId == 3) / summariesCount;
+            int vpCount = result.Count(x => x.PostLevelId == 4) / summariesCount;
 
             StatisticData statisticPostData = new StatisticData
             {

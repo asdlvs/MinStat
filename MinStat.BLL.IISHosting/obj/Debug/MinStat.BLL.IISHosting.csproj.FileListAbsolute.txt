@@ -9,3 +9,14 @@ D:\Work\Bonch\MinStat_4\MinStat.BLL.IISHosting\bin\EntityFramework.dll
 D:\Work\Bonch\MinStat_4\MinStat.BLL.IISHosting\bin\MinStat.BLL.pdb
 D:\Work\Bonch\MinStat_4\MinStat.BLL.IISHosting\bin\MinStat.DAL.pdb
 D:\Work\Bonch\MinStat_4\MinStat.BLL.IISHosting\bin\EntityFramework.xml
+E:\MinStat_4\MinStat.BLL.IISHosting\bin\MinStat.BLL.IISHosting.dll
+E:\MinStat_4\MinStat.BLL.IISHosting\bin\MinStat.BLL.IISHosting.pdb
+E:\MinStat_4\MinStat.BLL.IISHosting\bin\EntityFramework.dll
+E:\MinStat_4\MinStat.BLL.IISHosting\bin\MinStat.BLL.dll
+E:\MinStat_4\MinStat.BLL.IISHosting\bin\MinStat.DAL.dll
+E:\MinStat_4\MinStat.BLL.IISHosting\bin\MinStat.BLL.pdb
+E:\MinStat_4\MinStat.BLL.IISHosting\bin\EntityFramework.xml
+E:\MinStat_4\MinStat.BLL.IISHosting\bin\MinStat.DAL.pdb
+E:\MinStat_4\MinStat.BLL.IISHosting\obj\Debug\MinStat.BLL.IISHosting.csprojResolveAssemblyReference.cache
+E:\MinStat_4\MinStat.BLL.IISHosting\obj\Debug\MinStat.BLL.IISHosting.dll
+E:\MinStat_4\MinStat.BLL.IISHosting\obj\Debug\MinStat.BLL.IISHosting.pdb

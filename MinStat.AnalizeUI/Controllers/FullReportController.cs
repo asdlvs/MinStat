@@ -54,7 +54,7 @@ namespace MinStat.AnalizeUI.Controllers
         public ActionResult CustomReport(SelectionChecks selectionChecks, string reportType)
         {
             IEnumerable<StatisticDataModel> model = new StatisticDataModel[0];
-            if (reportType.EndsWith("#static"))
+            if (reportType.EndsWith("#static") || String.IsNullOrWhiteSpace(reportType))
             {
                 model = _selectionReport.GetQtyStaticData(
                     (int)Session["enterpriseId"],
