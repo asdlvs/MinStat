@@ -1,0 +1,7 @@
+F:\Repository\Trash\B_2\MinStat.Enterprises.WebUI\bin\MinStat.Enterprises.WebUI.dll
+F:\Repository\Trash\B_2\MinStat.Enterprises.WebUI\bin\MinStat.Enterprises.WebUI.pdb
+F:\Repository\Trash\B_2\MinStat.Enterprises.WebUI\bin\EntityFramework.dll
+F:\Repository\Trash\B_2\MinStat.Enterprises.WebUI\bin\EntityFramework.xml
+F:\Repository\Trash\B_2\MinStat.Enterprises.WebUI\obj\Debug\ResolveAssemblyReference.cache
+F:\Repository\Trash\B_2\MinStat.Enterprises.WebUI\obj\Debug\MinStat.Enterprises.WebUI.dll
+F:\Repository\Trash\B_2\MinStat.Enterprises.WebUI\obj\Debug\MinStat.Enterprises.WebUI.pdb

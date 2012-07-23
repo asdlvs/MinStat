@@ -32,3 +32,4 @@ D:\Work\Bonch\MinStat_4\Bonch.Domain\obj\Debug\Bonch.Domain.csprojResolveAssembl
 D:\Work\Bonch\MinStat_4\Bonch.Domain\obj\Debug\Bonch.Domain.dll
 D:\Work\Bonch\MinStat_4\Bonch.Domain\obj\Debug\Bonch.Domain.pdb
 E:\MinStat_4\Bonch.Domain\bin\Debug\Bonch.Domain.dll.config
+F:\Repository\Trash\B_2\Bonch.Domain\bin\Debug\Bonch.Domain.dll.config

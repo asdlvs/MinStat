@@ -16,3 +16,12 @@ E:\MinStat_4\MinStat.BLL\bin\Debug\EntityFramework.xml
 E:\MinStat_4\MinStat.BLL\obj\Debug\MinStat.BLL.csprojResolveAssemblyReference.cache
 E:\MinStat_4\MinStat.BLL\obj\Debug\MinStat.BLL.dll
 E:\MinStat_4\MinStat.BLL\obj\Debug\MinStat.BLL.pdb
+F:\Repository\Trash\B_2\MinStat.BLL\bin\Debug\MinStat.BLL.dll
+F:\Repository\Trash\B_2\MinStat.BLL\bin\Debug\MinStat.BLL.pdb
+F:\Repository\Trash\B_2\MinStat.BLL\bin\Debug\MinStat.DAL.dll
+F:\Repository\Trash\B_2\MinStat.BLL\bin\Debug\EntityFramework.dll
+F:\Repository\Trash\B_2\MinStat.BLL\bin\Debug\MinStat.DAL.pdb
+F:\Repository\Trash\B_2\MinStat.BLL\bin\Debug\EntityFramework.xml
+F:\Repository\Trash\B_2\MinStat.BLL\obj\Debug\ResolveAssemblyReference.cache
+F:\Repository\Trash\B_2\MinStat.BLL\obj\Debug\MinStat.BLL.dll
+F:\Repository\Trash\B_2\MinStat.BLL\obj\Debug\MinStat.BLL.pdb

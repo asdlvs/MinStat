@@ -20,3 +20,14 @@ E:\MinStat_4\MinStat.BLL.IISHosting\bin\MinStat.DAL.pdb
 E:\MinStat_4\MinStat.BLL.IISHosting\obj\Debug\MinStat.BLL.IISHosting.csprojResolveAssemblyReference.cache
 E:\MinStat_4\MinStat.BLL.IISHosting\obj\Debug\MinStat.BLL.IISHosting.dll
 E:\MinStat_4\MinStat.BLL.IISHosting\obj\Debug\MinStat.BLL.IISHosting.pdb
+F:\Repository\Trash\B_2\MinStat.BLL.IISHosting\bin\MinStat.BLL.IISHosting.dll
+F:\Repository\Trash\B_2\MinStat.BLL.IISHosting\bin\MinStat.BLL.IISHosting.pdb
+F:\Repository\Trash\B_2\MinStat.BLL.IISHosting\bin\EntityFramework.dll
+F:\Repository\Trash\B_2\MinStat.BLL.IISHosting\bin\MinStat.BLL.dll
+F:\Repository\Trash\B_2\MinStat.BLL.IISHosting\bin\MinStat.DAL.dll
+F:\Repository\Trash\B_2\MinStat.BLL.IISHosting\bin\MinStat.BLL.pdb
+F:\Repository\Trash\B_2\MinStat.BLL.IISHosting\bin\EntityFramework.xml
+F:\Repository\Trash\B_2\MinStat.BLL.IISHosting\bin\MinStat.DAL.pdb
+F:\Repository\Trash\B_2\MinStat.BLL.IISHosting\obj\Debug\ResolveAssemblyReference.cache
+F:\Repository\Trash\B_2\MinStat.BLL.IISHosting\obj\Debug\MinStat.BLL.IISHosting.dll
+F:\Repository\Trash\B_2\MinStat.BLL.IISHosting\obj\Debug\MinStat.BLL.IISHosting.pdb

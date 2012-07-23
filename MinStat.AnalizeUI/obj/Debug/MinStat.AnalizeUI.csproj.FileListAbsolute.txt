@@ -12,3 +12,10 @@ E:\MinStat_4\MinStat.AnalizeUI\bin\EntityFramework.xml
 E:\MinStat_4\MinStat.AnalizeUI\obj\Debug\MinStat.AnalizeUI.csprojResolveAssemblyReference.cache
 E:\MinStat_4\MinStat.AnalizeUI\obj\Debug\MinStat.AnalizeUI.dll
 E:\MinStat_4\MinStat.AnalizeUI\obj\Debug\MinStat.AnalizeUI.pdb
+F:\Repository\Trash\B_2\MinStat.AnalizeUI\bin\MinStat.AnalizeUI.dll
+F:\Repository\Trash\B_2\MinStat.AnalizeUI\bin\MinStat.AnalizeUI.pdb
+F:\Repository\Trash\B_2\MinStat.AnalizeUI\bin\EntityFramework.dll
+F:\Repository\Trash\B_2\MinStat.AnalizeUI\bin\EntityFramework.xml
+F:\Repository\Trash\B_2\MinStat.AnalizeUI\obj\Debug\ResolveAssemblyReference.cache
+F:\Repository\Trash\B_2\MinStat.AnalizeUI\obj\Debug\MinStat.AnalizeUI.dll
+F:\Repository\Trash\B_2\MinStat.AnalizeUI\obj\Debug\MinStat.AnalizeUI.pdb

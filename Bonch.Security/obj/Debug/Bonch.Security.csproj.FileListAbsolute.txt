@@ -43,3 +43,4 @@ D:\Work\Bonch\MinStat_4\Bonch.Security\obj\Debug\Bonch.Security.csprojResolveAss
 D:\Work\Bonch\MinStat_4\Bonch.Security\obj\Debug\Bonch.Security.dll
 D:\Work\Bonch\MinStat_4\Bonch.Security\obj\Debug\Bonch.Security.pdb
 E:\MinStat_4\Bonch.Security\bin\Debug\Bonch.Security.dll.config
+F:\Repository\Trash\B_2\Bonch.Security\bin\Debug\Bonch.Security.dll.config

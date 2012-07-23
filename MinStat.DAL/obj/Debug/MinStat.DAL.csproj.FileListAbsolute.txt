@@ -12,3 +12,10 @@ E:\MinStat_4\MinStat.DAL\bin\Debug\EntityFramework.xml
 E:\MinStat_4\MinStat.DAL\obj\Debug\MinStat.DAL.csprojResolveAssemblyReference.cache
 E:\MinStat_4\MinStat.DAL\obj\Debug\MinStat.DAL.dll
 E:\MinStat_4\MinStat.DAL\obj\Debug\MinStat.DAL.pdb
+F:\Repository\Trash\B_2\MinStat.DAL\bin\Debug\MinStat.DAL.dll
+F:\Repository\Trash\B_2\MinStat.DAL\bin\Debug\MinStat.DAL.pdb
+F:\Repository\Trash\B_2\MinStat.DAL\bin\Debug\EntityFramework.dll
+F:\Repository\Trash\B_2\MinStat.DAL\bin\Debug\EntityFramework.xml
+F:\Repository\Trash\B_2\MinStat.DAL\obj\Debug\ResolveAssemblyReference.cache
+F:\Repository\Trash\B_2\MinStat.DAL\obj\Debug\MinStat.DAL.dll
+F:\Repository\Trash\B_2\MinStat.DAL\obj\Debug\MinStat.DAL.pdb

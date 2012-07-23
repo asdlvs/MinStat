@@ -42,3 +42,8 @@ D:\Work\Bonch\MinStat_4\Bonch.MinUI\bin\Ninject.xml
 D:\Work\Bonch\MinStat_4\Bonch.MinUI\obj\Debug\Bonch.MinUI.csprojResolveAssemblyReference.cache
 D:\Work\Bonch\MinStat_4\Bonch.MinUI\obj\Debug\Bonch.MinUI.dll
 D:\Work\Bonch\MinStat_4\Bonch.MinUI\obj\Debug\Bonch.MinUI.pdb
+F:\Repository\Trash\B_2\Bonch.MinUI\bin\Bonch.Domain.dll
+F:\Repository\Trash\B_2\Bonch.MinUI\bin\Ninject.dll
+F:\Repository\Trash\B_2\Bonch.MinUI\bin\Bonch.Domain.pdb
+F:\Repository\Trash\B_2\Bonch.MinUI\bin\Ninject.pdb
+F:\Repository\Trash\B_2\Bonch.MinUI\bin\Ninject.xml
