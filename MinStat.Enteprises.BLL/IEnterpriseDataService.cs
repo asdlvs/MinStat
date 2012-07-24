@@ -32,13 +32,22 @@ namespace MinStat.Enterprises.BLL
         [OperationContract]
         void RemoveSummary(int summaryId);
 
+      [OperationContract]
+        void UpdateSummary(int summaryId, string title, List<int> activitiesIds);
+
         [OperationContract]
         void AddActivities(int summaryId, List<int> activitiesIds);
 
         [OperationContract]
         void RemoveActivity(int summaryId, int activitiId);
 
-        [OperationContract]
+      [OperationContract]
+      int GetPeoplesArraySize(int summaryId);
+
+      [OperationContract]
+      IEnumerable<Person> GetPeoples(int summaryId, int size, int offset);
+
+      [OperationContract]
         void CreatePerson(int summaryId, int activityId, string title, string post, int postLevelId, int educationLevelId, decimal yearSalary, bool gender, bool wasQualificationIncrease,
           bool wasValidate, int birthYear, int hiringYear, int startPostYear, int dismissalYear);
 

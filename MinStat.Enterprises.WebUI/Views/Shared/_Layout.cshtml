@@ -13,7 +13,8 @@
     <script src="@Url.Content("~/Scripts/bootstrap-alert.js")" type="text/javascript" ></script>
     <script src="@Url.Content("~/Scripts/bootstrap-tooltip.js")" type="text/javascript" ></script>
     <script src="@Url.Content("~/Scripts/bootstrap-popover.js")" type="text/javascript" ></script>
-    <script src="@Url.Content("~/Scripts/bootstrap-tab.js")" type="text/javascript" ></script>
+  <script src="@Url.Content("~/Scripts/bootstrap-tab.js")" type="text/javascript" ></script>
+      <script src="@Url.Content("~/Scripts/bootstrap-dropdown.js")" type="text/javascript" ></script>
 </head>
 
 <body>
@@ -26,16 +27,16 @@
                 </button>
                 @Html.ActionLink("Система отчетности", "Index", "Home", null, new { @class = "brand" })
                 <div class="nav-collapse collapse">
-                    <ul class="nav">
-                        <li class=""><a href="./index.html"></a></li>
-                        <li class="">
-                            @Html.ActionLink("Отчеты", "Index", "Summaries")
-                        </li>
-                        <li class="">
-                            @Html.ActionLink("Люди", "Index", "People")
-                        </li>
-                        <li class=""><a href="./base-css.html">Добавить предприятие</a> </li>
-                    </ul>
+                  <ul class="nav">
+                    <li class=""><a href="./index.html"></a></li>
+                    <li class="">
+                      @Html.ActionLink("Отчеты", "Index", "Summaries")
+                    </li>
+                    <li class="">
+                      @Html.ActionLink("Люди", "Index", "People")
+                    </li>
+                  </ul>
+                   <p class="navbar-text pull-right">Здравствуйте, <a href="#">@HttpContext.Current.User.Identity.Name</a>&nbsp;&nbsp;|&nbsp;&nbsp;@Html.ActionLink("Выйти", "LogOff", "Account")</p>
                 </div>
             </div>
         </div>

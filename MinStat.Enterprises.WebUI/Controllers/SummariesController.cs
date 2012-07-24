@@ -38,7 +38,15 @@ namespace MinStat.Enterprises.WebUI.Controllers
         {
             if (!String.IsNullOrWhiteSpace(summary.Title))
             {
+              if(summary.Id > 0)
+              {
+                _serviceAdapter.UpdateSummary(summary.Id, summary.Title, summary.Activities);
+              }
+              else
+              {
                 _serviceAdapter.CreateSummary(summary.Title, summary.Activities);
+                
+              }
             }
             else
             {
@@ -67,6 +75,12 @@ namespace MinStat.Enterprises.WebUI.Controllers
             _serviceAdapter.PublishSummary(summaryId);
             return RedirectToAction("Index");
         }
+
+      public JsonResult Activities(int summaryId)
+      {
+        IEnumerable<ActivityModel> activities = _serviceAdapter.GetActivities(summaryId);
+        return Json(activities, JsonRequestBehavior.AllowGet);
+      }
 
     }
 }

@@ -36,8 +36,7 @@ namespace MinStat.Enterprises.BLL
         [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
         public IEnumerable<Summary> GetSummaries()
         {
-            var result = _enterpriseRepository.GetSummaries(_enterpriseId).ToList();
-            return result;
+            return _enterpriseRepository.GetSummaries(_enterpriseId).ToList();
         }
 
         [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
@@ -91,19 +90,37 @@ namespace MinStat.Enterprises.BLL
         [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
         public IEnumerable<Activity> GetActivities()
         {
-            return _enterpriseRepository.GetActivities();
+            return _enterpriseRepository.GetActivities().ToList();
         }
 
         [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
         public IEnumerable<Activity> GetActivities(int summaryId)
         {
-            return _enterpriseRepository.GetActivities(summaryId);
+            return _enterpriseRepository.GetActivities(summaryId).ToList();
         }
 
-
+       [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
         public void PublishSummary(int summaryId)
         {
             _enterpriseRepository.PublishSummary(summaryId);
         }
+
+       [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
+        public void UpdateSummary(int summaryId, string title, List<int> activitiesIds)
+        {
+          _enterpriseRepository.UpdateSummary(summaryId, title, activitiesIds);
+        }
+
+       [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
+        public IEnumerable<Person> GetPeoples(int summaryId, int size, int offset)
+        {
+          return _enterpriseRepository.GetPeople(summaryId, size, offset).ToList();
+        }
+
+      [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
+       public int GetPeoplesArraySize(int summaryId)
+       {
+         return _enterpriseRepository.GetPeopleArraySize(summaryId);
+       }
     }
 }

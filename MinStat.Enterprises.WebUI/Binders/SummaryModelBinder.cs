@@ -17,7 +17,14 @@ namespace MinStat.Enterprises.WebUI.Binders
             SummaryModel model = new SummaryModel();
 
             model.Title = form["Title"];
-            string[] activities = form.AllKeys.Where(x => x.StartsWith(activityString, StringComparison.OrdinalIgnoreCase)).ToArray();
+            model.Id = 0;
+          int modelId;
+          if(Int32.TryParse(form["summaryId"], out modelId))
+          {
+            model.Id = modelId;
+          }
+
+          string[] activities = form.AllKeys.Where(x => x.StartsWith(activityString, StringComparison.OrdinalIgnoreCase)).ToArray();
             model.Activities = new int[activities.Count()];
             for (int i = 0; i < activities.Count(); i++)
             {

@@ -22,5 +22,13 @@ namespace MinStat.Enterprises.WebUI.ServiceAdapters
         void CopySummary(string title, int summaryId);
 
         void PublishSummary(int summaryId);
+
+      void UpdateSummary(int summaryId, string title, int[] activitiesIds);
+
+      int GetPeopleCount(int summaryId);
+
+      IEnumerable<PersonModel> GetPeople(int summaryId, int pagesize, int offset);
+
+
     }
 }

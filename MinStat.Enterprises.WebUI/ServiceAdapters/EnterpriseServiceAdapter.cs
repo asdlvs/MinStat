@@ -60,7 +60,23 @@ namespace MinStat.Enterprises.WebUI.ServiceAdapters
 
         public IEnumerable<ActivityModel> GetActivities(int summaryId)
         {
-            throw new NotImplementedException();
+          using (EnterpriseDataServiceClient proxy = new EnterpriseDataServiceClient())
+          {
+            IEnumerable<Activity> activities = proxy.GetActivitiesBySummary(summaryId);
+            foreach (Activity activity in activities)
+            {
+              yield return new ActivityModel
+              {
+                Id = activity.Idk__BackingField,
+                Title = activity.Titlek__BackingField,
+                Part_1 = activity.Part_1k__BackingField,
+                Part_2 = activity.Part_2k__BackingField,
+                Part_3 = activity.Part_3k__BackingField,
+                Part_4 = activity.Part_4k__BackingField,
+                Part_5 = activity.Part_5k__BackingField
+              };
+            }
+          }
         }
 
 
@@ -88,6 +104,49 @@ namespace MinStat.Enterprises.WebUI.ServiceAdapters
             {
                 proxy.PublishSummary(summaryId);
             }
+        }
+
+
+        public void UpdateSummary(int summaryId, string title, int[] activitiesIds)
+        {
+          using (EnterpriseDataServiceClient proxy = new EnterpriseDataServiceClient())
+          {
+            proxy.UpdateSummary(summaryId, title, activitiesIds);
+          }
+        }
+
+
+        public int GetPeopleCount(int summaryId)
+        {
+          using (EnterpriseDataServiceClient proxy = new EnterpriseDataServiceClient())
+          {
+            return proxy.GetPeoplesArraySize(summaryId);
+          }
+        }
+
+        public IEnumerable<PersonModel> GetPeople(int summaryId, int pagesize, int offset)
+        {
+          using (EnterpriseDataServiceClient proxy = new EnterpriseDataServiceClient())
+          {
+            return proxy.GetPeoples(summaryId, pagesize, offset).Select(x => new PersonModel
+              {
+                Id = x.Id,
+                SummaryId = x.SummaryId,
+                ActivityId = x.ActivityId,
+                Title = x.Title,
+                BirthYear = x.BirthYear,
+                DismissalYear = x.DismissalYear,
+                EducationLevelId = x.EducationLevelId,
+                Gender = x.Gender,
+                HiringYear = x.HiringYear,
+                Post = x.Post,
+                PostLevelId = x.PostLevelId,
+                StartPostYear = x.StartPostYear,
+                WasQualificationIncrease = x.WasQualificationIncrease,
+                WasValidate = x.WasValidate,
+                YearSalary = x.YearSalary
+              });
+          }
         }
     }
 }

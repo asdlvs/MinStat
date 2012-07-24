@@ -44,5 +44,11 @@ namespace MinStat.Enterprises.WebUI.Controllers
             return View(model);
         }
 
+      public ActionResult LogOff()
+      {
+        _authenticationService.Logout();
+        return RedirectToAction("Index");
+      }
+
     }
 }

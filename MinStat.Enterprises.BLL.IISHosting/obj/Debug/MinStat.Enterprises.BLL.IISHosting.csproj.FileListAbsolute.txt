@@ -9,3 +9,14 @@ D:\Work\Bonch\MinStat_4\MinStat.Enterprises.BLL.IISHosting\obj\Debug\MinStat.Ent
 D:\Work\Bonch\MinStat_4\MinStat.Enterprises.BLL.IISHosting\obj\Debug\MinStat.Enterprises.BLL.IISHosting.pdb
 D:\Work\Bonch\MinStat_4\MinStat.Enterprises.BLL.IISHosting\bin\MinStat.Enterprises.BLL.dll
 D:\Work\Bonch\MinStat_4\MinStat.Enterprises.BLL.IISHosting\bin\MinStat.Enterprises.BLL.pdb
+F:\Repository\Trash\B_2\MinStat.Enterprises.BLL.IISHosting\bin\MinStat.Enterprises.BLL.IISHosting.dll
+F:\Repository\Trash\B_2\MinStat.Enterprises.BLL.IISHosting\bin\MinStat.Enterprises.BLL.IISHosting.pdb
+F:\Repository\Trash\B_2\MinStat.Enterprises.BLL.IISHosting\bin\MinStat.Enterprises.BLL.dll
+F:\Repository\Trash\B_2\MinStat.Enterprises.BLL.IISHosting\bin\MinStat.Enterprises.DAL.dll
+F:\Repository\Trash\B_2\MinStat.Enterprises.BLL.IISHosting\bin\EntityFramework.dll
+F:\Repository\Trash\B_2\MinStat.Enterprises.BLL.IISHosting\bin\MinStat.Enterprises.BLL.pdb
+F:\Repository\Trash\B_2\MinStat.Enterprises.BLL.IISHosting\bin\MinStat.Enterprises.DAL.pdb
+F:\Repository\Trash\B_2\MinStat.Enterprises.BLL.IISHosting\bin\EntityFramework.xml
+F:\Repository\Trash\B_2\MinStat.Enterprises.BLL.IISHosting\obj\Debug\ResolveAssemblyReference.cache
+F:\Repository\Trash\B_2\MinStat.Enterprises.BLL.IISHosting\obj\Debug\MinStat.Enterprises.BLL.IISHosting.dll
+F:\Repository\Trash\B_2\MinStat.Enterprises.BLL.IISHosting\obj\Debug\MinStat.Enterprises.BLL.IISHosting.pdb

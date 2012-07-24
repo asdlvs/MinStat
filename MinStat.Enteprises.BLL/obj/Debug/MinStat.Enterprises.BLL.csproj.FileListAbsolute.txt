@@ -7,3 +7,12 @@ D:\Work\Bonch\MinStat_4\MinStat.Enteprises.BLL\bin\Debug\EntityFramework.xml
 D:\Work\Bonch\MinStat_4\MinStat.Enteprises.BLL\obj\Debug\MinStat.Enterprises.BLL.csprojResolveAssemblyReference.cache
 D:\Work\Bonch\MinStat_4\MinStat.Enteprises.BLL\obj\Debug\MinStat.Enterprises.BLL.dll
 D:\Work\Bonch\MinStat_4\MinStat.Enteprises.BLL\obj\Debug\MinStat.Enterprises.BLL.pdb
+F:\Repository\Trash\B_2\MinStat.Enteprises.BLL\bin\Debug\MinStat.Enterprises.BLL.dll
+F:\Repository\Trash\B_2\MinStat.Enteprises.BLL\bin\Debug\MinStat.Enterprises.BLL.pdb
+F:\Repository\Trash\B_2\MinStat.Enteprises.BLL\bin\Debug\MinStat.Enterprises.DAL.dll
+F:\Repository\Trash\B_2\MinStat.Enteprises.BLL\bin\Debug\EntityFramework.dll
+F:\Repository\Trash\B_2\MinStat.Enteprises.BLL\bin\Debug\MinStat.Enterprises.DAL.pdb
+F:\Repository\Trash\B_2\MinStat.Enteprises.BLL\bin\Debug\EntityFramework.xml
+F:\Repository\Trash\B_2\MinStat.Enteprises.BLL\obj\Debug\ResolveAssemblyReference.cache
+F:\Repository\Trash\B_2\MinStat.Enteprises.BLL\obj\Debug\MinStat.Enterprises.BLL.dll
+F:\Repository\Trash\B_2\MinStat.Enteprises.BLL\obj\Debug\MinStat.Enterprises.BLL.pdb

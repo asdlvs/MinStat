@@ -26,6 +26,8 @@ namespace MinStat.Enterprises.DAL
 
         void CreateSummary(int enterpriseId, string title, List<int> activitiesIds);
 
+      void UpdateSummary(int summaryId, string title, List<int> activities);
+
         void CopySummary(int enterpriseId, string title, int summaryId);
 
         void RemoveSummary(int summaryId);
@@ -35,6 +37,10 @@ namespace MinStat.Enterprises.DAL
         void AddActivities(int summaryId, List<int> activitiesIds);
 
         void RemoveActivity(int summaryId, int activitiId);
+
+      IEnumerable<Person> GetPeople(int summaryId, int size, int offset);
+
+      int GetPeopleArraySize(int summaryId);
 
         void CreatePerson(int summaryId,
           int activityId,

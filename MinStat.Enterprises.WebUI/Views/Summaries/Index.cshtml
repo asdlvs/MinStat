@@ -1,142 +1,156 @@
 ﻿@using MinStat.Enterprises.WebUI.Models
 @model IEnumerable<SummaryModel>
 @{
-    ViewBag.Title = "Index";
+  ViewBag.Title = "Index";
 }
 <script src="@Url.Content("~/Scripts/Bonch.Enterprises.Summary.js")" type="text/javascript" ></script>
 <div class="row">
-    <div class="span10 offset1">
-        <table class="table">
-            @foreach (SummaryModel summaryItem in Model)
+  <div class="span10 offset1">
+    <table class="table">
+      @foreach (SummaryModel summaryItem in Model)
+      {
+        <tr>
+          <td>@summaryItem.CreateDate
+          </td>
+          <td>@summaryItem.Title
+          </td>
+          <td>@summaryItem.Published
+          </td>
+          <td>@summaryItem.PublishedDate
+          </td>
+          <td>
+            @Html.ActionLink("Люди", "Index", "People", new { summaryId = summaryItem.Id }, new { @class = "btn btn-primary" })
+          </td>
+          <td>
+            @using (Html.BeginForm(new { controller = "Summaries", action = "Copy", summaryId = @summaryItem.Id }))
             {
-                <tr>
-                    <td>@summaryItem.CreateDate
-                    </td>
-                    <td>@summaryItem.Title
-                    </td>
-                    <td>@summaryItem.Published
-                    </td>
-                    <td>@summaryItem.PublishedDate
-                    </td>
-                    <td>
-                        <a class="btn btn-primary">Переименовать</a>
-                    </td>
-                    <td>
-                        <a class="btn btn-primary">Активности</a>
-                    </td>
-                    <td>
-                        <a class="btn btn-primary">Люди</a>
-                    </td>
-                    <td>
-                        @using (Html.BeginForm(new { controller = "Summaries", action = "Copy", summaryId = @summaryItem.Id }))
-                        {
-                            <a class="btn btn-primary" data-toggle="modal" href="@String.Format("#activityModalCopy{0}", summaryItem.Id)">
-                                Копировать</a>
-                            <br />
-                            <div class="modal hide" name="@String.Format("activityModalCopy{0}", summaryItem.Id)" id="@String.Format("activityModalCopy{0}", summaryItem.Id)">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">
-                                        ×</button>
-                                    <h3>
-                                        Новый отчет</h3>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="alert alert-error" name="@String.Format("emptytitleerror{0}", summaryItem.Id)" id="@String.Format("emptytitleerror{0}", summaryItem.Id)">
-                                        <button class="close" data-dismiss="alert">
-                                            ×</button>
-                                        <strong>Ошибка!</strong> Укажите пожалуйста название отчета.
-                                    </div>
-                                    <input type="text" class="input-xlarge" name="Title" />
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="#" class="btn" data-dismiss="modal">Отмена</a>
-                                    <input type="submit" id="@String.Format("savesummary{0}", summaryItem.Id)" name="@String.Format("savesummary{0}", summaryItem.Id)" class="btn btn-primary" value="Копировать" />
-                                </div>
-                            </div>
-                        }
-                    </td>
-                    <td>
-                        @if (!summaryItem.Published)
-                        {
-                            <a class="btn btn-warning activityModalPublish" data-toggle="modal" href="#activityModalPublish" data-value="@summaryItem.Id">
-                                Опубликовать</a>
-                        }
-                    </td>
-                    <td style="">
-                        @if (!summaryItem.Published)
-                        {
-                            using (Html.BeginForm(new { controller = "Summaries", action = "Remove", summaryId = @summaryItem.Id }))
-                            {
-                            <input type="submit" class="btn btn-danger" value="Удалить" />
-                            }
-                        }
-                    </td>
-                </tr>
-            }
-        </table>
-        <div class="modal hide" name="activityModalPublish" id="activityModalPublish">
-            <div class="modal-header">
-                <a type="button" class="close" data-dismiss="modal">×</a>
-                <h3>
-                    Публикация отчета</h3>
-            </div>
-            <div class="modal-body">
-                Вы уверены, что хотите опубликовать отчет? После публикации, внесение любых изменений
-                станет невозможным.
-            </div>
-            <div class="modal-footer">
-                @using (Html.BeginForm("Publish", "Summaries"))
-                {
-                    <a href="#" class="btn" data-dismiss="modal">Отмена</a>
-                    <input type="hidden" id="summaryId" name="summaryId" />
-                    <input type="submit" class="btn btn-primary" value="Опубликовать" />
-                }
-            </div>
-        </div>
-        @using (Html.BeginForm("Create", "Summaries"))
-        {
-            <a class="btn" data-toggle="modal" href="#activityModal0">Создать новый отчет</a>
-            <br />
-            <div class="modal hide" name="activityModal0" id="activityModal0">
+              <a class="btn btn-primary" data-toggle="modal" href="@String.Format("#activityModalCopy{0}", summaryItem.Id)">
+                Копировать</a>
+              <br />
+              <div class="modal hide" name="@String.Format("activityModalCopy{0}", summaryItem.Id)" id="@String.Format("activityModalCopy{0}", summaryItem.Id)">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">
-                        ×</button>
-                    <h3>
-                        Новый отчет</h3>
+                  <button type="button" class="close" data-dismiss="modal">
+                    ×</button>
+                  <h3>
+                    Новый отчет</h3>
                 </div>
                 <div class="modal-body">
-                    <div class="alert alert-error" name="emptytitleerror0" id="emptytitleerror0">
-                        <button class="close" data-dismiss="alert">
-                            ×</button>
-                        <strong>Ошибка!</strong> Укажите пожалуйста название отчета.
-                    </div>
-                    <input type="text" class="input-xlarge" name="Title" />
-                    <table class="table">
-                        @foreach (ActivityModel activity in (IEnumerable<ActivityModel>)ViewBag.Activities)
-                        {
-                            <tr>
-                                <td>
-                                    @String.Format("{0}.{1}{2}.{3}{4}", activity.Part_1, activity.Part_2, activity.Part_3, activity.Part_4, activity.Part_5)
-                                </td>
-                                <td>
-                                    @activity.Title
-                                </td>
-                                <td>
-                                    @if (activity.Part_5 != 0)
-                                    {
-                                        <input type="checkbox" id="@String.Format("Activity{0}", activity.Id)" name="@String.Format("Activity{0}", activity.Id)" />
-                                    }
-                                </td>
-                            </tr>
-                        }
-                    </table>
+                  <div class="alert alert-error" name="@String.Format("emptytitleerror{0}", summaryItem.Id)" id="@String.Format("emptytitleerror{0}", summaryItem.Id)">
+                    <button class="close" data-dismiss="alert">
+                      ×</button>
+                    <strong>Ошибка!</strong> Укажите пожалуйста название отчета.
+                  </div>
+                  <input type="text" class="input-xlarge" name="Title" />
                 </div>
                 <div class="modal-footer">
-                    <a href="#" class="btn" data-dismiss="modal">Отмена</a>
-                    <input type="submit" id="savesummary0" name="savesummary0" class="btn btn-primary"
-                        value="Сохранить">
+                  <a href="#" class="btn" data-dismiss="modal">Отмена</a>
+                  <input type="submit" id="@String.Format("savesummary{0}", summaryItem.Id)" name="@String.Format("savesummary{0}", summaryItem.Id)" class="btn btn-primary" value="Копировать" />
                 </div>
-            </div>
+              </div>
+            }
+          </td>
+          <td>
+            @if (!summaryItem.Published)
+            {
+              <a class="btn btn-primary changeactivities" summary-id="@summaryItem.Id" summary-title="@summaryItem.Title">
+                Редактировать</a>
+            }
+            else
+            {
+              <input type="submit" class="btn btn-inverse disabled" value="Редактировать" />
+            }
+          </td>
+          <td>
+            @if (!summaryItem.Published)
+            {
+              <a class="btn btn-warning activityModalPublish" data-toggle="modal" href="#activityModalPublish" data-value="@summaryItem.Id">
+                Опубликовать</a>
+            }
+            else
+            {
+              <input type="submit" class="btn btn-inverse disabled" value="Опубликовать" />
+            }
+          </td>
+          <td style="">
+            @if (!summaryItem.Published)
+            {
+              using (Html.BeginForm(new { controller = "Summaries", action = "Remove", summaryId = @summaryItem.Id }))
+              {
+              <input type="submit" class="btn btn-danger" value="Удалить" />
+              }
+            }
+            else
+            {
+              <input type="submit" class="btn btn-inverse disabled" value="Удалить" />
+            }
+          </td>
+        </tr>
+      }
+    </table>
+    <div class="modal hide" name="activityModalPublish" id="activityModalPublish">
+      <div class="modal-header">
+        <a type="button" class="close" data-dismiss="modal">×</a>
+        <h3>
+          Публикация отчета</h3>
+      </div>
+      <div class="modal-body">
+        Вы уверены, что хотите опубликовать отчет? После публикации, внесение любых изменений
+        станет невозможным.
+      </div>
+      <div class="modal-footer">
+        @using (Html.BeginForm("Publish", "Summaries"))
+        {
+          <a href="#" class="btn" data-dismiss="modal">Отмена</a>
+          <input type="hidden" id="summaryId" name="summaryId" />
+          <input type="submit" class="btn btn-primary" value="Опубликовать" />
         }
+      </div>
     </div>
+    @using (Html.BeginForm("Create", "Summaries"))
+    {
+      <a class="btn changeactivities" summary-id="0" summary-title="">Создать новый отчет</a>
+      <br />
+      <div class="modal hide" name="activityModal0" id="activityModal0">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            ×</button>
+          <h3>
+            Новый отчет</h3>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-error" name="emptytitleerror0" id="emptytitleerror0">
+            <button class="close" data-dismiss="alert">
+              ×</button>
+            <strong>Ошибка!</strong> Укажите пожалуйста название отчета.
+          </div>
+          <input type="text" class="input-xlarge" name="Title" id="Title" />
+          <input type="hidden" id="summaryId" name="summaryId" />
+          <table class="table">
+            @foreach (ActivityModel activity in (IEnumerable<ActivityModel>)ViewBag.Activities)
+            {
+              <tr>
+                <td>
+                  @String.Format("{0}.{1}{2}.{3}{4}", activity.Part_1, activity.Part_2, activity.Part_3, activity.Part_4, activity.Part_5)
+                </td>
+                <td>
+                  @activity.Title
+                </td>
+                <td>
+                  @if (activity.Part_5 != 0)
+                  {
+                    <input type="checkbox" id="@String.Format("Activity{0}", activity.Id)" name="@String.Format("Activity{0}", activity.Id)" />
+                  }
+                </td>
+              </tr>
+            }
+          </table>
+        </div>
+        <div class="modal-footer">
+          <a href="#" class="btn" data-dismiss="modal">Отмена</a>
+          <input type="submit" id="savesummary0" name="savesummary0" class="btn btn-primary"
+            value="Сохранить">
+        </div>
+      </div>
+    }
+  </div>
 </div>

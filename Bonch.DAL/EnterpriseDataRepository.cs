@@ -135,21 +135,31 @@ namespace MinStat.Enterprises.DAL
             _context.SaveChanges();
         }
 
-        public void RemoveActivity(int summaryId, int activitiId)
+        public void RemoveActivity(int summaryId, int activityId)
         {
             #region Pre-conditions
             if (!_context.Summaries.Any(x => x.Id == summaryId)) { throw new ArgumentException("Wrong summary Id", summaryId.ToString()); }
-            if (!_context.Activities.Any(x => x.Id == activitiId)) { throw new ArgumentException("Wrong activity Id", activitiId.ToString()); }
+            if (!_context.Activities.Any(x => x.Id == activityId)) { throw new ArgumentException("Wrong activity Id", activityId.ToString()); }
             #endregion
 
             SummaryActivity summaryActivity;
-            if ((summaryActivity = _context.SummaryActivities.FirstOrDefault(x => x.ActivityId == activitiId && x.SummaryId == summaryId)) != null)
+            if ((summaryActivity = _context.SummaryActivities.FirstOrDefault(x => x.ActivityId == activityId && x.SummaryId == summaryId)) != null)
             {
+              var people = _context.People.Where(x => x.ActivityId == activityId && x.SummaryId == summaryId);
+              foreach (var person in people)
+              {
+                _context.People.Remove(person);
+              }
                 _context.SummaryActivities.Remove(summaryActivity);
             }
         }
 
-        public void CreatePerson(int summaryId, int activityId, string title, string post, int postLevelId, int educationLevelId, decimal yearSalary, bool gender, bool wasQualificationIncrease,
+      public IEnumerable<Person> GetPeople(int summaryId, int size, int offset)
+      {
+        return _context.People.Where(x => x.SummaryId == summaryId).Skip(offset).Take(size);
+      }
+
+      public void CreatePerson(int summaryId, int activityId, string title, string post, int postLevelId, int educationLevelId, decimal yearSalary, bool gender, bool wasQualificationIncrease,
           bool wasValidate, int birthYear, int hiringYear, int startPostYear, int dismissalYear)
         {
             #region Pre-conditions
@@ -246,6 +256,39 @@ namespace MinStat.Enterprises.DAL
             summary.Published = true;
             summary.PublishedDate = DateTime.Now;
             _context.SaveChanges();
+        }
+
+
+        public void UpdateSummary(int summaryId, string title, List<int> activities)
+        {
+          #region Pre-conditions
+          if(!_context.Summaries.Any(x => x.Id == summaryId)) {throw new ArgumentException("Wrong summary id");}
+          #endregion
+
+          Summary summary = _context.Summaries.First(x => x.Id == summaryId);
+          IEnumerable<int> summaryActivities =
+            _context.SummaryActivities.Where(x => x.SummaryId == summaryId).Select(x => x.ActivityId).ToList();
+          IEnumerable<int> activitiesToDelete = summaryActivities.Except(activities);
+          foreach (int activityToDelete in activitiesToDelete)
+          {
+            this.RemoveActivity(summaryId, activityToDelete);
+          }
+
+          IEnumerable<int> activitiesToAdd = activities.Except(summaryActivities);
+            this.AddActivities(summaryId, activitiesToAdd.ToList());
+
+          if(!String.IsNullOrWhiteSpace(title) && !summary.Title.Equals(title))
+          {
+            summary.Title = title;
+          }
+
+          _context.SaveChanges();
+        }
+
+
+        public int GetPeopleArraySize(int summaryId)
+        {
+          return this._context.People.Count(x => x.SummaryId == summaryId);
         }
     }
 }
