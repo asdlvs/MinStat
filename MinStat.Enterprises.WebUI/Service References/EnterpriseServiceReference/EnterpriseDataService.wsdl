@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EnterpriseDataService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/EnterpriseService/EnterpriseDataService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/EnterpriseService/EnterpriseDataService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/EnterpriseService/EnterpriseDataService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MinStat.Enterprises.DAL.POCO" />
+      <xsd:import schemaLocation="http://localhost/EnterpriseService/EnterpriseDataService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="EnterpriseDataService_GetSummaries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSummaries" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_GetSummaries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSummariesResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_CreateSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSummary" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_CreateSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_CopySummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:CopySummary" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_CopySummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CopySummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_RemoveSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveSummary" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_RemoveSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_AddActivities_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddActivities" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_AddActivities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddActivitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_RemoveActivity_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveActivity" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_RemoveActivity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_CreatePerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePerson" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_CreatePerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_UpdatePerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePerson" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_UpdatePerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_RemovePerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemovePerson" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_RemovePerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemovePersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_GetActivities_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivities" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_GetActivities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_GetActivitiesBySummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivitiesBySummary" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_GetActivitiesBySummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivitiesBySummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_PublishSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:PublishSummary" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_PublishSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PublishSummaryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="EnterpriseDataService">
+    <wsdl:operation name="GetSummaries">
+      <wsdl:input wsaw:Action="http://tempuri.org/EnterpriseDataService/GetSummaries" message="tns:EnterpriseDataService_GetSummaries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/EnterpriseDataService/GetSummariesResponse" message="tns:EnterpriseDataService_GetSummaries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSummary">
+      <wsdl:input wsaw:Action="http://tempuri.org/EnterpriseDataService/CreateSummary" message="tns:EnterpriseDataService_CreateSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/EnterpriseDataService/CreateSummaryResponse" message="tns:EnterpriseDataService_CreateSummary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CopySummary">
+      <wsdl:input wsaw:Action="http://tempuri.org/EnterpriseDataService/CopySummary" message="tns:EnterpriseDataService_CopySummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/EnterpriseDataService/CopySummaryResponse" message="tns:EnterpriseDataService_CopySummary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSummary">
+      <wsdl:input wsaw:Action="http://tempuri.org/EnterpriseDataService/RemoveSummary" message="tns:EnterpriseDataService_RemoveSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/EnterpriseDataService/RemoveSummaryResponse" message="tns:EnterpriseDataService_RemoveSummary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddActivities">
+      <wsdl:input wsaw:Action="http://tempuri.org/EnterpriseDataService/AddActivities" message="tns:EnterpriseDataService_AddActivities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/EnterpriseDataService/AddActivitiesResponse" message="tns:EnterpriseDataService_AddActivities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveActivity">
+      <wsdl:input wsaw:Action="http://tempuri.org/EnterpriseDataService/RemoveActivity" message="tns:EnterpriseDataService_RemoveActivity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/EnterpriseDataService/RemoveActivityResponse" message="tns:EnterpriseDataService_RemoveActivity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/EnterpriseDataService/CreatePerson" message="tns:EnterpriseDataService_CreatePerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/EnterpriseDataService/CreatePersonResponse" message="tns:EnterpriseDataService_CreatePerson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/EnterpriseDataService/UpdatePerson" message="tns:EnterpriseDataService_UpdatePerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/EnterpriseDataService/UpdatePersonResponse" message="tns:EnterpriseDataService_UpdatePerson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemovePerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/EnterpriseDataService/RemovePerson" message="tns:EnterpriseDataService_RemovePerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/EnterpriseDataService/RemovePersonResponse" message="tns:EnterpriseDataService_RemovePerson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivities">
+      <wsdl:input wsaw:Action="http://tempuri.org/EnterpriseDataService/GetActivities" message="tns:EnterpriseDataService_GetActivities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/EnterpriseDataService/GetActivitiesResponse" message="tns:EnterpriseDataService_GetActivities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitiesBySummary">
+      <wsdl:input wsaw:Action="http://tempuri.org/EnterpriseDataService/GetActivitiesBySummary" message="tns:EnterpriseDataService_GetActivitiesBySummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/EnterpriseDataService/GetActivitiesBySummaryResponse" message="tns:EnterpriseDataService_GetActivitiesBySummary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PublishSummary">
+      <wsdl:input wsaw:Action="http://tempuri.org/EnterpriseDataService/PublishSummary" message="tns:EnterpriseDataService_PublishSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/EnterpriseDataService/PublishSummaryResponse" message="tns:EnterpriseDataService_PublishSummary_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_EnterpriseDataService" type="tns:EnterpriseDataService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSummaries">
+      <soap:operation soapAction="http://tempuri.org/EnterpriseDataService/GetSummaries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSummary">
+      <soap:operation soapAction="http://tempuri.org/EnterpriseDataService/CreateSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CopySummary">
+      <soap:operation soapAction="http://tempuri.org/EnterpriseDataService/CopySummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveSummary">
+      <soap:operation soapAction="http://tempuri.org/EnterpriseDataService/RemoveSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddActivities">
+      <soap:operation soapAction="http://tempuri.org/EnterpriseDataService/AddActivities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveActivity">
+      <soap:operation soapAction="http://tempuri.org/EnterpriseDataService/RemoveActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePerson">
+      <soap:operation soapAction="http://tempuri.org/EnterpriseDataService/CreatePerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePerson">
+      <soap:operation soapAction="http://tempuri.org/EnterpriseDataService/UpdatePerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePerson">
+      <soap:operation soapAction="http://tempuri.org/EnterpriseDataService/RemovePerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivities">
+      <soap:operation soapAction="http://tempuri.org/EnterpriseDataService/GetActivities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActivitiesBySummary">
+      <soap:operation soapAction="http://tempuri.org/EnterpriseDataService/GetActivitiesBySummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PublishSummary">
+      <soap:operation soapAction="http://tempuri.org/EnterpriseDataService/PublishSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EnterpriseDataService">
+    <wsdl:port name="BasicHttpBinding_EnterpriseDataService" binding="tns:BasicHttpBinding_EnterpriseDataService">
+      <soap:address location="http://localhost/EnterpriseService/EnterpriseDataService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

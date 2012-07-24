@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace MinStat.Enteprises.BLL
+namespace MinStat.Enterprises.BLL
 {
   using System;
   using System.Collections.Generic;

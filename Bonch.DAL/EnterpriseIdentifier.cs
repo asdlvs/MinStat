@@ -1,35 +1,36 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="EnterpriseIdentifier.cs" company="Microsoft">
-// TODO: Update copyright text.
-// </copyright>
-// -----------------------------------------------------------------------
-
-namespace MinStat.Enterprises.DAL
+﻿namespace MinStat.Enterprises.DAL
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Text;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
 
-  /// <summary>
-  /// TODO: Update summary.
-  /// </summary>
-  public class EnterpriseIdentifier : IIdentifier
-  {
-    private DatabaseContext _context;
-
-    public EnterpriseIdentifier()
+    public class EnterpriseIdentifier : IIdentifier
     {
-      _context = new DatabaseContext();
-    }
+        private DatabaseContext _context;
 
-    public int EnterpriseId(string username)
-    {
-      #region Pre-conditions
-      if(!_context.Users.Any(x => x.Mail == username)) { throw new ArgumentException("Wrong username");}
-      #endregion
+        public EnterpriseIdentifier()
+        {
+            _context = new DatabaseContext();
+        }
 
-      return _context.Users.First(x => x.Mail == username).EnterpriseId;
+        public int EnterpriseId(string username)
+        {
+            #region Pre-conditions
+            if (!_context.Users.Any(x => x.Mail == username)) { throw new ArgumentException("Wrong username"); }
+            #endregion
+
+            return _context.Users.First(x => x.Mail == username).EnterpriseId;
+        }
+
+        public bool Validate(string username, string password)
+        {
+            #region Pre-conditions
+            if (String.IsNullOrWhiteSpace(username)) { throw new ArgumentException(username); }
+            if (String.IsNullOrWhiteSpace(password)) { throw new ArgumentException(password); }
+            #endregion
+
+            return _context.Users.Any(x => x.Mail == username && x.Password == password);
+        }
     }
-  }
 }

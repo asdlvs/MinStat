@@ -1,21 +1,9 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="IIdentifier.cs" company="Microsoft">
-// TODO: Update copyright text.
-// </copyright>
-// -----------------------------------------------------------------------
-
-namespace MinStat.Enterprises.DAL
+﻿namespace MinStat.Enterprises.DAL
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Text;
+    public interface IIdentifier
+    {
+        int EnterpriseId(string username);
 
-  /// <summary>
-  /// TODO: Update summary.
-  /// </summary>
-  public interface IIdentifier
-  {
-    int EnterpriseId(string username);
-  }
+        bool Validate(string username, string password);
+    }
 }

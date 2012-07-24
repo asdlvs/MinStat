@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MinStat.Enterprises.DAL.POCO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MinStat.Enterprises.DAL.POCO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Summary" nillable="true" type="tns:Summary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSummary" nillable="true" type="tns:ArrayOfSummary" />
+  <xs:complexType name="Summary">
+    <xs:sequence>
+      <xs:element name="_x003C_AuthorName_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_CreateDate_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_EnterpriseId_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Id_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_PublishedDate_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_Published_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_SummaryActivities_x003E_k__BackingField" nillable="true" type="tns:ArrayOfSummaryActivity" />
+      <xs:element name="_x003C_Title_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Summary" nillable="true" type="tns:Summary" />
+  <xs:complexType name="ArrayOfSummaryActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SummaryActivity" nillable="true" type="tns:SummaryActivity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSummaryActivity" nillable="true" type="tns:ArrayOfSummaryActivity" />
+  <xs:complexType name="SummaryActivity">
+    <xs:sequence>
+      <xs:element name="_x003C_ActivityId_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Activity_x003E_k__BackingField" nillable="true" type="tns:Activity" />
+      <xs:element name="_x003C_SummaryId_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Summary_x003E_k__BackingField" nillable="true" type="tns:Summary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SummaryActivity" nillable="true" type="tns:SummaryActivity" />
+  <xs:complexType name="Activity">
+    <xs:sequence>
+      <xs:element name="_x003C_Id_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Part_1_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Part_2_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Part_3_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Part_4_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Part_5_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_SummaryActivities_x003E_k__BackingField" nillable="true" type="tns:ArrayOfSummaryActivity" />
+      <xs:element name="_x003C_Title_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Activity" nillable="true" type="tns:Activity" />
+  <xs:complexType name="ArrayOfActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Activity" nillable="true" type="tns:Activity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfActivity" nillable="true" type="tns:ArrayOfActivity" />
+</xs:schema>

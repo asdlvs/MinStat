@@ -5,3 +5,10 @@ F:\Repository\Trash\B_2\MinStat.Enterprises.WebUI\bin\EntityFramework.xml
 F:\Repository\Trash\B_2\MinStat.Enterprises.WebUI\obj\Debug\ResolveAssemblyReference.cache
 F:\Repository\Trash\B_2\MinStat.Enterprises.WebUI\obj\Debug\MinStat.Enterprises.WebUI.dll
 F:\Repository\Trash\B_2\MinStat.Enterprises.WebUI\obj\Debug\MinStat.Enterprises.WebUI.pdb
+D:\Work\Bonch\MinStat_4\MinStat.Enterprises.WebUI\bin\MinStat.Enterprises.WebUI.dll
+D:\Work\Bonch\MinStat_4\MinStat.Enterprises.WebUI\bin\MinStat.Enterprises.WebUI.pdb
+D:\Work\Bonch\MinStat_4\MinStat.Enterprises.WebUI\bin\EntityFramework.dll
+D:\Work\Bonch\MinStat_4\MinStat.Enterprises.WebUI\bin\EntityFramework.xml
+D:\Work\Bonch\MinStat_4\MinStat.Enterprises.WebUI\obj\Debug\MinStat.Enterprises.WebUI.csprojResolveAssemblyReference.cache
+D:\Work\Bonch\MinStat_4\MinStat.Enterprises.WebUI\obj\Debug\MinStat.Enterprises.WebUI.dll
+D:\Work\Bonch\MinStat_4\MinStat.Enterprises.WebUI\obj\Debug\MinStat.Enterprises.WebUI.pdb

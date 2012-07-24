@@ -1,0 +1,9 @@
+D:\Work\Bonch\MinStat_4\MinStat.Enteprises.BLL\bin\Debug\MinStat.Enterprises.BLL.dll
+D:\Work\Bonch\MinStat_4\MinStat.Enteprises.BLL\bin\Debug\MinStat.Enterprises.BLL.pdb
+D:\Work\Bonch\MinStat_4\MinStat.Enteprises.BLL\bin\Debug\MinStat.Enterprises.DAL.dll
+D:\Work\Bonch\MinStat_4\MinStat.Enteprises.BLL\bin\Debug\EntityFramework.dll
+D:\Work\Bonch\MinStat_4\MinStat.Enteprises.BLL\bin\Debug\MinStat.Enterprises.DAL.pdb
+D:\Work\Bonch\MinStat_4\MinStat.Enteprises.BLL\bin\Debug\EntityFramework.xml
+D:\Work\Bonch\MinStat_4\MinStat.Enteprises.BLL\obj\Debug\MinStat.Enterprises.BLL.csprojResolveAssemblyReference.cache
+D:\Work\Bonch\MinStat_4\MinStat.Enteprises.BLL\obj\Debug\MinStat.Enterprises.BLL.dll
+D:\Work\Bonch\MinStat_4\MinStat.Enteprises.BLL\obj\Debug\MinStat.Enterprises.BLL.pdb

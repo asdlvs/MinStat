@@ -5,3 +5,9 @@ F:\Repository\Trash\B_2\Bonch.DAL\bin\Debug\EntityFramework.dll
 F:\Repository\Trash\B_2\Bonch.DAL\bin\Debug\EntityFramework.xml
 F:\Repository\Trash\B_2\Bonch.DAL\obj\Debug\MinStat.Enterprises.DAL.dll
 F:\Repository\Trash\B_2\Bonch.DAL\obj\Debug\MinStat.Enterprises.DAL.pdb
+D:\Work\Bonch\MinStat_4\Bonch.DAL\obj\Debug\MinStat.Enterprises.DAL.dll
+D:\Work\Bonch\MinStat_4\Bonch.DAL\obj\Debug\MinStat.Enterprises.DAL.pdb
+D:\Work\Bonch\MinStat_4\Bonch.DAL\bin\Debug\MinStat.Enterprises.DAL.dll
+D:\Work\Bonch\MinStat_4\Bonch.DAL\bin\Debug\MinStat.Enterprises.DAL.pdb
+D:\Work\Bonch\MinStat_4\Bonch.DAL\bin\Debug\EntityFramework.dll
+D:\Work\Bonch\MinStat_4\Bonch.DAL\bin\Debug\EntityFramework.xml

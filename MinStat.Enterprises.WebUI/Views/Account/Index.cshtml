@@ -1,0 +1,42 @@
+﻿@model MinStat.Enterprises.WebUI.Models.AccountModel
+@{
+    ViewBag.Title = "Авторизация";
+}
+
+  <script type="text/javascript">
+      $(function () {
+          var className = "validation-summary-errors";
+          $("." + className).removeClass(className).closest("div").addClass("alert alert-error");
+          
+      });
+  </script>
+
+@using (Html.BeginForm())
+{
+    
+    <div class="row">
+        <div class="span4 offset4">
+            <div class="well">
+                <h2>
+                    Авторизация</h2>
+                <div class="alert alert-block">
+                    <a class="close" data-dismiss="alert" href="#">×</a>
+                    <h4 class="alert-heading">
+                        Внимание!</h4>
+                    Необходимо верно указать авторизационные данные. Будте внимательны при вводе.
+                </div>
+                @Html.ValidationSummary(true)
+                    @Html.LabelFor(x => x.UserName)
+
+                <input type="text" class="input-xlarge" id="UserName" name="UserName">
+
+                    @Html.LabelFor(x => x.Password)
+
+                <input type="password" class="input-xlarge" id="Password" name="Password">
+
+                <input type="submit" class="btn btn-primary" value="Войти" />
+            </div>
+        </div>
+    </div>
+
+}

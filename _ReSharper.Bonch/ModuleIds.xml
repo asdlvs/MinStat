@@ -8,6 +8,7 @@
   <Module PersistentId="C3510B5B-840F-4651-8408-C0F85793321B" ModuleId="MinStat.BLL.IISHosting" />
   <Module PersistentId="1BC73A96-6AC1-49E1-B9A5-B62772922F79" ModuleId="MinStat.AnalizeUI" />
   <Module PersistentId="F5F98192-E32F-42A2-ADF9-099A0CCB3C46" ModuleId="Bonch.DAL" />
-  <Module PersistentId="0EDF0ED2-C1AE-43B2-9DA6-9B01E0BE3FB9" ModuleId="MinStat.Enteprises.BLL" />
-  <Module PersistentId="A9F83061-99F8-4903-A8B8-7A487DA8DF46" ModuleId="MinStat.Enterprises.BLL.IISHosting" />
+  <Module PersistentId="3EA818FA-2C5F-4004-9A61-CFA8AF02F541" ModuleId="MinStat.Enteprises.BLL" />
+  <Module PersistentId="1EA803F3-E622-42E1-8ABC-280240D53B45" ModuleId="MinStat.Enterprises.BLL.IISHosting" />
+  <Module PersistentId="0148C348-0379-41AE-9832-47D102AD134E" ModuleId="MinStat.Enterprises.WebUI" />
 </Modules>

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="MinStat.Enterprises.BLL.EnterpriseDataService" CodeBehind="MinStat.Enterprise.BLL.EnterpriseDataService.cs" %>

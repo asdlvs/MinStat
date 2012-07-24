@@ -1,23 +1,24 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="SummaryActivity.cs" company="Microsoft">
-// TODO: Update copyright text.
-// </copyright>
-// -----------------------------------------------------------------------
+﻿
+using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace MinStat.Enterprises.DAL.POCO
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Text;
+    [Serializable]
+    public class SummaryActivity
+    {
+        [Key]
+        [Column("SummaryId", Order = 0)]
+        [ForeignKey("Summary")]
+        public int SummaryId { get; set; }
+        [InverseProperty("SummaryActivities")]
+        public virtual Summary Summary { get; set; }
 
-  /// <summary>
-  /// TODO: Update summary.
-  /// </summary>
-  public class SummaryActivity
-  {
-    public int SummaryId { get; set; }
-
-    public int ActivityId { get; set; }
-  }
+        [Key]
+        [Column("ActivityId", Order = 1)]
+        [ForeignKey("Activity")]
+        public int ActivityId { get; set; }
+        [InverseProperty("SummaryActivities")]
+        public virtual Activity Activity { get; set; }
+    }
 }

@@ -47,9 +47,14 @@
   <ItemGroup>
     <Compile Include="DatabaseContext.cs" />
     <Compile Include="EnterpriseDataRepository.cs" />
+    <Compile Include="EnterpriseIdentifier.cs" />
     <Compile Include="IEnterpriseDataRepository.cs" />
+    <Compile Include="IIdentifier.cs" />
+    <Compile Include="POCO\Activity.cs" />
+    <Compile Include="POCO\EducationLevel.cs" />
     <Compile Include="POCO\Enterprise.cs" />
     <Compile Include="POCO\Person.cs" />
+    <Compile Include="POCO\PostLevel.cs" />
     <Compile Include="POCO\Summary.cs" />
     <Compile Include="POCO\SummaryActivity.cs" />
     <Compile Include="POCO\User.cs" />

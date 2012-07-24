@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="bc1dd6e0-000c-4adb-a81f-7c4abd08675a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/EnterpriseService/EnterpriseDataService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="EnterpriseDataService.disco" MetadataType="Disco" ID="91e5eda5-7b64-4d4b-b75a-4696eaf72271" SourceId="1" SourceUrl="http://localhost/EnterpriseService/EnterpriseDataService.svc?disco" />
+    <MetadataFile FileName="EnterpriseDataService.xsd" MetadataType="Schema" ID="7f0058bf-f805-4d5e-99c0-0b39cfbb7ca1" SourceId="1" SourceUrl="http://localhost/EnterpriseService/EnterpriseDataService.svc?xsd=xsd0" />
+    <MetadataFile FileName="EnterpriseDataService1.xsd" MetadataType="Schema" ID="2906f38e-ac28-47c5-a0a5-3e6679f983a9" SourceId="1" SourceUrl="http://localhost/EnterpriseService/EnterpriseDataService.svc?xsd=xsd1" />
+    <MetadataFile FileName="EnterpriseDataService2.xsd" MetadataType="Schema" ID="a864ff75-a08a-4d88-b9e3-c103d71d0c7b" SourceId="1" SourceUrl="http://localhost/EnterpriseService/EnterpriseDataService.svc?xsd=xsd2" />
+    <MetadataFile FileName="EnterpriseDataService3.xsd" MetadataType="Schema" ID="e31768f8-b555-4f7b-9e10-c94568896790" SourceId="1" SourceUrl="http://localhost/EnterpriseService/EnterpriseDataService.svc?xsd=xsd3" />
+    <MetadataFile FileName="EnterpriseDataService.wsdl" MetadataType="Wsdl" ID="a6eb7fae-5e6e-4db2-b13b-6957eba60c62" SourceId="1" SourceUrl="http://localhost/EnterpriseService/EnterpriseDataService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

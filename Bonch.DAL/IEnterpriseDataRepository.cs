@@ -6,49 +6,57 @@
 
 namespace MinStat.Enterprises.DAL
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Text;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
 
-  using MinStat.Enterprises.DAL.POCO;
+    using MinStat.Enterprises.DAL.POCO;
 
-  /// <summary>
-  /// TODO: Update summary.
-  /// </summary>
-  public interface IEnterpriseDataRepository
-  {
-    void CreateSummary(int enterpriseId, string title, List<int> activitiesIds);
+    /// <summary>
+    /// TODO: Update summary.
+    /// </summary>
+    public interface IEnterpriseDataRepository
+    {
+        IEnumerable<Summary> GetSummaries(int enterpriseId);
 
-    void CopySummary(int enterpriseId, string title, int summaryId);
+        IEnumerable<Activity> GetActivities();
 
-    void RemoveSummary(int summaryId);
+        IEnumerable<Activity> GetActivities(int summaryId); 
 
-    void AddActivities(int summaryId, List<int> activitiesIds);
+        void CreateSummary(int enterpriseId, string title, List<int> activitiesIds);
 
-    void RemoveActivity(int summaryId, int activitiId);
+        void CopySummary(int enterpriseId, string title, int summaryId);
 
-    void CreatePerson(int summaryId,
-      int activityId,
-      string title,
-      string post,
-      int postLevelId,
-      int educationLevelId,
-      decimal YearSalary,
-      bool Gender,
-      bool WasQualificationIncrease,
-      bool WasValidate,
-      int BirthYear,
-      int HiringYear,
-      int StartPostYear,
-      int DismissalYear);
+        void RemoveSummary(int summaryId);
 
-    void UpdatePerson(int personId, string title, string post, int postLevelId, int educationLevelId, decimal yearSalary, bool gender, bool wasQualificationIncrease,
-      bool wasValidate, int birthYear, int hiringYear, int startPostYear, int dismissalYear);
+        void PublishSummary(int summaryId);
 
-    void RemovePerson(int personId);
+        void AddActivities(int summaryId, List<int> activitiesIds);
 
-    List<Person> FindPerson(string searchText);
+        void RemoveActivity(int summaryId, int activitiId);
 
-  }
+        void CreatePerson(int summaryId,
+          int activityId,
+          string title,
+          string post,
+          int postLevelId,
+          int educationLevelId,
+          decimal yearSalary,
+          bool gender,
+          bool wasQualificationIncrease,
+          bool wasValidate,
+          int birthYear,
+          int hiringYear,
+          int startPostYear,
+          int dismissalYear);
+
+        void UpdatePerson(int personId, string title, string post, int postLevelId, int educationLevelId, decimal yearSalary, bool gender, bool wasQualificationIncrease,
+          bool wasValidate, int birthYear, int hiringYear, int startPostYear, int dismissalYear);
+
+        void RemovePerson(int personId);
+
+        IEnumerable<Person> FindPerson(string searchText);
+
+    }
 }

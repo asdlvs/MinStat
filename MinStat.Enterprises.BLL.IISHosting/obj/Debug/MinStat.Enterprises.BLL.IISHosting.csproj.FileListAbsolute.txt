@@ -1,0 +1,11 @@
+D:\Work\Bonch\MinStat_4\MinStat.Enterprises.BLL.IISHosting\bin\MinStat.Enterprises.BLL.IISHosting.dll
+D:\Work\Bonch\MinStat_4\MinStat.Enterprises.BLL.IISHosting\bin\MinStat.Enterprises.BLL.IISHosting.pdb
+D:\Work\Bonch\MinStat_4\MinStat.Enterprises.BLL.IISHosting\bin\MinStat.Enterprises.DAL.dll
+D:\Work\Bonch\MinStat_4\MinStat.Enterprises.BLL.IISHosting\bin\EntityFramework.dll
+D:\Work\Bonch\MinStat_4\MinStat.Enterprises.BLL.IISHosting\bin\MinStat.Enterprises.DAL.pdb
+D:\Work\Bonch\MinStat_4\MinStat.Enterprises.BLL.IISHosting\bin\EntityFramework.xml
+D:\Work\Bonch\MinStat_4\MinStat.Enterprises.BLL.IISHosting\obj\Debug\MinStat.Enterprises.BLL.IISHosting.csprojResolveAssemblyReference.cache
+D:\Work\Bonch\MinStat_4\MinStat.Enterprises.BLL.IISHosting\obj\Debug\MinStat.Enterprises.BLL.IISHosting.dll
+D:\Work\Bonch\MinStat_4\MinStat.Enterprises.BLL.IISHosting\obj\Debug\MinStat.Enterprises.BLL.IISHosting.pdb
+D:\Work\Bonch\MinStat_4\MinStat.Enterprises.BLL.IISHosting\bin\MinStat.Enterprises.BLL.dll
+D:\Work\Bonch\MinStat_4\MinStat.Enterprises.BLL.IISHosting\bin\MinStat.Enterprises.BLL.pdb
