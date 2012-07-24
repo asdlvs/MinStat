@@ -58,25 +58,8 @@
                     <td>
                         @if (!summaryItem.Published)
                         {
-                            <a class="btn btn-warning" data-toggle="modal" href="#activityModalPublish">Опубликовать</a>
-                            <div class="modal hide" name="activityModalPublish" id="activityModalPublish">
-                                <div class="modal-header">
-                                    <a type="button" class="close" data-dismiss="modal">×</a>
-                                    <h3>
-                                        Публикация отчета</h3>
-                                </div>
-                                <div class="modal-body">
-                                    Вы уверены, что хотите опубликовать отчет? После публикации, внесение любых изменений
-                                    станет невозможным.
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="#" class="btn" data-dismiss="modal">Отмена</a>
-                                    @using (Html.BeginForm(new { controller = "Summaries", action = "Publish", summaryId = @summaryItem.Id }))
-                                    {
-                                        <input type="submit" class="btn btn-primary" value="Опубликовать" />
-                                    }
-                                </div>
-                            </div>
+                            <a class="btn btn-warning activityModalPublish" data-toggle="modal" href="#activityModalPublish" data-value="@summaryItem.Id">
+                                Опубликовать</a>
                         }
                     </td>
                     <td style="">
@@ -91,6 +74,25 @@
                 </tr>
             }
         </table>
+        <div class="modal hide" name="activityModalPublish" id="activityModalPublish">
+            <div class="modal-header">
+                <a type="button" class="close" data-dismiss="modal">×</a>
+                <h3>
+                    Публикация отчета</h3>
+            </div>
+            <div class="modal-body">
+                Вы уверены, что хотите опубликовать отчет? После публикации, внесение любых изменений
+                станет невозможным.
+            </div>
+            <div class="modal-footer">
+                @using (Html.BeginForm("Publish", "Summaries"))
+                {
+                    <a href="#" class="btn" data-dismiss="modal">Отмена</a>
+                    <input type="hidden" id="summaryId" name="summaryId" />
+                    <input type="submit" class="btn btn-primary" value="Опубликовать" />
+                }
+            </div>
+        </div>
         @using (Html.BeginForm("Create", "Summaries"))
         {
             <a class="btn" data-toggle="modal" href="#activityModal0">Создать новый отчет</a>

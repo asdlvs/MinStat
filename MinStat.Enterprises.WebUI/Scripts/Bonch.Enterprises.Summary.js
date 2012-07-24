@@ -7,4 +7,9 @@
             return false;
         }
     });
+
+    $('.activityModalPublish').click(function () {
+        var summaryId = $(this).attr('data-value');
+        $('#activityModalPublish #summaryId').val(summaryId);
+    });
 });
