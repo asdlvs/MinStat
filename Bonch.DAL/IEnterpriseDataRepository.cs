@@ -38,7 +38,7 @@ namespace MinStat.Enterprises.DAL
 
         void RemoveActivity(int summaryId, int activitiId);
 
-      IEnumerable<Person> GetPeople(int summaryId, int size, int offset);
+      IEnumerable<Person> GetPeople(int summaryId, int size, int offset, string orderby);
 
       int GetPeopleArraySize(int summaryId);
 

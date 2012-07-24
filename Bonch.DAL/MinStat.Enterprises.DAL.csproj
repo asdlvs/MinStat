@@ -48,6 +48,7 @@
     <Compile Include="DatabaseContext.cs" />
     <Compile Include="EnterpriseDataRepository.cs" />
     <Compile Include="EnterpriseIdentifier.cs" />
+    <Compile Include="Extensions\OrderByHelper.cs" />
     <Compile Include="IEnterpriseDataRepository.cs" />
     <Compile Include="IIdentifier.cs" />
     <Compile Include="POCO\Activity.cs" />

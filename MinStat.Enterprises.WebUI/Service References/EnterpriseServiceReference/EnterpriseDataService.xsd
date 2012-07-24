@@ -112,6 +112,7 @@
         <xs:element minOccurs="0" name="summaryId" type="xs:int" />
         <xs:element minOccurs="0" name="size" type="xs:int" />
         <xs:element minOccurs="0" name="offset" type="xs:int" />
+        <xs:element minOccurs="0" name="orderby" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

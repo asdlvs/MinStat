@@ -1,5 +1,5 @@
 ﻿@using MinStat.Enterprises.WebUI.Models
-@model IEnumerable<PersonModel>
+@model PeopleModel
 
 @{
     ViewBag.Title = "Index";
@@ -7,11 +7,42 @@
 
 <h2>Index</h2>
 
-<table class="table">
-  @foreach(PersonModel person in Model)
-  {
+<input type="hidden" id="orderby" name="orderby" value="@Model.OrderBy">
+
+<table class="table table-striped table-bordered table-condensed">
     <tr>
-      <td></td>
+        <th>Код работника</th>
+        <th>Пол</th>
+        <th>Год рождения</th>
+        <th>Активность</th>
+        <th>Год приема на работу</th>
+        <th>Должность</th>
+        <th>Год вступления в должность</th>
+        <th>Уровень образования</th>
+        <th>Повышение квалификации в текущем году</th>
+        <th>Рабочая группа</th>
+        <th>Аттестация в текущем году</th>
+        <th>Годовой доход</th>
+        <th>Год увольнения</th>
     </tr>
-  }
+    @foreach(PersonModel person in Model.PersonModels)
+    {
+        <tr>
+            <td>@person.Title</td>
+            <td>@person.Gender</td>
+            <td>@person.BirthYear</td>
+            <td>@person.ActivityTitle</td>
+            <td>@person.HiringYear</td>
+            <td>@person.Post</td>
+            <td>@person.StartPostYear</td>
+            <td>@person.EducationLevel</td>
+            <td>@person.WasQualificationIncrease</td>
+            <td>@person.PostLevel</td>
+            <td>@person.WasValidate</td>
+            <td>@person.YearSalary</td>
+            <td>@person.DismissalYear</td>
+        </tr>
+    }
 </table>
+
+@Html.Pagination(Model.Count, Model.PageSize, Model.Page, new { summaryId = Model.SummaryId, orderby = Model.OrderBy })

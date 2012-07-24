@@ -13,7 +13,7 @@ namespace MinStat.Enterprises.WebUI.ServiceAdapters
 
         IEnumerable<ActivityModel> GetActivities();
 
-        IEnumerable<ActivityModel> GetActivities(int summaryId); 
+        IEnumerable<ActivityModel> GetActivities(int summaryId);
 
         void CreateSummary(string title, int[] activitiesIds);
 
@@ -23,12 +23,17 @@ namespace MinStat.Enterprises.WebUI.ServiceAdapters
 
         void PublishSummary(int summaryId);
 
-      void UpdateSummary(int summaryId, string title, int[] activitiesIds);
+        void UpdateSummary(int summaryId, string title, int[] activitiesIds);
 
-      int GetPeopleCount(int summaryId);
+        int GetPeopleCount(int summaryId);
 
-      IEnumerable<PersonModel> GetPeople(int summaryId, int pagesize, int offset);
+        IEnumerable<PersonModel> GetPeople(int summaryId, int pagesize, int offset, string orderby);
 
+        void CreatePerson(PersonModel model);
+
+        void UpdatePerson(PersonModel model);
+
+        void RemovePerson(int personId);
 
     }
 }

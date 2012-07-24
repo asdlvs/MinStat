@@ -69,6 +69,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PeopleController.cs" />
     <Compile Include="Controllers\SummariesController.cs" />
+    <Compile Include="Extensions\HtmlExtensions.cs" />
     <Compile Include="Filters\RemoteErrorHandler.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -77,6 +78,7 @@
     <Compile Include="Interceptors\InterceptorBehaviorExtension.cs" />
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\ActivityModel.cs" />
+    <Compile Include="Models\PeopleModel.cs" />
     <Compile Include="Models\PersonModel.cs" />
     <Compile Include="Models\SummaryModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -130,6 +132,7 @@
     <Content Include="Scripts\Bonch.Enterprises.People.js" />
     <Content Include="Scripts\Bonch.Enterprises.Summary.js" />
     <Content Include="Scripts\bootstrap-alert.js" />
+    <Content Include="Scripts\bootstrap-dropdown.js" />
     <Content Include="Scripts\bootstrap-modal.js" />
     <Content Include="Scripts\bootstrap-popover.js" />
     <Content Include="Scripts\bootstrap-tab.js" />
@@ -217,6 +220,7 @@
     <Content Include="Views\Summaries\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\People\Index.cshtml" />
+    <Content Include="Views\People\ChooseSummary.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

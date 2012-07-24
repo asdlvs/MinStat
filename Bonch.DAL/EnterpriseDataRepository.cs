@@ -11,7 +11,7 @@ namespace MinStat.Enterprises.DAL
     using System.Globalization;
     using System.Linq;
     using System.Text;
-
+    using MinStat.Enterprises.DAL.Extensions;
     using MinStat.Enterprises.DAL.POCO;
 
     /// <summary>
@@ -154,9 +154,9 @@ namespace MinStat.Enterprises.DAL
             }
         }
 
-      public IEnumerable<Person> GetPeople(int summaryId, int size, int offset)
+      public IEnumerable<Person> GetPeople(int summaryId, int size, int offset, string orderby)
       {
-        return _context.People.Where(x => x.SummaryId == summaryId).Skip(offset).Take(size);
+        return _context.People.Where(x => x.SummaryId == summaryId).OrderBy(x => x.Id).OrderBy(orderby).Skip(offset).Take(size);
       }
 
       public void CreatePerson(int summaryId, int activityId, string title, string post, int postLevelId, int educationLevelId, decimal yearSalary, bool gender, bool wasQualificationIncrease,

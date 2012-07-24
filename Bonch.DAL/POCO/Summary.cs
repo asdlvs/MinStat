@@ -25,5 +25,8 @@ namespace MinStat.Enterprises.DAL.POCO
         [InverseProperty("Summary")]
         public virtual ICollection<SummaryActivity> SummaryActivities { get; set; }
 
+        [InverseProperty("Summary")]
+        public virtual ICollection<Person> People { get; set; }
+
     }
 }

@@ -99,28 +99,28 @@ namespace MinStat.Enterprises.BLL
             return _enterpriseRepository.GetActivities(summaryId).ToList();
         }
 
-       [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
+        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
         public void PublishSummary(int summaryId)
         {
             _enterpriseRepository.PublishSummary(summaryId);
         }
 
-       [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
+        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
         public void UpdateSummary(int summaryId, string title, List<int> activitiesIds)
         {
-          _enterpriseRepository.UpdateSummary(summaryId, title, activitiesIds);
+            _enterpriseRepository.UpdateSummary(summaryId, title, activitiesIds);
         }
 
-       [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public IEnumerable<Person> GetPeoples(int summaryId, int size, int offset)
+        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
+        public IEnumerable<Person> GetPeoples(int summaryId, int size, int offset, string orderby)
         {
-          return _enterpriseRepository.GetPeople(summaryId, size, offset).ToList();
+            return _enterpriseRepository.GetPeople(summaryId, size, offset, orderby).ToList();
         }
 
-      [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-       public int GetPeoplesArraySize(int summaryId)
-       {
-         return _enterpriseRepository.GetPeopleArraySize(summaryId);
-       }
+        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
+        public int GetPeoplesArraySize(int summaryId)
+        {
+            return _enterpriseRepository.GetPeopleArraySize(summaryId);
+        }
     }
 }
