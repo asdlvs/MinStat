@@ -12,6 +12,7 @@
       <xs:element name="_x003C_CreateDate_x003E_k__BackingField" type="xs:dateTime" />
       <xs:element name="_x003C_EnterpriseId_x003E_k__BackingField" type="xs:int" />
       <xs:element name="_x003C_Id_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_People_x003E_k__BackingField" nillable="true" type="tns:ArrayOfPerson" />
       <xs:element name="_x003C_PublishedDate_x003E_k__BackingField" type="xs:dateTime" />
       <xs:element name="_x003C_Published_x003E_k__BackingField" type="xs:boolean" />
       <xs:element name="_x003C_SummaryActivities_x003E_k__BackingField" nillable="true" type="tns:ArrayOfSummaryActivity" />
@@ -19,6 +20,48 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Summary" nillable="true" type="tns:Summary" />
+  <xs:complexType name="ArrayOfPerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Person" nillable="true" type="tns:Person" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPerson" nillable="true" type="tns:ArrayOfPerson" />
+  <xs:complexType name="Person">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activity" nillable="true" type="tns:Activity" />
+      <xs:element minOccurs="0" name="ActivityId" type="xs:int" />
+      <xs:element minOccurs="0" name="BirthYear" type="xs:int" />
+      <xs:element minOccurs="0" name="DismissalYear" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="EducationLevelId" type="xs:int" />
+      <xs:element minOccurs="0" name="Gender" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HiringYear" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Post" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostLevelId" type="xs:int" />
+      <xs:element minOccurs="0" name="StartPostYear" type="xs:int" />
+      <xs:element minOccurs="0" name="Summary" nillable="true" type="tns:Summary" />
+      <xs:element minOccurs="0" name="SummaryId" type="xs:int" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WasQualificationIncrease" type="xs:boolean" />
+      <xs:element minOccurs="0" name="WasValidate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="YearSalary" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Person" nillable="true" type="tns:Person" />
+  <xs:complexType name="Activity">
+    <xs:sequence>
+      <xs:element name="_x003C_Id_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Part_1_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Part_2_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Part_3_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Part_4_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Part_5_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_People_x003E_k__BackingField" nillable="true" type="tns:ArrayOfPerson" />
+      <xs:element name="_x003C_SummaryActivities_x003E_k__BackingField" nillable="true" type="tns:ArrayOfSummaryActivity" />
+      <xs:element name="_x003C_Title_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Activity" nillable="true" type="tns:Activity" />
   <xs:complexType name="ArrayOfSummaryActivity">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="SummaryActivity" nillable="true" type="tns:SummaryActivity" />
@@ -34,45 +77,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SummaryActivity" nillable="true" type="tns:SummaryActivity" />
-  <xs:complexType name="Activity">
-    <xs:sequence>
-      <xs:element name="_x003C_Id_x003E_k__BackingField" type="xs:int" />
-      <xs:element name="_x003C_Part_1_x003E_k__BackingField" type="xs:int" />
-      <xs:element name="_x003C_Part_2_x003E_k__BackingField" type="xs:int" />
-      <xs:element name="_x003C_Part_3_x003E_k__BackingField" type="xs:int" />
-      <xs:element name="_x003C_Part_4_x003E_k__BackingField" type="xs:int" />
-      <xs:element name="_x003C_Part_5_x003E_k__BackingField" type="xs:int" />
-      <xs:element name="_x003C_SummaryActivities_x003E_k__BackingField" nillable="true" type="tns:ArrayOfSummaryActivity" />
-      <xs:element name="_x003C_Title_x003E_k__BackingField" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Activity" nillable="true" type="tns:Activity" />
-  <xs:complexType name="ArrayOfPerson">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Person" nillable="true" type="tns:Person" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfPerson" nillable="true" type="tns:ArrayOfPerson" />
-  <xs:complexType name="Person">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="ActivityId" type="xs:int" />
-      <xs:element minOccurs="0" name="BirthYear" type="xs:int" />
-      <xs:element minOccurs="0" name="DismissalYear" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="EducationLevelId" type="xs:int" />
-      <xs:element minOccurs="0" name="Gender" type="xs:boolean" />
-      <xs:element minOccurs="0" name="HiringYear" type="xs:int" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="Post" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PostLevelId" type="xs:int" />
-      <xs:element minOccurs="0" name="StartPostYear" type="xs:int" />
-      <xs:element minOccurs="0" name="SummaryId" type="xs:int" />
-      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="WasQualificationIncrease" type="xs:boolean" />
-      <xs:element minOccurs="0" name="WasValidate" type="xs:boolean" />
-      <xs:element minOccurs="0" name="YearSalary" type="xs:decimal" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Person" nillable="true" type="tns:Person" />
   <xs:complexType name="ArrayOfActivity">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Activity" nillable="true" type="tns:Activity" />

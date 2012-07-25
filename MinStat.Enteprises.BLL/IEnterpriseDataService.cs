@@ -52,7 +52,7 @@ namespace MinStat.Enterprises.BLL
           bool wasValidate, int birthYear, int hiringYear, int startPostYear, int dismissalYear);
 
         [OperationContract]
-        void UpdatePerson(int personId, string title, string post, int postLevelId, int educationLevelId, decimal yearSalary, bool gender, bool wasQualificationIncrease,
+        void UpdatePerson(int personId, int activityId, string title, string post, int postLevelId, int educationLevelId, decimal yearSalary, bool gender, bool wasQualificationIncrease,
           bool wasValidate, int birthYear, int hiringYear, int startPostYear, int dismissalYear);
 
         [OperationContract]
@@ -67,6 +67,12 @@ namespace MinStat.Enterprises.BLL
         [OperationContract]
         void PublishSummary(int summaryId);
 
-        //List<Person> FindPerson(string searchText);
+      [OperationContract]
+      Dictionary<int, string> GetEducationLevels();
+
+      [OperationContract]
+      Dictionary<int, string> GetPostLeves();
+
+      //List<Person> FindPerson(string searchText);
     }
 }

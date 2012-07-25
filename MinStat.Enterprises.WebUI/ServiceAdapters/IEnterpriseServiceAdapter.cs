@@ -35,5 +35,9 @@ namespace MinStat.Enterprises.WebUI.ServiceAdapters
 
         void RemovePerson(int personId);
 
+      Dictionary<int, string> GetEducationLevels();
+
+      Dictionary<int, string> GetPostLevels();
+
     }
 }

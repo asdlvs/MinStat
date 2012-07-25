@@ -152,6 +152,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="personId" type="xs:int" />
+        <xs:element minOccurs="0" name="activityId" type="xs:int" />
         <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="post" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="postLevelId" type="xs:int" />
@@ -220,6 +221,30 @@
   <xs:element name="PublishSummaryResponse">
     <xs:complexType>
       <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEducationLevels">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEducationLevelsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetEducationLevelsResult" nillable="true" type="q8:ArrayOfKeyValueOfintstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPostLeves">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPostLevesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetPostLevesResult" nillable="true" type="q9:ArrayOfKeyValueOfintstring" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>

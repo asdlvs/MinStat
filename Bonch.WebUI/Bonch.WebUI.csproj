@@ -231,7 +231,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>12408</DevelopmentServerPort>
+          <DevelopmentServerPort>59874</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost/Bonch.WebUI</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

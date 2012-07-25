@@ -76,9 +76,9 @@ namespace MinStat.Enterprises.BLL
         }
 
         [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
-        public void UpdatePerson(int personId, string title, string post, int postLevelId, int educationLevelId, decimal yearSalary, bool gender, bool wasQualificationIncrease, bool wasValidate, int birthYear, int hiringYear, int startPostYear, int dismissalYear)
+        public void UpdatePerson(int personId, int activityId, string title, string post, int postLevelId, int educationLevelId, decimal yearSalary, bool gender, bool wasQualificationIncrease, bool wasValidate, int birthYear, int hiringYear, int startPostYear, int dismissalYear)
         {
-            _enterpriseRepository.UpdatePerson(personId, title, post, postLevelId, educationLevelId, yearSalary, gender, wasQualificationIncrease, wasValidate, birthYear, hiringYear, startPostYear, dismissalYear);
+            _enterpriseRepository.UpdatePerson(personId,activityId, title, post, postLevelId, educationLevelId, yearSalary, gender, wasQualificationIncrease, wasValidate, birthYear, hiringYear, startPostYear, dismissalYear);
         }
 
         [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
@@ -121,6 +121,17 @@ namespace MinStat.Enterprises.BLL
         public int GetPeoplesArraySize(int summaryId)
         {
             return _enterpriseRepository.GetPeopleArraySize(summaryId);
+        }
+
+
+        public Dictionary<int, string> GetEducationLevels()
+        {
+          return _enterpriseRepository.GetEducationLevels().ToDictionary(x => x.Id, x => x.Title);
+        }
+
+        public Dictionary<int, string> GetPostLeves()
+        {
+          return _enterpriseRepository.GetPostLevels().ToDictionary(x => x.Id, x => x.Title);
         }
     }
 }

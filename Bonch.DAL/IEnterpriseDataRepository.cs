@@ -57,12 +57,16 @@ namespace MinStat.Enterprises.DAL
           int startPostYear,
           int dismissalYear);
 
-        void UpdatePerson(int personId, string title, string post, int postLevelId, int educationLevelId, decimal yearSalary, bool gender, bool wasQualificationIncrease,
+        void UpdatePerson(int personId, int activityId, string title, string post, int postLevelId, int educationLevelId, decimal yearSalary, bool gender, bool wasQualificationIncrease,
           bool wasValidate, int birthYear, int hiringYear, int startPostYear, int dismissalYear);
 
         void RemovePerson(int personId);
 
         IEnumerable<Person> FindPerson(string searchText);
+
+      IEnumerable<EducationLevel> GetEducationLevels();
+
+      IEnumerable<PostLevel> GetPostLevels();
 
     }
 }

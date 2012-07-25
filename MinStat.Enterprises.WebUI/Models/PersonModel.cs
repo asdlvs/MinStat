@@ -1,46 +1,71 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
+﻿
 namespace MinStat.Enterprises.WebUI.Models
 {
-    public class PersonModel
-    {
-        public int Id { get; set; }
+  using System.ComponentModel.DataAnnotations;
+  using System.Web.Mvc;
 
-        public int SummaryId { get; set; }
+  public class PersonModel
+  {
+    [HiddenInput(DisplayValue = false)]
+    public int Id { get; set; }
 
-        public int ActivityId { get; set; }
+    [HiddenInput(DisplayValue = false)]
+    public int SummaryId { get; set; }
 
-        public string ActivityTitle { get; set; }
+    [Display(Name = "Активность")]
+    public int ActivityId { get; set; }
 
-        public string Title { get; set; }
+    public string ActivityTitle { get; set; }
 
-        public string Post { get; set; }
+    [Required(ErrorMessage = "Необходимо указать")]
+    [Display(Name = "Код работника")]
+    public string Title { get; set; }
 
-        public int PostLevelId { get; set; }
+    [Required(ErrorMessage = "Необходимо указать")]
+    [Display(Name = "Должность")]
+    public string Post { get; set; }
 
-        public string PostLevel { get; set; }
+    [Required(ErrorMessage = "Необходимо указать")]
+    [Display(Name = "Рабочая группа")]
+    public int PostLevelId { get; set; }
 
-        public int EducationLevelId { get; set; }
+    public string PostLevel { get; set; }
 
-        public string EducationLevel { get; set; }
+    [Required(ErrorMessage = "Необходимо указать")]
+    [Display(Name = "Уровень образования")]
+    public int EducationLevelId { get; set; }
 
-        public decimal YearSalary { get; set; }
+    public string EducationLevel { get; set; }
 
-        public bool Gender { get; set; }
+    [Required(ErrorMessage = "Необходимо указать")]
+    [Display(Name = "Годовой доход")]
+    public decimal YearSalary { get; set; }
 
-        public bool WasQualificationIncrease { get; set; }
+    [Display(Name = "Пол")]
+    public bool Gender { get; set; }
 
-        public bool WasValidate { get; set; }
+    [Display(Name = "Повышение квалификации в текущем году")]
+    public bool WasQualificationIncrease { get; set; }
 
-        public int BirthYear { get; set; }
+    [Display(Name = "Аттестация в текущем году")]
+    public bool WasValidate { get; set; }
 
-        public int HiringYear { get; set; }
+    [Required(ErrorMessage = "Необходимо указать")]
+    [RegularExpression("\\d{4}", ErrorMessage = "Укажите ")]
+    [Display(Name = "Год рождения")]
+    public int BirthYear { get; set; }
 
-        public int StartPostYear { get; set; }
+    [Required(ErrorMessage = "Необходимо указать")]
+    [RegularExpression("\\d{4}", ErrorMessage = "Укажите ")]
+    [Display(Name = "Год приема на работу")]
+    public int HiringYear { get; set; }
 
-        public int? DismissalYear { get; set; }
-    }
+    [Required(ErrorMessage = "Необходимо указать")]
+    [RegularExpression("\\d{4}", ErrorMessage = "Укажите ")]
+    [Display(Name = "Год вступления в должность")]
+    public int StartPostYear { get; set; }
+
+    [Display(Name = "Год увольнения")]
+    public int? DismissalYear { get; set; }
+  }
 }

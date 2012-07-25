@@ -37,7 +37,7 @@ namespace MinStat.Enterprises.WebUI.Controllers
                 if(isValid)
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Summaries");
                 }
             }
             ModelState.AddModelError("", "Неправильный логин или пароль");

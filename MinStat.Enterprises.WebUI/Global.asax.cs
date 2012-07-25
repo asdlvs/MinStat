@@ -18,7 +18,7 @@ namespace MinStat.Enterprises.WebUI
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-          //filters.Add(new RemoteErrorHandlerAttribute());
+          filters.Add(new RemoteErrorHandlerAttribute());
         }
 
         public static void RegisterRoutes(RouteCollection routes)
@@ -28,7 +28,7 @@ namespace MinStat.Enterprises.WebUI
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}", // URL with parameters
-                new { controller = "Home", action = "Index" } // Parameter defaults
+                new { controller = "Summaries", action = "Index" } // Parameter defaults
             );
 
         }
