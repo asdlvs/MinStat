@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+  <xs:import schemaLocation="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Activity" nillable="true" type="tns:Activity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfActivity" nillable="true" type="tns:ArrayOfActivity" />
+  <xs:complexType name="Activity">
+    <xs:sequence>
+      <xs:element name="_x003C_Id_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Part_1_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Part_2_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Part_3_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Part_4_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Part_5_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Title_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Activity" nillable="true" type="tns:Activity" />
+  <xs:complexType name="ArrayOfFilterCritery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FilterCritery" nillable="true" type="tns:FilterCritery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFilterCritery" nillable="true" type="tns:ArrayOfFilterCritery" />
+  <xs:complexType name="FilterCritery">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Collections.Generic" name="Key" type="q1:KeyValuePairOfintstring" />
+      <xs:element name="KeyValue" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_Inner_x003E_k__BackingField" nillable="true" type="q2:ArrayOfKeyValueOfintstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FilterCritery" nillable="true" type="tns:FilterCritery" />
+</xs:schema>

@@ -83,3 +83,9 @@ textarea
     font-weight: bold;
     border: 1px solid black;
 }
+
+.scroll {
+    height: 300px;
+    overflow: auto;
+    position: relative;
+}

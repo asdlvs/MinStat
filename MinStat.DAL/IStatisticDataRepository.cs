@@ -46,5 +46,9 @@ namespace MinStat.DAL
         IDictionary<int, string> GetFederalSubjects(int districtId);
         IDictionary<int, string> GetEnterprises(int sibjectId);
 
+        IEnumerable<Activity> GetActivities();
+
+        IEnumerable<FilterCritery> GetConsolidateFilterCriteries();
+
     }
 }

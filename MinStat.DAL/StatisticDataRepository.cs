@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using MinStat.DAL.Converters;
+using MinStat.DAL.POCO;
 using MinStat.DAL.POCO.ReportItems;
 using MinStat.DAL.POCO.ResultItems;
 
@@ -68,8 +69,8 @@ namespace MinStat.DAL
         public IEnumerable<StatisticData> GetQtyStaticReportData(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> verticalItems, List<KeyValuePair<int, int>> horizontalItems)
         {
             DataTable verticalItemsTable = new DataTable("OneIntColumnType");
-            verticalItemsTable.Columns.Add("Id", typeof (int));
-            foreach(int item in verticalItems)
+            verticalItemsTable.Columns.Add("Id", typeof(int));
+            foreach (int item in verticalItems)
             {
                 DataRow row = verticalItemsTable.NewRow();
                 row[0] = item;
@@ -79,7 +80,7 @@ namespace MinStat.DAL
             DataTable horizontalItemsTable = new DataTable("TwoIntColumnType");
             horizontalItemsTable.Columns.Add("FirstId", typeof(int));
             horizontalItemsTable.Columns.Add("SecondId", typeof(int));
-            foreach(var item in horizontalItems)
+            foreach (var item in horizontalItems)
             {
                 DataRow row = horizontalItemsTable.NewRow();
                 row[0] = item.Key;
@@ -117,7 +118,7 @@ namespace MinStat.DAL
         public IEnumerable<StatisticData> GetQtyDynamicReportData(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> verticalItems, List<KeyValuePair<int, int>> horizontalItems)
         {
             List<SelectionQtyDynamicReportItem> reportItems = new List<SelectionQtyDynamicReportItem>();
-            for(DateTime date = startDate; date <= endDate;)
+            for (DateTime date = startDate; date <= endDate; )
             {
                 DataTable verticalItemsTable = new DataTable("OneIntColumnType");
                 verticalItemsTable.Columns.Add("Id", typeof(int));
@@ -158,12 +159,14 @@ namespace MinStat.DAL
                 List<SelectionQtyDynamicReportItem> currentReportItems =
                     _context.Database.SqlQuery<SelectionQtyDynamicReportItem>(
                         SelectionQtyStaticDataStoredProcedureCaller, parameters).ToList();
-                currentReportItems.ForEach(x => { x.StartPeriodDate = date;
-                                                    x.EndPeriodDate = AddQrtl(date);
+                currentReportItems.ForEach(x =>
+                {
+                    x.StartPeriodDate = date;
+                    x.EndPeriodDate = AddQrtl(date);
                 });
 
                 reportItems.AddRange(currentReportItems);
-            
+
                 date = AddQrtl(date);
             }
             IStatisticDataConverter<SelectionQtyDynamicReportItem> converter = _converterFactory.GetConverter<SelectionQtyDynamicReportItem>();
@@ -180,7 +183,7 @@ namespace MinStat.DAL
 
             if (date < firstQ)
                 returnDate = date.AddDays((firstQ - date).TotalDays);
-            else if(date < secondQ)
+            else if (date < secondQ)
                 returnDate = date.AddDays((secondQ - date).TotalDays);
             else if (date < thirdQ)
                 returnDate = date.AddDays((thirdQ - date).TotalDays);
@@ -189,7 +192,6 @@ namespace MinStat.DAL
             return returnDate;
 
         }
-
 
         public IDictionary<int, string> GetFederalDistricts()
         {
@@ -204,6 +206,68 @@ namespace MinStat.DAL
         public IDictionary<int, string> GetEnterprises(int subjectId)
         {
             return _context.Enterprises.Where(x => x.FederalSubjectId == subjectId).ToDictionary(x => x.Id, x => x.Title);
+        }
+
+        public IEnumerable<POCO.Activity> GetActivities()
+        {
+            return _context.Activities;
+        }
+
+        public IEnumerable<FilterCritery> GetConsolidateFilterCriteries()
+        {
+            List<FilterCritery> result = new List<FilterCritery>();
+            FilterCritery commonCritery = new FilterCritery
+                                        {
+                                            Key = new KeyValuePair<int, string>(1, "Число работников, всего, чел."),
+                                            Inner = new Dictionary<int, string>
+                                                        {
+                                                            {2, "из них мужчин"},
+                                                            {3, "из них женщин"},
+                                                            {4, "Принято на работу, чел."},
+                                                            {5, "Уволено с работы, чел."},
+                                                            {6, "Повысили квалификацию, чел."},
+                                                            {7, "Прошли аттестацию, чел."}
+                                                        }
+                                        };
+            result.Add(commonCritery);
+
+            FilterCritery educationCritery = new FilterCritery
+                                                 {
+                                                     Key = new KeyValuePair<int, string>(8, "Образование:"),
+                                                     Inner = new Dictionary<int, string>
+                                                                 {
+                                                                     {9, "ВПО, чел."},
+                                                                     {10, "СПО, чел."},
+                                                                     {11, "СО, чел."}
+                                                                 }
+                                                 };
+            result.Add(educationCritery);
+
+            FilterCritery categoryCritery = new FilterCritery
+            {
+                Key = new KeyValuePair<int, string>(12, "Категория:"),
+                Inner = new Dictionary<int, string>
+                                                     {
+                                                         {13, "АУ, чел."},
+                                                         {14, "ИТРиС, чел."},
+                                                         {15, "ОР, чел."},
+                                                         {16, "ВП, чел."},
+                                                     }
+            };
+
+            FilterCritery middleAge = new FilterCritery
+                                          {
+                                              Key = new KeyValuePair<int, string>(17, "Средний возраст")
+                                          };
+            result.Add(middleAge);
+
+            FilterCritery middleSalary = new FilterCritery
+                                             {
+                                                 Key = new KeyValuePair<int,string>(18,"Среднегодовой доход")
+                                             };
+            result.Add(middleSalary);
+
+            return result;
         }
     }
 }

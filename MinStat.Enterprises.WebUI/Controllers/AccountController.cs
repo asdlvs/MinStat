@@ -18,7 +18,8 @@ namespace MinStat.Enterprises.WebUI.Controllers
             _authenticationService = authenticationService;
         }
 
-        public AccountController() :this(new AuthenticationServiceAdapter())
+        public AccountController()
+            : this(new AuthenticationServiceAdapter())
         {
         }
 
@@ -34,7 +35,7 @@ namespace MinStat.Enterprises.WebUI.Controllers
             {
                 bool isValid = _authenticationService.Login(model.UserName, model.Password, String.Empty,
                                                             model.RememberMe);
-                if(isValid)
+                if (isValid)
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
                     return RedirectToAction("Index", "Summaries");
@@ -44,11 +45,12 @@ namespace MinStat.Enterprises.WebUI.Controllers
             return View(model);
         }
 
-      public ActionResult LogOff()
-      {
-        _authenticationService.Logout();
-        return RedirectToAction("Index");
-      }
+        public ActionResult LogOff()
+        {
+            FormsAuthentication.SignOut();
+            _authenticationService.Logout();
+            return RedirectToAction("Index");
+        }
 
     }
 }

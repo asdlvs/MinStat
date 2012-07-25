@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ServiceModel;
+using MinStat.DAL.POCO;
 using MinStat.DAL.POCO.ResultItems;
 
 namespace MinStat.BLL
@@ -34,6 +35,12 @@ namespace MinStat.BLL
 
         [OperationContract]
         IDictionary<int, string> GetEnterprises(int subjectId);
+
+        [OperationContract]
+        IEnumerable<Activity> GetActivities();
+
+        [OperationContract]
+        IEnumerable<FilterCritery> GetConsolidateFilterCritery();
 
 
 

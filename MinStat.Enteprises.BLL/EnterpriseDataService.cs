@@ -133,5 +133,11 @@ namespace MinStat.Enterprises.BLL
         {
           return _enterpriseRepository.GetPostLevels().ToDictionary(x => x.Id, x => x.Title);
         }
+
+
+        public bool IsPublished(int summaryId)
+        {
+            return _enterpriseRepository.IsPublished(summaryId);
+        }
     }
 }

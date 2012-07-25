@@ -20,10 +20,8 @@
                     @foreach (string value in bodyItem.Values)
                     {
                         @Html.Raw(value == "0" ? "<td class=\"muted\">" : "<td>")
-                   ;
                         @value
                         @Html.Raw("</td>")
-                   ;
                     }
                 </tr>
             }

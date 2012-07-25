@@ -1,109 +1,103 @@
 ﻿@using MinStat.Enterprises.WebUI.Models
 @model PeopleModel
 @{
-  ViewBag.Title = "Index";
+    ViewBag.Title = "Index";
 }
 <script src="@Url.Content("~/Scripts/Bonch.Enterprises.People.js")" type="text/javascript" ></script>
-<h2>
-  Index</h2>
-<input type="hidden" id="orderby" name="orderby" value="@Model.OrderBy">
+<input type="hidden" id="orderby" name="orderby" value="@Model.OrderBy" />
 <table class="table table-striped table-bordered table-condensed">
-  <tr>
-    <th>
-      @Html.ActionLink("Код работника", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("Title{0}", Model.Direction) }, null)
-    </th>
-    <th>
-      @Html.ActionLink("Пол", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("Gender{0}", Model.Direction) }, null)
-    </th>
-    <th>
-      @Html.ActionLink("Год рождения", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("BirthYear{0}", Model.Direction) }, null)
-    </th>
-    <th>
-      @Html.ActionLink("Активность", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("ActivityId{0}", Model.Direction) }, null)
-    </th>
-    <th>
-      @Html.ActionLink("Год приема на работу", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("HiringYear{0}", Model.Direction) }, null)
-    </th>
-    <th>
-      @Html.ActionLink("Должность", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("Post{0}", Model.Direction) }, null)
-
-    </th>
-    <th>
-      @Html.ActionLink("Год вступления в должность", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("StartPostYear{0}", Model.Direction) }, null)
-      
-    </th>
-    <th>
-      @Html.ActionLink("Уровень образования", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("EducationLevelId{0}", Model.Direction) }, null)
-      
-    </th>
-    <th>
-      @Html.ActionLink("Повышение квалификации в текущем году", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("WasQualificationIncrease{0}", Model.Direction) }, null)
-      
-    </th>
-    <th>
-      @Html.ActionLink("Рабочая группа", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("PostLevelId{0}", Model.Direction) }, null)
-      
-    </th>
-    <th>
-      @Html.ActionLink("Аттестация в текущем году", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("WasValidate{0}", Model.Direction) }, null)
-      
-    </th>
-    <th>
-      @Html.ActionLink("Годовой доход", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("YearSalary{0}", Model.Direction) }, null)
-      
-    </th>
-    <th>
-      @Html.ActionLink("Год увольнения", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("DismissalYear{0}", Model.Direction) }, null)
-      
-    </th>
-  </tr>
-  @foreach (PersonModel person in Model.PersonModels)
-  {
-    <tr class="editperson">
-      <td class="init">
-        <input type="hidden" value="@person.Id" id="id"/>
-        <input type="hidden" value="@person.Title" id="title"/>
-        <input type="hidden" value="@person.Gender" id="gender" />
-        <input type="hidden" value="@person.BirthYear" id="birthyear" />
-        <input type="hidden" value="@person.ActivityId" id="activityId" />
-        <input type="hidden" value="@person.HiringYear" id="hiringyear" />
-        <input type="hidden" value="@person.Post" id="post" />
-        <input type="hidden" value="@person.StartPostYear" id="startpostyear" />
-        <input type="hidden" value="@person.EducationLevelId" id="educationlevelid" />
-        <input type="hidden" value="@person.WasQualificationIncrease" id="wasqualificationincrease" />
-        <input type="hidden" value="@person.PostLevelId" id="postlevelid" />
-        <input type="hidden" value="@person.WasValidate" id="wasvalidate" />
-        <input type="hidden" value="@person.YearSalary" id="yearsalary" />
-        <input type="hidden" value="@person.DismissalYear" id="dismissalyear" />
-        @person.Title
-      </td>
-      <td>@person.Gender
-      </td>
-      <td>@person.BirthYear
-      </td>
-      <td>
-        @person.ActivityTitle
-      </td>
-      <td>@person.HiringYear
-      </td>
-      <td>@person.Post
-      </td>
-      <td>@person.StartPostYear
-      </td>
-      <td>@person.EducationLevel
-      </td>
-      <td>@person.WasQualificationIncrease
-      </td>
-      <td>@person.PostLevel
-      </td>
-      <td>@person.WasValidate
-      </td>
-      <td>@person.YearSalary
-      </td>
-      <td>@person.DismissalYear
-      </td>
+    <tr>
+        <th>
+            @Html.ActionLink("Код работника", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("Title{0}", Model.Direction) }, null)
+        </th>
+        <th>
+            @Html.ActionLink("Пол", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("Gender{0}", Model.Direction) }, null)
+        </th>
+        <th>
+            @Html.ActionLink("Год рождения", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("BirthYear{0}", Model.Direction) }, null)
+        </th>
+        <th>
+            @Html.ActionLink("Активность", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("ActivityId{0}", Model.Direction) }, null)
+        </th>
+        <th>
+            @Html.ActionLink("Год приема на работу", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("HiringYear{0}", Model.Direction) }, null)
+        </th>
+        <th>
+            @Html.ActionLink("Должность", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("Post{0}", Model.Direction) }, null)
+        </th>
+        <th>
+            @Html.ActionLink("Год вступления в должность", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("StartPostYear{0}", Model.Direction) }, null)
+        </th>
+        <th>
+            @Html.ActionLink("Уровень образования", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("EducationLevelId{0}", Model.Direction) }, null)
+        </th>
+        <th>
+            @Html.ActionLink("Повышение квалификации в текущем году", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("WasQualificationIncrease{0}", Model.Direction) }, null)
+        </th>
+        <th>
+            @Html.ActionLink("Рабочая группа", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("PostLevelId{0}", Model.Direction) }, null)
+        </th>
+        <th>
+            @Html.ActionLink("Аттестация в текущем году", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("WasValidate{0}", Model.Direction) }, null)
+        </th>
+        <th>
+            @Html.ActionLink("Годовой доход", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("YearSalary{0}", Model.Direction) }, null)
+        </th>
+        <th>
+            @Html.ActionLink("Год увольнения", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("DismissalYear{0}", Model.Direction) }, null)
+        </th>
     </tr>
-  }
+    @foreach (PersonModel person in Model.PersonModels)
+    {
+        <tr @if(!Model.Published){@Html.Raw("class=\"editperson\"")}>
+            <td class="init">
+                <input type="hidden" value="@person.Id" id="id"/>
+                <input type="hidden" value="@person.Title" id="title"/>
+                <input type="hidden" value="@person.Gender" id="gender" />
+                <input type="hidden" value="@person.BirthYear" id="birthyear" />
+                <input type="hidden" value="@person.ActivityId" id="activityId" />
+                <input type="hidden" value="@person.HiringYear" id="hiringyear" />
+                <input type="hidden" value="@person.Post" id="post" />
+                <input type="hidden" value="@person.StartPostYear" id="startpostyear" />
+                <input type="hidden" value="@person.EducationLevelId" id="educationlevelid" />
+                <input type="hidden" value="@person.WasQualificationIncrease" id="wasqualificationincrease" />
+                <input type="hidden" value="@person.PostLevelId" id="postlevelid" />
+                <input type="hidden" value="@person.WasValidate" id="wasvalidate" />
+                <input type="hidden" value="@person.YearSalary" id="yearsalary" />
+                <input type="hidden" value="@person.DismissalYear" id="dismissalyear" />
+                @person.Title
+            </td>
+            <td>
+                    @Html.Raw(person.Gender ? "М" : "Ж")
+            </td>
+            <td>@person.BirthYear
+            </td>
+            <td>
+                @person.ActivityTitle
+            </td>
+            <td>@person.HiringYear
+            </td>
+            <td>@person.Post
+            </td>
+            <td>@person.StartPostYear
+            </td>
+            <td>@person.EducationLevel
+            </td>
+            <td>@Html.Raw(person.WasQualificationIncrease ? "Да" : "Нет")
+            </td>
+            <td>@person.PostLevel
+            </td>
+            <td>@Html.Raw(person.WasValidate ? "Да" : "Нет")
+            </td>
+            <td>@person.YearSalary
+            </td>
+            <td>@person.DismissalYear
+            </td>
+        </tr>
+    }
 </table>
 @Html.Pagination(Model.Count, Model.PageSize, Model.Page, new { summaryId = Model.SummaryId, orderby = Model.OrderBy })
-@Html.Action("Edit", new { summaryId = Model.SummaryId })
+@if (!Model.Published)
+{
+    @Html.Action("Edit", new { summaryId = Model.SummaryId })
+}

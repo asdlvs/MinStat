@@ -67,12 +67,15 @@ namespace MinStat.Enterprises.BLL
         [OperationContract]
         void PublishSummary(int summaryId);
 
-      [OperationContract]
-      Dictionary<int, string> GetEducationLevels();
+        [OperationContract]
+        Dictionary<int, string> GetEducationLevels();
 
-      [OperationContract]
-      Dictionary<int, string> GetPostLeves();
+        [OperationContract]
+        Dictionary<int, string> GetPostLeves();
 
-      //List<Person> FindPerson(string searchText);
+        [OperationContract]
+        bool IsPublished(int summaryId);
+
+        //List<Person> FindPerson(string searchText);
     }
 }

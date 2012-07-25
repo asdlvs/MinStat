@@ -52,9 +52,11 @@
     <Compile Include="Converters\IStatisticDataConverter.cs" />
     <Compile Include="IStatisticDataConvertersFactory.cs" />
     <Compile Include="IStatisticDataRepository.cs" />
+    <Compile Include="POCO\Activity.cs" />
     <Compile Include="POCO\Enterprise.cs" />
     <Compile Include="POCO\FederalDistrict.cs" />
     <Compile Include="POCO\FederalSubject.cs" />
+    <Compile Include="POCO\FilterCritery.cs" />
     <Compile Include="POCO\ReportItems\ConsolidatedReportItem.cs" />
     <Compile Include="POCO\ReportItems\FullReportItem.cs" />
     <Compile Include="POCO\ReportItems\PersonaliesReportItem.cs" />

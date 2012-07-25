@@ -161,6 +161,214 @@ namespace MinStat.AnalizeUI.StatisticDataReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Activity", Namespace="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO")]
+    [System.SerializableAttribute()]
+    public partial class Activity : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int Idk__BackingFieldField;
+        
+        private int Part_1k__BackingFieldField;
+        
+        private int Part_2k__BackingFieldField;
+        
+        private int Part_3k__BackingFieldField;
+        
+        private int Part_4k__BackingFieldField;
+        
+        private int Part_5k__BackingFieldField;
+        
+        private string Titlek__BackingFieldField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Id>k__BackingField", IsRequired=true)]
+        public int Idk__BackingField {
+            get {
+                return this.Idk__BackingFieldField;
+            }
+            set {
+                if ((this.Idk__BackingFieldField.Equals(value) != true)) {
+                    this.Idk__BackingFieldField = value;
+                    this.RaisePropertyChanged("Idk__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Part_1>k__BackingField", IsRequired=true)]
+        public int Part_1k__BackingField {
+            get {
+                return this.Part_1k__BackingFieldField;
+            }
+            set {
+                if ((this.Part_1k__BackingFieldField.Equals(value) != true)) {
+                    this.Part_1k__BackingFieldField = value;
+                    this.RaisePropertyChanged("Part_1k__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Part_2>k__BackingField", IsRequired=true)]
+        public int Part_2k__BackingField {
+            get {
+                return this.Part_2k__BackingFieldField;
+            }
+            set {
+                if ((this.Part_2k__BackingFieldField.Equals(value) != true)) {
+                    this.Part_2k__BackingFieldField = value;
+                    this.RaisePropertyChanged("Part_2k__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Part_3>k__BackingField", IsRequired=true)]
+        public int Part_3k__BackingField {
+            get {
+                return this.Part_3k__BackingFieldField;
+            }
+            set {
+                if ((this.Part_3k__BackingFieldField.Equals(value) != true)) {
+                    this.Part_3k__BackingFieldField = value;
+                    this.RaisePropertyChanged("Part_3k__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Part_4>k__BackingField", IsRequired=true)]
+        public int Part_4k__BackingField {
+            get {
+                return this.Part_4k__BackingFieldField;
+            }
+            set {
+                if ((this.Part_4k__BackingFieldField.Equals(value) != true)) {
+                    this.Part_4k__BackingFieldField = value;
+                    this.RaisePropertyChanged("Part_4k__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Part_5>k__BackingField", IsRequired=true)]
+        public int Part_5k__BackingField {
+            get {
+                return this.Part_5k__BackingFieldField;
+            }
+            set {
+                if ((this.Part_5k__BackingFieldField.Equals(value) != true)) {
+                    this.Part_5k__BackingFieldField = value;
+                    this.RaisePropertyChanged("Part_5k__BackingField");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Title>k__BackingField", IsRequired=true)]
+        public string Titlek__BackingField {
+            get {
+                return this.Titlek__BackingFieldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Titlek__BackingFieldField, value) != true)) {
+                    this.Titlek__BackingFieldField = value;
+                    this.RaisePropertyChanged("Titlek__BackingField");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FilterCritery", Namespace="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO")]
+    [System.SerializableAttribute()]
+    public partial class FilterCritery : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private System.Collections.Generic.KeyValuePair<int, string> KeyField;
+        
+        private string KeyValueField;
+        
+        private System.Collections.Generic.Dictionary<int, string> Innerk__BackingFieldField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.Collections.Generic.KeyValuePair<int, string> Key {
+            get {
+                return this.KeyField;
+            }
+            set {
+                if ((this.KeyField.Equals(value) != true)) {
+                    this.KeyField = value;
+                    this.RaisePropertyChanged("Key");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public string KeyValue {
+            get {
+                return this.KeyValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.KeyValueField, value) != true)) {
+                    this.KeyValueField = value;
+                    this.RaisePropertyChanged("KeyValue");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Name="<Inner>k__BackingField", IsRequired=true)]
+        public System.Collections.Generic.Dictionary<int, string> Innerk__BackingField {
+            get {
+                return this.Innerk__BackingFieldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Innerk__BackingFieldField, value) != true)) {
+                    this.Innerk__BackingFieldField = value;
+                    this.RaisePropertyChanged("Innerk__BackingField");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://www.fem-sut.spb.ru/", ConfigurationName="StatisticDataReference.StatisticDataService")]
     public interface StatisticDataService {
@@ -185,6 +393,13 @@ namespace MinStat.AnalizeUI.StatisticDataReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetEnterprises", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetEnterprisesResponse")]
         System.Collections.Generic.Dictionary<int, string> GetEnterprises(int subjectId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetActivities", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetActivitiesResponse")]
+        MinStat.AnalizeUI.StatisticDataReference.Activity[] GetActivities();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetConsolidateFilterCritery", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetConsolidateFilterCriteryRespons" +
+            "e")]
+        MinStat.AnalizeUI.StatisticDataReference.FilterCritery[] GetConsolidateFilterCritery();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -240,6 +455,14 @@ namespace MinStat.AnalizeUI.StatisticDataReference {
         
         public System.Collections.Generic.Dictionary<int, string> GetEnterprises(int subjectId) {
             return base.Channel.GetEnterprises(subjectId);
+        }
+        
+        public MinStat.AnalizeUI.StatisticDataReference.Activity[] GetActivities() {
+            return base.Channel.GetActivities();
+        }
+        
+        public MinStat.AnalizeUI.StatisticDataReference.FilterCritery[] GetConsolidateFilterCritery() {
+            return base.Channel.GetConsolidateFilterCritery();
         }
     }
 }

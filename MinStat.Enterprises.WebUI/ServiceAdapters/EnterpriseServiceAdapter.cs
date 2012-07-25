@@ -210,5 +210,14 @@ namespace MinStat.Enterprises.WebUI.ServiceAdapters
         return proxy.GetPostLeves();
       }
     }
+
+
+    public bool IsPublished(int summaryId)
+    {
+        using (EnterpriseDataServiceClient proxy = new EnterpriseDataServiceClient())
+        {
+            return proxy.IsPublished(summaryId);
+        }
+    }
   }
 }

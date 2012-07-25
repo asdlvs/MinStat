@@ -1,71 +1,115 @@
 ﻿@model MinStat.Enterprises.WebUI.Models.PersonModel
 @using (Html.BeginForm())
 {
-  <a class="btn" data-toggle="modal" href="#editPerson">Добавить</a>
-  <div class="modal hide" id="editPerson">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal">
-        ×</button>
-      <h3>
-        Редактирование</h3>
-    </div>
-    <div class="modal-body" id="persontoedit">
-      @Html.EditorFor(x => x.Id)
-      @Html.EditorFor(x => x.SummaryId)
+    <a class="btn" data-toggle="modal" id="addpersonbutton">Добавить</a>
+    <div class="modal hide" id="editPerson">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+                ×</button>
+            <h3>
+                Редактирование</h3>
+        </div>
+        <div class="modal-body" id="persontoedit">
+            @Html.EditorFor(x => x.Id)
+            @Html.EditorFor(x => x.SummaryId)
+            
+            <div style="display: table">
+                <div style="display: table-row">
+                    <div style="display: table-cell; padding-right: 5px; font-weight: bold;">@Html.ValidationMessageFor(x => x.Title)</div>
+                    <div style="display: table-cell">@Html.LabelFor(x => x.Title)</div>
+                </div>
+            </div>
+            @Html.EditorFor(x => x.Title)
+            
+            <div style="display: table">
+                <div style="display: table-row">
+                    <div style="display: table-cell; padding-right: 5px; font-weight: bold;">@Html.ValidationMessageFor(x => x.Post)</div>
+                    <div style="display: table-cell">@Html.LabelFor(x => x.Post)</div>
+                </div>
+            </div>
+            @Html.EditorFor(x => x.Post)
+            
+            <div style="display: table">
+                <div style="display: table-row">
+                    <div style="display: table-cell; padding-right: 5px; font-weight: bold;">@Html.ValidationMessageFor(x => x.ActivityId)</div>
+                    <div style="display: table-cell">@Html.LabelFor(x => x.ActivityId)</div>
+                </div>
+            </div>
+            @Html.DropDownListFor(x => x.ActivityId, new SelectList(ViewBag.Activities, "Id", "Title"))
+            
+            <div style="display: table">
+                <div style="display: table-row">
+                    <div style="display: table-cell; padding-right: 5px; font-weight: bold;">@Html.ValidationMessageFor(x => x.PostLevelId)</div>
+                    <div style="display: table-cell">@Html.LabelFor(x => x.PostLevelId)</div>
+                </div>
+            </div>
+            @Html.DropDownListFor(x => x.PostLevelId, new SelectList(ViewBag.PostLevels, "Key", "Value"))
+            
+            <div style="display: table">
+                <div style="display: table-row">
+                    <div style="display: table-cell; padding-right: 5px; font-weight: bold;">@Html.ValidationMessageFor(x => x.EducationLevelId)</div>
+                    <div style="display: table-cell">@Html.LabelFor(x => x.EducationLevelId)</div>
+                </div>
+            </div>
+            @Html.DropDownListFor(x => x.EducationLevelId, new SelectList(ViewBag.EducationLevels, "Key", "Value"))
+            
+            <div style="display: table">
+                <div style="display: table-row">
+                    <div style="display: table-cell; padding-right: 5px; font-weight: bold;">@Html.ValidationMessageFor(x => x.YearSalary)</div>
+                    <div style="display: table-cell">@Html.LabelFor(x => x.YearSalary)</div>
+                </div>
+            </div>
+            @Html.EditorFor(x => x.YearSalary)
+            
+            <div style="display: table">
+                <div style="display: table-row">
+                    <div style="display: table-cell; padding-right: 5px; font-weight: bold;">@Html.ValidationMessageFor(x => x.BirthYear)</div>
+                    <div style="display: table-cell">@Html.LabelFor(x => x.BirthYear)</div>
+                </div>
+            </div>
+            @Html.EditorFor(x => x.BirthYear)
+            
+            <div style="display: table">
+                <div style="display: table-row">
+                    <div style="display: table-cell; padding-right: 5px; font-weight: bold;">@Html.ValidationMessageFor(x => x.HiringYear)</div>
+                    <div style="display: table-cell">@Html.LabelFor(x => x.HiringYear)</div>
+                </div>
+            </div>
+            @Html.EditorFor(x => x.HiringYear)
+            
+            <div style="display: table">
+                <div style="display: table-row">
+                    <div style="display: table-cell; padding-right: 5px; font-weight: bold;">@Html.ValidationMessageFor(x => x.StartPostYear)</div>
+                    <div style="display: table-cell">@Html.LabelFor(x => x.StartPostYear)</div>
+                </div>
+            </div>
+            @Html.EditorFor(x => x.StartPostYear)
+            
+            <div style="display: table">
+                <div style="display: table-row">
+                    <div style="display: table-cell; padding-right: 5px; font-weight: bold;">@Html.ValidationMessageFor(x => x.DismissalYear)</div>
+                    <div style="display: table-cell">@Html.LabelFor(x => x.DismissalYear)</div>
+                </div>
+            </div>
+            @Html.EditorFor(x => x.DismissalYear)
 
-      @Html.ValidationMessageFor(x => x.Title)
-      @Html.LabelFor(x => x.Title)
-      @Html.EditorFor(x => x.Title)
-      
-      @Html.ValidationMessageFor(x => x.Post)
-      @Html.LabelFor(x => x.Post)
-      @Html.EditorFor(x => x.Post)
-      
-      @Html.ValidationMessageFor(x => x.ActivityId)
-      @Html.LabelFor(x => x.ActivityId)
-      @Html.DropDownListFor(x => x.ActivityId, new SelectList(ViewBag.Activities, "Id", "Title"))
-      
-      @Html.ValidationMessageFor(x => x.PostLevelId)
-      @Html.LabelFor(x => x.PostLevelId)
-      @Html.DropDownListFor(x => x.PostLevelId, new SelectList(ViewBag.PostLevels, "Key", "Value"))
-      
-      @Html.ValidationMessageFor(x => x.EducationLevelId)
-      @Html.LabelFor(x => x.EducationLevelId)
-      @Html.DropDownListFor(x => x.EducationLevelId, new SelectList(ViewBag.EducationLevels, "Key", "Value"))
-      
-      @Html.ValidationMessageFor(x => x.YearSalary)
-      @Html.LabelFor(x => x.YearSalary)
-      @Html.EditorFor(x => x.YearSalary)
-      
-      @Html.ValidationMessageFor(x => x.BirthYear)
-      @Html.LabelFor(x => x.BirthYear)
-      @Html.EditorFor(x => x.BirthYear)
-      
-      @Html.ValidationMessageFor(x => x.HiringYear)
-      @Html.LabelFor(x => x.HiringYear)
-      @Html.EditorFor(x => x.HiringYear)
-      
-      @Html.ValidationMessageFor(x => x.StartPostYear)
-      @Html.LabelFor(x => x.StartPostYear)
-      @Html.EditorFor(x => x.StartPostYear)
-      
-      @Html.ValidationMessageFor(x => x.DismissalYear)
-      @Html.LabelFor(x => x.DismissalYear)
-      @Html.EditorFor(x => x.DismissalYear)
-      
-      
-      @Html.LabelFor(x => x.Gender)
-      @Html.EditorFor(x => x.Gender)
+            @Html.LabelFor(x => x.Gender)
+            @Html.EditorFor(x => x.Gender)
 
-      @Html.LabelFor(x => x.WasQualificationIncrease)
-      @Html.EditorFor(x => x.WasQualificationIncrease)
+            @Html.LabelFor(x => x.WasQualificationIncrease)
+            @Html.EditorFor(x => x.WasQualificationIncrease)
 
-      @Html.LabelFor(x => x.WasValidate)
-      @Html.EditorFor(x => x.WasValidate)
+            @Html.LabelFor(x => x.WasValidate)
+            @Html.EditorFor(x => x.WasValidate)
+        </div>
+        <div class="modal-footer">
+            <div style="display:table;">
+                <div style="display:table-row">
+                    <div  style="display:table-cell; width: 400px;"><input type="submit" id="deletebutton"  name="button" class="btn btn-danger" name="button"  value="Удалить" /></div>
+                    <div  style="display:table-cell"><a href="#" class="btn" data-dismiss="modal">Отмена</a></div>
+                    <div  style="display:table-cell"><input type="submit" name="button" class="btn btn-primary" value="Сохранить" /></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="modal-footer">
-      <a href="#" class="btn" data-dismiss="modal">Отмена</a>
-      <input type="submit" class="btn btn-primary" value="Сохранить" />
-    </div>
-  </div>
 }

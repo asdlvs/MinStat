@@ -22,5 +22,7 @@ namespace MinStat.Enterprises.WebUI.Models
         public int Count { get; set; }
 
         public int PageSize { get; set; }
+
+        public bool Published { get; set; }
     }
 }

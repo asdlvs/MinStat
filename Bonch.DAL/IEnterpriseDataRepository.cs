@@ -22,11 +22,11 @@ namespace MinStat.Enterprises.DAL
 
         IEnumerable<Activity> GetActivities();
 
-        IEnumerable<Activity> GetActivities(int summaryId); 
+        IEnumerable<Activity> GetActivities(int summaryId);
 
         void CreateSummary(int enterpriseId, string title, List<int> activitiesIds);
 
-      void UpdateSummary(int summaryId, string title, List<int> activities);
+        void UpdateSummary(int summaryId, string title, List<int> activities);
 
         void CopySummary(int enterpriseId, string title, int summaryId);
 
@@ -38,24 +38,12 @@ namespace MinStat.Enterprises.DAL
 
         void RemoveActivity(int summaryId, int activitiId);
 
-      IEnumerable<Person> GetPeople(int summaryId, int size, int offset, string orderby);
+        IEnumerable<Person> GetPeople(int summaryId, int size, int offset, string orderby);
 
-      int GetPeopleArraySize(int summaryId);
+        int GetPeopleArraySize(int summaryId);
 
-        void CreatePerson(int summaryId,
-          int activityId,
-          string title,
-          string post,
-          int postLevelId,
-          int educationLevelId,
-          decimal yearSalary,
-          bool gender,
-          bool wasQualificationIncrease,
-          bool wasValidate,
-          int birthYear,
-          int hiringYear,
-          int startPostYear,
-          int dismissalYear);
+        void CreatePerson(int summaryId,int activityId,string title,string post,int postLevelId,int educationLevelId,decimal yearSalary,bool gender,bool wasQualificationIncrease,
+          bool wasValidate,int birthYear,int hiringYear,int startPostYear,int dismissalYear);
 
         void UpdatePerson(int personId, int activityId, string title, string post, int postLevelId, int educationLevelId, decimal yearSalary, bool gender, bool wasQualificationIncrease,
           bool wasValidate, int birthYear, int hiringYear, int startPostYear, int dismissalYear);
@@ -64,9 +52,11 @@ namespace MinStat.Enterprises.DAL
 
         IEnumerable<Person> FindPerson(string searchText);
 
-      IEnumerable<EducationLevel> GetEducationLevels();
+        IEnumerable<EducationLevel> GetEducationLevels();
 
-      IEnumerable<PostLevel> GetPostLevels();
+        IEnumerable<PostLevel> GetPostLevels();
+
+        bool IsPublished(int summaryId);
 
     }
 }

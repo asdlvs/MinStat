@@ -39,5 +39,6 @@ namespace MinStat.Enterprises.DAL
         public DbSet<EducationLevel> EducationLevels { get; set; }
 
         public DbSet<PostLevel> PostLevels { get; set; }
+
     }
 }

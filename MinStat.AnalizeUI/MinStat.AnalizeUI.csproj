@@ -65,14 +65,18 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Binders\ConsolidateReportCreatorBinder.cs" />
     <Compile Include="Binders\CustomReportBinder.cs" />
-    <Compile Include="Controllers\ConsolidateReportController.cs" />
+    <Compile Include="Controllers\ConsolidateController.cs" />
     <Compile Include="Controllers\FullReportController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ActivityModel.cs" />
+    <Compile Include="Models\ConsolidateReportCreatorModel.cs" />
+    <Compile Include="Models\FilterCriteryModel.cs" />
     <Compile Include="Models\FullReportModel.cs" />
     <Compile Include="Models\StatisticDataItemModel.cs" />
     <Compile Include="Models\StatisticDataModel.cs" />
@@ -127,6 +131,7 @@
     <Content Include="Scripts\bootstrap-alert.js" />
     <Content Include="Scripts\bootstrap-modal.js" />
     <Content Include="Scripts\bootstrap-popover.js" />
+    <Content Include="Scripts\bootstrap-scrollspy.js" />
     <Content Include="Scripts\bootstrap-tab.js" />
     <Content Include="Scripts\bootstrap-tooltip.js" />
     <Content Include="Scripts\excanvas.min.js" />
@@ -144,6 +149,12 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
+    <None Include="Service References\StatisticDataReference\MinStat.AnalizeUI.StatisticDataReference.Activity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StatisticDataReference\MinStat.AnalizeUI.StatisticDataReference.FilterCritery.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\StatisticDataReference\MinStat.AnalizeUI.StatisticDataReference.StatisticData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -248,7 +259,7 @@
     </None>
     <Content Include="Views\FullReport\Index.cshtml" />
     <Content Include="Views\Shared\StaticStatisticData.cshtml" />
-    <Content Include="Views\ConsolidateReport\Index.cshtml" />
+    <Content Include="Views\Consolidate\Index.cshtml" />
     <None Include="Service References\StatisticDataReference\StatisticDataService4.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -256,6 +267,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\DynamicDiagram.cshtml" />
     <Content Include="Views\Shared\DynamicStatisticData.cshtml" />
+    <None Include="Service References\StatisticDataReference\StatisticDataService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\Consolidate\Report.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

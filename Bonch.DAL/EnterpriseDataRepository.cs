@@ -304,5 +304,14 @@ namespace MinStat.Enterprises.DAL
     {
       return _context.PostLevels;
     }
+
+
+    public bool IsPublished(int summaryId)
+    {
+        #region Pre-conditions
+        if(!_context.Summaries.Any(x => x.Id == summaryId)) { throw new ArgumentException("Wrong summary Id");}
+        #endregion
+        return _context.Summaries.First(x => x.Id == summaryId).Published;
+    }
   }
 }

@@ -57,5 +57,17 @@ namespace MinStat.BLL
         {
             return _statisticDataRepository.GetEnterprises(subjectId);
         }
+
+
+        public IEnumerable<DAL.POCO.Activity> GetActivities()
+        {
+            return _statisticDataRepository.GetActivities();
+        }
+
+
+        public IEnumerable<DAL.POCO.FilterCritery> GetConsolidateFilterCritery()
+        {
+            return _statisticDataRepository.GetConsolidateFilterCriteries();
+        }
     }
 }

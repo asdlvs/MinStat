@@ -67,6 +67,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetActivities">
+      <soap:operation soapAction="http://www.fem-sut.spb.ru/StatisticDataService/GetActivities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConsolidateFilterCritery">
+      <soap:operation soapAction="http://www.fem-sut.spb.ru/StatisticDataService/GetConsolidateFilterCritery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="StatisticDataService">
     <wsdl:port name="BasicHttpBinding_StatisticDataService" binding="tns:BasicHttpBinding_StatisticDataService">

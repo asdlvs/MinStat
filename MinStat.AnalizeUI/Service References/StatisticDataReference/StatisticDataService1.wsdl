@@ -7,6 +7,7 @@
       <xsd:import schemaLocation="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO.ResultItems" />
       <xsd:import schemaLocation="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
       <xsd:import schemaLocation="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+      <xsd:import schemaLocation="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="StatisticDataService_GetFullReport_InputMessage">
@@ -51,6 +52,18 @@
   <wsdl:message name="StatisticDataService_GetEnterprises_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetEnterprisesResponse" />
   </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetActivities_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivities" />
+  </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetActivities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActivitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetConsolidateFilterCritery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsolidateFilterCritery" />
+  </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetConsolidateFilterCritery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConsolidateFilterCriteryResponse" />
+  </wsdl:message>
   <wsdl:portType name="StatisticDataService">
     <wsdl:operation name="GetFullReport">
       <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetFullReport" message="tns:StatisticDataService_GetFullReport_InputMessage" />
@@ -79,6 +92,14 @@
     <wsdl:operation name="GetEnterprises">
       <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetEnterprises" message="tns:StatisticDataService_GetEnterprises_InputMessage" />
       <wsdl:output wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetEnterprisesResponse" message="tns:StatisticDataService_GetEnterprises_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActivities">
+      <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetActivities" message="tns:StatisticDataService_GetActivities_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetActivitiesResponse" message="tns:StatisticDataService_GetActivities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConsolidateFilterCritery">
+      <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetConsolidateFilterCritery" message="tns:StatisticDataService_GetConsolidateFilterCritery_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetConsolidateFilterCriteryResponse" message="tns:StatisticDataService_GetConsolidateFilterCritery_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

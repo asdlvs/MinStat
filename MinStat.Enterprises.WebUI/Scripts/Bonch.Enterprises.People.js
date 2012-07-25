@@ -1,22 +1,50 @@
 ﻿$(document).ready(function () {
-  $('.editperson').click(function () {
-    var td = $(this).children(".init");
 
-    $('#persontoedit #Id').val(td.children("#id").val());
-    $('#persontoedit #Title').val(td.children("#title").val());
-    $('#persontoedit #Gender').val(td.children("#gender").val());
-    $('#persontoedit #BirthYear').val(td.children("#birthyear").val());
-    $('#persontoedit #ActivityId').val(td.children("#activityId").val());
-    $('#persontoedit #HiringYear').val(td.children("#hiringyear").val());
-    $('#persontoedit #Post').val(td.children("#post").val());
-    $('#persontoedit #StartPostYear').val(td.children("#startpostyear").val());
-    $('#persontoedit #EducationLevelId').val(td.children("#educationlevelid").val());
-    $('#persontoedit #WasQualificationIncrease').val(td.children("#wasqualificationincrease").val());
-    $('#persontoedit #PostLevelId').val(td.children("#postlevelid").val());
-    $('#persontoedit #WasValidate').val(td.children("#wasvalidate").val());
-    $('#persontoedit #YearSalary').val(td.children("#yearsalary").val());
-    $('#persontoedit #DismissalYear').val(td.children("#dismissalyear").val());
 
-    $('#editPerson').modal('show');
-  });
+    $('#addpersonbutton').click(function () {
+        $('#deletebutton').css('display', 'none');
+        $('#persontoedit #Id').val(0);
+        $('#persontoedit #Title').val('');
+        $('#persontoedit #Gender').val(false);
+        $('#persontoedit #BirthYear').val('');
+        $('#persontoedit #ActivityId').val('');
+        $('#persontoedit #HiringYear').val('');
+        $('#persontoedit #Post').val('');
+        $('#persontoedit #StartPostYear').val('');
+        $('#persontoedit #EducationLevelId').val('');
+        $('#persontoedit #WasQualificationIncrease').val(false);
+        $('#persontoedit #PostLevelId').val('');
+        $('#persontoedit #WasValidate').val(false);
+        $('#persontoedit #YearSalary').val('');
+        $('#persontoedit #DismissalYear').val('');
+        $('#editPerson').modal('show');
+    });
+
+    $('.editperson').click(function () {
+        $('#deletebutton').css('display', 'block');
+        var td = $(this).children(".init");
+
+        $('#persontoedit #Id').val(td.children("#id").val());
+        $('#persontoedit #Title').val(td.children("#title").val());
+        if (td.children("#gender").val() == "True") {
+            $('#persontoedit #Gender').attr("checked", "checked");
+        }
+        $('#persontoedit #BirthYear').val(td.children("#birthyear").val());
+        $('#persontoedit #ActivityId').val(td.children("#activityId").val());
+        $('#persontoedit #HiringYear').val(td.children("#hiringyear").val());
+        $('#persontoedit #Post').val(td.children("#post").val());
+        $('#persontoedit #StartPostYear').val(td.children("#startpostyear").val());
+        $('#persontoedit #EducationLevelId').val(td.children("#educationlevelid").val());
+        if (td.children("#wasqualificationincrease").val() == "True") {
+            $('#persontoedit #WasQualificationIncrease').attr("checked", "checked");
+        }
+        $('#persontoedit #PostLevelId').val(td.children("#postlevelid").val());
+        if (td.children("#wasvalidate").val() == "True") {
+            $('#persontoedit #WasValidate').attr("checked", "checked");
+        }
+        $('#persontoedit #YearSalary').val(td.children("#yearsalary").val());
+        $('#persontoedit #DismissalYear').val(td.children("#dismissalyear").val());
+
+        $('#editPerson').modal('show');
+    });
 });

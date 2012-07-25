@@ -247,4 +247,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="IsPublished">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="summaryId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsPublishedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsPublishedResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

@@ -1,0 +1,126 @@
+﻿@using MinStat.AnalizeUI.Models
+@model ConsolidateReportCreatorModel
+@{
+    ViewBag.Title = "Index";
+}
+@using (Html.BeginForm())
+{
+    <div class="alert alert-info">
+        <a class="close" data-dismiss="alert" href="#">×</a>
+        <h4 class="alert-heading">
+            Памятка!</h4>
+        Для того, чтобы отобразить таблицу укажите критерии отбора.
+    </div>
+    @Html.DropDownList("federalDistrictId", new SelectList(ViewBag.FederalDistricts, "Key", "Value"),
+        new { rel = "popover", data_content = "Если хотите отфильтровать данные по федеральному округу, то укажите один из округов ниже.", data_original_title = "Федеральный округ" })
+    <select id="federalSubjectId" name="federalSubjectId" rel="popover" data-content="Если хотите отфильтровать данные по субъекту федерации, то укажите один из субъектов ниже. Для отображения списка субъектов федерации необходимо указать федеральный округ."
+        data-original-title="Субъект федерации">
+    </select>
+    <input type="hidden" id="selectedFederalSubject" value="@ViewBag.SelectedFederalSubjectId"/>
+    <select id="enterpriseId" name="enterpriseId" rel="popover" data-content="Если хотите отфильтровать данные по предприятию, то укажите одно из предприятий ниже. Для отображения списка предприятий необходимо указать субъект федерации."
+        data-original-title="Предприятие">
+    </select>
+    <input type="hidden" id="selectedEnterprise" value="@ViewBag.SelectedEnterpriseId"/>
+    <input type="text" id="startDate" name="startDate" value="2012-01-01" />
+    <input type="text" id="endDate" name="endDate" value="2012-07-21" />
+
+
+    <div id="navbarExample" class="navbar navbar-static">
+        <div class="navbar-inner">
+            <div class="container" style="width: auto;">
+                <div class="brand">
+                    Выберите активности</div>
+            </div>
+        </div>
+    </div>
+    <div class="well scroll">
+        <table class="table">
+            @foreach (ActivityModel activity in Model.Activities)
+            {
+                <tr style="@Html.Raw(activity.Part_5 == 0 ? "font-weight:bold;" : "")">
+                    <td>
+                        @if (activity.Part_5 != 0)
+                        {
+                            @Html.CheckBox(String.Format("activitycheckbox_{0}", activity.Id))
+                        }
+                    </td>
+                    <td>@String.Format("{0}.{1}{2}.{3}{4}", activity.Part_1, activity.Part_2, activity.Part_3, activity.Part_4, activity.Part_5)
+                    </td>
+                    <td>@activity.Title
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div id="navbarExample" class="navbar navbar-static">
+        <div class="navbar-inner">
+            <div class="container" style="width: auto;">
+                <div class="brand">
+                    Выберите критерии анализа</div>
+            </div>
+        </div>
+    </div>
+    <div class="well scroll">
+        <table class="table">
+            @foreach (FilterCriteryModel critery in Model.Criteries)
+            {
+                <tr style="font-weight: bold;">
+                    <td style="width: 20px;">
+                        @if (critery.Inner == null)
+                        {
+                             @Html.CheckBox(String.Format("filtercritery_{0}", critery.Key.Key))
+                        }
+                    </td>
+                    <td>
+                        @critery.Key.Value
+                    </td>
+                </tr>
+                   if (critery.Inner != null)
+                   {
+                       foreach (var inner in critery.Inner)
+                       {
+                <tr>
+                    <td>
+                       @Html.CheckBox(String.Format("filtercritery_{0}", inner.Key))
+                    </td>
+                    <td>
+                        @inner.Value
+                    </td>
+                </tr>
+                       }
+                   }
+            }
+        </table>
+    </div>
+    <input type="submit" value="Сформировать отчет" class="btn btn-success" />
+}
+@*@foreach (StatisticDataModel m in Model)
+{
+    if (m != null)
+    {
+    <table class="table-striped table-bordered table-condensed">
+        <tr>
+            @foreach (var headItem in m.Titles)
+            {
+                <th>@headItem.Value
+                </th>
+            }
+        </tr>
+        @foreach (StatisticDataItemModel bodyItem in m.Values)
+        {
+            <tr class="@String.Format("strong{0}", bodyItem.BoldLevel)">
+                <td>@bodyItem.Title
+                </td>
+                @foreach (string value in bodyItem.Values)
+                {
+                    @Html.Raw(value == "0" ? "<td class=\"muted\">" : "<td>")
+               ;
+                    @value
+                    @Html.Raw("</td>")
+               ;
+                }
+            </tr>
+        }
+    </table>
+    }
+}*@ 
