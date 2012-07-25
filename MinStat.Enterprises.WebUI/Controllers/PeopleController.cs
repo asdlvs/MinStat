@@ -28,10 +28,13 @@ namespace MinStat.Enterprises.WebUI.Controllers
     public ActionResult Index(int summaryId = 0, int page = 1, string orderby = "Title")
     {
       if (summaryId == 0) return RedirectToAction("Index", "Summaries");
+      if (page < 1) page = 1;
 
       PeopleModel model = new PeopleModel();
+      model.Page = page;
       model.SummaryId = summaryId;
       model.OrderBy = orderby;
+      model.Direction = orderby.EndsWith("Desc", StringComparison.OrdinalIgnoreCase) ? "" : " Desc";
       model.PageSize = Int32.Parse(ConfigurationManager.AppSettings["peoplepagesize"]);
       model.Count = _enterpriseAdapter.GetPeopleCount(summaryId);
       model.PersonModels = _enterpriseAdapter.GetPeople(summaryId, model.PageSize, (page - 1) * model.PageSize, orderby);

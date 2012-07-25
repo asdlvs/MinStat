@@ -10,50 +10,58 @@
 <table class="table table-striped table-bordered table-condensed">
   <tr>
     <th>
-      Код работника
+      @Html.ActionLink("Код работника", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("Title{0}", Model.Direction) }, null)
     </th>
     <th>
-      Пол
+      @Html.ActionLink("Пол", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("Gender{0}", Model.Direction) }, null)
     </th>
     <th>
-      Год рождения
+      @Html.ActionLink("Год рождения", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("BirthYear{0}", Model.Direction) }, null)
     </th>
     <th>
-      Активность
+      @Html.ActionLink("Активность", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("ActivityId{0}", Model.Direction) }, null)
     </th>
     <th>
-      Год приема на работу
+      @Html.ActionLink("Год приема на работу", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("HiringYear{0}", Model.Direction) }, null)
     </th>
     <th>
-      Должность
+      @Html.ActionLink("Должность", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("Post{0}", Model.Direction) }, null)
+
     </th>
     <th>
-      Год вступления в должность
+      @Html.ActionLink("Год вступления в должность", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("StartPostYear{0}", Model.Direction) }, null)
+      
     </th>
     <th>
-      Уровень образования
+      @Html.ActionLink("Уровень образования", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("EducationLevelId{0}", Model.Direction) }, null)
+      
     </th>
     <th>
-      Повышение квалификации в текущем году
+      @Html.ActionLink("Повышение квалификации в текущем году", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("WasQualificationIncrease{0}", Model.Direction) }, null)
+      
     </th>
     <th>
-      Рабочая группа
+      @Html.ActionLink("Рабочая группа", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("PostLevelId{0}", Model.Direction) }, null)
+      
     </th>
     <th>
-      Аттестация в текущем году
+      @Html.ActionLink("Аттестация в текущем году", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("WasValidate{0}", Model.Direction) }, null)
+      
     </th>
     <th>
-      Годовой доход
+      @Html.ActionLink("Годовой доход", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("YearSalary{0}", Model.Direction) }, null)
+      
     </th>
     <th>
-      Год увольнения
+      @Html.ActionLink("Год увольнения", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("DismissalYear{0}", Model.Direction) }, null)
+      
     </th>
   </tr>
   @foreach (PersonModel person in Model.PersonModels)
   {
     <tr class="editperson">
       <td class="init">
-         <input type="hidden" value="@person.Id" id="id"/>
+        <input type="hidden" value="@person.Id" id="id"/>
         <input type="hidden" value="@person.Title" id="title"/>
         <input type="hidden" value="@person.Gender" id="gender" />
         <input type="hidden" value="@person.BirthYear" id="birthyear" />

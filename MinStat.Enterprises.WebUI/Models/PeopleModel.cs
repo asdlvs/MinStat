@@ -11,6 +11,8 @@ namespace MinStat.Enterprises.WebUI.Models
 
         public string OrderBy { get; set; }
 
+        public string Direction { get; set; }
+
         public string SummaryTitle { get; set; }
 
         public int SummaryId { get; set; }
