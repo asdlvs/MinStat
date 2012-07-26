@@ -13,8 +13,8 @@ namespace MinStat.AnalizeUI.Binders
         public object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
         {
             ConsolidateReportCreatorModel model = new ConsolidateReportCreatorModel();
-            const string verticalMark = "activitycheckbox_";
-            const string horizontalMark = "filtercritery_";
+            const string verticalMark = "filtercritery_";
+            const string horizontalMark = "activitycheckbox_";
             NameValueCollection form = controllerContext.HttpContext.Request.Form;
             var activitiesCollection = new List<int>();
             var filterCriteryCollection = new List<int>();

@@ -28,16 +28,17 @@
         <xs:element minOccurs="0" name="enterpriseId" type="xs:int" />
         <xs:element minOccurs="0" name="federalSubjectId" type="xs:int" />
         <xs:element minOccurs="0" name="federalDistrictId" type="xs:int" />
-        <xs:element minOccurs="0" name="subsectorId" type="xs:int" />
         <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
         <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="activities" nillable="true" type="q2:ArrayOfint" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="criteries" nillable="true" type="q3:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetConsolidateReportResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO.ResultItems" minOccurs="0" name="GetConsolidateReportResult" nillable="true" type="q2:ArrayOfStatisticData" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO.ResultItems" minOccurs="0" name="GetConsolidateReportResult" nillable="true" type="q4:ArrayOfStatisticData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -49,15 +50,15 @@
         <xs:element minOccurs="0" name="federalDistrictId" type="xs:int" />
         <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
         <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
-        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="verticalChecks" nillable="true" type="q3:ArrayOfint" />
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="horizontalChecks" nillable="true" type="q4:ArrayOfKeyValuePairOfintint" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="verticalChecks" nillable="true" type="q5:ArrayOfint" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="horizontalChecks" nillable="true" type="q6:ArrayOfKeyValuePairOfintint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetQtyStaticReportResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO.ResultItems" minOccurs="0" name="GetQtyStaticReportResult" nillable="true" type="q5:ArrayOfStatisticData" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO.ResultItems" minOccurs="0" name="GetQtyStaticReportResult" nillable="true" type="q7:ArrayOfStatisticData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -69,15 +70,15 @@
         <xs:element minOccurs="0" name="federalDistrictId" type="xs:int" />
         <xs:element minOccurs="0" name="startDate" type="xs:dateTime" />
         <xs:element minOccurs="0" name="endDate" type="xs:dateTime" />
-        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="verticalChecks" nillable="true" type="q6:ArrayOfint" />
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="horizontalChecks" nillable="true" type="q7:ArrayOfKeyValuePairOfintint" />
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="verticalChecks" nillable="true" type="q8:ArrayOfint" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="horizontalChecks" nillable="true" type="q9:ArrayOfKeyValuePairOfintint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetQtyDynamicReportResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO.ResultItems" minOccurs="0" name="GetQtyDynamicReportResult" nillable="true" type="q8:ArrayOfStatisticData" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO.ResultItems" minOccurs="0" name="GetQtyDynamicReportResult" nillable="true" type="q10:ArrayOfStatisticData" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -89,7 +90,7 @@
   <xs:element name="GetFederalDistrictsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetFederalDistrictsResult" nillable="true" type="q9:ArrayOfKeyValueOfintstring" />
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetFederalDistrictsResult" nillable="true" type="q11:ArrayOfKeyValueOfintstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -103,7 +104,7 @@
   <xs:element name="GetFederalSubjectsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetFederalSubjectsResult" nillable="true" type="q10:ArrayOfKeyValueOfintstring" />
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetFederalSubjectsResult" nillable="true" type="q12:ArrayOfKeyValueOfintstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -117,7 +118,7 @@
   <xs:element name="GetEnterprisesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetEnterprisesResult" nillable="true" type="q11:ArrayOfKeyValueOfintstring" />
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetEnterprisesResult" nillable="true" type="q13:ArrayOfKeyValueOfintstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -129,7 +130,7 @@
   <xs:element name="GetActivitiesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO" minOccurs="0" name="GetActivitiesResult" nillable="true" type="q12:ArrayOfActivity" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO" minOccurs="0" name="GetActivitiesResult" nillable="true" type="q14:ArrayOfActivity" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -141,7 +142,7 @@
   <xs:element name="GetConsolidateFilterCriteryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO" minOccurs="0" name="GetConsolidateFilterCriteryResult" nillable="true" type="q13:ArrayOfFilterCritery" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO" minOccurs="0" name="GetConsolidateFilterCriteryResult" nillable="true" type="q15:ArrayOfFilterCritery" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

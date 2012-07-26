@@ -12,12 +12,14 @@ using MinStat.DAL.POCO.ResultItems;
 
 namespace MinStat.DAL
 {
+
+    //TODO: Говно с критериями
     public class StatisticDataRepository : IStatisticDataRepository
     {
         readonly IStatisticDataConvertersFactory _converterFactory;
         private readonly DatabaseContext _context;
 
-        private const string ConsolidateDataStoredProcedureCaller = "Exec dbo.GetConsolidateDate @EnterpriseId, @FederalSubjectId, @FederalDistrictId, @SubSectorId, @StartDate, @EndDate";
+        private const string ConsolidateDataStoredProcedureCaller = "Exec dbo.GetConsolidateDate @EnterpriseId, @FederalSubjectId, @FederalDistrictId, @StartDate, @EndDate, @Activities, @Genders";
         private const string FullDataStoredProcedureCaller = "Exec dbo.GetFullData @EnterpriseId, @FederalSubjectId, @FederalDistrictId, @StartDate, @EndDate";
         private const string SelectionQtyStaticDataStoredProcedureCaller = "Exec dbo.GetFilterQtyStaticData @EnterpriseId, @FederalSubjectId, @FederalDistrictId, @StartDate, @EndDate, @activities, @educationPostLevels";
 
@@ -31,16 +33,29 @@ namespace MinStat.DAL
             this(new StatisticDataConvertersFactory(), new DatabaseContext())
         { }
 
-        public IEnumerable<StatisticData> GetConsolidatedReportData(int enterpriseId, int federalSubjectId, int federalDistrictId, int subsectorId, DateTime startDate, DateTime endDate)
+        public IEnumerable<StatisticData> GetConsolidatedReportData(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> activities, List<int> criteries)
         {
+            DataTable dtActivities = CreateOneRowDataTable(activities, "OneIntColumnType");
+            SqlParameter activitiesParameter = CreateSqlParameter(dtActivities, "@Activities", "dbo.OneIntColumnType");
+
+
+            List<int> genders = new List<int>();
+            if (criteries.Contains(2))
+                genders.Add(1);
+            if (criteries.Contains(3))
+                genders.Add(0);
+            DataTable dtGender = CreateOneRowDataTable(genders, "OneBitColumnType");
+            SqlParameter genderParameter = CreateSqlParameter(dtGender, "@Genders", "dbo.OneBitColumnType");
+
             SqlParameter[] parameters = new[]
                                             {
                                                 new SqlParameter("@EnterpriseId", enterpriseId),
                                                 new SqlParameter("@FederalSubjectId", federalSubjectId),
                                                 new SqlParameter("@FederalDistrictId", federalDistrictId),
-                                                 new SqlParameter("@SubsectorId", subsectorId),
                                                 new SqlParameter("@StartDate", startDate),
-                                                new SqlParameter("@EndDate", endDate)
+                                                new SqlParameter("@EndDate", endDate),
+                                                activitiesParameter, 
+                                                genderParameter
                                             };
             IEnumerable<ConsolidatedReportItem> consolidatedReportItems =
                 _context.Database.SqlQuery<ConsolidatedReportItem>(ConsolidateDataStoredProcedureCaller, parameters);
@@ -68,16 +83,10 @@ namespace MinStat.DAL
 
         public IEnumerable<StatisticData> GetQtyStaticReportData(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> verticalItems, List<KeyValuePair<int, int>> horizontalItems)
         {
-            DataTable verticalItemsTable = new DataTable("OneIntColumnType");
-            verticalItemsTable.Columns.Add("Id", typeof(int));
-            foreach (int item in verticalItems)
-            {
-                DataRow row = verticalItemsTable.NewRow();
-                row[0] = item;
-                verticalItemsTable.Rows.Add(row);
-            }
-
+            DataTable verticalItemsTable = CreateOneRowDataTable(verticalItems, "TwoIntColumnType");
+            SqlParameter activitiesParameter = CreateSqlParameter(verticalItemsTable, "@activities", "dbo.OneIntColumnType");
             DataTable horizontalItemsTable = new DataTable("TwoIntColumnType");
+            
             horizontalItemsTable.Columns.Add("FirstId", typeof(int));
             horizontalItemsTable.Columns.Add("SecondId", typeof(int));
             foreach (var item in horizontalItems)
@@ -88,9 +97,7 @@ namespace MinStat.DAL
                 horizontalItemsTable.Rows.Add(row);
             }
 
-            SqlParameter activitiesParameter = new SqlParameter("@activities", SqlDbType.Structured);
-            activitiesParameter.Value = verticalItemsTable;
-            activitiesParameter.TypeName = "dbo.OneIntColumnType";
+
             SqlParameter educationPostLevelsParameter = new SqlParameter("@educationPostLevels", SqlDbType.Structured);
             educationPostLevelsParameter.Value = horizontalItemsTable;
             educationPostLevelsParameter.TypeName = "dbo.TwoIntColumnType";
@@ -254,6 +261,7 @@ namespace MinStat.DAL
                                                          {16, "ВП, чел."},
                                                      }
             };
+            result.Add(educationCritery);
 
             FilterCritery middleAge = new FilterCritery
                                           {
@@ -268,6 +276,27 @@ namespace MinStat.DAL
             result.Add(middleSalary);
 
             return result;
+        }
+
+        private DataTable CreateOneRowDataTable<T>(IEnumerable<T> items, string typeName)
+        {
+            DataTable result = new DataTable(typeName);
+            result.Columns.Add("Id", typeof(T));
+            foreach (T item in items)
+            {
+                DataRow row = result.NewRow();
+                row[0] = item;
+                result.Rows.Add(row);
+            }
+            return result;
+        }
+
+        private SqlParameter CreateSqlParameter(DataTable dt, string parameterName, string typeName)
+        {
+            SqlParameter prm = new SqlParameter(parameterName, SqlDbType.Structured);
+            prm.Value = dt;
+            prm.TypeName = typeName;
+            return prm;
         }
     }
 }

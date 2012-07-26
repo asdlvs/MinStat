@@ -377,7 +377,7 @@ namespace MinStat.AnalizeUI.StatisticDataReference {
         MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetFullReport(int enterpriseId, int federalSubjectId, int federalDistrictId, System.DateTime startDate, System.DateTime endDate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetConsolidateReport", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetConsolidateReportResponse")]
-        MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetConsolidateReport(int enterpriseId, int federalSubjectId, int federalDistrictId, int subsectorId, System.DateTime startDate, System.DateTime endDate);
+        MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetConsolidateReport(int enterpriseId, int federalSubjectId, int federalDistrictId, System.DateTime startDate, System.DateTime endDate, int[] activities, int[] criteries);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetQtyStaticReport", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetQtyStaticReportResponse")]
         MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetQtyStaticReport(int enterpriseId, int federalSubjectId, int federalDistrictId, System.DateTime startDate, System.DateTime endDate, int[] verticalChecks, System.Collections.Generic.KeyValuePair<int, int>[] horizontalChecks);
@@ -433,8 +433,8 @@ namespace MinStat.AnalizeUI.StatisticDataReference {
             return base.Channel.GetFullReport(enterpriseId, federalSubjectId, federalDistrictId, startDate, endDate);
         }
         
-        public MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetConsolidateReport(int enterpriseId, int federalSubjectId, int federalDistrictId, int subsectorId, System.DateTime startDate, System.DateTime endDate) {
-            return base.Channel.GetConsolidateReport(enterpriseId, federalSubjectId, federalDistrictId, subsectorId, startDate, endDate);
+        public MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetConsolidateReport(int enterpriseId, int federalSubjectId, int federalDistrictId, System.DateTime startDate, System.DateTime endDate, int[] activities, int[] criteries) {
+            return base.Channel.GetConsolidateReport(enterpriseId, federalSubjectId, federalDistrictId, startDate, endDate, activities, criteries);
         }
         
         public MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetQtyStaticReport(int enterpriseId, int federalSubjectId, int federalDistrictId, System.DateTime startDate, System.DateTime endDate, int[] verticalChecks, System.Collections.Generic.KeyValuePair<int, int>[] horizontalChecks) {

@@ -34,6 +34,7 @@ namespace MinStat.AnalizeUI.Controllers
         [HttpPost]
         public ActionResult Index(ConsolidateReportCreatorModel model)
         {
+            var res = _adapter.GetConsolidateReport(model);
             ViewBag.SelectedFederalSubjectId = model.FederalSubjectId;
             ViewBag.SelectedEnterpriseId = model.EnterpriseId;
             return View(model);
