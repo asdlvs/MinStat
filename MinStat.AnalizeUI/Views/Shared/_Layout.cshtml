@@ -29,14 +29,15 @@
                 @Html.ActionLink("Система отчетности", "Index", "Home", null, new { @class = "brand" })
                 <div class="nav-collapse collapse">
                     <ul class="nav">
-                        <li class=""><a href="./index.html"></a></li>
                         <li class="">
                             @Html.ActionLink("Базовый отчет", "Index", "FullReport")
                         </li>
                         <li class="">
                             @Html.ActionLink("Сводный отчет", "Index", "Consolidate")
                         </li>
-                        <li class=""><a href="./base-css.html">Добавить предприятие</a> </li>
+                        <li class="">
+                             @Html.ActionLink("Добавить предприятие", "Index", "Administration")
+                        </li>
                     </ul>
                 </div>
             </div>

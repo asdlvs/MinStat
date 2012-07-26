@@ -57,6 +57,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdministrationService.svc" />
     <Content Include="StatisticDataService.svc" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

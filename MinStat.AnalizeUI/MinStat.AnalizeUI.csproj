@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="Binders\ConsolidateReportCreatorBinder.cs" />
     <Compile Include="Binders\CustomReportBinder.cs" />
+    <Compile Include="Controllers\AdministrationController.cs" />
     <Compile Include="Controllers\ConsolidateController.cs" />
     <Compile Include="Controllers\FullReportController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -76,17 +77,26 @@
     </Compile>
     <Compile Include="Models\ActivityModel.cs" />
     <Compile Include="Models\ConsolidateReportCreatorModel.cs" />
+    <Compile Include="Models\CreateEnterpriseModel.cs" />
+    <Compile Include="Models\EnterpriseModel.cs" />
     <Compile Include="Models\FilterCriteryModel.cs" />
     <Compile Include="Models\FullReportModel.cs" />
     <Compile Include="Models\StatisticDataItemModel.cs" />
     <Compile Include="Models\StatisticDataModel.cs" />
     <Compile Include="O\SelectionChecks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\AdministrationService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\StatisticDataReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ServiceAdapters\AdministrationServiceAdapter.cs" />
+    <Compile Include="ServiceAdapters\IAdministrationServiceAdapter.cs" />
     <Compile Include="ServiceAdapters\ConsolidateReportAdapter.cs" />
     <Compile Include="ServiceAdapters\FullReportAdapter.cs" />
     <Compile Include="ServiceAdapters\IInfoDataAdapter.cs" />
@@ -149,6 +159,13 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
+    <None Include="Service References\AdministrationService\AdministrationService.wsdl" />
+    <None Include="Service References\AdministrationService\AdministrationService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AdministrationService\AdministrationService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\StatisticDataReference\MinStat.AnalizeUI.StatisticDataReference.Activity.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -223,6 +240,13 @@
     <Content Include="Scripts\plugins\jqplot.pyramidRenderer.min.js" />
     <Content Include="Scripts\plugins\jqplot.trendline.js" />
     <Content Include="Scripts\plugins\jqplot.trendline.min.js" />
+    <None Include="Service References\AdministrationService\AdministrationService.disco" />
+    <None Include="Service References\AdministrationService\configuration91.svcinfo" />
+    <None Include="Service References\AdministrationService\configuration.svcinfo" />
+    <None Include="Service References\AdministrationService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -271,6 +295,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Views\Consolidate\Report.cshtml" />
+    <Content Include="Views\Administration\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -280,6 +305,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AdministrationService\" />
     <WCFMetadataStorage Include="Service References\StatisticDataReference\" />
   </ItemGroup>
   <ItemGroup>

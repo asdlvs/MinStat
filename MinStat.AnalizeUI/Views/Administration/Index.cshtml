@@ -1,0 +1,62 @@
+﻿@model MinStat.AnalizeUI.Models.CreateEnterpriseModel
+@{
+    ViewBag.Title = "Index";
+}
+@using (Html.BeginForm("Index", "Administration", FormMethod.Get))
+{
+    @Html.DropDownList("federalDistrictId", new SelectList(ViewBag.FederalDistricts, "Key", "Value", @ViewBag.SelectedFederalDistrictId),
+        new { rel = "popover", data_content = "Если хотите отфильтровать данные по федеральному округу, то укажите один из округов ниже.", data_original_title = "Федеральный округ" })
+    <select id="federalSubjectId" name="federalSubjectId" rel="popover" data-content="Если хотите отфильтровать данные по субъекту федерации, то укажите один из субъектов ниже. Для отображения списка субъектов федерации необходимо указать федеральный округ."
+        data-original-title="Субъект федерации">
+    </select>
+    <input type="hidden" id="selectedFederalSubject" value="@ViewBag.SelectedFederalSubjectId"/><br />
+    <input type="submit" value="Показать предприятия" class="btn btn-success" />
+}
+@using (Html.BeginForm("Create", "Administration"))
+{
+    if (Model.Enterprises.Any() || @ViewBag.SelectedFederalSubjectId != null)
+    {
+    <a class="btn btn-info" data-toggle="modal" href="#myModal">Добавить предприятие</a>
+    <div class="modal hide" id="myModal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+                ×</button>
+            <h3>
+                Добавление предприятия</h3>
+        </div>
+        <div class="modal-body">
+            <p>
+                <input type="hidden" name="federalSubjectId" id="federalSubjectId" value="@ViewBag.SelectedFederalSubjectId"/>
+                <input type="hidden" name="federalDistrictId" id="federalDistrictId" value="@ViewBag.SelectedFederalDistrictId"/>
+                Название предприятия:<br />
+                <input type="text" name="title" id="title"><br />
+                Электронная почта контактного лица:<br />
+                <input type="text" name="mail" id="mail"><br />
+            </p>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn" data-dismiss="modal">Отмена</a>
+            <input type="submit" class="btn btn-primary" value="Добавить"></input>
+        </div>
+    </div>
+    }
+}
+<table class="table">
+    @foreach (var enterprise in Model.Enterprises)
+    {
+        <tr>
+            <td>
+                @enterprise.Title
+            </td>
+            <td style="width: 40px">
+                @using (Html.BeginForm("Remove", "Administration"))
+                {
+                    <input type="hidden" name="federalSubjectId" id="federalSubjectId" value="@ViewBag.SelectedFederalSubjectId"/>
+                    <input type="hidden" name="federalDistrictId" id="federalDistrictId" value="@ViewBag.SelectedFederalDistrictId"/>
+                    <input type="hidden" name="enterpriseId" id="enterpriseId" value="@enterprise.Id"/>
+                     <input type="submit" class="btn btn-danger" value="Удалить"></input>
+                }
+            </td>
+        </tr>
+    }
+</table>

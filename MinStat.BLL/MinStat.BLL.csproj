@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministrationService.cs" />
+    <Compile Include="IAdminstrationService.cs" />
     <Compile Include="IStatisticDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StatisticDataService.cs" />

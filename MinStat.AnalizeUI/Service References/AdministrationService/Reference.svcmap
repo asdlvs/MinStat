@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="51d1f6b3-b556-483e-968e-d95f98353325" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/StatisticService/AdministrationService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AdministrationService.xsd" MetadataType="Schema" ID="9b5a32b8-eb7f-43c8-8e42-e4cfda7936bc" SourceId="1" SourceUrl="http://synchrophasa-pc/StatisticService/AdministrationService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AdministrationService.wsdl" MetadataType="Wsdl" ID="61abc4dc-bd5c-4d39-ad12-2e243daba5db" SourceId="1" SourceUrl="http://synchrophasa-pc/StatisticService/AdministrationService.svc?wsdl" />
+    <MetadataFile FileName="AdministrationService1.xsd" MetadataType="Schema" ID="7f50cf13-571b-45bb-aa5b-916e4c6aa3e9" SourceId="1" SourceUrl="http://synchrophasa-pc/StatisticService/AdministrationService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AdministrationService.disco" MetadataType="Disco" ID="fa4d88b9-c457-4cbf-afc2-68eec33877f5" SourceId="1" SourceUrl="http://synchrophasa-pc/StatisticService/AdministrationService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
