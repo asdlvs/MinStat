@@ -55,5 +55,11 @@ namespace MinStat.DAL.Converters
             statisticData.Titles = statisticData.Titles.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
             return new List<StatisticData> { statisticData };
         }
+
+
+        public IEnumerable<StatisticData> Convert(IEnumerable<SelectionQtyStaticReportItem> result, List<int> criteries)
+        {
+          throw new NotImplementedException();
+        }
     }
 }

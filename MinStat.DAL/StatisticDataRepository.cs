@@ -12,8 +12,9 @@ using MinStat.DAL.POCO.ResultItems;
 
 namespace MinStat.DAL
 {
+  using MinStat.DAL.HardCode;
 
-    //TODO: Говно с критериями
+  //TODO: Говно с критериями
     public class StatisticDataRepository : IStatisticDataRepository
     {
         readonly IStatisticDataConvertersFactory _converterFactory;
@@ -62,7 +63,7 @@ namespace MinStat.DAL
             IStatisticDataConverter<ConsolidatedReportItem> converter =
                 _converterFactory.GetConverter<ConsolidatedReportItem>();
             consolidatedReportItems = consolidatedReportItems.ToList();
-            return converter.Convert(consolidatedReportItems);
+            return converter.Convert(consolidatedReportItems, criteries);
 
         }
 
@@ -215,67 +216,14 @@ namespace MinStat.DAL
             return _context.Enterprises.Where(x => x.FederalSubjectId == subjectId).ToDictionary(x => x.Id, x => x.Title);
         }
 
-        public IEnumerable<POCO.Activity> GetActivities()
+        public IEnumerable<Activity> GetActivities()
         {
             return _context.Activities;
         }
 
         public IEnumerable<FilterCritery> GetConsolidateFilterCriteries()
         {
-            List<FilterCritery> result = new List<FilterCritery>();
-            FilterCritery commonCritery = new FilterCritery
-                                        {
-                                            Key = new KeyValuePair<int, string>(1, "Число работников, всего, чел."),
-                                            Inner = new Dictionary<int, string>
-                                                        {
-                                                            {2, "из них мужчин"},
-                                                            {3, "из них женщин"},
-                                                            {4, "Принято на работу, чел."},
-                                                            {5, "Уволено с работы, чел."},
-                                                            {6, "Повысили квалификацию, чел."},
-                                                            {7, "Прошли аттестацию, чел."}
-                                                        }
-                                        };
-            result.Add(commonCritery);
-
-            FilterCritery educationCritery = new FilterCritery
-                                                 {
-                                                     Key = new KeyValuePair<int, string>(8, "Образование:"),
-                                                     Inner = new Dictionary<int, string>
-                                                                 {
-                                                                     {9, "ВПО, чел."},
-                                                                     {10, "СПО, чел."},
-                                                                     {11, "СО, чел."}
-                                                                 }
-                                                 };
-            result.Add(educationCritery);
-
-            FilterCritery categoryCritery = new FilterCritery
-            {
-                Key = new KeyValuePair<int, string>(12, "Категория:"),
-                Inner = new Dictionary<int, string>
-                                                     {
-                                                         {13, "АУ, чел."},
-                                                         {14, "ИТРиС, чел."},
-                                                         {15, "ОР, чел."},
-                                                         {16, "ВП, чел."},
-                                                     }
-            };
-            result.Add(educationCritery);
-
-            FilterCritery middleAge = new FilterCritery
-                                          {
-                                              Key = new KeyValuePair<int, string>(17, "Средний возраст")
-                                          };
-            result.Add(middleAge);
-
-            FilterCritery middleSalary = new FilterCritery
-                                             {
-                                                 Key = new KeyValuePair<int,string>(18,"Среднегодовой доход")
-                                             };
-            result.Add(middleSalary);
-
-            return result;
+          return Filters.GetConsolidateCriteries();
         }
 
         private DataTable CreateOneRowDataTable<T>(IEnumerable<T> items, string typeName)

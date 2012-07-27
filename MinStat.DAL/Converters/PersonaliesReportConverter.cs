@@ -12,5 +12,11 @@ namespace MinStat.DAL.Converters
         {
             throw new NotImplementedException();
         }
+
+
+        public IEnumerable<StatisticData> Convert(IEnumerable<PersonaliesReportConverter> result, List<int> criteries)
+        {
+          throw new NotImplementedException();
+        }
     }
 }

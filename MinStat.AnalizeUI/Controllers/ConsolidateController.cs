@@ -34,10 +34,8 @@ namespace MinStat.AnalizeUI.Controllers
         [HttpPost]
         public ActionResult Index(ConsolidateReportCreatorModel model)
         {
-            var res = _adapter.GetConsolidateReport(model);
-            ViewBag.SelectedFederalSubjectId = model.FederalSubjectId;
-            ViewBag.SelectedEnterpriseId = model.EnterpriseId;
-            return View(model);
+            IEnumerable<StatisticDataModel> statisticData = _adapter.GetConsolidateReport(model);
+            return View("DynamicStatisticData", statisticData);
         }
 
         public ActionResult Report()

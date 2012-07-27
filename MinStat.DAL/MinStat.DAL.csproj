@@ -52,6 +52,7 @@
     <Compile Include="Converters\SelectionQtyStaticConverter.cs" />
     <Compile Include="DatabaseContext.cs" />
     <Compile Include="Converters\IStatisticDataConverter.cs" />
+    <Compile Include="HardCode\Filters.cs" />
     <Compile Include="InfoRepository.cs" />
     <Compile Include="IStatisticDataConvertersFactory.cs" />
     <Compile Include="IStatisticDataRepository.cs" />

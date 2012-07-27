@@ -68,5 +68,11 @@ namespace MinStat.DAL.Converters
 
             return new List<StatisticData> { statisticData };
         }
+
+
+        public IEnumerable<StatisticData> Convert(IEnumerable<FullReportItem> result, List<int> criteries)
+        {
+          throw new NotImplementedException();
+        }
     }
 }

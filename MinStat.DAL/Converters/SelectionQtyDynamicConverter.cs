@@ -39,5 +39,11 @@ namespace MinStat.DAL.Converters
             }
             return new List<StatisticData> { statisticData };
         }
+
+
+        public IEnumerable<StatisticData> Convert(IEnumerable<SelectionQtyDynamicReportItem> result, List<int> criteries)
+        {
+          throw new NotImplementedException();
+        }
     }
 }
