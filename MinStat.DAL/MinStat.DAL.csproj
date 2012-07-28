@@ -45,7 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Converters\ConsolidatedReportConverter.cs" />
+    <Compile Include="Converters\ConsolidatedDynamicReportConverter.cs" />
+    <Compile Include="Converters\ConsolidatedStaticReportConverter.cs" />
     <Compile Include="Converters\FullReportConverter.cs" />
     <Compile Include="Converters\PersonaliesReportConverter.cs" />
     <Compile Include="Converters\SelectionQtyDynamicConverter.cs" />
@@ -64,7 +65,8 @@
     <Compile Include="POCO\FilterCritery.cs" />
     <Compile Include="IInfoRepository.cs" />
     <Compile Include="POCO\Person.cs" />
-    <Compile Include="POCO\ReportItems\ConsolidatedReportItem.cs" />
+    <Compile Include="POCO\ReportItems\ConsolidatedDynamicReportItem.cs" />
+    <Compile Include="POCO\ReportItems\ConsolidatedStaticReportItem.cs" />
     <Compile Include="POCO\ReportItems\FullReportItem.cs" />
     <Compile Include="POCO\ReportItems\PersonaliesReportItem.cs" />
     <Compile Include="POCO\ReportItems\SelectionQtyDynamicReportItem.cs" />

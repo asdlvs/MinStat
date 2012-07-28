@@ -32,10 +32,18 @@ namespace MinStat.AnalizeUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(ConsolidateReportCreatorModel model)
+        public ActionResult Index(ConsolidateReportCreatorModel model, string report)
         {
-            IEnumerable<StatisticDataModel> statisticData = _adapter.GetConsolidateReport(model);
-            return View("DynamicStatisticData", statisticData);
+            if (report.Equals("Статический отчет"))
+            {
+                IEnumerable<StatisticDataModel> statisticData = _adapter.GetStaticConsolidatedReport(model);
+                return View("StaticStatisticData", statisticData);
+            }
+            else
+            {
+                IEnumerable<StatisticDataModel> statisticData = _adapter.GetDynamicConsolidatedReport(model);
+                return View("DynamicStatisticData", statisticData);
+            }
         }
 
         public ActionResult Report()

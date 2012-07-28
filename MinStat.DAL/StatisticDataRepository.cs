@@ -12,17 +12,22 @@ using MinStat.DAL.POCO.ResultItems;
 
 namespace MinStat.DAL
 {
-  using MinStat.DAL.HardCode;
+    using MinStat.DAL.HardCode;
 
-  //TODO: Говно с критериями
+    //TODO: Говно с критериями
     public class StatisticDataRepository : IStatisticDataRepository
     {
-        readonly IStatisticDataConvertersFactory _converterFactory;
+        private readonly IStatisticDataConvertersFactory _converterFactory;
         private readonly DatabaseContext _context;
 
-        private const string ConsolidateDataStoredProcedureCaller = "Exec dbo.GetConsolidateDate @EnterpriseId, @FederalSubjectId, @FederalDistrictId, @StartDate, @EndDate, @Activities, @Genders";
-        private const string FullDataStoredProcedureCaller = "Exec dbo.GetFullData @EnterpriseId, @FederalSubjectId, @FederalDistrictId, @StartDate, @EndDate";
-        private const string SelectionQtyStaticDataStoredProcedureCaller = "Exec dbo.GetFilterQtyStaticData @EnterpriseId, @FederalSubjectId, @FederalDistrictId, @StartDate, @EndDate, @activities, @educationPostLevels";
+        private const string ConsolidateDataStoredProcedureCaller =
+            "Exec dbo.GetConsolidateDate @EnterpriseId, @FederalSubjectId, @FederalDistrictId, @StartDate, @EndDate, @Activities";
+
+        private const string FullDataStoredProcedureCaller =
+            "Exec dbo.GetFullData @EnterpriseId, @FederalSubjectId, @FederalDistrictId, @StartDate, @EndDate";
+
+        private const string SelectionQtyStaticDataStoredProcedureCaller =
+            "Exec dbo.GetFilterQtyStaticData @EnterpriseId, @FederalSubjectId, @FederalDistrictId, @StartDate, @EndDate, @activities, @educationPostLevels";
 
         public StatisticDataRepository(IStatisticDataConvertersFactory converterFactory, DatabaseContext contextAdapter)
         {
@@ -32,21 +37,13 @@ namespace MinStat.DAL
 
         public StatisticDataRepository() :
             this(new StatisticDataConvertersFactory(), new DatabaseContext())
-        { }
+        {
+        }
 
-        public IEnumerable<StatisticData> GetConsolidatedReportData(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> activities, List<int> criteries)
+        public IEnumerable<StatisticData> GetStaticConsolidatedReportData(int enterpriseId, int federalSubjectId,int federalDistrictId, DateTime startDate,DateTime endDate, List<int> activities,List<int> criteries)
         {
             DataTable dtActivities = CreateOneRowDataTable(activities, "OneIntColumnType");
             SqlParameter activitiesParameter = CreateSqlParameter(dtActivities, "@Activities", "dbo.OneIntColumnType");
-
-
-            List<int> genders = new List<int>();
-            if (criteries.Contains(2))
-                genders.Add(1);
-            if (criteries.Contains(3))
-                genders.Add(0);
-            DataTable dtGender = CreateOneRowDataTable(genders, "OneBitColumnType");
-            SqlParameter genderParameter = CreateSqlParameter(dtGender, "@Genders", "dbo.OneBitColumnType");
 
             SqlParameter[] parameters = new[]
                                             {
@@ -55,17 +52,53 @@ namespace MinStat.DAL
                                                 new SqlParameter("@FederalDistrictId", federalDistrictId),
                                                 new SqlParameter("@StartDate", startDate),
                                                 new SqlParameter("@EndDate", endDate),
-                                                activitiesParameter, 
-                                                genderParameter
+                                                activitiesParameter
                                             };
-            IEnumerable<ConsolidatedReportItem> consolidatedReportItems =
-                _context.Database.SqlQuery<ConsolidatedReportItem>(ConsolidateDataStoredProcedureCaller, parameters);
-            IStatisticDataConverter<ConsolidatedReportItem> converter =
-                _converterFactory.GetConverter<ConsolidatedReportItem>();
+            IEnumerable<ConsolidatedStaticReportItem> consolidatedReportItems =
+                _context.Database.SqlQuery<ConsolidatedStaticReportItem>(ConsolidateDataStoredProcedureCaller,
+                                                                         parameters);
+            IStatisticDataConverter<ConsolidatedStaticReportItem> converter =
+                _converterFactory.GetConverter<ConsolidatedStaticReportItem>();
             consolidatedReportItems = consolidatedReportItems.ToList();
-            return converter.Convert(consolidatedReportItems, criteries);
+            return converter.Convert(consolidatedReportItems);
 
         }
+
+        public IEnumerable<StatisticData> GetDynamicConsolidatedReportData(int enterpriseId, int federalSubjectId,int federalDistrictId, DateTime startDate,DateTime endDate, List<int> activities,List<int> criteries)
+        {
+            List<ConsolidatedDynamicReportItem> reportItems = new List<ConsolidatedDynamicReportItem>();
+            for (DateTime date = startDate; date <= endDate; )
+            {
+                DataTable dtActivities = CreateOneRowDataTable(activities, "OneIntColumnType");
+                SqlParameter activitiesParameter = CreateSqlParameter(dtActivities, "@Activities", "dbo.OneIntColumnType");
+
+                SqlParameter[] parameters = new[]
+                                            {
+                                                new SqlParameter("@EnterpriseId", enterpriseId),
+                                                new SqlParameter("@FederalSubjectId", federalSubjectId),
+                                                new SqlParameter("@FederalDistrictId", federalDistrictId),
+                                                new SqlParameter("@StartDate", date),
+                                                new SqlParameter("@EndDate", AddQrtl(date)),
+                                                activitiesParameter
+                                            };
+                List<ConsolidatedDynamicReportItem> consolidatedReportItems =
+                    _context.Database.SqlQuery<ConsolidatedDynamicReportItem>(ConsolidateDataStoredProcedureCaller,
+                                                                             parameters).ToList();
+
+                consolidatedReportItems.ForEach(x =>
+                {
+                    x.StartPeriodDate = date;
+                    x.EndPeriodDate = AddQrtl(date);
+                });
+                reportItems.AddRange(consolidatedReportItems);
+                date = AddQrtl(date);
+            }
+
+            IStatisticDataConverter<ConsolidatedDynamicReportItem> converter =
+                _converterFactory.GetConverter<ConsolidatedDynamicReportItem>();
+            return converter.Convert(reportItems, criteries);
+        }
+
 
         public IEnumerable<StatisticData> GetFullReportData(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate)
         {
@@ -87,7 +120,7 @@ namespace MinStat.DAL
             DataTable verticalItemsTable = CreateOneRowDataTable(verticalItems, "TwoIntColumnType");
             SqlParameter activitiesParameter = CreateSqlParameter(verticalItemsTable, "@activities", "dbo.OneIntColumnType");
             DataTable horizontalItemsTable = new DataTable("TwoIntColumnType");
-            
+
             horizontalItemsTable.Columns.Add("FirstId", typeof(int));
             horizontalItemsTable.Columns.Add("SecondId", typeof(int));
             foreach (var item in horizontalItems)
@@ -167,6 +200,7 @@ namespace MinStat.DAL
                 List<SelectionQtyDynamicReportItem> currentReportItems =
                     _context.Database.SqlQuery<SelectionQtyDynamicReportItem>(
                         SelectionQtyStaticDataStoredProcedureCaller, parameters).ToList();
+
                 currentReportItems.ForEach(x =>
                 {
                     x.StartPeriodDate = date;
@@ -223,7 +257,7 @@ namespace MinStat.DAL
 
         public IEnumerable<FilterCritery> GetConsolidateFilterCriteries()
         {
-          return Filters.GetConsolidateCriteries();
+            return Filters.GetConsolidateCriteries();
         }
 
         private DataTable CreateOneRowDataTable<T>(IEnumerable<T> items, string typeName)
@@ -246,6 +280,7 @@ namespace MinStat.DAL
             prm.TypeName = typeName;
             return prm;
         }
+
     }
 }
 

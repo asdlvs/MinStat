@@ -13,8 +13,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetConsolidateReport">
-      <soap:operation soapAction="http://www.fem-sut.spb.ru/StatisticDataService/GetConsolidateReport" style="document" />
+    <wsdl:operation name="GetStaticConsolidatedReport">
+      <soap:operation soapAction="http://www.fem-sut.spb.ru/StatisticDataService/GetStaticConsolidatedReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDynamicConsolidatedReport">
+      <soap:operation soapAction="http://www.fem-sut.spb.ru/StatisticDataService/GetDynamicConsolidatedReport" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

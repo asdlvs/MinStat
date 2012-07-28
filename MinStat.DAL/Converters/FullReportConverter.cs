@@ -72,7 +72,7 @@ namespace MinStat.DAL.Converters
 
         public IEnumerable<StatisticData> Convert(IEnumerable<FullReportItem> result, List<int> criteries)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

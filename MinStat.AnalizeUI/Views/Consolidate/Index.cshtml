@@ -52,11 +52,20 @@
             }
         </table>
     </div>
+    
+        <div class="alert alert-info">
+        <a class="close" data-dismiss="alert" href="#">×</a>
+        <h4 class="alert-heading">
+            Памятка!</h4>
+        Нажмите на эту кнопку, для того чтобы создать статический отчет со сводными данными. Для корректного отображения необходимо указать активности.
+    </div>
+    <input type="submit" value="Статический отчет" class="btn btn-success" name="report" />
+        <br/>    <br/>  
     <div id="navbarExample" class="navbar navbar-static">
         <div class="navbar-inner">
             <div class="container" style="width: auto;">
                 <div class="brand">
-                    Выберите критерии анализа</div>
+                    Выберите критерии фильтрации</div>
             </div>
         </div>
     </div>
@@ -72,7 +81,7 @@
                         }
                     </td>
                     <td>
-                        @critery.Key.Value
+                        @Html.Raw(critery.Key.Value)
                     </td>
                 </tr>
                    if (critery.Inner != null)
@@ -84,7 +93,7 @@
                        @Html.CheckBox(String.Format("filtercritery_{0}", inner.Key))
                     </td>
                     <td>
-                        @inner.Value
+                        @Html.Raw(inner.Value)
                     </td>
                 </tr>
                        }
@@ -92,7 +101,14 @@
             }
         </table>
     </div>
-    <input type="submit" value="Сформировать отчет" class="btn btn-success" />
+            <div class="alert alert-info">
+        <a class="close" data-dismiss="alert" href="#">×</a>
+        <h4 class="alert-heading">
+            Памятка!</h4>
+                Нажмите на эту кнопку, для того чтобы создать динамический отчет со сводными данными.
+                Для корректного отображения необхожимо указать активности и критерии фильтрации.
+    </div>
+    <input type="submit" value="Динамический отчет" class="btn btn-success"  name="report"/>
 }
 @*@foreach (StatisticDataModel m in Model)
 {

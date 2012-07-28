@@ -14,9 +14,9 @@
         @foreach (StatisticDataItemModel dataItem in Model.Values)
         {
             @Html.Raw(String.Format("var points{0} = [];", dataItem.Id));
-            foreach (var value in dataItem.Values)
+            foreach (string value in dataItem.Values)
             {
-                @Html.Raw(String.Format("points{0}.push({1});", dataItem.Id, value));
+                @Html.Raw(String.Format("points{0}.push({1});", dataItem.Id, value.Replace(",",".")));
             }
 
         }

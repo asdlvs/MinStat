@@ -14,7 +14,10 @@ namespace MinStat.BLL
         IEnumerable<StatisticData> GetFullReport(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate);
         
         [OperationContract]
-        IEnumerable<StatisticData> GetConsolidateReport(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> activities, List<int> criteries);
+        IEnumerable<StatisticData> GetStaticConsolidatedReport(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> activities, List<int> criteries);
+
+        [OperationContract]
+        IEnumerable<StatisticData> GetDynamicConsolidatedReport(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> activities, List<int> criteries);
 
         [OperationContract]
         IEnumerable<StatisticData> GetQtyStaticReport(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, 

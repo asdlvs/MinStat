@@ -15,7 +15,7 @@
             @foreach (StatisticDataItemModel bodyItem in m.Values)
             {
                 <tr class="@String.Format("strong{0}", bodyItem.BoldLevel)">
-                    <td>@bodyItem.Title
+                <td> @Html.Raw(bodyItem.Title)
                     </td>
                     @foreach (string value in bodyItem.Values)
                     {
@@ -27,6 +27,8 @@
             }
         </table>
     }
-
-    @Html.Partial("StaticDiagram", m)
+    if (m != null && m.Values != null && m.Values.Any())
+     {
+         @Html.Partial("StaticDiagram", m)
+     }
 }

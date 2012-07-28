@@ -12,7 +12,8 @@ namespace MinStat.DAL.Converters
     {
         public IEnumerable<StatisticData> Convert(IEnumerable<SelectionQtyDynamicReportItem> result)
         {
-            IEnumerable<DateTime> periods = result.Select(x => x.StartPeriodDate).Distinct();
+            var resultList = result.ToList();
+            IEnumerable<DateTime> periods = resultList.Select(x => x.StartPeriodDate).Distinct().ToList();
 
             StatisticData statisticData = new StatisticData();
             statisticData.Titles = new Dictionary<string, string>();
@@ -22,7 +23,7 @@ namespace MinStat.DAL.Converters
             {
                 statisticData.Titles.Add(period.ToShortDateString(), period.ToShortDateString());
             }
-            var activities = result.Select(x => new {x.ActivityId, x.ActivityTitle }).Distinct();
+            var activities = resultList.Select(x => new { x.ActivityId, x.ActivityTitle }).Distinct();
             
             foreach(var activity in activities)
             {
@@ -32,7 +33,7 @@ namespace MinStat.DAL.Converters
                 statisticDataItem.Values = new List<string>();
                 foreach(DateTime startPeriod in periods)
                 {
-                    int value = result.Where(x => x.StartPeriodDate == startPeriod && x.ActivityId == activity.ActivityId).Sum(x => x.PeoplesCount);
+                    int value = resultList.Where(x => x.StartPeriodDate == startPeriod && x.ActivityId == activity.ActivityId).Sum(x => x.PeoplesCount);
                     statisticDataItem.Values.Add(value.ToString(CultureInfo.InvariantCulture));
                 }
                 statisticData.Lines.Add(statisticDataItem);
@@ -43,7 +44,7 @@ namespace MinStat.DAL.Converters
 
         public IEnumerable<StatisticData> Convert(IEnumerable<SelectionQtyDynamicReportItem> result, List<int> criteries)
         {
-          throw new NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

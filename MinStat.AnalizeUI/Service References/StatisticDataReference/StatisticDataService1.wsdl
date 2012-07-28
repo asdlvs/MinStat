@@ -16,11 +16,17 @@
   <wsdl:message name="StatisticDataService_GetFullReport_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetFullReportResponse" />
   </wsdl:message>
-  <wsdl:message name="StatisticDataService_GetConsolidateReport_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetConsolidateReport" />
+  <wsdl:message name="StatisticDataService_GetStaticConsolidatedReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStaticConsolidatedReport" />
   </wsdl:message>
-  <wsdl:message name="StatisticDataService_GetConsolidateReport_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetConsolidateReportResponse" />
+  <wsdl:message name="StatisticDataService_GetStaticConsolidatedReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStaticConsolidatedReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetDynamicConsolidatedReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDynamicConsolidatedReport" />
+  </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetDynamicConsolidatedReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDynamicConsolidatedReportResponse" />
   </wsdl:message>
   <wsdl:message name="StatisticDataService_GetQtyStaticReport_InputMessage">
     <wsdl:part name="parameters" element="tns:GetQtyStaticReport" />
@@ -69,9 +75,13 @@
       <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetFullReport" message="tns:StatisticDataService_GetFullReport_InputMessage" />
       <wsdl:output wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetFullReportResponse" message="tns:StatisticDataService_GetFullReport_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetConsolidateReport">
-      <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetConsolidateReport" message="tns:StatisticDataService_GetConsolidateReport_InputMessage" />
-      <wsdl:output wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetConsolidateReportResponse" message="tns:StatisticDataService_GetConsolidateReport_OutputMessage" />
+    <wsdl:operation name="GetStaticConsolidatedReport">
+      <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetStaticConsolidatedReport" message="tns:StatisticDataService_GetStaticConsolidatedReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetStaticConsolidatedReportResponse" message="tns:StatisticDataService_GetStaticConsolidatedReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDynamicConsolidatedReport">
+      <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetDynamicConsolidatedReport" message="tns:StatisticDataService_GetDynamicConsolidatedReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetDynamicConsolidatedReportResponse" message="tns:StatisticDataService_GetDynamicConsolidatedReport_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetQtyStaticReport">
       <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetQtyStaticReport" message="tns:StatisticDataService_GetQtyStaticReport_InputMessage" />

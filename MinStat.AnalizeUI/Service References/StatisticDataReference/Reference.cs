@@ -376,8 +376,13 @@ namespace MinStat.AnalizeUI.StatisticDataReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetFullReport", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetFullReportResponse")]
         MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetFullReport(int enterpriseId, int federalSubjectId, int federalDistrictId, System.DateTime startDate, System.DateTime endDate);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetConsolidateReport", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetConsolidateReportResponse")]
-        MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetConsolidateReport(int enterpriseId, int federalSubjectId, int federalDistrictId, System.DateTime startDate, System.DateTime endDate, int[] activities, int[] criteries);
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetStaticConsolidatedReport", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetStaticConsolidatedReportRespons" +
+            "e")]
+        MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetStaticConsolidatedReport(int enterpriseId, int federalSubjectId, int federalDistrictId, System.DateTime startDate, System.DateTime endDate, int[] activities, int[] criteries);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetDynamicConsolidatedReport", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetDynamicConsolidatedReportRespon" +
+            "se")]
+        MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetDynamicConsolidatedReport(int enterpriseId, int federalSubjectId, int federalDistrictId, System.DateTime startDate, System.DateTime endDate, int[] activities, int[] criteries);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetQtyStaticReport", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetQtyStaticReportResponse")]
         MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetQtyStaticReport(int enterpriseId, int federalSubjectId, int federalDistrictId, System.DateTime startDate, System.DateTime endDate, int[] verticalChecks, System.Collections.Generic.KeyValuePair<int, int>[] horizontalChecks);
@@ -433,8 +438,12 @@ namespace MinStat.AnalizeUI.StatisticDataReference {
             return base.Channel.GetFullReport(enterpriseId, federalSubjectId, federalDistrictId, startDate, endDate);
         }
         
-        public MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetConsolidateReport(int enterpriseId, int federalSubjectId, int federalDistrictId, System.DateTime startDate, System.DateTime endDate, int[] activities, int[] criteries) {
-            return base.Channel.GetConsolidateReport(enterpriseId, federalSubjectId, federalDistrictId, startDate, endDate, activities, criteries);
+        public MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetStaticConsolidatedReport(int enterpriseId, int federalSubjectId, int federalDistrictId, System.DateTime startDate, System.DateTime endDate, int[] activities, int[] criteries) {
+            return base.Channel.GetStaticConsolidatedReport(enterpriseId, federalSubjectId, federalDistrictId, startDate, endDate, activities, criteries);
+        }
+        
+        public MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetDynamicConsolidatedReport(int enterpriseId, int federalSubjectId, int federalDistrictId, System.DateTime startDate, System.DateTime endDate, int[] activities, int[] criteries) {
+            return base.Channel.GetDynamicConsolidatedReport(enterpriseId, federalSubjectId, federalDistrictId, startDate, endDate, activities, criteries);
         }
         
         public MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetQtyStaticReport(int enterpriseId, int federalSubjectId, int federalDistrictId, System.DateTime startDate, System.DateTime endDate, int[] verticalChecks, System.Collections.Generic.KeyValuePair<int, int>[] horizontalChecks) {

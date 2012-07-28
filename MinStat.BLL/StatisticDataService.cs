@@ -25,9 +25,14 @@ namespace MinStat.BLL
         }
 
 
-        public IEnumerable<StatisticData> GetConsolidateReport(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> activities, List<int> criteries)
+        public IEnumerable<StatisticData> GetStaticConsolidatedReport(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> activities, List<int> criteries)
         {
-            return _statisticDataRepository.GetConsolidatedReportData(enterpriseId, federalSubjectId, federalDistrictId,startDate, endDate, activities,criteries);
+            return _statisticDataRepository.GetStaticConsolidatedReportData(enterpriseId, federalSubjectId, federalDistrictId, startDate, endDate, activities, criteries);
+        }
+
+        public IEnumerable<StatisticData> GetDynamicConsolidatedReport(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> activities, List<int> criteries)
+        {
+            return _statisticDataRepository.GetDynamicConsolidatedReportData(enterpriseId, federalSubjectId, federalDistrictId, startDate, endDate, activities, criteries);
         }
 
         public IEnumerable<StatisticData> GetQtyStaticReport(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> verticalChecks, List<KeyValuePair<int, int>> horizontalChecks)

@@ -10,7 +10,8 @@ namespace MinStat.DAL
 {
     public interface IStatisticDataRepository
     {
-        IEnumerable<StatisticData> GetConsolidatedReportData(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> activities, List<int> criteries);
+        IEnumerable<StatisticData> GetStaticConsolidatedReportData(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> activities, List<int> criteries);
+        IEnumerable<StatisticData> GetDynamicConsolidatedReportData(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> activities, List<int> criteries);
 
         IEnumerable<StatisticData> GetFullReportData(int enterpriseId,
             int federalSubjectId,

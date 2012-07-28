@@ -296,6 +296,7 @@
     </None>
     <Content Include="Views\Consolidate\Report.cshtml" />
     <Content Include="Views\Administration\Index.cshtml" />
+    <Content Include="Views\Consolidate\StaticReport.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

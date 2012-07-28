@@ -11,9 +11,13 @@ namespace MinStat.DAL
     {
         public IStatisticDataConverter<T> GetConverter<T>()
         {
-            if (typeof(T) == typeof(ConsolidatedReportItem))
+            if (typeof(T) == typeof(ConsolidatedStaticReportItem))
             {
-                return (IStatisticDataConverter<T>) new ConsolidatedReportConverter();
+                return (IStatisticDataConverter<T>) new ConsolidatedStaticReportConverter();
+            }
+            if (typeof(T) == typeof(ConsolidatedDynamicReportItem))
+            {
+                return (IStatisticDataConverter<T>)new ConsolidatedDynamicReportConverter();
             }
             if (typeof(T) == typeof(FullReportItem))
             {

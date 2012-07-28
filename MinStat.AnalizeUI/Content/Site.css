@@ -85,7 +85,7 @@ textarea
 }
 
 .scroll {
-    height: 300px;
+    height: 200px;
     overflow: auto;
     position: relative;
 }
