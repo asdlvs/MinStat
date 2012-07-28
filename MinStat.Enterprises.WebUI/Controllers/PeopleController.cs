@@ -4,13 +4,14 @@ using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MinStat.Enterprises.WebUI.Filters;
 
 namespace MinStat.Enterprises.WebUI.Controllers
 {
     using MinStat.Enterprises.WebUI.ServiceAdapters;
     using MinStat.Enterprises.WebUI.Models;
 
-    [Authorize]
+    [Authorize, NoCache]
     public class PeopleController : Controller
     {
         private IEnterpriseServiceAdapter _enterpriseAdapter;
@@ -58,16 +59,15 @@ namespace MinStat.Enterprises.WebUI.Controllers
         [HttpPost]
         public ActionResult Edit(PersonModel model, string button)
         {
-
+            ViewBag.EducationLevels = _enterpriseAdapter.GetEducationLevels();
+            ViewBag.PostLevels = _enterpriseAdapter.GetPostLevels();
+            ViewBag.Activities = _enterpriseAdapter.GetActivities(model.SummaryId);
             if (button.Equals("Удалить", StringComparison.OrdinalIgnoreCase))
             {
                 _enterpriseAdapter.RemovePerson(model.Id);
             }
             else
             {
-                ViewBag.EducationLevels = _enterpriseAdapter.GetEducationLevels();
-                ViewBag.PostLevels = _enterpriseAdapter.GetPostLevels();
-                ViewBag.Activities = _enterpriseAdapter.GetActivities(model.SummaryId);
                 if (ModelState.IsValid)
                 {
                     if (model.Id == 0)

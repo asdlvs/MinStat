@@ -788,6 +788,9 @@ namespace MinStat.Enterprises.WebUI.EnterpriseServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EnterpriseDataService/IsPublished", ReplyAction="http://tempuri.org/EnterpriseDataService/IsPublishedResponse")]
         bool IsPublished(int summaryId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EnterpriseDataService/UploadPersons", ReplyAction="http://tempuri.org/EnterpriseDataService/UploadPersonsResponse")]
+        void UploadPersons(byte[] csvFile, int summaryId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -887,6 +890,10 @@ namespace MinStat.Enterprises.WebUI.EnterpriseServiceReference {
         
         public bool IsPublished(int summaryId) {
             return base.Channel.IsPublished(summaryId);
+        }
+        
+        public void UploadPersons(byte[] csvFile, int summaryId) {
+            base.Channel.UploadPersons(csvFile, summaryId);
         }
     }
 }

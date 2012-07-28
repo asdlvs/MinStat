@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MinStat.AnalizeUI.Filters;
 using MinStat.AnalizeUI.O;
 using MinStat.AnalizeUI.ServiceAdapters;
 using MinStat.AnalizeUI.Models;
 
 namespace MinStat.AnalizeUI.Controllers
 {
+    [NoCache]
     public class FullReportController : Controller
     {
         //
@@ -26,6 +28,8 @@ namespace MinStat.AnalizeUI.Controllers
             Dictionary<int, string> federalDistricts = _infoAdapter.GetFederalDistricts().ToDictionary(x => x.Key, x => x.Value);
             federalDistricts.Add(0, "");
             ViewBag.FederalDistricts = federalDistricts.OrderBy(x => x.Key);
+            ViewBag.StartDate = new DateTime(DateTime.Now.Year, 1, 1).ToShortDateString();
+            ViewBag.EndDate = DateTime.Now.ToShortDateString();
         }
 
         public ActionResult Index()
@@ -45,6 +49,8 @@ namespace MinStat.AnalizeUI.Controllers
 
             IEnumerable<StatisticDataModel> model = _adapter.GetFullReport(enterpriseId ?? 0, federalSubjectId ?? 0, federalDistrictId ?? 0,
                                                               DateTime.Parse(startDate), DateTime.Parse(endDate));
+            ViewBag.StartDate = startDate;
+            ViewBag.EndDate = endDate;
             ViewBag.SelectedFederalSubjectId = federalSubjectId ?? 0;
             ViewBag.SelectedEnterpriseId = enterpriseId ?? 0;
             return View(model);

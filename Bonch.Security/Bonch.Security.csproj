@@ -57,12 +57,6 @@
     <Compile Include="Concrete\SecurityHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bonch.Domain\Bonch.Domain.csproj">
-      <Project>{DB5B82D6-A1B2-4E64-9DF5-66672D56E334}</Project>
-      <Name>Bonch.Domain</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>

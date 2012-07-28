@@ -2,6 +2,15 @@
 @{
     ViewBag.Title = "Index";
 }
+
+    <div class="alert alert-info">
+        <a class="close" data-dismiss="alert" href="#">×</a>
+        <h4 class="alert-heading">
+            Памятка!</h4>
+        Для того, чтобы добавить новое предприятие в систему, укажите федеральный округ и субъект федерации.
+        После этого нажмите на кнопку <span class="btn btn-success">Показать предприятия</span>. 
+    </div>
+
 @using (Html.BeginForm("Index", "Administration", FormMethod.Get))
 {
     @Html.DropDownList("federalDistrictId", new SelectList(ViewBag.FederalDistricts, "Key", "Value", @ViewBag.SelectedFederalDistrictId),

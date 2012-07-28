@@ -4,10 +4,12 @@ using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MinStat.AnalizeUI.Filters;
 using MinStat.AnalizeUI.ServiceAdapters;
 
 namespace MinStat.AnalizeUI.Controllers
 {
+    [NoCache]
     public class RegionController : Controller
     {
         private IInfoDataAdapter _infoAdapter;

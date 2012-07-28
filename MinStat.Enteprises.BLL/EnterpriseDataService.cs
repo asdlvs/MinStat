@@ -9,6 +9,7 @@ using System.ServiceModel.Channels;
 using System.Text;
 using MinStat.Enterprises.DAL;
 using MinStat.Enterprises.DAL.POCO;
+using System.IO;
 
 namespace MinStat.Enterprises.BLL
 {
@@ -19,17 +20,19 @@ namespace MinStat.Enterprises.BLL
     {
         private IIdentifier _identifier;
         private IEnterpriseDataRepository _enterpriseRepository;
+        private IPersonsUploader _uploader;
         private readonly int _enterpriseId;
 
-        public EnterpriseDataService(IIdentifier identifier, IEnterpriseDataRepository repository)
+        public EnterpriseDataService(IIdentifier identifier, IEnterpriseDataRepository repository, IPersonsUploader uploader)
         {
             _identifier = identifier;
             _enterpriseRepository = repository;
+            _uploader = uploader;
             _enterpriseId = _identifier.EnterpriseId(System.Threading.Thread.CurrentPrincipal.Identity.Name);
         }
 
         public EnterpriseDataService()
-            : this(new EnterpriseIdentifier(), new EnterpriseDataRepository())
+            : this(new EnterpriseIdentifier(), new EnterpriseDataRepository(), new PersonsUploader())
         {
         }
 
@@ -78,7 +81,7 @@ namespace MinStat.Enterprises.BLL
         [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
         public void UpdatePerson(int personId, int activityId, string title, string post, int postLevelId, int educationLevelId, decimal yearSalary, bool gender, bool wasQualificationIncrease, bool wasValidate, int birthYear, int hiringYear, int startPostYear, int dismissalYear)
         {
-            _enterpriseRepository.UpdatePerson(personId,activityId, title, post, postLevelId, educationLevelId, yearSalary, gender, wasQualificationIncrease, wasValidate, birthYear, hiringYear, startPostYear, dismissalYear);
+            _enterpriseRepository.UpdatePerson(personId, activityId, title, post, postLevelId, educationLevelId, yearSalary, gender, wasQualificationIncrease, wasValidate, birthYear, hiringYear, startPostYear, dismissalYear);
         }
 
         [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
@@ -123,21 +126,28 @@ namespace MinStat.Enterprises.BLL
             return _enterpriseRepository.GetPeopleArraySize(summaryId);
         }
 
-
+        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
         public Dictionary<int, string> GetEducationLevels()
         {
-          return _enterpriseRepository.GetEducationLevels().ToDictionary(x => x.Id, x => x.Title);
+            return _enterpriseRepository.GetEducationLevels().ToDictionary(x => x.Id, x => x.Title);
         }
-
+        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
         public Dictionary<int, string> GetPostLeves()
         {
-          return _enterpriseRepository.GetPostLevels().ToDictionary(x => x.Id, x => x.Title);
+            return _enterpriseRepository.GetPostLevels().ToDictionary(x => x.Id, x => x.Title);
         }
 
-
+        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
         public bool IsPublished(int summaryId)
         {
             return _enterpriseRepository.IsPublished(summaryId);
+        }
+
+        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
+        public void UploadPersons(byte[] csvFile, int summaryId)
+        {
+            IEnumerable<Person> persons = _uploader.ParseFile(csvFile, summaryId);
+            _enterpriseRepository.CreatePersons(persons);
         }
     }
 }

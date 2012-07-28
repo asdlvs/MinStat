@@ -33,8 +33,8 @@ namespace MinStat.DAL.Converters
                 statisticDataItem.Values = new List<string>();
                 foreach(DateTime startPeriod in periods)
                 {
-                    int value = resultList.Where(x => x.StartPeriodDate == startPeriod && x.ActivityId == activity.ActivityId).Sum(x => x.PeoplesCount);
-                    statisticDataItem.Values.Add(value.ToString(CultureInfo.InvariantCulture));
+                    decimal value = resultList.Where(x => x.StartPeriodDate == startPeriod && x.ActivityId == activity.ActivityId).Sum(x => x.PeoplesCount);
+                    statisticDataItem.Values.Add(value != 0 ? value.ToString("#.##") : "0");
                 }
                 statisticData.Lines.Add(statisticDataItem);
             }

@@ -14,6 +14,6 @@ namespace MinStat.DAL.POCO.ReportItems
         public string EducationLevelTitle { get; set; }
         public int? PostLevelId { get; set; }
         public string PostLevelTitle { get; set; }
-        public int PeoplesCount { get; set; }
+        public decimal PeoplesCount { get; set; }
     }
 }

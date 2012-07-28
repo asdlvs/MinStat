@@ -41,5 +41,7 @@ namespace MinStat.Enterprises.WebUI.ServiceAdapters
 
         bool IsPublished(int summaryId);
 
+        void UploadPersons(byte[] scvFile, int summaryId);
+
     }
 }

@@ -219,5 +219,13 @@ namespace MinStat.Enterprises.WebUI.ServiceAdapters
             return proxy.IsPublished(summaryId);
         }
     }
+
+      public void UploadPersons(byte[] scvFile, int summaryId)
+      {
+          using (EnterpriseDataServiceClient proxy = new EnterpriseDataServiceClient())
+          {
+              proxy.UploadPersons(scvFile, summaryId);
+          }
+      }
   }
 }

@@ -4,11 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using MinStat.Enterprises.WebUI.Filters;
 using MinStat.Enterprises.WebUI.Models;
 using MinStat.Enterprises.WebUI.ServiceAdapters;
 
 namespace MinStat.Enterprises.WebUI.Controllers
 {
+    [NoCache]
     public class AccountController : Controller
     {
         private IAuthenticationServiceAdapter _authenticationService;

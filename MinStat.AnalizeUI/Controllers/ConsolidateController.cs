@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MinStat.AnalizeUI.Filters;
 using MinStat.AnalizeUI.Models;
 using MinStat.AnalizeUI.ServiceAdapters;
 
 namespace MinStat.AnalizeUI.Controllers
 {
+    [NoCache]
     public class ConsolidateController : Controller
     {
         private readonly ConsolidateReportAdapter _adapter;
@@ -21,6 +23,8 @@ namespace MinStat.AnalizeUI.Controllers
             Dictionary<int, string> federalDistricts = _infoAdapter.GetFederalDistricts().ToDictionary(x => x.Key, x => x.Value);
             federalDistricts.Add(0, "");
             ViewBag.FederalDistricts = federalDistricts.OrderBy(x => x.Key);
+            ViewBag.StartDate = new DateTime(DateTime.Now.Year, 1, 1).ToShortDateString();
+            ViewBag.EndDate = DateTime.Now.ToShortDateString();
         }
 
         public ActionResult Index()

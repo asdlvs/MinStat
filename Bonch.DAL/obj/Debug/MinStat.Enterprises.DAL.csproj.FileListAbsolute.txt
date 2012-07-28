@@ -11,4 +11,3 @@ D:\Work\Bonch\MinStat_4\Bonch.DAL\bin\Debug\MinStat.Enterprises.DAL.dll
 D:\Work\Bonch\MinStat_4\Bonch.DAL\bin\Debug\MinStat.Enterprises.DAL.pdb
 D:\Work\Bonch\MinStat_4\Bonch.DAL\bin\Debug\EntityFramework.dll
 D:\Work\Bonch\MinStat_4\Bonch.DAL\bin\Debug\EntityFramework.xml
-D:\Work\Bonch\MinStat_4\Bonch.DAL\obj\Debug\MinStat.Enterprises.DAL.csprojResolveAssemblyReference.cache

@@ -8,12 +8,12 @@
 
     @helper Vars(IEnumerable<string> values)
         {
-            @Html.Raw(values.Aggregate((x, y) => String.Format("{0},{1}", x, y)))
+            @Html.Raw(values.Aggregate((x, y) => String.Format("{0},{1}",x , y)))
     }
 
     @foreach (StatisticDataItemModel m in Model.Values)
     {
-    @Html.Raw(String.Format("var s{0} = [{1}];", m.Id, m.Values.Aggregate((x, y) => String.Format("{0},{1}", x, y))));
+    @Html.Raw(String.Format("var s{0} = [{1}];", m.Id, m.Values.Aggregate((x, y) => String.Format("{0},{1}", x.Replace(",","."), y.Replace(",",".")))));
     }
         var plot3 = $.jqplot('chart3', [@Vars(Model.Values.Select(x => "s"+x.Id))], {
             // Tell the plot to stack the bars.    

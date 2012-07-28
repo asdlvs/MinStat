@@ -47,7 +47,7 @@ namespace MinStat.DAL.Converters
                     item.Values.Add(
                         pointElement == null
                                         ? "0"
-                                        : pointElement.PeoplesCount.ToString(CultureInfo.InvariantCulture));
+                                        : pointElement.PeoplesCount.ToString("#.##"));
                 }
                 statisticData.Lines.Add(item);
             }

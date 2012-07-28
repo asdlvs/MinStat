@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MinStat.AnalizeUI.Filters;
 
 namespace MinStat.AnalizeUI.Controllers
 {
+    [NoCache]
     public class HomeController : Controller
     {
         //

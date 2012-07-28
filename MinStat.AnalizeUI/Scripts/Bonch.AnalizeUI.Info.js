@@ -13,7 +13,7 @@
 });
 
 function fillFederalSubjectsLists(federalDistrictId) {
-    $.get("http://localhost/MinStat.AnalizeUI/Region/FederalSubjects", { federalDistrictId: federalDistrictId }, function (data) {
+    $.get("/MinStat.AnalizeUI/Region/FederalSubjects", { federalDistrictId: federalDistrictId }, function (data) {
         $("#federalSubjectId").empty();
         $("#federalSubjectId").append($('<option value="0"></option>'));
         $.each(data, function (el) {
@@ -30,7 +30,7 @@ function fillFederalSubjectsLists(federalDistrictId) {
 }
 
 function fillEntepriseList(federalSubjectId) {
-    $.get("http://localhost/MinStat.AnalizeUI/Region/Enterprises", { federalSubjectId: federalSubjectId }, function (datae) {
+    $.get("/MinStat.AnalizeUI/Region/Enterprises", { federalSubjectId: federalSubjectId }, function (datae) {
         $("#enterpriseId").empty();
         $("#enterpriseId").append($('<option value="0"></option>'));
         $.each(datae, function (el) {

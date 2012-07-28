@@ -76,6 +76,9 @@ namespace MinStat.Enterprises.BLL
         [OperationContract]
         bool IsPublished(int summaryId);
 
+        [OperationContract]
+        void UploadPersons(byte[] csvFile, int summaryId);
+
         //List<Person> FindPerson(string searchText);
     }
 }

@@ -48,6 +48,8 @@ namespace MinStat.Enterprises.DAL
         void UpdatePerson(int personId, int activityId, string title, string post, int postLevelId, int educationLevelId, decimal yearSalary, bool gender, bool wasQualificationIncrease,
           bool wasValidate, int birthYear, int hiringYear, int startPostYear, int dismissalYear);
 
+        void CreatePersons(IEnumerable<Person> persons);
+
         void RemovePerson(int personId);
 
         IEnumerable<Person> FindPerson(string searchText);
