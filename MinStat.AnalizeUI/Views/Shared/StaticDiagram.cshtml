@@ -11,11 +11,16 @@
             @Html.Raw(values.Aggregate((x, y) => String.Format("{0},{1}",x , y)))
     }
 
-    @foreach (StatisticDataItemModel m in Model.Values)
-    {
-    @Html.Raw(String.Format("var s{0} = [{1}];", m.Id, m.Values.Aggregate((x, y) => String.Format("{0},{1}", x.Replace(",","."), y.Replace(",",".")))));
-    }
-        var plot3 = $.jqplot('chart3', [@Vars(Model.Values.Select(x => "s"+x.Id))], {
+   @foreach (StatisticDataItemModel dataItem in Model.Values)
+        {
+            @Html.Raw(String.Format("var points{0} = [];", dataItem.Id));
+            foreach (string value in dataItem.Values)
+            {
+                @Html.Raw(String.Format("points{0}.push({1});", dataItem.Id, value.Replace(",",".")));
+            }
+
+        }
+        var plot3 = $.jqplot('chart3', [@Vars(Model.Values.Select(x => "points"+x.Id))], {
             // Tell the plot to stack the bars.    
             stackSeries: false,
             captureRightClick: false,
