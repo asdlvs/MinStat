@@ -60,7 +60,7 @@ namespace MinStat.DAL.Converters
                         item.Values.Add(
                             pointElement == null
                                             ? "0"
-                                            : pointElement.PeoplesCount.ToString("#.##"));
+                                            : pointElement.PeoplesCount.ToString("0.00"));
                     }
                 }
                 statisticData.Lines.Add(item);
