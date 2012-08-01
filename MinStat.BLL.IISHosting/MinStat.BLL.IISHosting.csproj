@@ -13,6 +13,7 @@
     <RootNamespace>MinStat.BLL.IISHosting</RootNamespace>
     <AssemblyName>MinStat.BLL.IISHosting</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,7 +60,9 @@
   <ItemGroup>
     <Content Include="AdministrationService.svc" />
     <Content Include="StatisticDataService.svc" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
