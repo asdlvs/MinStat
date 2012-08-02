@@ -1,4 +1,5 @@
-﻿@using MinStat.AnalizeUI.Models
+﻿﻿@using MinStat.AnalizeUI.Models
+@using MinStat.AnalizeUI.Models
 @model IEnumerable<StatisticDataModel>
 @{
     ViewBag.Title = "Index";
@@ -93,8 +94,7 @@
     @Html.Hidden("reportType")
         <table class="table-striped table-bordered table-condensed">
             <tr>
-                <td>
-                </td>
+                <td></td>
                 <td>
                 </td>
                 @foreach (var headItem in m.Titles)
@@ -109,12 +109,14 @@
 
             </tr>
             <tr>
-                <th></th>
+                <th>
+                </th>
                 @foreach (var headItem in m.Titles)
                 {
                     <th style="font-size: smaller;">@headItem.Value
                     </th>
                 }
+
             </tr>
             @foreach (StatisticDataItemModel bodyItem in m.Values)
             {
@@ -129,14 +131,13 @@
                     </td>
                     @foreach (var value in bodyItem.Values)
                     {
-                        @Html.Raw(value == "0" ? "<td class=\"muted\" >" : "<td>")
+                        @Html.Raw(value == "0" ? "<td class=\"muted\">" : "<td>")
                         @value
                         @Html.Raw("</td>")
                     }
                 </tr>
             }
         </table>
-    <br/>
-    <a data-toggle="modal" href="#myModal" class="btn btn-success">Просмотреть отчет</a>
+    <a data-toggle="modal" href="#myModal" class="btn btn-success">Создать отчет</a>
     }
 }
