@@ -29,6 +29,9 @@ namespace MinStat.DAL
         private const string SelectionQtyStaticDataStoredProcedureCaller =
             "Exec dbo.GetFilterQtyStaticData @EnterpriseId, @FederalSubjectId, @FederalDistrictId, @StartDate, @EndDate, @activities, @educationPostLevels";
 
+        private const string SummaryDataStoredProcedureCaller =
+            "Exec dbo.GetSummaryData @genders, @educationlevels, @postlevels, @bounddate, @enterpriseid, @federalsubjectid, @federaldistrictid, @activities";
+
         public StatisticDataRepository(IStatisticDataConvertersFactory converterFactory, DatabaseContext contextAdapter)
         {
             _converterFactory = converterFactory;
@@ -98,7 +101,6 @@ namespace MinStat.DAL
                 _converterFactory.GetConverter<ConsolidatedDynamicReportItem>();
             return converter.Convert(reportItems, criteries);
         }
-
 
         public IEnumerable<StatisticData> GetFullReportData(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate)
         {
@@ -281,6 +283,42 @@ namespace MinStat.DAL
             return prm;
         }
 
+        public IEnumerable<StatisticData> GetSummaryReportData(int enterpiseId, int federalSubjectId, int federalDistrictId, DateTime boundDate, List<int> activities, List<int> genders, List<int> educationLevels, List<int> postLevels)
+        {
+            DataTable activitiesDataTable = CreateOneRowDataTable(activities, "OneIntColumnType");
+            DataTable educationLevelsDataTable = CreateOneRowDataTable(educationLevels, "OneIntColumnType");
+            DataTable postLevelsDataTable = CreateOneRowDataTable(postLevels, "OneIntColumnType");
+            DataTable gendersDataTable = CreateOneRowDataTable(genders, "OneBitColumnType");
+
+            SqlParameter activitiesParameter = CreateSqlParameter(activitiesDataTable, "activities", "dbo.OneIntColumnType");
+            SqlParameter educationLevelsParameter = CreateSqlParameter(educationLevelsDataTable, "educationlevels", "dbo.OneIntColumnType");
+            SqlParameter postLevelsParameter = CreateSqlParameter(postLevelsDataTable, "postlevels", "dbo.OneIntColumnType");
+            SqlParameter gendersParameter = CreateSqlParameter(gendersDataTable, "genders", "dbo.OneBitColumnType");
+
+            IEnumerable<SummaryReportItem> summaryReportItems = _context.Database.SqlQuery<SummaryReportItem>(SummaryDataStoredProcedureCaller,
+                gendersParameter, 
+                educationLevelsParameter, 
+                postLevelsParameter,
+                new SqlParameter("bounddate", boundDate),
+                new SqlParameter("enterpriseid", enterpiseId),
+                new SqlParameter("federalsubjectid", federalSubjectId),
+                new SqlParameter("federaldistrictid", federalDistrictId), 
+                activitiesParameter);
+
+            IStatisticDataConverter<SummaryReportItem> converter = _converterFactory.GetConverter<SummaryReportItem>();
+            return converter.Convert(summaryReportItems);
+        }
+
+
+        public IEnumerable<PostLevel> PostLevels()
+        {
+            return _context.PostLevels;
+        }
+
+        public IEnumerable<EducationLevel> EducationLevels()
+        {
+            return _context.EducationLevels;
+        }
     }
 }
 

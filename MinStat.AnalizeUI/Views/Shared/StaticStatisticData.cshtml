@@ -27,7 +27,7 @@
             }
         </table>
     }
-    if (m != null && m.Values != null && m.Values.Any())
+    if (ViewBag.RenderGraphic != null && ViewBag.RenderGraphic && m != null && m.Values != null && m.Values.Any())
      {
          @Html.Partial("StaticDiagram", m)
      }

@@ -26,7 +26,7 @@ namespace MinStat.AnalizeUI.Controllers
             _infoAdapter = new InfoDataAdapter();
 
             Dictionary<int, string> federalDistricts = _infoAdapter.GetFederalDistricts().ToDictionary(x => x.Key, x => x.Value);
-            federalDistricts.Add(0, "");
+            federalDistricts.Add(0, "Все округа");
             ViewBag.FederalDistricts = federalDistricts.OrderBy(x => x.Key);
             ViewBag.StartDate = new DateTime(DateTime.Now.Year, 1, 1).ToShortDateString();
             ViewBag.EndDate = DateTime.Now.ToShortDateString();
@@ -59,6 +59,7 @@ namespace MinStat.AnalizeUI.Controllers
         [HttpPost]
         public ActionResult CustomReport(SelectionChecks selectionChecks, string reportType)
         {
+            ViewBag.RenderGraphic = true;
             IEnumerable<StatisticDataModel> model = new StatisticDataModel[0];
             if (reportType.EndsWith("#static") || String.IsNullOrWhiteSpace(reportType))
             {

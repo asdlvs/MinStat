@@ -69,5 +69,22 @@ namespace MinStat.AnalizeUI.ServiceAdapters
                 }
             }
         }
+
+
+        public IDictionary<int, string> GetPostLevels()
+        {
+            using (StatisticDataServiceClient proxy = new StatisticDataServiceClient())
+            {
+                return proxy.GetPostLevels();
+            }
+        }
+
+        public IDictionary<int, string> GetEducationLevels()
+        {
+            using (StatisticDataServiceClient proxy = new StatisticDataServiceClient())
+            {
+                return proxy.GetEducationLevels();
+            }
+        }
     }
 }

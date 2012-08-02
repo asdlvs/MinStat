@@ -49,6 +49,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetSummaryReport">
+      <soap:operation soapAction="http://www.fem-sut.spb.ru/StatisticDataService/GetSummaryReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetFederalDistricts">
       <soap:operation soapAction="http://www.fem-sut.spb.ru/StatisticDataService/GetFederalDistricts" style="document" />
       <wsdl:input>
@@ -87,6 +96,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetConsolidateFilterCritery">
       <soap:operation soapAction="http://www.fem-sut.spb.ru/StatisticDataService/GetConsolidateFilterCritery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostLevels">
+      <soap:operation soapAction="http://www.fem-sut.spb.ru/StatisticDataService/GetPostLevels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEducationLevels">
+      <soap:operation soapAction="http://www.fem-sut.spb.ru/StatisticDataService/GetEducationLevels" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -15,7 +15,7 @@
 function fillFederalSubjectsLists(federalDistrictId) {
     $.get("/MinStat.AnalizeUI/Region/FederalSubjects", { federalDistrictId: federalDistrictId }, function (data) {
         $("#federalSubjectId").empty();
-        $("#federalSubjectId").append($('<option value="0"></option>'));
+        $("#federalSubjectId").append($('<option value="0">Все субъекты</option>'));
         $.each(data, function (el) {
             $("#federalSubjectId").append($('<option value="' + el + '">' + data[el] + '</option>'));
         });
@@ -32,7 +32,7 @@ function fillFederalSubjectsLists(federalDistrictId) {
 function fillEntepriseList(federalSubjectId) {
     $.get("/MinStat.AnalizeUI/Region/Enterprises", { federalSubjectId: federalSubjectId }, function (datae) {
         $("#enterpriseId").empty();
-        $("#enterpriseId").append($('<option value="0"></option>'));
+        $("#enterpriseId").append($('<option value="0">Все предприятия</option>'));
         $.each(datae, function (el) {
             $("#enterpriseId").append($('<option value="' + el + '">' + datae[el] + '</option>'));
         });

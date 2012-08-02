@@ -390,6 +390,9 @@ namespace MinStat.AnalizeUI.StatisticDataReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetQtyDynamicReport", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetQtyDynamicReportResponse")]
         MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetQtyDynamicReport(int enterpriseId, int federalSubjectId, int federalDistrictId, System.DateTime startDate, System.DateTime endDate, int[] verticalChecks, System.Collections.Generic.KeyValuePair<int, int>[] horizontalChecks);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetSummaryReport", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetSummaryReportResponse")]
+        MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetSummaryReport(int enterpiseId, int federalSubjectId, int federalDistrictId, System.DateTime boundDate, int[] activities, int[] genders, int[] educationLevels, int[] postLevels);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetFederalDistricts", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetFederalDistrictsResponse")]
         System.Collections.Generic.Dictionary<int, string> GetFederalDistricts();
         
@@ -405,6 +408,12 @@ namespace MinStat.AnalizeUI.StatisticDataReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetConsolidateFilterCritery", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetConsolidateFilterCriteryRespons" +
             "e")]
         MinStat.AnalizeUI.StatisticDataReference.FilterCritery[] GetConsolidateFilterCritery();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetPostLevels", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetPostLevelsResponse")]
+        System.Collections.Generic.Dictionary<int, string> GetPostLevels();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetEducationLevels", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetEducationLevelsResponse")]
+        System.Collections.Generic.Dictionary<int, string> GetEducationLevels();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -454,6 +463,10 @@ namespace MinStat.AnalizeUI.StatisticDataReference {
             return base.Channel.GetQtyDynamicReport(enterpriseId, federalSubjectId, federalDistrictId, startDate, endDate, verticalChecks, horizontalChecks);
         }
         
+        public MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetSummaryReport(int enterpiseId, int federalSubjectId, int federalDistrictId, System.DateTime boundDate, int[] activities, int[] genders, int[] educationLevels, int[] postLevels) {
+            return base.Channel.GetSummaryReport(enterpiseId, federalSubjectId, federalDistrictId, boundDate, activities, genders, educationLevels, postLevels);
+        }
+        
         public System.Collections.Generic.Dictionary<int, string> GetFederalDistricts() {
             return base.Channel.GetFederalDistricts();
         }
@@ -472,6 +485,14 @@ namespace MinStat.AnalizeUI.StatisticDataReference {
         
         public MinStat.AnalizeUI.StatisticDataReference.FilterCritery[] GetConsolidateFilterCritery() {
             return base.Channel.GetConsolidateFilterCritery();
+        }
+        
+        public System.Collections.Generic.Dictionary<int, string> GetPostLevels() {
+            return base.Channel.GetPostLevels();
+        }
+        
+        public System.Collections.Generic.Dictionary<int, string> GetEducationLevels() {
+            return base.Channel.GetEducationLevels();
         }
     }
 }

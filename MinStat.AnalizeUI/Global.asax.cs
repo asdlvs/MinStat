@@ -40,6 +40,7 @@ namespace MinStat.AnalizeUI
             RegisterRoutes(RouteTable.Routes);
             ModelBinders.Binders.Add(typeof(SelectionChecks), new CustomReportBinder());
             ModelBinders.Binders.Add(typeof(ConsolidateReportCreatorModel), new ConsolidateReportCreatorBinder());
+            ModelBinders.Binders.Add(typeof(SummaryReportCreatorModel), new SummaryReportCreatorBinder());
         }
     }
 }

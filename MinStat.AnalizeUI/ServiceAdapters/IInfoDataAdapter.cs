@@ -13,5 +13,7 @@ namespace MinStat.AnalizeUI.ServiceAdapters
         IDictionary<int, string> GetEnterprises(int subjectId);
         IEnumerable<ActivityModel> GetActivities();
         IEnumerable<FilterCriteryModel> GetFilterCriteries();
+        IDictionary<int, string> GetPostLevels();
+        IDictionary<int, string> GetEducationLevels();
     }
 }

@@ -40,6 +40,12 @@
   <wsdl:message name="StatisticDataService_GetQtyDynamicReport_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetQtyDynamicReportResponse" />
   </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetSummaryReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSummaryReport" />
+  </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetSummaryReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSummaryReportResponse" />
+  </wsdl:message>
   <wsdl:message name="StatisticDataService_GetFederalDistricts_InputMessage">
     <wsdl:part name="parameters" element="tns:GetFederalDistricts" />
   </wsdl:message>
@@ -70,6 +76,18 @@
   <wsdl:message name="StatisticDataService_GetConsolidateFilterCritery_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetConsolidateFilterCriteryResponse" />
   </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetPostLevels_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostLevels" />
+  </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetPostLevels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostLevelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetEducationLevels_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEducationLevels" />
+  </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetEducationLevels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEducationLevelsResponse" />
+  </wsdl:message>
   <wsdl:portType name="StatisticDataService">
     <wsdl:operation name="GetFullReport">
       <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetFullReport" message="tns:StatisticDataService_GetFullReport_InputMessage" />
@@ -91,6 +109,10 @@
       <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetQtyDynamicReport" message="tns:StatisticDataService_GetQtyDynamicReport_InputMessage" />
       <wsdl:output wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetQtyDynamicReportResponse" message="tns:StatisticDataService_GetQtyDynamicReport_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetSummaryReport">
+      <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetSummaryReport" message="tns:StatisticDataService_GetSummaryReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetSummaryReportResponse" message="tns:StatisticDataService_GetSummaryReport_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetFederalDistricts">
       <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetFederalDistricts" message="tns:StatisticDataService_GetFederalDistricts_InputMessage" />
       <wsdl:output wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetFederalDistrictsResponse" message="tns:StatisticDataService_GetFederalDistricts_OutputMessage" />
@@ -110,6 +132,14 @@
     <wsdl:operation name="GetConsolidateFilterCritery">
       <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetConsolidateFilterCritery" message="tns:StatisticDataService_GetConsolidateFilterCritery_InputMessage" />
       <wsdl:output wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetConsolidateFilterCriteryResponse" message="tns:StatisticDataService_GetConsolidateFilterCritery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPostLevels">
+      <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetPostLevels" message="tns:StatisticDataService_GetPostLevels_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetPostLevelsResponse" message="tns:StatisticDataService_GetPostLevels_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEducationLevels">
+      <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetEducationLevels" message="tns:StatisticDataService_GetEducationLevels_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetEducationLevelsResponse" message="tns:StatisticDataService_GetEducationLevels_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

@@ -21,14 +21,16 @@ namespace MinStat.BLL
 
         [OperationContract]
         IEnumerable<StatisticData> GetQtyStaticReport(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, 
-            List<int> verticalChecks,
-            List<KeyValuePair<int, int>> horizontalChecks);
+            List<int> verticalChecks, List<KeyValuePair<int, int>> horizontalChecks);
 
         [OperationContract]
         IEnumerable<StatisticData> GetQtyDynamicReport(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate,
-            List<int> verticalChecks,
-            List<KeyValuePair<int, int>> horizontalChecks);
+            List<int> verticalChecks, List<KeyValuePair<int, int>> horizontalChecks);
 
+        [OperationContract]
+        IEnumerable<StatisticData> GetSummaryReport(int enterpiseId, int federalSubjectId, int federalDistrictId, DateTime boundDate, List<int> activities,
+                                                        List<int> genders, List<int> educationLevels, List<int> postLevels);
+        
         [OperationContract]
         IDictionary<int, string> GetFederalDistricts();
 
@@ -44,7 +46,10 @@ namespace MinStat.BLL
         [OperationContract]
         IEnumerable<FilterCritery> GetConsolidateFilterCritery();
 
+        [OperationContract]
+        IDictionary<int, string> GetPostLevels();
 
-
+        [OperationContract]
+        IDictionary<int, string> GetEducationLevels();
     }
 }

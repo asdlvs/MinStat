@@ -13,30 +13,18 @@ namespace MinStat.DAL
         IEnumerable<StatisticData> GetStaticConsolidatedReportData(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> activities, List<int> criteries);
         IEnumerable<StatisticData> GetDynamicConsolidatedReportData(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> activities, List<int> criteries);
 
-        IEnumerable<StatisticData> GetFullReportData(int enterpriseId,
-            int federalSubjectId,
-            int federalDistrictId,
-            DateTime startDate,
-            DateTime endDate);
+        IEnumerable<StatisticData> GetFullReportData(int enterpriseId,int federalSubjectId,int federalDistrictId,DateTime startDate,DateTime endDate);
 
         IEnumerable<StatisticData> GetPeronaliesReportData();
 
-        IEnumerable<StatisticData> GetQtyStaticReportData(int enterpriseId, 
-            int federalSubjectId, 
-            int federalDistrictId, 
-            DateTime startDate, 
-            DateTime endDate, 
-            List<int> verticalItems, 
+        IEnumerable<StatisticData> GetQtyStaticReportData(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> verticalItems, 
             List<KeyValuePair<int, int>> horizontalItems);
 
-        IEnumerable<StatisticData> GetQtyDynamicReportData(int enterpriseId,
-            int federalSubjectId,
-            int federalDistrictId,
-            DateTime startDate,
-            DateTime endDate,
-            List<int> verticalItems,
+        IEnumerable<StatisticData> GetQtyDynamicReportData(int enterpriseId,int federalSubjectId,int federalDistrictId,DateTime startDate,DateTime endDate,List<int> verticalItems,
             List<KeyValuePair<int, int>> horizontalItems);
 
+        IEnumerable<StatisticData> GetSummaryReportData(int enterpiseId, int federalSubjectId, int federalDistrictId,DateTime boundDate, List<int> activities,
+                                                        List<int> genders, List<int> educationLevels,List<int> postLevels);
         IDictionary<int, string> GetFederalDistricts();
         IDictionary<int, string> GetFederalSubjects(int districtId);
         IDictionary<int, string> GetEnterprises(int sibjectId);
@@ -45,5 +33,8 @@ namespace MinStat.DAL
 
         IEnumerable<FilterCritery> GetConsolidateFilterCriteries();
 
+        IEnumerable<PostLevel> PostLevels();
+
+        IEnumerable<EducationLevel> EducationLevels();
     }
 }

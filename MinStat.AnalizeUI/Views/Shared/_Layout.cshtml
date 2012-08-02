@@ -4,7 +4,7 @@
     <title>@ViewBag.Title</title>
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
-    <link href="@Url.Content("~/Content/bootstrap-responsive.min.css")" rel="stylesheet" type="text/css" />
+@*    <link href="@Url.Content("~/Content/bootstrap-responsive.min.css")" rel="stylesheet" type="text/css" />*@
     <link href="@Url.Content("~/Content/datepicker.css")" rel="stylesheet" type="text/css" />
     <script src="@Url.Content("~/Scripts/jquery-1.7.2.min.js")" type="text/javascript" ></script>
     <script src="@Url.Content("~/Scripts/jquery-ui-1.8.11.js")" type="text/javascript" ></script>
@@ -36,6 +36,9 @@
                         </li>
                         <li class="">
                             @Html.ActionLink("Сводный отчет", "Index", "Consolidate")
+                        </li>
+                        <li class="">
+                            @Html.ActionLink("Количественный отчет", "Index", "Summary")
                         </li>
                         <li class="">
                             @Html.ActionLink("Добавить предприятие", "Index", "Administration")

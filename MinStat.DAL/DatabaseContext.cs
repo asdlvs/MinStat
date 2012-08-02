@@ -18,5 +18,7 @@ namespace MinStat.DAL
         public DbSet<Person> People { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<SummaryActivity> SummaryActivities { get; set; }
+        public DbSet<EducationLevel> EducationLevels { get; set; }
+        public DbSet<PostLevel> PostLevels { get; set; }
     }
 }
