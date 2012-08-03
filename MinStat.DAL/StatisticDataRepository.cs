@@ -32,6 +32,8 @@ namespace MinStat.DAL
         private const string SummaryDataStoredProcedureCaller =
             "Exec dbo.GetSummaryData @genders, @educationlevels, @postlevels, @bounddate, @enterpriseid, @federalsubjectid, @federaldistrictid, @activities";
 
+        private const string FastSummaryStoredProcedureCaller = "Exec [dbo].[GetFastSummaryData] @enterpriseid @federalsubjectid @federaldistrictid @activityid";
+
         public StatisticDataRepository(IStatisticDataConvertersFactory converterFactory, DatabaseContext contextAdapter)
         {
             _converterFactory = converterFactory;
@@ -237,7 +239,24 @@ namespace MinStat.DAL
 
         }
 
-        public IDictionary<int, string> GetFederalDistricts()
+      public IEnumerable<StatisticData> GetFastSummaryReportData(int enterpriseId, int federalSubjectId, int federalDistrictId, int activityId)
+      {
+        SqlParameter[] parameters = new[]
+                                            {
+                                                new SqlParameter("@EnterpriseId", enterpriseId),
+                                                new SqlParameter("@FederalSubjectId", federalSubjectId),
+                                                new SqlParameter("@FederalDistrictId", federalDistrictId)
+                                            };
+        IEnumerable<FastSummaryReportItem> fastReportItems =
+            _context.Database.SqlQuery<FastSummaryReportItem>(FastSummaryStoredProcedureCaller,
+                                                                     parameters);
+        IStatisticDataConverter<FastSummaryReportItem> converter =
+            _converterFactory.GetConverter<FastSummaryReportItem>();
+        fastReportItems = fastReportItems.ToList();
+        return converter.Convert(fastReportItems);
+      }
+
+      public IDictionary<int, string> GetFederalDistricts()
         {
             return _context.FederalDistricts.ToDictionary(x => x.Id, x => x.Title);
         }

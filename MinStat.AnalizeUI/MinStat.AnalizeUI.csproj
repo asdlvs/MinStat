@@ -69,6 +69,7 @@
     <Compile Include="Binders\CustomReportBinder.cs" />
     <Compile Include="Binders\SummaryReportCreatorBinder.cs" />
     <Compile Include="Controllers\AdministrationController.cs" />
+    <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\ConsolidateController.cs" />
     <Compile Include="Controllers\FullReportController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -148,6 +149,7 @@
     <Content Include="Scripts\Bonch.AnalizeUI.Reports.js" />
     <Content Include="Scripts\bootstrap-alert.js" />
     <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap-dropdown.js" />
     <Content Include="Scripts\bootstrap-modal.js" />
     <Content Include="Scripts\bootstrap-popover.js" />
     <Content Include="Scripts\bootstrap-scrollspy.js" />

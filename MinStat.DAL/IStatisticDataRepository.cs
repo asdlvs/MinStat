@@ -25,6 +25,9 @@ namespace MinStat.DAL
 
         IEnumerable<StatisticData> GetSummaryReportData(int enterpiseId, int federalSubjectId, int federalDistrictId,DateTime boundDate, List<int> activities,
                                                         List<int> genders, List<int> educationLevels,List<int> postLevels);
+
+        IEnumerable<StatisticData> GetFastSummaryReportData(int enterpriseId, int federalSubjectId, int federalDistrictId, int activityId);
+
         IDictionary<int, string> GetFederalDistricts();
         IDictionary<int, string> GetFederalSubjects(int districtId);
         IDictionary<int, string> GetEnterprises(int sibjectId);

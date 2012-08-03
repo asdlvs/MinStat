@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Converters\ConsolidatedDynamicReportConverter.cs" />
     <Compile Include="Converters\ConsolidatedStaticReportConverter.cs" />
+    <Compile Include="Converters\FastSummaryReportConverter.cs" />
     <Compile Include="Converters\FullReportConverter.cs" />
     <Compile Include="Converters\PersonaliesReportConverter.cs" />
     <Compile Include="Converters\SelectionQtyDynamicConverter.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="POCO\PostLevel.cs" />
     <Compile Include="POCO\ReportItems\ConsolidatedDynamicReportItem.cs" />
     <Compile Include="POCO\ReportItems\ConsolidatedStaticReportItem.cs" />
+    <Compile Include="POCO\ReportItems\FastSummaryReportItem.cs" />
     <Compile Include="POCO\ReportItems\FullReportItem.cs" />
     <Compile Include="POCO\ReportItems\PersonaliesReportItem.cs" />
     <Compile Include="POCO\ReportItems\SelectionQtyDynamicReportItem.cs" />

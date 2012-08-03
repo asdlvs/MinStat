@@ -39,6 +39,10 @@ namespace MinStat.DAL
             {
                 return (IStatisticDataConverter<T>) new SummaryDataReportConverter();
             }
+            if (typeof(T) == typeof(FastSummaryReportItem))
+            {
+              return (IStatisticDataConverter<T>)new FastSummaryReportConverter();
+            }
             throw new ArgumentException("There is not converter for such type.");
         }
     }

@@ -87,5 +87,16 @@ namespace MinStat.BLL
         {
             return _statisticDataRepository.EducationLevels().ToDictionary(x => x.Id, x => x.Title);
         }
+
+
+        public IEnumerable<StatisticData> GetFastSummaryReport(int enterpriseId, int federalSubjectId, int federalDistrictId, int activityId)
+        {
+          return _statisticDataRepository.GetFastSummaryReportData(enterpriseId, federalSubjectId, federalDistrictId, activityId);
+        }
+
+        public IDictionary<int, string> GetFederalDistricts(int enterpiseId, int federalSubjectId, int federalDistrictId, int activityId)
+        {
+          throw new NotImplementedException();
+        }
     }
 }
