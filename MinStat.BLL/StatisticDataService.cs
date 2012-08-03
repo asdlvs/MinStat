@@ -93,10 +93,5 @@ namespace MinStat.BLL
         {
           return _statisticDataRepository.GetFastSummaryReportData(enterpriseId, federalSubjectId, federalDistrictId, activityId);
         }
-
-        public IDictionary<int, string> GetFederalDistricts(int enterpiseId, int federalSubjectId, int federalDistrictId, int activityId)
-        {
-          throw new NotImplementedException();
-        }
     }
 }

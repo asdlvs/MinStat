@@ -6,25 +6,35 @@ using System.Web.Mvc;
 
 namespace MinStat.AnalizeUI.Controllers
 {
-  using MinStat.AnalizeUI.Models;
-  using MinStat.AnalizeUI.ServiceAdapters;
+    using Models;
+    using ServiceAdapters;
 
-  public class CommonController : Controller
-  {
-    private readonly ConsolidateReportAdapter _adapter;
-    private readonly IInfoDataAdapter _infoAdapter;
-
-    public CommonController()
+    public class CommonController : Controller
     {
-      _adapter = new ConsolidateReportAdapter();
-      _infoAdapter = new InfoDataAdapter();
-    }
+        private readonly FastSummaryReportAdapter _adapter;
+        private IInfoDataAdapter _infoAdapter;
 
-    public ActionResult Report(int enterpriseId, int federalSubjectId, int federalDistrictId, int activityId)
-    {
-      IEnumerable<StatisticDataModel> statisticData = _adapter.GetDynamicConsolidatedReport(null);
-      return View("DynamicStatisticData", statisticData);
-    }
+        public CommonController()
+        {
+            _adapter = new FastSummaryReportAdapter();
+            _infoAdapter = new InfoDataAdapter();
+        }
 
-  }
+        public ActionResult Report(int enterpriseId, int federalSubjectId, int federalDistrictId, int activityId)
+        {
+            IEnumerable<StatisticDataModel> statisticData = _adapter.GetFastSummaryReport(enterpriseId, federalSubjectId, federalDistrictId, activityId);
+            return View("StaticStatisticData", statisticData);
+        }
+
+        public ActionResult Chooser()
+        {
+            FastSummarySelectModel model = new FastSummarySelectModel();
+            model.Activities = _infoAdapter.GetActivities();
+            model.Enterprises = _infoAdapter.GetEnterprises(0);
+            model.FederalSubjects = _infoAdapter.GetFederalSubjects(0);
+            model.FederalDistricts = _infoAdapter.GetFederalDistricts();
+            return PartialView(model);
+        }
+
+    }
 }

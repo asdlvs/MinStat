@@ -83,6 +83,7 @@
     <Compile Include="Models\ConsolidateReportCreatorModel.cs" />
     <Compile Include="Models\CreateEnterpriseModel.cs" />
     <Compile Include="Models\EnterpriseModel.cs" />
+    <Compile Include="Models\FastSummarySelectModel.cs" />
     <Compile Include="Models\FilterCriteryModel.cs" />
     <Compile Include="Models\FullReportModel.cs" />
     <Compile Include="Models\StatisticDataItemModel.cs" />
@@ -101,6 +102,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ServiceAdapters\AdministrationServiceAdapter.cs" />
+    <Compile Include="ServiceAdapters\FastSummaryReportAdapter.cs" />
     <Compile Include="ServiceAdapters\IAdministrationServiceAdapter.cs" />
     <Compile Include="ServiceAdapters\ConsolidateReportAdapter.cs" />
     <Compile Include="ServiceAdapters\FullReportAdapter.cs" />
@@ -310,6 +312,7 @@
     <Content Include="Views\Administration\Index.cshtml" />
     <Content Include="Views\Consolidate\StaticReport.cshtml" />
     <Content Include="Views\Summary\Index.cshtml" />
+    <Content Include="Views\Common\Chooser.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

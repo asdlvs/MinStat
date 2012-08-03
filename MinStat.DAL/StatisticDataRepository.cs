@@ -263,12 +263,12 @@ namespace MinStat.DAL
 
         public IDictionary<int, string> GetFederalSubjects(int districtId)
         {
-            return _context.FederalSubjects.Where(x => x.FederalDistrictId == districtId).ToDictionary(x => x.Id, x => x.Title);
+            return _context.FederalSubjects.Where(x => x.FederalDistrictId == districtId && districtId == 0).ToDictionary(x => x.Id, x => x.Title);
         }
 
         public IDictionary<int, string> GetEnterprises(int subjectId)
         {
-            return _context.Enterprises.Where(x => x.FederalSubjectId == subjectId).ToDictionary(x => x.Id, x => x.Title);
+            return _context.Enterprises.Where(x => x.FederalSubjectId == subjectId && subjectId == 0).ToDictionary(x => x.Id, x => x.Title);
         }
 
         public IEnumerable<Activity> GetActivities()

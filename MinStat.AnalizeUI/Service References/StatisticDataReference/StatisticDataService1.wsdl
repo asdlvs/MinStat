@@ -46,6 +46,12 @@
   <wsdl:message name="StatisticDataService_GetSummaryReport_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetSummaryReportResponse" />
   </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetFastSummaryReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFastSummaryReport" />
+  </wsdl:message>
+  <wsdl:message name="StatisticDataService_GetFastSummaryReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFastSummaryReportResponse" />
+  </wsdl:message>
   <wsdl:message name="StatisticDataService_GetFederalDistricts_InputMessage">
     <wsdl:part name="parameters" element="tns:GetFederalDistricts" />
   </wsdl:message>
@@ -112,6 +118,10 @@
     <wsdl:operation name="GetSummaryReport">
       <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetSummaryReport" message="tns:StatisticDataService_GetSummaryReport_InputMessage" />
       <wsdl:output wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetSummaryReportResponse" message="tns:StatisticDataService_GetSummaryReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFastSummaryReport">
+      <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetFastSummaryReport" message="tns:StatisticDataService_GetFastSummaryReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetFastSummaryReportResponse" message="tns:StatisticDataService_GetFastSummaryReport_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetFederalDistricts">
       <wsdl:input wsaw:Action="http://www.fem-sut.spb.ru/StatisticDataService/GetFederalDistricts" message="tns:StatisticDataService_GetFederalDistricts_InputMessage" />

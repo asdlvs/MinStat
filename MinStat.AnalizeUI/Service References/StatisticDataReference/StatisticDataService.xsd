@@ -123,6 +123,23 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetFastSummaryReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="enterpriseId" type="xs:int" />
+        <xs:element minOccurs="0" name="federalSubjectId" type="xs:int" />
+        <xs:element minOccurs="0" name="federalDistrictId" type="xs:int" />
+        <xs:element minOccurs="0" name="activityId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFastSummaryReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO.ResultItems" minOccurs="0" name="GetFastSummaryReportResult" nillable="true" type="q19:ArrayOfStatisticData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetFederalDistricts">
     <xs:complexType>
       <xs:sequence />
@@ -131,7 +148,7 @@
   <xs:element name="GetFederalDistrictsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetFederalDistrictsResult" nillable="true" type="q19:ArrayOfKeyValueOfintstring" />
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetFederalDistrictsResult" nillable="true" type="q20:ArrayOfKeyValueOfintstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -145,7 +162,7 @@
   <xs:element name="GetFederalSubjectsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetFederalSubjectsResult" nillable="true" type="q20:ArrayOfKeyValueOfintstring" />
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetFederalSubjectsResult" nillable="true" type="q21:ArrayOfKeyValueOfintstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -159,7 +176,7 @@
   <xs:element name="GetEnterprisesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetEnterprisesResult" nillable="true" type="q21:ArrayOfKeyValueOfintstring" />
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetEnterprisesResult" nillable="true" type="q22:ArrayOfKeyValueOfintstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -171,7 +188,7 @@
   <xs:element name="GetActivitiesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO" minOccurs="0" name="GetActivitiesResult" nillable="true" type="q22:ArrayOfActivity" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO" minOccurs="0" name="GetActivitiesResult" nillable="true" type="q23:ArrayOfActivity" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -183,7 +200,7 @@
   <xs:element name="GetConsolidateFilterCriteryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO" minOccurs="0" name="GetConsolidateFilterCriteryResult" nillable="true" type="q23:ArrayOfFilterCritery" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO" minOccurs="0" name="GetConsolidateFilterCriteryResult" nillable="true" type="q24:ArrayOfFilterCritery" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -195,7 +212,7 @@
   <xs:element name="GetPostLevelsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetPostLevelsResult" nillable="true" type="q24:ArrayOfKeyValueOfintstring" />
+        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetPostLevelsResult" nillable="true" type="q25:ArrayOfKeyValueOfintstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -207,7 +224,7 @@
   <xs:element name="GetEducationLevelsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetEducationLevelsResult" nillable="true" type="q25:ArrayOfKeyValueOfintstring" />
+        <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetEducationLevelsResult" nillable="true" type="q26:ArrayOfKeyValueOfintstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

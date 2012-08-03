@@ -393,6 +393,9 @@ namespace MinStat.AnalizeUI.StatisticDataReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetSummaryReport", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetSummaryReportResponse")]
         MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetSummaryReport(int enterpiseId, int federalSubjectId, int federalDistrictId, System.DateTime boundDate, int[] activities, int[] genders, int[] educationLevels, int[] postLevels);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetFastSummaryReport", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetFastSummaryReportResponse")]
+        MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetFastSummaryReport(int enterpriseId, int federalSubjectId, int federalDistrictId, int activityId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.fem-sut.spb.ru/StatisticDataService/GetFederalDistricts", ReplyAction="http://www.fem-sut.spb.ru/StatisticDataService/GetFederalDistrictsResponse")]
         System.Collections.Generic.Dictionary<int, string> GetFederalDistricts();
         
@@ -465,6 +468,10 @@ namespace MinStat.AnalizeUI.StatisticDataReference {
         
         public MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetSummaryReport(int enterpiseId, int federalSubjectId, int federalDistrictId, System.DateTime boundDate, int[] activities, int[] genders, int[] educationLevels, int[] postLevels) {
             return base.Channel.GetSummaryReport(enterpiseId, federalSubjectId, federalDistrictId, boundDate, activities, genders, educationLevels, postLevels);
+        }
+        
+        public MinStat.AnalizeUI.StatisticDataReference.StatisticData[] GetFastSummaryReport(int enterpriseId, int federalSubjectId, int federalDistrictId, int activityId) {
+            return base.Channel.GetFastSummaryReport(enterpriseId, federalSubjectId, federalDistrictId, activityId);
         }
         
         public System.Collections.Generic.Dictionary<int, string> GetFederalDistricts() {

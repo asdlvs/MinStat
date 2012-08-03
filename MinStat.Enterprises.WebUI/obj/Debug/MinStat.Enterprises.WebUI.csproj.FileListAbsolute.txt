@@ -11,3 +11,4 @@ D:\Work\Bonch\MinStat_4\MinStat.Enterprises.WebUI\bin\EntityFramework.dll
 D:\Work\Bonch\MinStat_4\MinStat.Enterprises.WebUI\bin\EntityFramework.xml
 D:\Work\Bonch\MinStat_4\MinStat.Enterprises.WebUI\obj\Debug\MinStat.Enterprises.WebUI.dll
 D:\Work\Bonch\MinStat_4\MinStat.Enterprises.WebUI\obj\Debug\MinStat.Enterprises.WebUI.pdb
+D:\Work\Bonch\MinStat_4\MinStat.Enterprises.WebUI\obj\Debug\MinStat.Enterprises.WebUI.csprojResolveAssemblyReference.cache

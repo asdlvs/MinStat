@@ -12,7 +12,7 @@ namespace MinStat.BLL
     {
         [OperationContract]
         IEnumerable<StatisticData> GetFullReport(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate);
-        
+
         [OperationContract]
         IEnumerable<StatisticData> GetStaticConsolidatedReport(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> activities, List<int> criteries);
 
@@ -20,7 +20,7 @@ namespace MinStat.BLL
         IEnumerable<StatisticData> GetDynamicConsolidatedReport(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> activities, List<int> criteries);
 
         [OperationContract]
-        IEnumerable<StatisticData> GetQtyStaticReport(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, 
+        IEnumerable<StatisticData> GetQtyStaticReport(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate,
             List<int> verticalChecks, List<KeyValuePair<int, int>> horizontalChecks);
 
         [OperationContract]
@@ -31,11 +31,11 @@ namespace MinStat.BLL
         IEnumerable<StatisticData> GetSummaryReport(int enterpiseId, int federalSubjectId, int federalDistrictId, DateTime boundDate, List<int> activities,
                                                         List<int> genders, List<int> educationLevels, List<int> postLevels);
 
-      [OperationContract]
+        [OperationContract]
         IEnumerable<StatisticData> GetFastSummaryReport(int enterpriseId, int federalSubjectId, int federalDistrictId, int activityId);
-      
-      [OperationContract]
-      IDictionary<int, string> GetFederalDistricts(int enterpiseId, int federalSubjectId, int federalDistrictId, int activityId);
+
+        [OperationContract]
+        IDictionary<int, string> GetFederalDistricts();
 
         [OperationContract]
         IDictionary<int, string> GetFederalSubjects(int districtId);
