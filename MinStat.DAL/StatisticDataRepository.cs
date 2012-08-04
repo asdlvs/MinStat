@@ -32,7 +32,7 @@ namespace MinStat.DAL
         private const string SummaryDataStoredProcedureCaller =
             "Exec dbo.GetSummaryData @genders, @educationlevels, @postlevels, @bounddate, @enterpriseid, @federalsubjectid, @federaldistrictid, @activities";
 
-        private const string FastSummaryStoredProcedureCaller = "Exec [dbo].[GetFastSummaryData] @enterpriseid @federalsubjectid @federaldistrictid @activityid";
+        private const string FastSummaryStoredProcedureCaller = "Exec [dbo].[GetFastSummaryData] @enterpriseid, @federalsubjectid, @federaldistrictid, @activityid";
 
         public StatisticDataRepository(IStatisticDataConvertersFactory converterFactory, DatabaseContext contextAdapter)
         {
@@ -243,9 +243,10 @@ namespace MinStat.DAL
       {
         SqlParameter[] parameters = new[]
                                             {
-                                                new SqlParameter("@EnterpriseId", enterpriseId),
-                                                new SqlParameter("@FederalSubjectId", federalSubjectId),
-                                                new SqlParameter("@FederalDistrictId", federalDistrictId)
+                                                new SqlParameter("@enterpriseid", enterpriseId),
+                                                new SqlParameter("@federalsubjectid", federalSubjectId),
+                                                new SqlParameter("@federaldistrictid", federalDistrictId),
+                                                new SqlParameter("@activityid", activityId)
                                             };
         IEnumerable<FastSummaryReportItem> fastReportItems =
             _context.Database.SqlQuery<FastSummaryReportItem>(FastSummaryStoredProcedureCaller,
@@ -263,12 +264,12 @@ namespace MinStat.DAL
 
         public IDictionary<int, string> GetFederalSubjects(int districtId)
         {
-            return _context.FederalSubjects.Where(x => x.FederalDistrictId == districtId && districtId == 0).ToDictionary(x => x.Id, x => x.Title);
+            return _context.FederalSubjects.Where(x => x.FederalDistrictId == districtId || districtId == 0).ToDictionary(x => x.Id, x => x.Title);
         }
 
         public IDictionary<int, string> GetEnterprises(int subjectId)
         {
-            return _context.Enterprises.Where(x => x.FederalSubjectId == subjectId && subjectId == 0).ToDictionary(x => x.Id, x => x.Title);
+            return _context.Enterprises.Where(x => x.FederalSubjectId == subjectId || subjectId == 0).ToDictionary(x => x.Id, x => x.Title);
         }
 
         public IEnumerable<Activity> GetActivities()

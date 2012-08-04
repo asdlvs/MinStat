@@ -35,7 +35,7 @@
             <li class="dropdown">
               <a class="dropdown-toggle" href="#" data-toggle="dropdown">Стандартные отчеты<b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Предприятие</a></li>
+                <li><a  data-toggle="modal" href="#chooseEnterpriseModal">Предприятие</a></li>
                 <li><a href="#">Субъект Федерации</a></li>
                 <li><a href="#">Федеральный округ</a></li>
                 <li class="divider"></li>
@@ -64,12 +64,14 @@
   <br />
   <br />
   <br />
-  <div class="container">
-    <div class="row">
-      <div class="span12">
-        @RenderBody()
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                @RenderBody()
+            </div>
+        </div>
     </div>
-  </div>
+    
+    @Html.Action("Chooser", "Common")
 </body>
 </html>

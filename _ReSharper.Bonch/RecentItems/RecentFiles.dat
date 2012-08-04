@@ -1,44 +1,66 @@
 ﻿<RecentFiles>
   <RecentFiles>
-    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/f:DatabaseContext.cs" caret="827" fromTop="21" />
-    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:POCO/f:EducationLevel.cs" caret="227" fromTop="10" />
-    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:POCO/f:PostLevel.cs" caret="222" fromTop="10" />
-    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/f:IStatisticDataRepository.cs" caret="2112" fromTop="37" />
-    <File id="93ECADCE-1F20-4F64-BFD5-2D96A6F8245E/f:IStatisticDataService.cs" caret="1847" fromTop="31" />
-    <File id="93ECADCE-1F20-4F64-BFD5-2D96A6F8245E/f:StatisticDataService.cs" caret="3695" fromTop="23" />
-    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/f:StatisticDataRepository.cs" caret="13141" fromTop="22" />
-    <File id="C3510B5B-840F-4651-8408-C0F85793321B/f:Web.config" caret="861" fromTop="15" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/f:Web.config" caret="0" fromTop="0" />
     <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:SummaryDataReportConverter.cs" caret="1348" fromTop="9" />
     <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:FullReport/f:Index.cshtml" caret="6178" fromTop="38" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Shared/f:_Layout.cshtml" caret="0" fromTop="0" />
     <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Content/f:bootstrap.min.css" caret="0" fromTop="0" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Home/f:Index.cshtml" caret="530" fromTop="18" />
-    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Views/d:Shared/f:_Layout.cshtml" caret="257" fromTop="6" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:ServiceAdapters/f:IAdministrationServiceAdapter.cs" caret="0" fromTop="0" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Controllers/f:SummaryController.cs" caret="1327" fromTop="36" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:ServiceAdapters/f:ConsolidateReportAdapter.cs" caret="924" fromTop="19" />
+    <File id="C3510B5B-840F-4651-8408-C0F85793321B/f:Web.config" caret="854" fromTop="0" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Models/f:EnterpriseModel.cs" caret="0" fromTop="0" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Models/f:ActivityModel.cs" caret="0" fromTop="0" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Models/f:FastSummarySelectModel.cs" caret="285" fromTop="10" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Shared/f:DynamicDiagram.cshtml" caret="0" fromTop="0" />
+    <File id="93ECADCE-1F20-4F64-BFD5-2D96A6F8245E/f:IStatisticDataService.cs" caret="2087" fromTop="34" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:ServiceAdapters/f:IEnterpriseServiceAdapter.cs" caret="0" fromTop="0" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:ServiceAdapters/f:IAuthenticationServiceAdapter.cs" caret="0" fromTop="0" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Views/d:Shared/f:_Layout.cshtml" caret="2084" fromTop="28" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Controllers/f:RegionController.cs" caret="687" fromTop="27" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:ServiceAdapters/f:InfoDataAdapter.cs" caret="747" fromTop="23" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Home/f:Index.cshtml" caret="161" fromTop="6" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Controllers/f:FullReportController.cs" caret="1587" fromTop="37" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:ServiceAdapters/f:FastSummaryReportAdapter.cs" caret="547" fromTop="15" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/f:StatisticDataRepository.cs" caret="14308" fromTop="29" />
+    <File id="93ECADCE-1F20-4F64-BFD5-2D96A6F8245E/f:StatisticDataService.cs" caret="4407" fromTop="23" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Controllers/f:CommonController.cs" caret="681" fromTop="24" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Shared/f:_Layout.cshtml" caret="2298" fromTop="0" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Common/f:Chooser.cshtml" caret="1538" fromTop="25" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:SelectionQtyStaticConverter.cs" caret="1085" fromTop="21" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:POCO/d:ReportItems/f:SummaryReportItem.cs" caret="472" fromTop="13" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:POCO/d:ReportItems/f:FastSummaryReportItem.cs" caret="881" fromTop="30" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:ConsolidatedStaticReportConverter.cs" caret="3359" fromTop="40" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:FastSummaryReportConverter.cs" caret="1122" fromTop="8" />
   </RecentFiles>
   <RecentEdits>
-    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:SummaryDataReportConverter.cs" caret="1189" fromTop="11" />
-    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:SummaryDataReportConverter.cs" caret="942" fromTop="20" />
-    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:SummaryDataReportConverter.cs" caret="3584" fromTop="24" />
-    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:SummaryDataReportConverter.cs" caret="2699" fromTop="32" />
-    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:SummaryDataReportConverter.cs" caret="3402" fromTop="34" />
-    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:SummaryDataReportConverter.cs" caret="1866" fromTop="15" />
-    <File id="C3510B5B-840F-4651-8408-C0F85793321B/f:Web.config" caret="861" fromTop="15" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:FullReport/f:Index.cshtml" caret="6639" fromTop="8" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:FullReport/f:Index.cshtml" caret="6639" fromTop="17" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:FullReport/f:Index.cshtml" caret="6639" fromTop="5" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:FullReport/f:Index.cshtml" caret="6639" fromTop="45" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:FullReport/f:Index.cshtml" caret="6489" fromTop="31" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:FullReport/f:Index.cshtml" caret="6489" fromTop="25" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:FullReport/f:Index.cshtml" caret="6489" fromTop="22" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:FullReport/f:Index.cshtml" caret="6489" fromTop="14" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:FullReport/f:Index.cshtml" caret="5475" fromTop="21" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:FullReport/f:Index.cshtml" caret="5424" fromTop="16" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:FullReport/f:Index.cshtml" caret="4993" fromTop="5" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:FullReport/f:Index.cshtml" caret="6621" fromTop="10" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:FullReport/f:Index.cshtml" caret="5630" fromTop="33" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:FullReport/f:Index.cshtml" caret="6178" fromTop="38" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Home/f:Index.cshtml" caret="165" fromTop="6" />
-    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Views/d:Shared/f:_Layout.cshtml" caret="257" fromTop="6" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Common/f:Chooser.cshtml" caret="2082" fromTop="15" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Common/f:Chooser.cshtml" caret="2082" fromTop="9" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Common/f:Chooser.cshtml" caret="2082" fromTop="33" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Common/f:Chooser.cshtml" caret="1952" fromTop="34" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Common/f:Chooser.cshtml" caret="113" fromTop="2" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Shared/f:_Layout.cshtml" caret="2567" fromTop="23" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Home/f:Index.cshtml" caret="161" fromTop="6" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Controllers/f:CommonController.cs" caret="840" fromTop="24" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/f:StatisticDataRepository.cs" caret="1605" fromTop="18" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/f:StatisticDataRepository.cs" caret="13870" fromTop="22" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Common/f:Chooser.cshtml" caret="752" fromTop="15" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Common/f:Chooser.cshtml" caret="1795" fromTop="29" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Common/f:Chooser.cshtml" caret="1698" fromTop="23" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Common/f:Chooser.cshtml" caret="1538" fromTop="25" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:FastSummaryReportConverter.cs" caret="5029" fromTop="26" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:FastSummaryReportConverter.cs" caret="0" fromTop="0" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:FastSummaryReportConverter.cs" caret="5029" fromTop="8" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:SelectionQtyStaticConverter.cs" caret="606" fromTop="15" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:SelectionQtyStaticConverter.cs" caret="1085" fromTop="24" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:FastSummaryReportConverter.cs" caret="5029" fromTop="45" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:FastSummaryReportConverter.cs" caret="4829" fromTop="45" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:FastSummaryReportConverter.cs" caret="314" fromTop="13" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:FastSummaryReportConverter.cs" caret="3453" fromTop="9" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:FastSummaryReportConverter.cs" caret="539" fromTop="6" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:FastSummaryReportConverter.cs" caret="600" fromTop="8" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:FastSummaryReportConverter.cs" caret="3428" fromTop="22" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:FastSummaryReportConverter.cs" caret="3428" fromTop="33" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:POCO/d:ReportItems/f:FastSummaryReportItem.cs" caret="881" fromTop="30" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:FastSummaryReportConverter.cs" caret="3499" fromTop="39" />
+    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:FastSummaryReportConverter.cs" caret="1122" fromTop="8" />
   </RecentEdits>
 </RecentFiles>

@@ -20,9 +20,9 @@ namespace MinStat.AnalizeUI.Controllers
             _infoAdapter = new InfoDataAdapter();
         }
 
-        public ActionResult Report(int enterpriseId, int federalSubjectId, int federalDistrictId, int activityId)
+        public ActionResult Report(int? enterpriseId, int? federalSubjectId, int? federalDistrictId, int? activityId)
         {
-            IEnumerable<StatisticDataModel> statisticData = _adapter.GetFastSummaryReport(enterpriseId, federalSubjectId, federalDistrictId, activityId);
+            IEnumerable<StatisticDataModel> statisticData = _adapter.GetFastSummaryReport(enterpriseId ?? 0, federalSubjectId ?? 0, federalDistrictId ?? 0, activityId ?? 0);
             return View("StaticStatisticData", statisticData);
         }
 

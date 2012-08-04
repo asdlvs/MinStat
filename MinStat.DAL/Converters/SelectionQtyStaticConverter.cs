@@ -12,7 +12,8 @@ namespace MinStat.DAL.Converters
         public IEnumerable<POCO.ResultItems.StatisticData> Convert(IEnumerable<SelectionQtyStaticReportItem> result)
         {
             StatisticData statisticData = new StatisticData();
-            statisticData.Titles = result.Select(x => new {x.PostLevelId, x.EducationLevelId, x.PostLevelTitle, x.EducationLevelTitle})
+            var resultList = result.ToList();
+            statisticData.Titles = resultList.Select(x => new { x.PostLevelId, x.EducationLevelId, x.PostLevelTitle, x.EducationLevelTitle })
                 .Distinct()
                 .ToDictionary(
                     x => String.Format("{0}-{1}", x.PostLevelId, x.EducationLevelId),
@@ -21,7 +22,7 @@ namespace MinStat.DAL.Converters
             statisticData.Lines = new List<StatisticDataItem>();
 
             var resultGroupedByActivity =
-                result.GroupBy(x => new {x.ActivityId, x.ActivityTitle, x.Part1, x.Part2, x.Part3, x.Part4, x.Part5});
+                resultList.GroupBy(x => new { x.ActivityId, x.ActivityTitle, x.Part1, x.Part2, x.Part3, x.Part4, x.Part5 });
 
             foreach (var groupedReportItem in resultGroupedByActivity)
             {

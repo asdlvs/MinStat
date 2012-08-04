@@ -27,5 +27,7 @@ namespace MinStat.DAL.POCO.ReportItems
     public string PostLevelTitle { get; set; }
 
     public int Count { get; set; }
+    public int MiddleAge { get; set; }
+    public decimal MiddleSalary { get; set; }
   }
 }
