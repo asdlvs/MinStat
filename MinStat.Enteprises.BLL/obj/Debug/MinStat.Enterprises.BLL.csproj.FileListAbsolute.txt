@@ -16,3 +16,12 @@ F:\Repository\Trash\B_2\MinStat.Enteprises.BLL\bin\Debug\EntityFramework.xml
 F:\Repository\Trash\B_2\MinStat.Enteprises.BLL\obj\Debug\ResolveAssemblyReference.cache
 F:\Repository\Trash\B_2\MinStat.Enteprises.BLL\obj\Debug\MinStat.Enterprises.BLL.dll
 F:\Repository\Trash\B_2\MinStat.Enteprises.BLL\obj\Debug\MinStat.Enterprises.BLL.pdb
+E:\MinStat_4\MinStat.Enteprises.BLL\bin\Debug\MinStat.Enterprises.BLL.dll
+E:\MinStat_4\MinStat.Enteprises.BLL\bin\Debug\MinStat.Enterprises.BLL.pdb
+E:\MinStat_4\MinStat.Enteprises.BLL\bin\Debug\MinStat.Enterprises.DAL.dll
+E:\MinStat_4\MinStat.Enteprises.BLL\bin\Debug\EntityFramework.dll
+E:\MinStat_4\MinStat.Enteprises.BLL\bin\Debug\MinStat.Enterprises.DAL.pdb
+E:\MinStat_4\MinStat.Enteprises.BLL\bin\Debug\EntityFramework.xml
+E:\MinStat_4\MinStat.Enteprises.BLL\obj\Debug\MinStat.Enterprises.BLL.csprojResolveAssemblyReference.cache
+E:\MinStat_4\MinStat.Enteprises.BLL\obj\Debug\MinStat.Enterprises.BLL.dll
+E:\MinStat_4\MinStat.Enteprises.BLL\obj\Debug\MinStat.Enterprises.BLL.pdb

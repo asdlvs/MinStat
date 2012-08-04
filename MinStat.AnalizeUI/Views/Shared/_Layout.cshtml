@@ -36,12 +36,12 @@
               <a class="dropdown-toggle" href="#" data-toggle="dropdown">Стандартные отчеты<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a  data-toggle="modal" href="#chooseEnterpriseModal">Предприятие</a></li>
-                <li><a href="#">Субъект Федерации</a></li>
-                <li><a href="#">Федеральный округ</a></li>
+                <li><a  data-toggle="modal" href="#chooseFederalSubjectModal">Субъект Федерации</a></li>
+                <li><a data-toggle="modal"  href="#chooseFederalDistrictModal">Федеральный округ</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Подотрасль</a></li>
+                <li><a data-toggle="modal" href="#chooseActivityModal">Подотрасль</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Отрасль СМК</a></li>
+                <li><a href="#">@Html.ActionLink("Отрасль СМК", "Report", "Common")</a></li>
               </ul>
             </li>
             <li class="">

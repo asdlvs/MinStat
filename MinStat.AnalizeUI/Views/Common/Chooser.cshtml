@@ -1,5 +1,6 @@
 ﻿@using MinStat.AnalizeUI.Models
 @model FastSummarySelectModel
+
 <div class="modal hide" id="chooseEnterpriseModal">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">
@@ -13,17 +14,17 @@
             <ul class="nav nav-tabs">
                 @foreach (var groupedItem in Model.Enterprises.GroupBy(x => x.Value.Substring(0, 1)).OrderBy(x => x.Key))
                 {
-                    <li class="@Html.Raw(groupedItem.Key ==  Model.Enterprises.GroupBy(x => x.Value.Substring(0, 1)).OrderBy(x => x.Key).First().Key ? "active" : "")"><a href="@String.Format("#tab_{0}", groupedItem.Key)" data-toggle="tab">@groupedItem.Key</a></li>
+                    <li class="@Html.Raw(groupedItem.Key == Model.Enterprises.GroupBy(x => x.Value.Substring(0, 1)).OrderBy(x => x.Key).First().Key ? "active" : "")">
+                        <a href="@String.Format("#tab_{0}", groupedItem.Key)" data-toggle="tab">@groupedItem.Key</a></li>
                 }
             </ul>
             <div class="tab-content">
                 @foreach (var groupedItem in Model.Enterprises.GroupBy(x => x.Value.Substring(0, 1)))
                 {
                     <div class="tab-pane @Html.Raw(groupedItem.Key == Model.Enterprises.GroupBy(x => x.Value.Substring(0, 1)).OrderBy(x => x.Key).First().Key ? "active" : "")" id="@String.Format("tab_{0}", groupedItem.Key)">
-                        
-                        @for (int i = 0; i < groupedItem.Count(); i++ )
+                        @for (int i = 0; i < groupedItem.Count(); i++)
                         {
-                            <div class="span2" @((i + 1) % 3 == 0 ? "style=height:30px;" : "style=float:left;height:30px;")>
+                            <div class="span2" @((i + 1) % 3 == 0 ? "style=height:50px;" : "style=float:left;height:50px;")>
                                 @Html.ActionLink(groupedItem.ElementAt(i).Value, "Report", "Common", new { enterpriseId = groupedItem.ElementAt(i).Key }, null)
                             </div>
                         
@@ -36,6 +37,91 @@
         </div>
     </div>
     <div class="modal-footer">
-        <a href="#" class="btn" data-dismiss="modal">Close</a>
+        <a href="#" class="btn" data-dismiss="modal">Отмена</a>
     </div>
 </div>
+
+<div class="modal hide" id="chooseFederalSubjectModal">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+            ×</button>
+        <h3>
+            Субъект федерации</h3>
+    </div>
+    <div class="modal-body">
+        <div class="tabbable">
+            <!-- Only required for left/right tabs -->
+            <ul class="nav nav-tabs">
+                @foreach (var groupedItem in Model.FederalSubjects.GroupBy(x => x.Value.Substring(0, 1)).OrderBy(x => x.Key))
+                {
+                    <li class="@Html.Raw(groupedItem.Key == Model.FederalSubjects.GroupBy(x => x.Value.Substring(0, 1)).OrderBy(x => x.Key).First().Key ? "active" : "")">
+                        <a href="@String.Format("#tab_{0}", groupedItem.Key)" data-toggle="tab">@groupedItem.Key</a></li>
+                }
+            </ul>
+            <div class="tab-content">
+                @foreach (var groupedItem in Model.FederalSubjects.GroupBy(x => x.Value.Substring(0, 1)))
+                {
+                    <div class="tab-pane @Html.Raw(groupedItem.Key == Model.FederalSubjects.GroupBy(x => x.Value.Substring(0, 1)).OrderBy(x => x.Key).First().Key ? "active" : "")" id="@String.Format("tab_{0}", groupedItem.Key)">
+                        @for (int i = 0; i < groupedItem.Count(); i++)
+                        {
+                            <div class="span2" @((i + 1) % 3 == 0 ? "style=height:50px;" : "style=float:left;height:50px;")>
+                                @Html.ActionLink(groupedItem.ElementAt(i).Value, "Report", "Common", new { federalSubjectId = groupedItem.ElementAt(i).Key }, null)
+                            </div>
+                        
+                        }
+                    </div>
+                }
+                <div class="tab-pane" id="tab2">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">Отмена</a>
+    </div>
+</div>
+
+<div class="modal hide" id="chooseFederalDistrictModal">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+            ×</button>
+        <h3>
+            Федеральный округ</h3>
+    </div>
+    <div class="modal-body">
+        @for (int i = 0; i < Model.FederalDistricts.Count; i++)
+        {
+            <div class="span2" @((i + 1) % 3 == 0 ? "style=height:50px;" : "style=float:left;height:50px;")>
+                @Html.ActionLink(Model.FederalDistricts.ElementAt(i).Value, "Report", "Common", new { federalDistrictId = Model.FederalDistricts.ElementAt(i).Key }, null)
+            </div>
+                        
+        }
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">Отмена</a>
+    </div>
+</div>
+
+<div class="modal hide" id="chooseActivityModal">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+            ×</button>
+        <h3>
+            Подотрасль</h3>
+    </div>
+    <div class="modal-body">
+    @foreach (var activity in Model.Activities.OrderBy(x => x.Part_1).ThenBy(x => x.Part_2).ThenBy(x => x.Part_3).ThenBy(x => x.Part_4).ThenBy(x => x.Part_5))
+        {
+            <div class="span6" @(activity.Part_5 == 0 ? "style=font-weight:bold;padding-top:15px;" : "") >
+                @Html.ActionLink(String.Format("{0}.{1}{2}.{3}{4}  {5}",activity.Part_1, activity.Part_2, activity.Part_3, activity.Part_4, activity.Part_5,activity.Title), "Report", "Common", new { activityId = activity.Id }, null)
+            </div>
+                        
+        }
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">Отмена</a>
+    </div>
+</div>
+
+
+
