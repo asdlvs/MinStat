@@ -1,0 +1,13 @@
+D:\Work\Bonch\MinStat_4\Bonch.MinStat.ImportFileGenerator\Bonch.MinStat.ImportFileGenerator\bin\Debug\Bonch.MinStat.ImportFileGenerator.dll
+D:\Work\Bonch\MinStat_4\Bonch.MinStat.ImportFileGenerator\Bonch.MinStat.ImportFileGenerator\bin\Debug\Bonch.MinStat.ImportFileGenerator.pdb
+D:\Work\Bonch\MinStat_4\Bonch.MinStat.ImportFileGenerator\Bonch.MinStat.ImportFileGenerator\bin\Debug\Bonch.MinStat.ImportFileGenerator.dll.manifest
+D:\Work\Bonch\MinStat_4\Bonch.MinStat.ImportFileGenerator\Bonch.MinStat.ImportFileGenerator\bin\Debug\Bonch.MinStat.ImportFileGenerator.vsto
+D:\Work\Bonch\MinStat_4\Bonch.MinStat.ImportFileGenerator\Bonch.MinStat.ImportFileGenerator\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+D:\Work\Bonch\MinStat_4\Bonch.MinStat.ImportFileGenerator\Bonch.MinStat.ImportFileGenerator\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.xml
+D:\Work\Bonch\MinStat_4\Bonch.MinStat.ImportFileGenerator\Bonch.MinStat.ImportFileGenerator\obj\Debug\Bonch.MinStat.ImportFileGenerator.csprojResolveAssemblyReference.cache
+D:\Work\Bonch\MinStat_4\Bonch.MinStat.ImportFileGenerator\Bonch.MinStat.ImportFileGenerator\obj\Debug\Bonch.MinStat.ImportFileGenerator.BindingForm.resources
+D:\Work\Bonch\MinStat_4\Bonch.MinStat.ImportFileGenerator\Bonch.MinStat.ImportFileGenerator\obj\Debug\Bonch.MinStat.ImportFileGenerator.Properties.Resources.resources
+D:\Work\Bonch\MinStat_4\Bonch.MinStat.ImportFileGenerator\Bonch.MinStat.ImportFileGenerator\obj\Debug\Bonch.MinStat.ImportFileGenerator.Ribbon.resources
+D:\Work\Bonch\MinStat_4\Bonch.MinStat.ImportFileGenerator\Bonch.MinStat.ImportFileGenerator\obj\Debug\Bonch.MinStat.ImportFileGenerator.csproj.GenerateResource.Cache
+D:\Work\Bonch\MinStat_4\Bonch.MinStat.ImportFileGenerator\Bonch.MinStat.ImportFileGenerator\obj\Debug\Bonch.MinStat.ImportFileGenerator.dll
+D:\Work\Bonch\MinStat_4\Bonch.MinStat.ImportFileGenerator\Bonch.MinStat.ImportFileGenerator\obj\Debug\Bonch.MinStat.ImportFileGenerator.pdb
