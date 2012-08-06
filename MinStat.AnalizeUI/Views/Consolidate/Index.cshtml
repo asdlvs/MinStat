@@ -15,29 +15,30 @@
         <div style="display: table-row">
             <div style="display: table-cell; vertical-align: top;">
                 @Html.DropDownList("federalDistrictId", new SelectList(ViewBag.FederalDistricts, "Key", "Value"),
-                         new { rel = "popover", data_content = "Если хотите отфильтровать данные по федеральному округу, то укажите один из округов ниже.", data_original_title = "Федеральный округ" })
+                         new { @class = "span2", rel = "popover", data_content = "Если хотите отфильтровать данные по федеральному округу, то укажите один из округов ниже.", data_original_title = "Федеральный округ" })
             </div>
             <div style="display: table-cell; vertical-align: top;">
-                <select id="federalSubjectId" name="federalSubjectId" rel="popover" data-content="Если хотите отфильтровать данные по субъекту федерации, то укажите один из субъектов ниже. Для отображения списка субъектов федерации необходимо указать федеральный округ."
+                <select class="span2" id="federalSubjectId" name="federalSubjectId" rel="popover"
+                    data-content="Если хотите отфильтровать данные по субъекту федерации, то укажите один из субъектов ниже. Для отображения списка субъектов федерации необходимо указать федеральный округ."
                     data-original-title="Субъект федерации">
                 </select>
                 <input type="hidden" id="selectedFederalSubject" value="@ViewBag.SelectedFederalSubjectId"/>
             </div>
             <div style="display: table-cell; vertical-align: top;">
-                <select id="enterpriseId" name="enterpriseId" rel="popover" data-content="Если хотите отфильтровать данные по предприятию, то укажите одно из предприятий ниже. Для отображения списка предприятий необходимо указать субъект федерации."
+                <select class="span2" id="enterpriseId" name="enterpriseId" rel="popover" data-content="Если хотите отфильтровать данные по предприятию, то укажите одно из предприятий ниже. Для отображения списка предприятий необходимо указать субъект федерации."
                     data-original-title="Предприятие">
                 </select>
                 <input type="hidden" id="selectedEnterprise" value="@ViewBag.SelectedEnterpriseId"/>
             </div>
             <div style="display: table-cell; vertical-align: top;">
                 <div class="input-append date" id="dpstart" data-date="@ViewBag.StartDate" data-date-format="dd.mm.yyyy">
-                    <input class="span1" size="16" type="text" value="@ViewBag.StartDate" readonly id="startDate" name="startDate">
+                    <input class="span2" size="16" type="text" value="@ViewBag.StartDate" readonly id="startDate" name="startDate">
                     <span class="add-on"><i class="icon-th"></i></span>
                 </div>
             </div>
             <div style="display: table-cell; vertical-align: top;">
                 <div class="input-append date" id="dpend" data-date="@ViewBag.EndDate" data-date-format="dd.mm.yyyy">
-                    <input class="span1" size="16" type="text" value="@ViewBag.EndDate" readonly id="endDate" name="endDate">
+                    <input class="span2" size="16" type="text" value="@ViewBag.EndDate" readonly id="endDate" name="endDate">
                     <span class="add-on"><i class="icon-th"></i></span>
                 </div>
             </div>
@@ -61,13 +62,27 @@
         <table class="table">
             @foreach (ActivityModel activity in Model.Activities)
             {
-                <tr style="@Html.Raw(activity.Part_5 == 0 ? "font-weight:bold;" : "")">
-                    <td>
-                        @if (activity.Part_5 != 0)
+                <tr class="@Html.Raw(activity.Part_5 == 0 && activity.Part_4 != 0 ? "strong1" : activity.Part_5 == 0 && activity.Part_4 == 0 ? "strong2" : "")">
+                    
+                        @if (activity.Part_5 == 0 && activity.Part_4 == 0)
                         {
-                            @Html.CheckBox(String.Format("activitycheckbox_{0}", activity.Id))
+                            <td class="withcheckbox">
+                            @Html.CheckBox(String.Format("activitycheckbox_{0}", activity.Id), false, new { data_checkboxlevel = "twozeros" })
+                            </td>
                         }
-                    </td>
+                        else if (activity.Part_5 == 0 && activity.Part_4 != 0)
+                        {
+                            <td class="withcheckbox" style="padding-left: 15px;">
+                            @Html.CheckBox(String.Format("activitycheckbox_{0}", activity.Id), false, new { data_checkboxlevel = "onezero" })
+                            </td>
+                        }
+                        else
+                            {
+                            <td class="withcheckbox" style="padding-left: 30px;">
+                            @Html.CheckBox(String.Format("activitycheckbox_{0}", activity.Id), new { data_checkboxlevel = "actual" })
+                            </td>
+                        }
+                    
                     <td>@String.Format("{0}.{1}{2}.{3}{4}", activity.Part_1, activity.Part_2, activity.Part_3, activity.Part_4, activity.Part_5)
                     </td>
                     <td>@activity.Title

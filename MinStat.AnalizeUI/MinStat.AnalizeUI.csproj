@@ -148,6 +148,7 @@
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\Bonch.AnalizeUI.Checkboxes.js" />
     <Content Include="Scripts\Bonch.AnalizeUI.Info.js" />
     <Content Include="Scripts\Bonch.AnalizeUI.Reports.js" />
     <Content Include="Scripts\bootstrap-alert.js" />

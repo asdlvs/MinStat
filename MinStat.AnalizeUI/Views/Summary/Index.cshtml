@@ -55,11 +55,25 @@
         <table class="table">
             @foreach (ActivityModel activity in Model.Activities)
             {
-                <tr style="@Html.Raw(activity.Part_5 == 0 ? "font-weight:bold;" : "")">
-                    <td >
-                        @if (activity.Part_5 != 0)
+                <tr class="@Html.Raw(activity.Part_5 == 0 && activity.Part_4 != 0 ? "strong1" : activity.Part_5 == 0 && activity.Part_4 == 0 ? "strong2" : "")">
+                    <td class="withcheckbox">
+                         @if (activity.Part_5 == 0 && activity.Part_4 == 0)
                         {
-                            @Html.CheckBox(String.Format("activitycheckbox_{0}", activity.Id))
+                            <td class="withcheckbox">
+                            @Html.CheckBox(String.Format("activitycheckbox_{0}", activity.Id), false, new { data_checkboxlevel = "twozeros" })
+                            </td>
+                        }
+                        else if (activity.Part_5 == 0 && activity.Part_4 != 0)
+                        {
+                            <td class="withcheckbox" style="padding-left: 15px;">
+                            @Html.CheckBox(String.Format("activitycheckbox_{0}", activity.Id), false, new { data_checkboxlevel = "onezero" })
+                            </td>
+                        }
+                        else
+                            {
+                            <td class="withcheckbox" style="padding-left: 30px;">
+                            @Html.CheckBox(String.Format("activitycheckbox_{0}", activity.Id), new { data_checkboxlevel = "actual" })
+                            </td>
                         }
                     </td>
                     <td>@String.Format("{0}.{1}{2}.{3}{4}", activity.Part_1, activity.Part_2, activity.Part_3, activity.Part_4, activity.Part_5)
@@ -71,11 +85,12 @@
         </table>
     </div>
     
-        <div class="alert alert-info">
+    <div class="alert alert-info">
         <a class="close" data-dismiss="alert" href="#">×</a>
         <h4 class="alert-heading">
             Памятка!</h4>
-        Для отображения количественных данных укажите критерии фильтрации.<br /> Если не будет выбран не один пункт, то отчет покажет данные по всем критериям.
+        Для отображения количественных данных укажите критерии фильтрации.<br />
+        Если не будет выбран не один пункт, то отчет покажет данные по всем критериям.
     </div>
     <div id="navbarExample" class="navbar navbar-static">
         <div class="navbar-inner">
@@ -88,40 +103,59 @@
     <div class="well scroll">
         <table class="table">
             <tr style="font-weight: bold;">
-                <td style="width: 30px;"></td>
-                <td>Пол:</td>
+                <td style="width: 30px;">
+                </td>
+                <td>
+                    Пол:
+                </td>
             </tr>
             <tr>
-                <td>@Html.CheckBox("gendercheckbox_0")</td>
-                <td>Женщины</td>
+                <td>@Html.CheckBox("gendercheckbox_0")
+                </td>
+                <td>
+                    Женщины
+                </td>
             </tr>
             <tr>
-                <td>@Html.CheckBox("gendercheckbox_1")</td>
-                <td>Мужчины</td>
+                <td>@Html.CheckBox("gendercheckbox_1")
+                </td>
+                <td>
+                    Мужчины
+                </td>
             </tr>
             <tr style="font-weight: bold;">
-                <td></td>
-                <td>Образование:</td>
+                <td>
+                </td>
+                <td>
+                    Образование:
+                </td>
             </tr>
             @foreach (var education in Model.EducationLevels)
             {
                 <tr>
-                    <td>@Html.CheckBox(String.Format("educationlevelcheckbox_{0}", education.Key))</td>
-                    <td>@education.Value</td>
+                    <td>@Html.CheckBox(String.Format("educationlevelcheckbox_{0}", education.Key))
+                    </td>
+                    <td>@education.Value
+                    </td>
                 </tr>
             }
             <tr style="font-weight: bold;">
-                <td></td>
-                <td>Категория:</td>
+                <td>
+                </td>
+                <td>
+                    Категория:
+                </td>
             </tr>
             @foreach (var post in Model.PostLevels)
             {
                 <tr>
-                    <td>@Html.CheckBox(String.Format("postlevelcheckbox_{0}", post.Key))</td>
-                    <td>@post.Value</td>
+                    <td>@Html.CheckBox(String.Format("postlevelcheckbox_{0}", post.Key))
+                    </td>
+                    <td>@post.Value
+                    </td>
                 </tr>
             }
         </table>
     </div>
-        <input type="submit" value="Создать Отчет" class="btn btn-success" name="report" />
+    <input type="submit" value="Создать Отчет" class="btn btn-success" name="report" />
 }
