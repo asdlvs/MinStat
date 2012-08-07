@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.SuspendLayout();
+            
             // 
             // BindingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(423, 262);
+            this.Controls.Add(this.button1);
             this.Name = "BindingForm";
             this.Text = "Укажите соотношения";
             this.Load += new System.EventHandler(this.BindingForm_Load);
@@ -43,5 +45,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button button1;
     }
 }
