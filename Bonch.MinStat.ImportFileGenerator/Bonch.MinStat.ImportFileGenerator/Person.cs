@@ -11,5 +11,13 @@ namespace Bonch.MinStat.ImportFileGenerator
         public int EducationLevelId { get; set; }
         public int PostLevelId { get; set; }
         public string Post { get; set; }
+        public decimal YearSalary { get; set; }
+        public bool Gender { get; set; }
+        public bool WasIncrease { get; set; }
+        public bool WasValidation { get; set; }
+        public int BirthYear { get; set; }
+        public int HiringYear { get; set; }
+        public int StartPostYear { get; set; }
+        public int DismissalYear { get; set; }
     }
 }
