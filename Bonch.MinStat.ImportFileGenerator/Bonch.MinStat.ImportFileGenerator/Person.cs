@@ -19,5 +19,6 @@ namespace Bonch.MinStat.ImportFileGenerator
         public int HiringYear { get; set; }
         public int StartPostYear { get; set; }
         public int DismissalYear { get; set; }
+        public string Activity { get; set; }
     }
 }

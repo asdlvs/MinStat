@@ -9,5 +9,6 @@ namespace MinStat.Enterprises.BLL
     public interface IPersonsUploader
     {
         IEnumerable<Person> ParseFile(byte[] csvFile, int summaryId);
+        IEnumerable<Activity> Activities { get; set; }
     }
 }

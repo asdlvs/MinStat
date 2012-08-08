@@ -146,6 +146,7 @@ namespace MinStat.Enterprises.BLL
         [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
         public void UploadPersons(byte[] csvFile, int summaryId)
         {
+            _uploader.Activities = _enterpriseRepository.GetActivities();
             IEnumerable<Person> persons = _uploader.ParseFile(csvFile, summaryId);
             _enterpriseRepository.CreatePersons(persons);
         }

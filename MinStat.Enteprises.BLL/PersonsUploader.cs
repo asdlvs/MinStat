@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text;
 using MinStat.Enterprises.DAL.POCO;
 
@@ -8,6 +10,8 @@ namespace MinStat.Enterprises.BLL
 {
     public class PersonsUploader : IPersonsUploader
     {
+        public IEnumerable<Activity> Activities { get; set; }
+
         public IEnumerable<Person> ParseFile(byte[] csvFile, int summaryId)
         {
             List<Person> persons = new List<Person>();
@@ -21,8 +25,12 @@ namespace MinStat.Enterprises.BLL
                         string[] array = line.Split(';');
                         Person person = new Person();
                         person.SummaryId = summaryId;
-
-                        person.ActivityId = GetInt(array[0]);
+                        string[] activityParts = GetString(array[0]).Split('.');
+                        person.ActivityId = this.Activities.First(x =>
+                                                                  x.Part_1.ToString(CultureInfo.InvariantCulture) == activityParts[0]
+                                                                  && String.Format("{0}{1}", x.Part_2, x.Part_3) == activityParts[1]
+                                                                  && String.Format("{0}{1}", x.Part_4, x.Part_5) == activityParts[2]
+                            ).Id;
                         person.Title = GetString(array[1]);
                         person.Post = GetString(array[2]);
                         person.PostLevelId = GetInt(array[3]);

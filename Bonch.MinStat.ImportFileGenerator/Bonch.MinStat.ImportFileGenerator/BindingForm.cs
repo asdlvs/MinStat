@@ -27,10 +27,12 @@ namespace Bonch.MinStat.ImportFileGenerator
             for (int c = 1; c <= selectedCellsColumnsCount; c++)
             {
                 string name = selectedCells[1, c].Address;
+                name = name.Substring(1, name.LastIndexOf('$') - 1);
                 columnsNames.Add(c, name);
             }
 
             List<string> columnValues = columnsNames.Select(x => x.Value).ToList();
+            comboBoxActivity.DataSource = new List<string>(columnValues);
             comboBoxIdentifier.DataSource = new List<string>(columnValues);
             comboBoxPost.DataSource = new List<string>(columnValues);
             comboBoxPostLevel.DataSource = new List<string>(columnValues);
@@ -55,72 +57,111 @@ namespace Bonch.MinStat.ImportFileGenerator
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            Range selectedCells = Globals.ThisAddIn.Application.ActiveWindow.RangeSelection;
-
-            List<Person> people = new List<Person>();
-            StringBuilder peopleStringBuilder = new StringBuilder();
-            int selectedCellsColumnsCount = selectedCells.Columns.Count;
-            int selectedCellsRowsCount = selectedCells.Rows.Count;
-            for (int r = 1; r <= selectedCellsRowsCount; r++)
+            try
             {
-                Person p = new Person();
-                p.Title = selectedCells[r, GetIndex(comboBoxIdentifier.SelectedItem.ToString())].Value2;
-                p.Post = selectedCells[r, GetIndex(comboBoxPost.SelectedItem.ToString())].Value2;
-                p.PostLevelId = Int32.Parse(selectedCells[r, GetIndex(comboBoxPostLevel.SelectedItem.ToString())].Value2.ToString());
-                p.EducationLevelId = Int32.Parse(selectedCells[r, GetIndex(comboBoxEducationLevel.SelectedItem.ToString())].Value2.ToString());
+                Range selectedCells = Globals.ThisAddIn.Application.ActiveWindow.RangeSelection;
 
-                p.BirthYear = Int32.Parse(selectedCells[r, GetIndex(comboBoxBirthYear.SelectedItem.ToString())].Value2.ToString());
-                p.HiringYear = Int32.Parse(selectedCells[r, GetIndex(comboBoxHiringYear.SelectedItem.ToString())].Value2.ToString());
-                p.StartPostYear = Int32.Parse(selectedCells[r, GetIndex(comboBoxStartPostYear.SelectedItem.ToString())].Value2.ToString());
-                //p.DismissalYear = Int32.Parse(selectedCells[r, GetIndex(comboBoxDismissalYear.SelectedItem.ToString())].Value2.ToString());
+                List<Person> people = new List<Person>();
+                int selectedCellsColumnsCount = selectedCells.Columns.Count;
+                int selectedCellsRowsCount = selectedCells.Rows.Count;
+                for (int r = 1; r <= selectedCellsRowsCount; r++)
+                {
+                    Person p = new Person();
+                    p.Title = GetValue<string>(selectedCells[r, GetIndex(comboBoxIdentifier.SelectedItem.ToString())]);
+                    p.Post = GetValue<string>(selectedCells[r, GetIndex(comboBoxPost.SelectedItem.ToString())]);
+                    p.PostLevelId = GetValue<int>(selectedCells[r, GetIndex(comboBoxPostLevel.SelectedItem.ToString())]);
+                    p.EducationLevelId = GetValue<int>(selectedCells[r, GetIndex(comboBoxEducationLevel.SelectedItem.ToString())]);
 
-                p.Gender = selectedCells[r, GetIndex(comboBoxGender.SelectedItem.ToString())].Value2.ToString() == "1"
-                    || selectedCells[r, GetIndex(comboBoxGender.SelectedItem.ToString())].Value2.ToString().ToUpper() == "М"
-                    || selectedCells[r, GetIndex(comboBoxGender.SelectedItem.ToString())].Value2.ToString().ToUpper() == "TRUE";
+                    p.BirthYear = GetValue<int>(selectedCells[r, GetIndex(comboBoxBirthYear.SelectedItem.ToString())]);
+                    p.HiringYear = GetValue<int>(selectedCells[r, GetIndex(comboBoxHiringYear.SelectedItem.ToString())]);
+                    p.StartPostYear = GetValue<int>(selectedCells[r, GetIndex(comboBoxStartPostYear.SelectedItem.ToString())]);
+                    p.DismissalYear = GetValue<int>(selectedCells[r, GetIndex(comboBoxDismissalYear.SelectedItem.ToString())]);
 
-                p.WasIncrease = selectedCells[r, GetIndex(comboBoxGender.SelectedItem.ToString())].Value2.ToString() == "1"
-                    || selectedCells[r, GetIndex(comboBoxGender.SelectedItem.ToString())].Value2.ToString().ToUpper() == "TRUE";
+                    p.Gender = GetValue<bool>(selectedCells[r, GetIndex(comboBoxGender.SelectedItem.ToString())]);
 
-                p.WasValidation = selectedCells[r, GetIndex(comboBoxGender.SelectedItem.ToString())].Value2.ToString() == "1"
-                    || selectedCells[r, GetIndex(comboBoxGender.SelectedItem.ToString())].Value2.ToString().ToUpper() == "TRUE";
+                    p.WasIncrease = GetValue<bool>(selectedCells[r, GetIndex(comboBoxIncrease.SelectedItem.ToString())]);
 
-                p.YearSalary = Decimal.Parse(selectedCells[r, GetIndex(comboBoxYearSalary.SelectedItem.ToString())].Value2.ToString());
+                    p.WasValidation = GetValue<bool>(selectedCells[r, GetIndex(comboBoxValidation.SelectedItem.ToString())]);
 
-                people.Add(p);
-                peopleStringBuilder.AppendFormat("{0}, {1}, {2}, {3}", p.Title, p.Post, p.PostLevelId, p.EducationLevelId);
+                    p.YearSalary = GetValue<decimal>(selectedCells[r, GetIndex(comboBoxYearSalary.SelectedItem.ToString())]);
+
+                    p.Activity = GetValue<string>(selectedCells[r, GetIndex(comboBoxActivity.SelectedItem.ToString())]); 
+
+                    people.Add(p);
+                }
+                SaveFile(people);
             }
-            SaveFile(people);
+            catch (Exception)
+            {
+                MessageBox.Show("Произошла ошибка. Проверьте корректность вводимых данных.");
+            }
         }
 
         private void SaveFile(List<Person> people)
         {
             SaveFileDialog save = new SaveFileDialog();
             DialogResult dialogResult = save.ShowDialog();
-            string path = dialogResult.ToString();
-
-            using (FileStream fs = File.OpenWrite(path))
+            if (dialogResult == DialogResult.OK)
             {
-                using (TextWriter writer = new StreamWriter(fs))
+                string path = save.FileName;
+
+                using (FileStream fs = File.OpenWrite(path))
                 {
-                    foreach (Person person in people)
+                    using (TextWriter writer = new StreamWriter(fs))
                     {
-                        string resultString = String.Format("30;{0};{1};{2};{3};{4};{5};{6};{7};{8};{9};{10};{11}",
-                            person.Title,
-                            person.Post,
-                            person.PostLevelId,
-                            person.EducationLevelId,
-                            person.YearSalary,
-                            person.Gender,
-                            person.WasIncrease,
-                            person.WasValidation,
-                            person.BirthYear,
-                            person.HiringYear,
-                            person.StartPostYear,
-                            person.DismissalYear
-                            );
-                        writer.WriteLine(resultString);
+                        foreach (Person person in people)
+                        {
+                            string resultString = String.Format("{12};{0};{1};{2};{3};{4};{5};{6};{7};{8};{9};{10};{11}",
+                                person.Title,
+                                person.Post,
+                                person.PostLevelId,
+                                person.EducationLevelId,
+                                person.YearSalary,
+                                person.Gender,
+                                person.WasIncrease,
+                                person.WasValidation,
+                                person.BirthYear,
+                                person.HiringYear,
+                                person.StartPostYear,
+                                person.DismissalYear,
+                                person.Activity
+                                );
+                            writer.WriteLine(resultString);
+                        }
+                        writer.Flush();
                     }
-                    writer.Flush();
+
+                    MessageBox.Show("Файл успешно сохранен!");
+                }
+            }
+            this.Close();
+        }
+
+        private T GetValue<T>(dynamic cell)
+        {
+            if (cell.Value2 == null)
+                return default(T);
+            else
+            {
+                if (typeof(T) == typeof(string))
+                {
+                    return cell.Value2.ToString();
+                }
+                else if (typeof(T) == typeof(int))
+                {
+                    return Int32.Parse(cell.Value2.ToString());
+                }
+                else if (typeof(T) == typeof(decimal))
+                {
+                    return Decimal.Parse(cell.Value2.ToString());
+                }
+                else if (typeof(T) == typeof(bool))
+                {
+                    return cell.Value2.ToString() == "1" || cell.Value2.ToString().ToUpper() == "М" || cell.Value2.ToString().ToUpper() == "True";
+                }
+                else
+                {
+                    return default(T);
                 }
             }
         }
