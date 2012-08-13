@@ -4,6 +4,7 @@
     }; 
 
 
+
     $('#addpersonbutton').click(function () {
         $('#deletebutton').css('display', 'none');
         $('#persontoedit #Id').val(0);
@@ -30,7 +31,9 @@
         $('#persontoedit #Id').val(td.children("#id").val());
         $('#persontoedit #Title').val(td.children("#title").val());
         if (td.children("#gender").val() == "True") {
-            $('#persontoedit #Gender').attr("checked", "checked");
+            $('#persontoedit #Gender option:nth-child(1)').attr('selected', 'selected');
+        } else {
+            $('#persontoedit #Gender option:nth-child(2)').attr('selected', 'selected');
         }
         $('#persontoedit #BirthYear').val(td.children("#birthyear").val());
         $('#persontoedit #ActivityId').val(td.children("#activityId").val());

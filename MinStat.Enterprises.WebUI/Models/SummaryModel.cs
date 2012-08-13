@@ -14,7 +14,7 @@ namespace MinStat.Enterprises.WebUI.Models
         public string PublishedDate { get; set; }
         public int[] Activities { get; set; }
         public List<ActivityModel> ActivityModels { get; set; }
-      public List<PersonModel> PersonModels { get; set; }
+        public List<PersonModel> PersonModels { get; set; }
 
     }
 }

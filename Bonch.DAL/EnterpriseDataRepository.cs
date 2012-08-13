@@ -163,10 +163,10 @@ namespace MinStat.Enterprises.DAL
             bool wasValidate, int birthYear, int hiringYear, int startPostYear, int dismissalYear)
         {
             #region Pre-conditions
-            if (!_context.Summaries.Any(x => x.Id == summaryId)) { throw new ArgumentException("Wrong summary Id", summaryId.ToString()); }
-            if (!_context.Activities.Any(x => x.Id == activityId)) { throw new ArgumentException("Wrong activity Id", activityId.ToString()); }
-            if (!_context.EducationLevels.Any(x => x.Id == educationLevelId)) { throw new ArgumentException("Wrong education level id", educationLevelId.ToString()); }
-            if (!_context.PostLevels.Any(x => x.Id == postLevelId)) { throw new ArgumentException("Wrong post level Id", postLevelId.ToString()); }
+            if (_context.Summaries.All(x => x.Id != summaryId)) { throw new ArgumentException("Wrong summary Id", summaryId.ToString(CultureInfo.InvariantCulture)); }
+            if (_context.Activities.All(x => x.Id != activityId)) { throw new ArgumentException("Wrong activity Id", activityId.ToString(CultureInfo.InvariantCulture)); }
+            if (_context.EducationLevels.All(x => x.Id != educationLevelId)) { throw new ArgumentException("Wrong education level id", educationLevelId.ToString(CultureInfo.InvariantCulture)); }
+            if (_context.PostLevels.All(x => x.Id != postLevelId)) { throw new ArgumentException("Wrong post level Id", postLevelId.ToString(CultureInfo.InvariantCulture)); }
             if (!_context.SummaryActivities.Any(x => x.ActivityId == activityId && x.SummaryId == summaryId)) { throw new ArgumentException("No such SummaryActivity"); }
             #endregion
 

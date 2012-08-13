@@ -32,7 +32,7 @@ namespace MinStat.Enterprises.BLL
                                                                   && String.Format("{0}{1}", x.Part_4, x.Part_5) == activityParts[2]
                             ).Id;
                         person.Title = GetString(array[1]);
-                        person.Post = GetString(array[2]);
+                        person.Post = array[2];
                         person.PostLevelId = GetInt(array[3]);
                         person.EducationLevelId = GetInt(array[4]);
                         person.YearSalary = GetDecimal(array[5]);

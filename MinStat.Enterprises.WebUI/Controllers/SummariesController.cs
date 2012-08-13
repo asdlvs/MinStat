@@ -31,7 +31,7 @@ namespace MinStat.Enterprises.WebUI.Controllers
         {
             IEnumerable<SummaryModel> model = _serviceAdapter.GetSummaries();
             ViewBag.Activities = _serviceAdapter.GetActivities();
-            return View(model);
+            return View("Index",model);
         }
 
         [HttpPost]
@@ -86,15 +86,24 @@ namespace MinStat.Enterprises.WebUI.Controllers
         [HttpPost]
         public ActionResult Upload(IEnumerable<HttpPostedFileBase> fileUpload, int summaryId)
         {
-            foreach (var file in fileUpload)
+            try
             {
-                if (file == null) continue;
-                
-                byte[] fileByteArray = new byte[file.InputStream.Length];
-                file.InputStream.Read(fileByteArray, 0, fileByteArray.Length);
-                _serviceAdapter.UploadPersons(fileByteArray, summaryId);
+                foreach (var file in fileUpload)
+                {
+                    if (file == null) continue;
+
+                    byte[] fileByteArray = new byte[file.InputStream.Length];
+                    file.InputStream.Read(fileByteArray, 0, fileByteArray.Length);
+                    _serviceAdapter.UploadPersons(fileByteArray, summaryId);
+                }
+                return RedirectToAction("Index");
             }
-            return RedirectToAction("Index");
+            catch (Exception)
+            {
+                ModelState.AddModelError("uploadfail", "При загрузке файла произошла ошибка. Проверьте загружаемый файл на валидность данных.");
+                return Index();
+            }
+
         }
 
     }

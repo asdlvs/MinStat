@@ -1,0 +1,6 @@
+﻿@model bool
+@Html.DropDownList("", new List<SelectListItem>
+                                       {
+                                           new SelectListItem { Selected = Model, Text = "М", Value = "True"},
+                                           new SelectListItem { Selected = !Model, Text = "Ж", Value = "False"}
+                                       })

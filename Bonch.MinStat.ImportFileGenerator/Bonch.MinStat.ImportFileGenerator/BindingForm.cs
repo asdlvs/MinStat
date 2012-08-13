@@ -28,6 +28,7 @@ namespace Bonch.MinStat.ImportFileGenerator
             {
                 string name = selectedCells[1, c].Address;
                 name = name.Substring(1, name.LastIndexOf('$') - 1);
+                name = string.Format("Колонка {0}", name);
                 columnsNames.Add(c, name);
             }
 
@@ -71,20 +72,14 @@ namespace Bonch.MinStat.ImportFileGenerator
                     p.Post = GetValue<string>(selectedCells[r, GetIndex(comboBoxPost.SelectedItem.ToString())]);
                     p.PostLevelId = GetValue<int>(selectedCells[r, GetIndex(comboBoxPostLevel.SelectedItem.ToString())]);
                     p.EducationLevelId = GetValue<int>(selectedCells[r, GetIndex(comboBoxEducationLevel.SelectedItem.ToString())]);
-
                     p.BirthYear = GetValue<int>(selectedCells[r, GetIndex(comboBoxBirthYear.SelectedItem.ToString())]);
                     p.HiringYear = GetValue<int>(selectedCells[r, GetIndex(comboBoxHiringYear.SelectedItem.ToString())]);
                     p.StartPostYear = GetValue<int>(selectedCells[r, GetIndex(comboBoxStartPostYear.SelectedItem.ToString())]);
                     p.DismissalYear = GetValue<int>(selectedCells[r, GetIndex(comboBoxDismissalYear.SelectedItem.ToString())]);
-
                     p.Gender = GetValue<bool>(selectedCells[r, GetIndex(comboBoxGender.SelectedItem.ToString())]);
-
                     p.WasIncrease = GetValue<bool>(selectedCells[r, GetIndex(comboBoxIncrease.SelectedItem.ToString())]);
-
                     p.WasValidation = GetValue<bool>(selectedCells[r, GetIndex(comboBoxValidation.SelectedItem.ToString())]);
-
                     p.YearSalary = GetValue<decimal>(selectedCells[r, GetIndex(comboBoxYearSalary.SelectedItem.ToString())]);
-
                     p.Activity = GetValue<string>(selectedCells[r, GetIndex(comboBoxActivity.SelectedItem.ToString())]); 
 
                     people.Add(p);
@@ -100,10 +95,15 @@ namespace Bonch.MinStat.ImportFileGenerator
         private void SaveFile(List<Person> people)
         {
             SaveFileDialog save = new SaveFileDialog();
+            save.InitialDirectory = "c:\\";
+            save.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            save.FilterIndex = 2;
+            save.RestoreDirectory = true;
             DialogResult dialogResult = save.ShowDialog();
             if (dialogResult == DialogResult.OK)
             {
                 string path = save.FileName;
+                if (File.Exists(path)) { File.Delete(path); }
 
                 using (FileStream fs = File.OpenWrite(path))
                 {

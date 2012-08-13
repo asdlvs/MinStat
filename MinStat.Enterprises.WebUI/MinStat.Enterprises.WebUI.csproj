@@ -223,6 +223,7 @@
     <Content Include="Views\Shared\Errors\Error.cshtml" />
     <Content Include="Views\People\Edit.cshtml" />
     <Content Include="Views\People\Index.cshtml" />
+    <Content Include="Views\People\EditorTemplates\GenderSelector.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
