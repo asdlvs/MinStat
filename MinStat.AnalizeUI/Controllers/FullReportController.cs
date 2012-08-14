@@ -53,14 +53,22 @@ namespace MinStat.AnalizeUI.Controllers
             ViewBag.EndDate = endDate;
             ViewBag.SelectedFederalSubjectId = federalSubjectId ?? 0;
             ViewBag.SelectedEnterpriseId = enterpriseId ?? 0;
-            return View(model);
+            return View("Index", model);
         }
 
         [HttpPost]
         public ActionResult CustomReport(SelectionChecks selectionChecks, string reportType)
         {
+            if (!selectionChecks.HorizontalChecks.Any() || !selectionChecks.VerticalChecks.Any())
+            {
+                ModelState.AddModelError("nochecks", "Для составления отчета необходимо указать виды деятельности и категории работников!");
+                return Index((int?)Session["enterpriseId"], (int?)Session["federalSubjectId"], (int?)Session["federalDistrictId"],
+                             (string)Session["startDate"], (string)Session["endDate"]);
+            }
+
             ViewBag.RenderGraphic = true;
             IEnumerable<StatisticDataModel> model = new StatisticDataModel[0];
+
             if (reportType.EndsWith("#static") || String.IsNullOrWhiteSpace(reportType))
             {
                 model = _selectionReport.GetQtyStaticData(

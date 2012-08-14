@@ -50,39 +50,40 @@
             $('#dpend').datepicker();
         });
     </script>
+    
     <div id="navbarExample" class="navbar navbar-static">
         <div class="navbar-inner">
             <div class="container" style="width: auto;">
                 <div class="brand">
-                    Выберите активности</div>
+                    Выберите виды деятельности</div>
             </div>
         </div>
     </div>
+    
+    <strong>@Html.ValidationMessage("noactivities")</strong>
     <div class="well scroll">
         <table class="table">
             @foreach (ActivityModel activity in Model.Activities)
             {
                 <tr class="@Html.Raw(activity.Part_5 == 0 && activity.Part_4 != 0 ? "strong1" : activity.Part_5 == 0 && activity.Part_4 == 0 ? "strong2" : "")">
-                    
-                        @if (activity.Part_5 == 0 && activity.Part_4 == 0)
-                        {
-                            <td class="withcheckbox">
+                    @if (activity.Part_5 == 0 && activity.Part_4 == 0)
+                    {
+                        <td class="withcheckbox">
                             @Html.CheckBox(String.Format("activitycheckbox_{0}", activity.Id), false, new { data_checkboxlevel = "twozeros" })
-                            </td>
-                        }
-                        else if (activity.Part_5 == 0 && activity.Part_4 != 0)
-                        {
-                            <td class="withcheckbox" style="padding-left: 15px;">
+                        </td>
+                    }
+                    else if (activity.Part_5 == 0 && activity.Part_4 != 0)
+                    {
+                        <td class="withcheckbox" style="padding-left: 20px;">
                             @Html.CheckBox(String.Format("activitycheckbox_{0}", activity.Id), false, new { data_checkboxlevel = "onezero" })
-                            </td>
-                        }
-                        else
-                            {
-                            <td class="withcheckbox" style="padding-left: 30px;">
+                        </td>
+                    }
+                    else
+                    {
+                        <td class="withcheckbox" style="padding-left: 33px;">
                             @Html.CheckBox(String.Format("activitycheckbox_{0}", activity.Id), new { data_checkboxlevel = "actual" })
-                            </td>
-                        }
-                    
+                        </td>
+                    }
                     <td>@String.Format("{0}.{1}{2}.{3}{4}", activity.Part_1, activity.Part_2, activity.Part_3, activity.Part_4, activity.Part_5)
                     </td>
                     <td>@activity.Title
@@ -97,9 +98,10 @@
         <h4 class="alert-heading">
             Памятка!</h4>
         Нажмите на эту кнопку, для того чтобы создать статический отчет со сводными данными.
-        Для корректного отображения необходимо указать активности.
+        Для корректного отображения необходимо указать виды деятельности.
     </div>
-    <input type="submit" value="Статический отчет" class="btn btn-success" name="report" />
+    <input type="submit" value="Статический отчет" class="btn btn-success pull-right"
+        name="report" />
     <br />    <br />  
     <div id="navbarExample" class="navbar navbar-static">
         <div class="navbar-inner">
@@ -109,6 +111,7 @@
             </div>
         </div>
     </div>
+    <strong>@Html.ValidationMessage("nocriteries")</strong>
     <div class="well scroll">
         <table class="table">
             @foreach (FilterCriteryModel critery in Model.Criteries)
@@ -146,9 +149,10 @@
         <h4 class="alert-heading">
             Памятка!</h4>
         Нажмите на эту кнопку, для того чтобы создать динамический отчет со сводными данными.
-        Для корректного отображения необхожимо указать активности и критерии фильтрации.
+        Для корректного отображения необхожимо указать виды деятельности и критерии фильтрации.
     </div>
-    <input type="submit" value="Динамический отчет" class="btn btn-success" name="report" />
+    <input type="submit" value="Динамический отчет" class="btn btn-success pull-right"
+        name="report" />
 }
 @*@foreach (StatisticDataModel m in Model)
 {

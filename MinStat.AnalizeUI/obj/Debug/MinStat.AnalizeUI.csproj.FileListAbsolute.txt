@@ -18,3 +18,4 @@ F:\Repository\Trash\B_2\MinStat.AnalizeUI\bin\EntityFramework.xml
 F:\Repository\Trash\B_2\MinStat.AnalizeUI\obj\Debug\ResolveAssemblyReference.cache
 F:\Repository\Trash\B_2\MinStat.AnalizeUI\obj\Debug\MinStat.AnalizeUI.dll
 F:\Repository\Trash\B_2\MinStat.AnalizeUI\obj\Debug\MinStat.AnalizeUI.pdb
+D:\Work\Bonch\MinStat_4\MinStat.AnalizeUI\obj\Debug\MinStat.AnalizeUI.csprojResolveAssemblyReference.cache

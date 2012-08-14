@@ -36,6 +36,20 @@ namespace MinStat.AnalizeUI.Controllers
         [HttpPost]
         public ActionResult Index(SummaryReportCreatorModel model)
         {
+            if (!model.SelectedActivities.Any()
+                || !model.SelectedGenders.Any()
+                || !model.SelectedEducationLevels.Any()
+                ||!model.SelectedPostLevels.Any()
+                )
+            {
+                ModelState.AddModelError("activities", "Необходимо указать виды деятельности.");
+                ModelState.AddModelError("genders", "Необходимо указать пол.");
+                ModelState.AddModelError("educationlevels", "Необходимо указать уровни образования.");
+                ModelState.AddModelError("postlevels", "Необходимо указать категории работников.");
+            }
+
+            if (!ModelState.IsValid) { return Index(); }
+
             IEnumerable<StatisticDataModel> statisticData = _summaryAdapter.GetSummaryReport(model);
             return View("StaticStatisticData", statisticData);
         }

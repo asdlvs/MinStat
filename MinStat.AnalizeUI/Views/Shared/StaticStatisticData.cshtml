@@ -2,33 +2,39 @@
 @model IEnumerable<StatisticDataModel>
 @foreach (StatisticDataModel m in Model)
 {
-    if (m != null)
+    if (m != null && m.Values != null && m.Values.Any())
     {
-        <table class="table-striped table-bordered table-condensed">
-            <tr>
-                @foreach (var headItem in m.Titles)
+    <table class="table-striped table-bordered table-condensed">
+        <tr>
+            @foreach (var headItem in m.Titles)
+            {
+                <th>@headItem.Value
+                </th>
+            }
+        </tr>
+        @foreach (StatisticDataItemModel bodyItem in m.Values)
+        {
+            <tr class="@String.Format("strong{0}", bodyItem.BoldLevel)">
+                <td>
+                    @Html.Raw(bodyItem.Title)
+                </td>
+                @foreach (string value in bodyItem.Values)
                 {
-                    <th>@headItem.Value
-                    </th>
+                    @Html.Raw(value == "0" ? "<td class=\"muted\">" : "<td>")
+                    @value
+                    @Html.Raw("</td>")
                 }
             </tr>
-            @foreach (StatisticDataItemModel bodyItem in m.Values)
-            {
-                <tr class="@String.Format("strong{0}", bodyItem.BoldLevel)">
-                <td> @Html.Raw(bodyItem.Title)
-                    </td>
-                    @foreach (string value in bodyItem.Values)
-                    {
-                        @Html.Raw(value == "0" ? "<td class=\"muted\">" : "<td>")
-                        @value
-                        @Html.Raw("</td>")
-                    }
-                </tr>
-            }
-        </table>
+        }
+    </table>
+        if (ViewBag.RenderGraphic != null && ViewBag.RenderGraphic)
+        {
+    @Html.Partial("StaticDiagram", m)
+        }
     }
-    if (ViewBag.RenderGraphic != null && ViewBag.RenderGraphic && m != null && m.Values != null && m.Values.Any())
-     {
-         @Html.Partial("StaticDiagram", m)
-     }
+    else
+    {
+        <strong>Данные по Вашему запросу отсутствуют.</strong>
+    }
+
 }

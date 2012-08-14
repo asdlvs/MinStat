@@ -1,22 +1,27 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bonch.MinStat.ImportFileGenerator", "Bonch.MinStat.ImportFileGenerator\Bonch.MinStat.ImportFileGenerator.csproj", "{92130B97-154B-4764-AF1C-AA5C951E336F}"
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Bonch.MinStat.ImportFileGeneratorSetup", "Bonch.MinStat.ImportFileGeneratorSetup\Bonch.MinStat.ImportFileGeneratorSetup.vdproj", "{572E8681-9CD0-4277-BE69-83B53D816DC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
+		DVD-5|Any CPU = DVD-5|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		SingleImage|Any CPU = SingleImage|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92130B97-154B-4764-AF1C-AA5C951E336F}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{92130B97-154B-4764-AF1C-AA5C951E336F}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{92130B97-154B-4764-AF1C-AA5C951E336F}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{92130B97-154B-4764-AF1C-AA5C951E336F}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
 		{92130B97-154B-4764-AF1C-AA5C951E336F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{92130B97-154B-4764-AF1C-AA5C951E336F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92130B97-154B-4764-AF1C-AA5C951E336F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92130B97-154B-4764-AF1C-AA5C951E336F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{572E8681-9CD0-4277-BE69-83B53D816DC1}.Debug|Any CPU.ActiveCfg = Debug
-		{572E8681-9CD0-4277-BE69-83B53D816DC1}.Release|Any CPU.ActiveCfg = Release
+		{92130B97-154B-4764-AF1C-AA5C951E336F}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{92130B97-154B-4764-AF1C-AA5C951E336F}.SingleImage|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

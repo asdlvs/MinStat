@@ -17,7 +17,7 @@
             @Html.ActionLink("Год рождения", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("BirthYear{0}", Model.Direction) }, null)
         </th>
         <th>
-            @Html.ActionLink("Активность", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("ActivityId{0}", Model.Direction) }, null)
+            @Html.ActionLink("Вид деятельности", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("ActivityId{0}", Model.Direction) }, null)
         </th>
         <th>
             @Html.ActionLink("Год приема на работу", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("HiringYear{0}", Model.Direction) }, null)

@@ -47,32 +47,33 @@
         <div class="navbar-inner">
             <div class="container" style="width: auto;">
                 <div class="brand">
-                    Выберите активности</div>
+                    Выберите виды деятельности</div>
             </div>
         </div>
     </div>
+    @Html.ValidationSummary()
     <div class="well scroll">
         <table class="table">
             @foreach (ActivityModel activity in Model.Activities)
             {
                 <tr class="@Html.Raw(activity.Part_5 == 0 && activity.Part_4 != 0 ? "strong1" : activity.Part_5 == 0 && activity.Part_4 == 0 ? "strong2" : "")">
                     <td class="withcheckbox">
-                         @if (activity.Part_5 == 0 && activity.Part_4 == 0)
+                        @if (activity.Part_5 == 0 && activity.Part_4 == 0)
                         {
                             <td class="withcheckbox">
-                            @Html.CheckBox(String.Format("activitycheckbox_{0}", activity.Id), false, new { data_checkboxlevel = "twozeros" })
+                                @Html.CheckBox(String.Format("activitycheckbox_{0}", activity.Id), false, new { data_checkboxlevel = "twozeros" })
                             </td>
                         }
                         else if (activity.Part_5 == 0 && activity.Part_4 != 0)
                         {
-                            <td class="withcheckbox" style="padding-left: 15px;">
-                            @Html.CheckBox(String.Format("activitycheckbox_{0}", activity.Id), false, new { data_checkboxlevel = "onezero" })
+                            <td class="withcheckbox" style="padding-left: 20px;">
+                                @Html.CheckBox(String.Format("activitycheckbox_{0}", activity.Id), false, new { data_checkboxlevel = "onezero" })
                             </td>
                         }
                         else
-                            {
-                            <td class="withcheckbox" style="padding-left: 30px;">
-                            @Html.CheckBox(String.Format("activitycheckbox_{0}", activity.Id), new { data_checkboxlevel = "actual" })
+                        {
+                            <td class="withcheckbox" style="padding-left: 33px;">
+                                @Html.CheckBox(String.Format("activitycheckbox_{0}", activity.Id), new { data_checkboxlevel = "actual" })
                             </td>
                         }
                     </td>
@@ -106,7 +107,7 @@
                 <td style="width: 30px;">
                 </td>
                 <td>
-                    Пол:
+                    Пол: 
                 </td>
             </tr>
             <tr>
@@ -127,7 +128,7 @@
                 <td>
                 </td>
                 <td>
-                    Образование:
+                    Образование: 
                 </td>
             </tr>
             @foreach (var education in Model.EducationLevels)
@@ -143,7 +144,7 @@
                 <td>
                 </td>
                 <td>
-                    Категория:
+                    Категория: 
                 </td>
             </tr>
             @foreach (var post in Model.PostLevels)
@@ -157,5 +158,5 @@
             }
         </table>
     </div>
-    <input type="submit" value="Создать Отчет" class="btn btn-success" name="report" />
+    <input type="submit" value="Создать Отчет" class="btn btn-success pull-right" name="report" />
 }

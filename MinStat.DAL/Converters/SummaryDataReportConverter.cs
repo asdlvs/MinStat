@@ -14,12 +14,11 @@ namespace MinStat.DAL.Converters
         {
             StatisticData statisticData = new StatisticData();
             var resultList = result.ToList();
+            statisticData.Titles = new Dictionary<string, string> { { "0", "" }, { "1", "Количество" }, { "2", "Средний возраст" }, { "3", "Средний годовой доход" } };
+            statisticData.Lines = new List<StatisticDataItem>();
+
             if (resultList.Any())
             {
-              statisticData.Titles = new Dictionary<string, string>
-                { { "0", "" }, { "1", "Количество" }, { "2", "Средний возраст" }, { "3", "Средний годовой доход" } };
-              statisticData.Lines = new List<StatisticDataItem>();
-
               var groupedByActivityResult = resultList.GroupBy(x => new { x.ActivityId, x.ActivityTitle });
               foreach (var groupedItem in groupedByActivityResult)
               {

@@ -16,10 +16,11 @@
         <div style="display: table-row">
             <div style="display: table-cell; vertical-align: top;">
                 @Html.DropDownList("federalDistrictId", new SelectList(ViewBag.FederalDistricts, "Key", "Value"),
-        new {@class="span2", rel = "popover", data_content = "Если хотите отфильтровать данные по федеральному округу, то укажите один из округов ниже.", data_original_title = "Федеральный округ" })
+        new { @class = "span2", rel = "popover", data_content = "Если хотите отфильтровать данные по федеральному округу, то укажите один из округов ниже.", data_original_title = "Федеральный округ" })
             </div>
             <div style="display: table-cell; vertical-align: top;">
-                <select class="span2" id="federalSubjectId" name="federalSubjectId" rel="popover" data-content="Если хотите отфильтровать данные по субъекту федерации, то укажите один из субъектов ниже. Для отображения списка субъектов федерации необходимо указать федеральный округ."
+                <select class="span2" id="federalSubjectId" name="federalSubjectId" rel="popover"
+                    data-content="Если хотите отфильтровать данные по субъекту федерации, то укажите один из субъектов ниже. Для отображения списка субъектов федерации необходимо указать федеральный округ."
                     data-original-title="Субъект федерации">
                 </select></div>
             <div style="display: table-cell; vertical-align: top;">
@@ -75,7 +76,7 @@
                 </div>
                 <div class="tab-pane fade" id="dynamic">
                     <p>
-                        В этом отчете вы сможете посмотреть динамичемие количественные данные по указаным
+                        В этом отчете вы сможете посмотреть динамические количественные данные по указаным
                         фильтрам.</p>
                 </div>
             </div>
@@ -92,52 +93,54 @@
     using (Html.BeginForm("CustomReport", "FullReport"))
     {
     @Html.Hidden("reportType")
-        <table class="table-striped table-bordered table-condensed">
-            <tr>
-                <td></td>
-                <td>
-                </td>
-                @foreach (var headItem in m.Titles)
-                {
-                    if (!String.IsNullOrEmpty(headItem.Key))
-                    {
-                        <td style="text-align: center;">
-                            @Html.CheckBox(String.Format("horizontal_{0}", headItem.Key))
-                        </td>
-                    }
-                }
-
-            </tr>
-            <tr>
-                <th>
-                </th>
-                @foreach (var headItem in m.Titles)
-                {
-                    <th style="font-size: smaller;">@headItem.Value
-                    </th>
-                }
-
-            </tr>
-            @foreach (StatisticDataItemModel bodyItem in m.Values)
+    @Html.ValidationSummary()
+    <table class="table-striped table-bordered table-condensed">
+        <tr>
+            <td>
+            </td>
+            <td>
+            </td>
+            @foreach (var headItem in m.Titles)
             {
-                <tr class="@String.Format("strong{0}", bodyItem.BoldLevel)">
-                    <td>
-                        @if (bodyItem.BoldLevel == 0)
-                        {
-                            @Html.CheckBox(String.Format("vertical_{0}", bodyItem.Id))
-                        }
-                    </td>
-                    <td style="font-size: smaller;">@bodyItem.Title
-                    </td>
-                    @foreach (var value in bodyItem.Values)
-                    {
-                        @Html.Raw(value == "0" ? "<td class=\"muted\">" : "<td>")
-                        @value
-                        @Html.Raw("</td>")
-                    }
-                </tr>
+                if (!String.IsNullOrEmpty(headItem.Key))
+                {
+                <td style="text-align: center;">
+                    @Html.CheckBox(String.Format("horizontal_{0}", headItem.Key))
+                </td>
+                }
             }
-        </table>
-    <a data-toggle="modal" href="#myModal" class="btn btn-success">Создать отчет</a>
+        </tr>
+        <tr>
+            <th>
+            </th>
+            @foreach (var headItem in m.Titles)
+            {
+                <th style="font-size: smaller;">@headItem.Value
+                </th>
+            }
+        </tr>
+        @foreach (StatisticDataItemModel bodyItem in m.Values)
+        {
+            <tr class="@String.Format("strong{0}", bodyItem.BoldLevel)">
+                <td>
+                    @if (bodyItem.BoldLevel == 0)
+                    {
+                        @Html.CheckBox(String.Format("vertical_{0}", bodyItem.Id))
+                    }
+                </td>
+                <td style="font-size: smaller;">@bodyItem.Title
+                </td>
+                @foreach (var value in bodyItem.Values)
+                {
+                    @Html.Raw(value == "0" ? "<td class=\"muted\">" : "<td>")
+                    @value
+                    @Html.Raw("</td>")
+                }
+            </tr>
+        }
+    </table>
+    <br />
+
+    <a data-toggle="modal" href="#myModal" class="btn btn-success pull-right">Создать отчет</a>
     }
 }

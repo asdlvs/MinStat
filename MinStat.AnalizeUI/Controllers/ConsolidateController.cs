@@ -40,11 +40,21 @@ namespace MinStat.AnalizeUI.Controllers
         {
             if (report.Equals("Статический отчет"))
             {
+                if(!model.SelectedActivities.Any())
+                {
+                    ModelState.AddModelError("noactivities", "Для создания статического отчета, необходимо указать виды деятельности!");
+                    return Index();
+                }
                 IEnumerable<StatisticDataModel> statisticData = _adapter.GetStaticConsolidatedReport(model);
                 return View("StaticStatisticData", statisticData);
             }
             else
             {
+                if (!model.SelectedActivities.Any() || !model.SelectedCriteries.Any())
+                {
+                    ModelState.AddModelError("nocriteries", "Для создания статического отчета, необходимо указать виды деятельности и критерии фильтрации!");
+                    return Index();
+                }
                 ViewBag.RenderGraphic = true;
                 IEnumerable<StatisticDataModel> statisticData = _adapter.GetDynamicConsolidatedReport(model);
                 return View("DynamicStatisticData", statisticData);

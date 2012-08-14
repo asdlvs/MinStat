@@ -1,58 +1,36 @@
 ﻿<RecentFiles>
   <RecentFiles>
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Models/f:ActivityModel.cs" caret="0" fromTop="0" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Models/f:FastSummarySelectModel.cs" caret="285" fromTop="10" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Shared/f:DynamicDiagram.cshtml" caret="0" fromTop="0" />
-    <File id="93ECADCE-1F20-4F64-BFD5-2D96A6F8245E/f:IStatisticDataService.cs" caret="2087" fromTop="34" />
-    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:ServiceAdapters/f:IEnterpriseServiceAdapter.cs" caret="0" fromTop="0" />
-    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:ServiceAdapters/f:IAuthenticationServiceAdapter.cs" caret="0" fromTop="0" />
-    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Views/d:Shared/f:_Layout.cshtml" caret="2084" fromTop="28" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Controllers/f:RegionController.cs" caret="687" fromTop="27" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:ServiceAdapters/f:InfoDataAdapter.cs" caret="747" fromTop="23" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Home/f:Index.cshtml" caret="161" fromTop="6" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Controllers/f:FullReportController.cs" caret="1587" fromTop="37" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:ServiceAdapters/f:FastSummaryReportAdapter.cs" caret="547" fromTop="15" />
-    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/f:StatisticDataRepository.cs" caret="14308" fromTop="29" />
-    <File id="93ECADCE-1F20-4F64-BFD5-2D96A6F8245E/f:StatisticDataService.cs" caret="4407" fromTop="23" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Controllers/f:CommonController.cs" caret="681" fromTop="24" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Common/f:Chooser.cshtml" caret="1538" fromTop="25" />
-    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:SelectionQtyStaticConverter.cs" caret="1085" fromTop="21" />
-    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:POCO/d:ReportItems/f:SummaryReportItem.cs" caret="472" fromTop="13" />
-    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:POCO/d:ReportItems/f:FastSummaryReportItem.cs" caret="881" fromTop="30" />
-    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:ConsolidatedStaticReportConverter.cs" caret="3359" fromTop="40" />
-    <File id="E4F51377-987F-4326-BC66-538C8D1AD2E0/d:Converters/f:FastSummaryReportConverter.cs" caret="1763" fromTop="18" />
-    <File id="C3510B5B-840F-4651-8408-C0F85793321B/f:Web.config" caret="628" fromTop="11" />
     <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Scripts/f:Bonch.AnalizeUI.Info.js" caret="0" fromTop="0" />
     <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Scripts/f:Bonch.AnalizeUI.Reports.js" caret="221" fromTop="6" />
     <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Shared/f:_Layout.cshtml" caret="2059" fromTop="9" />
     <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:FullReport/f:Index.cshtml" caret="2664" fromTop="0" />
     <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Content/f:Site.css" caret="1160" fromTop="17" />
     <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Scripts/f:Bonch.AnalizeUI.Checkboxes.js" caret="2156" fromTop="28" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Consolidate/f:Index.cshtml" caret="4827" fromTop="28" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Summary/f:Index.cshtml" caret="4340" fromTop="31" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Summary/f:Index.cshtml" caret="0" fromTop="0" />
+    <File id="3EA818FA-2C5F-4004-9A61-CFA8AF02F541/f:EnterpriseDataService.cs" caret="1599" fromTop="30" />
+    <File id="3EA818FA-2C5F-4004-9A61-CFA8AF02F541/d:Interceptors/f:IdentityMessageInspector.cs" caret="1133" fromTop="29" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Filters/f:RemoteErrorHandler.cs" caret="684" fromTop="22" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Filters/f:NoCacheAttribute.cs" caret="267" fromTop="9" />
+    <File id="F5F98192-E32F-42A2-ADF9-099A0CCB3C46/f:EnterpriseIdentifier.cs" caret="610" fromTop="20" />
+    <File id="F5F98192-E32F-42A2-ADF9-099A0CCB3C46/f:EnterpriseDataRepository.cs" caret="7145" fromTop="0" />
+    <File id="F5F98192-E32F-42A2-ADF9-099A0CCB3C46/f:IEnterpriseDataRepository.cs" caret="1405" fromTop="23" />
+    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Consolidate/f:Index.cshtml" caret="0" fromTop="0" />
+    <File id="3EA818FA-2C5F-4004-9A61-CFA8AF02F541/f:PersonsUploader.cs" caret="1437" fromTop="25" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Views/d:Summaries/f:Index.cshtml" caret="340" fromTop="10" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Models/f:SummaryModel.cs" caret="520" fromTop="16" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Binders/f:SummaryModelBinder.cs" caret="0" fromTop="0" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:ServiceAdapters/f:EnterpriseServiceAdapter.cs" caret="6496" fromTop="25" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Interceptors/f:CookieMessageInspector.cs" caret="627" fromTop="22" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Scripts/f:Bonch.Enterprises.Summary.js" caret="0" fromTop="0" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Controllers/f:PeopleController.cs" caret="2324" fromTop="40" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Models/f:PersonModel.cs" caret="1848" fromTop="30" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Views/d:People/d:EditorTemplates/f:GenderSelector.cshtml" caret="13" fromTop="1" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Controllers/f:SummariesController.cs" caret="2737" fromTop="22" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Validators/f:YearRangeAttribute.cs" caret="288" fromTop="9" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Scripts/f:Bonch.Enterprises.People.js" caret="213" fromTop="5" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Views/d:People/f:Edit.cshtml" caret="3708" fromTop="10" />
   </RecentFiles>
   <RecentEdits>
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Scripts/f:Bonch.AnalizeUI.Checkboxes.js" caret="3169" fromTop="4" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Consolidate/f:Index.cshtml" caret="5127" fromTop="23" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Consolidate/f:Index.cshtml" caret="5127" fromTop="14" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Consolidate/f:Index.cshtml" caret="5127" fromTop="18" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Consolidate/f:Index.cshtml" caret="5127" fromTop="17" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Consolidate/f:Index.cshtml" caret="5127" fromTop="10" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Consolidate/f:Index.cshtml" caret="5127" fromTop="10" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Consolidate/f:Index.cshtml" caret="5127" fromTop="19" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Content/f:Site.css" caret="1160" fromTop="17" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Consolidate/f:Index.cshtml" caret="5127" fromTop="31" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Consolidate/f:Index.cshtml" caret="5127" fromTop="17" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Consolidate/f:Index.cshtml" caret="5127" fromTop="19" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Consolidate/f:Index.cshtml" caret="5127" fromTop="25" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Scripts/f:Bonch.AnalizeUI.Checkboxes.js" caret="3169" fromTop="5" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Scripts/f:Bonch.AnalizeUI.Checkboxes.js" caret="3169" fromTop="5" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Scripts/f:Bonch.AnalizeUI.Checkboxes.js" caret="3123" fromTop="7" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Consolidate/f:Index.cshtml" caret="5127" fromTop="6" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Consolidate/f:Index.cshtml" caret="5127" fromTop="8" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Consolidate/f:Index.cshtml" caret="5085" fromTop="31" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Consolidate/f:Index.cshtml" caret="5085" fromTop="6" />
-    <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Consolidate/f:Index.cshtml" caret="5085" fromTop="6" />
     <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Consolidate/f:Index.cshtml" caret="5085" fromTop="6" />
     <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Scripts/f:Bonch.AnalizeUI.Checkboxes.js" caret="3123" fromTop="28" />
     <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Scripts/f:Bonch.AnalizeUI.Checkboxes.js" caret="3094" fromTop="28" />
@@ -62,5 +40,24 @@
     <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Consolidate/f:Index.cshtml" caret="4279" fromTop="19" />
     <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Consolidate/f:Index.cshtml" caret="4625" fromTop="25" />
     <File id="1BC73A96-6AC1-49E1-B9A5-B62772922F79/d:Views/d:Summary/f:Index.cshtml" caret="4340" fromTop="31" />
+    <File id="F5F98192-E32F-42A2-ADF9-099A0CCB3C46/f:EnterpriseDataRepository.cs" caret="8395" fromTop="29" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Controllers/f:SummariesController.cs" caret="2697" fromTop="31" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Views/d:Summaries/f:Index.cshtml" caret="240" fromTop="6" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Controllers/f:SummariesController.cs" caret="3144" fromTop="26" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Controllers/f:SummariesController.cs" caret="3386" fromTop="37" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Controllers/f:SummariesController.cs" caret="1000" fromTop="24" />
+    <File id="3EA818FA-2C5F-4004-9A61-CFA8AF02F541/f:PersonsUploader.cs" caret="2581" fromTop="33" />
+    <File id="3EA818FA-2C5F-4004-9A61-CFA8AF02F541/f:PersonsUploader.cs" caret="1649" fromTop="13" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Models/f:SummaryModel.cs" caret="520" fromTop="16" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Models/f:PersonModel.cs" caret="2447" fromTop="38" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Models/f:PersonModel.cs" caret="1408" fromTop="40" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Views/d:People/d:EditorTemplates/f:GenderSelector.cshtml" caret="370" fromTop="5" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Views/d:People/d:EditorTemplates/f:GenderSelector.cshtml" caret="325" fromTop="4" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Scripts/f:Bonch.Enterprises.People.js" caret="1558" fromTop="28" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Models/f:PersonModel.cs" caret="2119" fromTop="41" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Models/f:PersonModel.cs" caret="190" fromTop="10" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Models/f:PersonModel.cs" caret="1848" fromTop="30" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Views/d:People/f:Edit.cshtml" caret="3774" fromTop="12" />
+    <File id="0148C348-0379-41AE-9832-47D102AD134E/d:Scripts/f:Bonch.Enterprises.People.js" caret="222" fromTop="5" />
   </RecentEdits>
 </RecentFiles>

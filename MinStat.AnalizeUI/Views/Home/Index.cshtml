@@ -1,41 +1,65 @@
 ﻿@{
-  ViewBag.Title = "Index";
+    ViewBag.Title = "Index";
 }
 <div class="row-fluid">
-  <div class="span12 alert alert-success">
-    <div class="span2">
-      <img src="@Url.Content("~/Content/img/logo.png")"  />
+    <div class="span12 alert alert-success">
+        <div class="span2">
+            <img src="@Url.Content("~/Content/img/logo.png")"  />
+        </div>
+        <div class="span10">
+            <strong>Добро пожаловать в отраслевую информационо-аналитическую систему управления
+                балансом трудовых ресурсов отрасли связи, информационных технологий и массовых коммуникаций
+                "Кадры"</strong>
+        </div>
     </div>
-    <div class="span10">
-      <strong>Добро пожаловать в отраслевую информационо-аналитическую систему управления
-        балансом трудовых ресурсов отрасли связи, информационных технологий и массовых коммуникаций
-        "Кадры"</strong>
-    </div>
-  </div>
 </div>
 <div class="well">
-  <strong>Базовый отчет </strong>
-  <br />
-  <br />
-  С помощью этой системы вы сможете просмотреть количественные данные по активностям.
-  <br />
-  <br />
-  @Html.ActionLink("Начать", "Index", "FullReport", null, new { @class = "btn btn-primary" })
+    <strong>Стандартный отчет </strong>
+    <br />
+    <br />
+    Стандартный отчет позволяет получить последние результаты (число работников, образование,
+    категории работников, средний возраст, среднегодовой доход) по отрасли, федеральному
+    округу, субъекту федерации или предприятию без учета видов деятельности.
+    <br />
+    <br />
 </div>
 <div class="well">
-  <strong>Сводный отчет </strong>
-  <br />
-  <br />
-  С помощью этой системы вы сможете просмотреть количественные и относительные данные
-  по указанным критериям.
-  <br />
-  <br />
-  @Html.ActionLink("Начать", "Index", "Consolidate", null, new { @class = "btn btn-primary" })
+    <strong>Базовый отчет </strong>
+    <br />
+    <br />
+    Базовый отчет позволяет получить для отрасли, федерального округа, субъекта федерации
+    или предприятия результаты, соответствующие задаваемому критерию (образование и
+    категории работников) по видам деятельности в заданном интервале дат.
+    <br />
+    @Html.ActionLink("Начать", "Index", "FullReport", null, new { @class = "btn btn-primary pull-right" })
+    <br />
 </div>
 <div class="well">
-  <strong>Добавить новое предприятие </strong>Для добавление нового предприятия, пройдите
-  по следующей ссылке.
-  <br />
-  <br />
-  @Html.ActionLink("Начать", "Index", "Administration", null, new { @class = "btn btn-primary" })
+    <strong>Сводный отчет </strong>
+    <br />
+    <br />
+    Сводный отчет позволяет для выбранной отрасли, федерального округа, субъекта федерации
+    или предприятия задавать <strong>сложные критерии</strong>, по любым признакам (образование и категории
+    работников) по видам деятельности в <strong>заданном интервале дат</strong>.
+    <br />@Html.ActionLink("Начать", "Index", "Consolidate", null, new { @class = "btn btn-primary pull-right" })
+    <br />
+    
+</div>
+<div class="well">
+    <strong>Количественный отчет </strong>
+    <br />
+    <br />
+    Количественный отчет позволяет получить для отрасли, федерального округа, субъекта
+    федерации или предприятия результаты, соответствующие сложному критерию (образование
+    и категории работников) по видам деятельности на <strong>конкретную дату</strong>.
+    <br />@Html.ActionLink("Начать", "Index", "Summary", null, new { @class = "btn btn-primary pull-right" })
+    <br />
+    
+</div>
+<div class="well">
+    <strong>Добавить новое предприятие </strong><br /><br />Для добавление нового предприятия, пройдите
+    по следующей ссылке.
+    <br /> @Html.ActionLink("Начать", "Index", "Administration", null, new { @class = "btn btn-primary pull-right" })
+    <br />
+   
 </div>

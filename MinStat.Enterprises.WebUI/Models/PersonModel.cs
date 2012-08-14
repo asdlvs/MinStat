@@ -14,7 +14,7 @@ namespace MinStat.Enterprises.WebUI.Models
         [HiddenInput(DisplayValue = false)]
         public int SummaryId { get; set; }
 
-        [Display(Name = "Активность")]
+        [Display(Name = "Вид деятельности")]
         public int ActivityId { get; set; }
 
         public string ActivityTitle { get; set; }

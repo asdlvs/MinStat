@@ -5,7 +5,7 @@
 }
 @foreach (StatisticDataModel m in Model)
 {
-    if (m != null)
+    if (m != null && m.Values != null && m.Values.Any())
     {
     <table class="table-striped table-bordered table-condensed">
         <tr>
@@ -31,9 +31,11 @@
             </tr>
         }
     </table>
-    }
-    if (m != null && m.Values != null && m.Values.Any())
-    {
     @Html.Partial("DynamicDiagram", m)
+    
+    }
+    else
+    {
+    <strong>Данные по Вашему запросу отсутствуют.</strong>
     }
 }
