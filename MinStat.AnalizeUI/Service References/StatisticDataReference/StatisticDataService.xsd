@@ -148,7 +148,7 @@
   <xs:element name="GetFederalDistrictsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetFederalDistrictsResult" nillable="true" type="q20:ArrayOfKeyValueOfintstring" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO" minOccurs="0" name="GetFederalDistrictsResult" nillable="true" type="q20:ArrayOfFederalDistrict" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -162,7 +162,7 @@
   <xs:element name="GetFederalSubjectsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetFederalSubjectsResult" nillable="true" type="q21:ArrayOfKeyValueOfintstring" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO" minOccurs="0" name="GetFederalSubjectsResult" nillable="true" type="q21:ArrayOfFederalSubject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -176,7 +176,7 @@
   <xs:element name="GetEnterprisesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetEnterprisesResult" nillable="true" type="q22:ArrayOfKeyValueOfintstring" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO" minOccurs="0" name="GetEnterprisesResult" nillable="true" type="q22:ArrayOfEnterprise" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

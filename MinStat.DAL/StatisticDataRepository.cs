@@ -45,7 +45,7 @@ namespace MinStat.DAL
         {
         }
 
-        public IEnumerable<StatisticData> GetStaticConsolidatedReportData(int enterpriseId, int federalSubjectId,int federalDistrictId, DateTime startDate,DateTime endDate, List<int> activities,List<int> criteries)
+        public IEnumerable<StatisticData> GetStaticConsolidatedReportData(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> activities, List<int> criteries)
         {
             DataTable dtActivities = CreateOneRowDataTable(activities, "OneIntColumnType");
             SqlParameter activitiesParameter = CreateSqlParameter(dtActivities, "@Activities", "dbo.OneIntColumnType");
@@ -69,7 +69,7 @@ namespace MinStat.DAL
 
         }
 
-        public IEnumerable<StatisticData> GetDynamicConsolidatedReportData(int enterpriseId, int federalSubjectId,int federalDistrictId, DateTime startDate,DateTime endDate, List<int> activities,List<int> criteries)
+        public IEnumerable<StatisticData> GetDynamicConsolidatedReportData(int enterpriseId, int federalSubjectId, int federalDistrictId, DateTime startDate, DateTime endDate, List<int> activities, List<int> criteries)
         {
             List<ConsolidatedDynamicReportItem> reportItems = new List<ConsolidatedDynamicReportItem>();
             for (DateTime date = startDate; date <= endDate; )
@@ -239,37 +239,37 @@ namespace MinStat.DAL
 
         }
 
-      public IEnumerable<StatisticData> GetFastSummaryReportData(int enterpriseId, int federalSubjectId, int federalDistrictId, int activityId)
-      {
-        SqlParameter[] parameters = new[]
+        public IEnumerable<StatisticData> GetFastSummaryReportData(int enterpriseId, int federalSubjectId, int federalDistrictId, int activityId)
+        {
+            SqlParameter[] parameters = new[]
                                             {
                                                 new SqlParameter("@enterpriseid", enterpriseId),
                                                 new SqlParameter("@federalsubjectid", federalSubjectId),
                                                 new SqlParameter("@federaldistrictid", federalDistrictId),
                                                 new SqlParameter("@activityid", activityId)
                                             };
-        IEnumerable<FastSummaryReportItem> fastReportItems =
-            _context.Database.SqlQuery<FastSummaryReportItem>(FastSummaryStoredProcedureCaller,
-                                                                     parameters);
-        IStatisticDataConverter<FastSummaryReportItem> converter =
-            _converterFactory.GetConverter<FastSummaryReportItem>();
-        fastReportItems = fastReportItems.ToList();
-        return converter.Convert(fastReportItems);
-      }
-
-      public IDictionary<int, string> GetFederalDistricts()
-        {
-            return _context.FederalDistricts.ToDictionary(x => x.Id, x => x.Title);
+            IEnumerable<FastSummaryReportItem> fastReportItems =
+                _context.Database.SqlQuery<FastSummaryReportItem>(FastSummaryStoredProcedureCaller,
+                                                                         parameters);
+            IStatisticDataConverter<FastSummaryReportItem> converter =
+                _converterFactory.GetConverter<FastSummaryReportItem>();
+            fastReportItems = fastReportItems.ToList();
+            return converter.Convert(fastReportItems);
         }
 
-        public IDictionary<int, string> GetFederalSubjects(int districtId)
+        public List<FederalDistrict> GetFederalDistricts()
         {
-            return _context.FederalSubjects.Where(x => x.FederalDistrictId == districtId || districtId == 0).ToDictionary(x => x.Id, x => x.Title);
+            return _context.FederalDistricts.ToList();
         }
 
-        public IDictionary<int, string> GetEnterprises(int subjectId)
+        public List<FederalSubject> GetFederalSubjects(int districtId)
         {
-            return _context.Enterprises.Where(x => x.FederalSubjectId == subjectId || subjectId == 0).ToDictionary(x => x.Id, x => x.Title);
+            return _context.FederalSubjects.Where(x => x.FederalDistrictId == districtId || districtId == 0).ToList();
+        }
+
+        public List<Enterprise> GetEnterprises(int subjectId)
+        {
+            return _context.Enterprises.Where(x => x.FederalSubjectId == subjectId || subjectId == 0).ToList();
         }
 
         public IEnumerable<Activity> GetActivities()
@@ -316,13 +316,13 @@ namespace MinStat.DAL
             SqlParameter gendersParameter = CreateSqlParameter(gendersDataTable, "genders", "dbo.OneBitColumnType");
 
             IEnumerable<SummaryReportItem> summaryReportItems = _context.Database.SqlQuery<SummaryReportItem>(SummaryDataStoredProcedureCaller,
-                gendersParameter, 
-                educationLevelsParameter, 
+                gendersParameter,
+                educationLevelsParameter,
                 postLevelsParameter,
                 new SqlParameter("bounddate", boundDate),
                 new SqlParameter("enterpriseid", enterpiseId),
                 new SqlParameter("federalsubjectid", federalSubjectId),
-                new SqlParameter("federaldistrictid", federalDistrictId), 
+                new SqlParameter("federaldistrictid", federalDistrictId),
                 activitiesParameter);
 
             IStatisticDataConverter<SummaryReportItem> converter = _converterFactory.GetConverter<SummaryReportItem>();

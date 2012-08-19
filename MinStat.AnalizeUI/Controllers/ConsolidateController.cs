@@ -20,7 +20,7 @@ namespace MinStat.AnalizeUI.Controllers
             _adapter = new ConsolidateReportAdapter();
             _infoAdapter = new InfoDataAdapter();
 
-            Dictionary<int, string> federalDistricts = _infoAdapter.GetFederalDistricts().ToDictionary(x => x.Key, x => x.Value);
+            Dictionary<int, string> federalDistricts = _infoAdapter.GetFederalDistricts().ToDictionary(x => x.Id, x => x.Title);
             federalDistricts.Add(0, "Все округа");
             ViewBag.FederalDistricts = federalDistricts.OrderBy(x => x.Key);
             ViewBag.StartDate = new DateTime(DateTime.Now.Year, 1, 1).ToShortDateString();

@@ -1,5 +1,6 @@
 ﻿
 using System;
+using MinStat.Enterprises.WebUI.Validators;
 
 namespace MinStat.Enterprises.WebUI.Models
 {
@@ -55,16 +56,19 @@ namespace MinStat.Enterprises.WebUI.Models
 
         [Required(ErrorMessage = "Необходимо указать")]
         [RegularExpression("\\d{4}", ErrorMessage = "Укажите ")]
+        [YearRange(1940, 18, ErrorMessage = "Укажите правильно")]
         [Display(Name = "Год рождения")]
         public int BirthYear { get; set; }
 
         [Required(ErrorMessage = "Необходимо указать")]
         [RegularExpression("\\d{4}", ErrorMessage = "Укажите ")]
+        [YearRange(1958, 0, ErrorMessage = "Укажите правильно")]
         [Display(Name = "Год приема на работу")]
         public int HiringYear { get; set; }
 
         [Required(ErrorMessage = "Необходимо указать")]
         [RegularExpression("\\d{4}", ErrorMessage = "Укажите ")]
+        [YearRange(1958, 0, ErrorMessage = "Укажите правильно")]
         [Display(Name = "Год вступления в должность")]
         public int StartPostYear { get; set; }
 

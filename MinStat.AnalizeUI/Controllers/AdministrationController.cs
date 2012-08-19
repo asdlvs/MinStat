@@ -20,7 +20,7 @@ namespace MinStat.AnalizeUI.Controllers
             _adapter = adapter;
             _infoAdapter = infoDataAdapter;
 
-            Dictionary<int, string> federalDistricts = _infoAdapter.GetFederalDistricts().ToDictionary(x => x.Key, x => x.Value);
+            Dictionary<int, string> federalDistricts = _infoAdapter.GetFederalDistricts().ToDictionary(x => x.Id, x => x.Title);
             federalDistricts.Add(0, "");
             ViewBag.FederalDistricts = federalDistricts.OrderBy(x => x.Key);
         }
@@ -37,10 +37,10 @@ namespace MinStat.AnalizeUI.Controllers
             if (federalSubjectId != null)
             {
                 model.FederalSubjectId = (int) federalSubjectId;
-                IDictionary<int, string> enterprises = _infoAdapter.GetEnterprises(model.FederalSubjectId);
+                IEnumerable<EnterpriseModel> enterprises = _infoAdapter.GetEnterprises(model.FederalSubjectId);
                 ViewBag.SelectedFederalSubjectId = model.FederalSubjectId;
                 ViewBag.SelectedFederalDistrictId = federalDistrictId;
-                model.Enterprises = enterprises.Select(x => new EnterpriseModel { Id = x.Key, Title = x.Value });
+                model.Enterprises = enterprises.Select(x => new EnterpriseModel { Id = x.Id, Title = x.Title });
             }
             else
             {

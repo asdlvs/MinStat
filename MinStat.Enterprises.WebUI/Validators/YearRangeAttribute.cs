@@ -9,8 +9,8 @@ namespace MinStat.Enterprises.WebUI.Validators
 {
     public class YearRangeAttribute : ValidationAttribute, IClientValidatable
     {
-        private int _startDate;
-        private int _difference;
+        private readonly int _startDate;
+        private readonly int _difference;
 
         public YearRangeAttribute(int startDate, int difference)
         {
@@ -20,13 +20,20 @@ namespace MinStat.Enterprises.WebUI.Validators
 
         public override bool IsValid(object value)
         {
-            int yearToTest = (int) value;
+            int yearToTest = (int)value;
             return yearToTest >= _startDate && yearToTest <= DateTime.Now.Year - _difference;
         }
 
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
         {
-            throw new NotImplementedException();
+            var rule = new ModelClientValidationRule
+            {
+                ErrorMessage = FormatErrorMessage(this.ErrorMessage),
+                ValidationType = "range",
+            };
+            rule.ValidationParameters.Add("min", _startDate);
+            rule.ValidationParameters.Add("max", DateTime.Now.Year - _difference);
+            yield return rule;
         }
     }
 }

@@ -25,13 +25,13 @@ namespace MinStat.AnalizeUI.Controllers
 
         public JsonResult FederalSubjects(int federalDistrictId)
         {
-            Dictionary<string, string> federalSubjects = _infoAdapter.GetFederalSubjects(federalDistrictId).ToDictionary(x => x.Key.ToString(CultureInfo.InvariantCulture), x=> x.Value);
+            Dictionary<string, string> federalSubjects = _infoAdapter.GetFederalSubjects(federalDistrictId).ToDictionary(x => x.Id.ToString(CultureInfo.InvariantCulture), x=> x.Title);
             return Json(federalSubjects, JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult Enterprises(int federalSubjectId)
         {
-            Dictionary<string, string> enterprises = _infoAdapter.GetEnterprises(federalSubjectId).ToDictionary(x => x.Key.ToString(CultureInfo.InvariantCulture), x => x.Value);
+            Dictionary<string, string> enterprises = _infoAdapter.GetEnterprises(federalSubjectId).ToDictionary(x => x.Id.ToString(CultureInfo.InvariantCulture), x => x.Title);
             return Json(enterprises, JsonRequestBehavior.AllowGet);
         }
 

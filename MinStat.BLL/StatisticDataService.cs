@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using MinStat.DAL;
+using MinStat.DAL.POCO;
 using MinStat.DAL.POCO.ResultItems;
 
 namespace MinStat.BLL
@@ -47,17 +48,17 @@ namespace MinStat.BLL
             return _statisticDataRepository.GetQtyDynamicReportData(enterpriseId, federalSubjectId, federalDistrictId, startDate, endDate, verticalChecks, horizontalChecks);
         }
 
-        public IDictionary<int, string> GetFederalDistricts()
+        public List<FederalDistrict> GetFederalDistricts()
         {
             return _statisticDataRepository.GetFederalDistricts();
         }
 
-        public IDictionary<int, string> GetFederalSubjects(int districtId)
+        public List<FederalSubject> GetFederalSubjects(int districtId)
         {
             return _statisticDataRepository.GetFederalSubjects(districtId);
         }
 
-        public IDictionary<int, string> GetEnterprises(int subjectId)
+        public List<Enterprise> GetEnterprises(int subjectId)
         {
             return _statisticDataRepository.GetEnterprises(subjectId);
         }

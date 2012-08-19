@@ -98,6 +98,7 @@
     <Compile Include="ServiceAdapters\EnterpriseServiceAdapter.cs" />
     <Compile Include="ServiceAdapters\IAuthenticationServiceAdapter.cs" />
     <Compile Include="ServiceAdapters\IEnterpriseServiceAdapter.cs" />
+    <Compile Include="Validators\YearRangeAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-responsive.min.css" />

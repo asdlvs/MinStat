@@ -9,27 +9,41 @@ namespace MinStat.AnalizeUI.ServiceAdapters
 {
     public class InfoDataAdapter : IInfoDataAdapter
     {
-        public IDictionary<int, string> GetFederalDistricts()
+        public IEnumerable<FederalDistrictModel> GetFederalDistricts()
         {
             using (StatisticDataServiceClient proxy = new StatisticDataServiceClient())
             {
-                return proxy.GetFederalDistricts();
+                return proxy.GetFederalDistricts().Select(x => new FederalDistrictModel
+                                                                   {
+                                                                       Id = x.Idk__BackingField,
+                                                                       Title = x.Titlek__BackingField
+                                                                   });
             }
         }
 
-        public IDictionary<int, string> GetFederalSubjects(int districtId)
+        public IEnumerable<FederalSubjectModel> GetFederalSubjects(int districtId)
         {
             using (StatisticDataServiceClient proxy = new StatisticDataServiceClient())
             {
-                return proxy.GetFederalSubjects(districtId);
+                return proxy.GetFederalSubjects(districtId).Select(x => new FederalSubjectModel
+                {
+                    Id = x.Idk__BackingField,
+                    Title = x.Titlek__BackingField,
+                    FederalDistrictId = x.FederalDistrictIdk__BackingField
+                });
             }
         }
 
-        public IDictionary<int, string> GetEnterprises(int subjectId)
+        public IEnumerable<EnterpriseModel> GetEnterprises(int subjectId)
         {
             using (StatisticDataServiceClient proxy = new StatisticDataServiceClient())
             {
-                return proxy.GetEnterprises(subjectId);
+                return proxy.GetEnterprises(subjectId).Select(x => new EnterpriseModel
+                {
+                    Id = x.Idk__BackingField,
+                    Title = x.Titlek__BackingField,
+                    FederalSubjectId = x.FederalSubjectIdk__BackingField
+                });
             }
         }
 

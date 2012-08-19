@@ -84,6 +84,8 @@
     <Compile Include="Models\CreateEnterpriseModel.cs" />
     <Compile Include="Models\EnterpriseModel.cs" />
     <Compile Include="Models\FastSummarySelectModel.cs" />
+    <Compile Include="Models\FederalDistrictModel.cs" />
+    <Compile Include="Models\FederalSubjectModel.cs" />
     <Compile Include="Models\FilterCriteryModel.cs" />
     <Compile Include="Models\FullReportModel.cs" />
     <Compile Include="Models\StatisticDataItemModel.cs" />
@@ -183,6 +185,15 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\StatisticDataReference\MinStat.AnalizeUI.StatisticDataReference.Activity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StatisticDataReference\MinStat.AnalizeUI.StatisticDataReference.Enterprise.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StatisticDataReference\MinStat.AnalizeUI.StatisticDataReference.FederalDistrict.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\StatisticDataReference\MinStat.AnalizeUI.StatisticDataReference.FederalSubject.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\StatisticDataReference\MinStat.AnalizeUI.StatisticDataReference.FilterCritery.datasource">

@@ -2,8 +2,47 @@
 @model IEnumerable<StatisticDataModel>
 @foreach (StatisticDataModel m in Model)
 {
-    if (m != null && m.Values != null && m.Values.Any())
+    <h1>Отчет</h1>
+    <h2>@m.ReportName</h2>
+    <br />
+   if (!string.IsNullOrWhiteSpace(m.CreatedDateTime))
+   {
+         <h3>Создан: <span style="font-weight: normal">@m.CreatedDateTime</span></h3>
+         <br />
+   }
+   if (!string.IsNullOrWhiteSpace(m.MainActivity))
+   {
+        <h3>Отрасль: <span style="font-weight: normal">«@m.MainActivity»</span></h3>
+   }
+   if (!string.IsNullOrWhiteSpace(m.Activity))
+   {
+        <h3>Подотрасль: <span style="font-weight: normal">«@m.Activity»</span></h3>
+   }
+   if (!string.IsNullOrWhiteSpace(m.FederalDistrict))
+   {
+        <h3>Федеральный округ: <span style="font-weight: normal">«@m.FederalDistrict»</span></h3>
+   }
+   if (!string.IsNullOrWhiteSpace(m.FederalSubject))
+   {
+        <h3>Субъект Федерации: <span style="font-weight: normal">«@m.FederalSubject»</span></h3>
+   }
+   if (!string.IsNullOrWhiteSpace(m.Enterprise))
+   {
+        <h3>Предприятие: <span style="font-weight: normal">«@m.Enterprise»</span></h3>
+   }
+    if (!string.IsNullOrWhiteSpace(m.EndDate))
     {
+        <h3>Начало отчетного периода:	<span style="font-weight: normal">«@m.StartDate»</span></h3>
+    }
+    if (!string.IsNullOrWhiteSpace(m.StartDate))
+    {
+        <h3>Конец отчетного периода:	<span style="font-weight: normal">«@m.EndDate»</span></h3>
+    }
+
+    <br />
+    
+   if (m != null && m.Values != null && m.Values.Any())
+   {
     <table class="table-striped table-bordered table-condensed">
         <tr>
             @foreach (var headItem in m.Titles)
@@ -31,10 +70,10 @@
         {
     @Html.Partial("StaticDiagram", m)
         }
-    }
-    else
-    {
-        <strong>Данные по Вашему запросу отсутствуют.</strong>
-    }
+   }
+   else
+   {
+    <strong>Данные по Вашему запросу отсутствуют.</strong>
+   }
 
 }

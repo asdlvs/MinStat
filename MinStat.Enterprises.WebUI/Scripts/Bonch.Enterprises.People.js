@@ -16,9 +16,9 @@
         $('#persontoedit #Post').val('');
         $('#persontoedit #StartPostYear').val('');
         $('#persontoedit #EducationLevelId').val('');
-        $('#persontoedit #WasQualificationIncrease').val(false);
+        $('#persontoedit #WasQualificationIncrease').val();
         $('#persontoedit #PostLevelId').val('');
-        $('#persontoedit #WasValidate').val(false);
+        $('#persontoedit #WasValidate').val();
         $('#persontoedit #YearSalary').val('');
         $('#persontoedit #DismissalYear').val('');
         $('#editPerson').modal('show');

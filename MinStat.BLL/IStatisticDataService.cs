@@ -35,13 +35,13 @@ namespace MinStat.BLL
         IEnumerable<StatisticData> GetFastSummaryReport(int enterpriseId, int federalSubjectId, int federalDistrictId, int activityId);
 
         [OperationContract]
-        IDictionary<int, string> GetFederalDistricts();
+        List<FederalDistrict> GetFederalDistricts();
 
         [OperationContract]
-        IDictionary<int, string> GetFederalSubjects(int districtId);
+        List<FederalSubject> GetFederalSubjects(int districtId);
 
         [OperationContract]
-        IDictionary<int, string> GetEnterprises(int subjectId);
+        List<Enterprise> GetEnterprises(int subjectId);
 
         [OperationContract]
         IEnumerable<Activity> GetActivities();

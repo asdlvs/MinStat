@@ -8,9 +8,9 @@ namespace MinStat.AnalizeUI.ServiceAdapters
 {
     public interface IInfoDataAdapter
     {
-        IDictionary<int, string> GetFederalDistricts();
-        IDictionary<int, string> GetFederalSubjects(int districtId);
-        IDictionary<int, string> GetEnterprises(int subjectId);
+        IEnumerable<FederalDistrictModel> GetFederalDistricts();
+        IEnumerable<FederalSubjectModel> GetFederalSubjects(int districtId);
+        IEnumerable<EnterpriseModel> GetEnterprises(int subjectId);
         IEnumerable<ActivityModel> GetActivities();
         IEnumerable<FilterCriteryModel> GetFilterCriteries();
         IDictionary<int, string> GetPostLevels();

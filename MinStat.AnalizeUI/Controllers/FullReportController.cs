@@ -25,7 +25,7 @@ namespace MinStat.AnalizeUI.Controllers
             _selectionReport = new SelectionReportAdapter();
             _infoAdapter = new InfoDataAdapter();
 
-            Dictionary<int, string> federalDistricts = _infoAdapter.GetFederalDistricts().ToDictionary(x => x.Key, x => x.Value);
+            Dictionary<int, string> federalDistricts = _infoAdapter.GetFederalDistricts().ToDictionary(x => x.Id, x => x.Title);
             federalDistricts.Add(0, "Все округа");
             ViewBag.FederalDistricts = federalDistricts.OrderBy(x => x.Key);
             ViewBag.StartDate = new DateTime(DateTime.Now.Year, 1, 1).ToShortDateString();
@@ -68,7 +68,7 @@ namespace MinStat.AnalizeUI.Controllers
 
             ViewBag.RenderGraphic = true;
             IEnumerable<StatisticDataModel> model = new StatisticDataModel[0];
-
+            FillReportMetaData(model);
             if (reportType.EndsWith("#static") || String.IsNullOrWhiteSpace(reportType))
             {
                 model = _selectionReport.GetQtyStaticData(
@@ -78,6 +78,7 @@ namespace MinStat.AnalizeUI.Controllers
                     (string)Session["startDate"],
                     (string)Session["endDate"],
                     selectionChecks.VerticalChecks, selectionChecks.HorizontalChecks);
+                FillReportMetaData(model);
                 return View("StaticStatisticData", model);
             }
             if (reportType.EndsWith("#dynamic"))
@@ -89,10 +90,59 @@ namespace MinStat.AnalizeUI.Controllers
                     (string)Session["startDate"],
                     (string)Session["endDate"],
                     selectionChecks.VerticalChecks, selectionChecks.HorizontalChecks);
+                FillReportMetaData(model);
                 return View("DynamicStatisticData", model);
             }
+            FillReportMetaData(model);
             return View("Index", model);
         }
 
+        private void FillReportMetaData(IEnumerable<StatisticDataModel> model)
+        {
+            foreach (StatisticDataModel eModel in model)
+            {
+                eModel.MainActivity = "Связи информационных технологий и массовых коммуникаций";
+                eModel.ReportName = "Базовый";
+                eModel.CreatedDateTime = String.Format("{0} {1}", DateTime.Now.ToShortDateString(),
+                                                       DateTime.Now.ToShortTimeString());
+                eModel.StartDate = (string) Session["startDate"];
+                eModel.EndDate = (string)Session["endDate"];
+                eModel.Activity = "Все подотрасли";
+                eModel.FederalDistrict = (int) Session["federalDistrictId"] == 0
+                                             ? "Все Федеральные Округа"
+                                             : _infoAdapter.GetFederalDistricts().Single(
+                                                 x => x.Id == (int) Session["federalDistrictId"])
+                                                   .Title;
+
+                if ((int) Session["federalSubjectId"] == 0)
+                {
+                    eModel.FederalSubject = "Все субъекты федерации";
+                }
+                else
+                {
+                    FederalSubjectModel federalSubject =
+                        _infoAdapter.GetFederalSubjects(0).Single(x => x.Id == (int) Session["federalSubjectId"]);
+                    eModel.FederalSubject = federalSubject.Title;
+                    eModel.FederalDistrict =
+                        _infoAdapter.GetFederalDistricts().Single(x => x.Id == federalSubject.FederalDistrictId).Title;
+                }
+
+                if ((int) Session["enterpriseId"] == 0)
+                {
+                    eModel.Enterprise = "Все предприятия";
+                }
+                else
+                {
+                    EnterpriseModel enterprise =
+                        _infoAdapter.GetEnterprises(0).Single(x => x.Id == (int) Session["enterpriseId"]);
+                    eModel.Enterprise = enterprise.Title;
+                    FederalSubjectModel federalSubject =
+                        _infoAdapter.GetFederalSubjects(0).Single(x => x.Id == enterprise.FederalSubjectId);
+                    eModel.FederalSubject = federalSubject.Title;
+                    eModel.FederalDistrict =
+                        _infoAdapter.GetFederalDistricts().Single(x => x.Id == federalSubject.FederalDistrictId).Title;
+                }
+            }
+        }
     }
 }

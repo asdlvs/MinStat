@@ -2,6 +2,47 @@
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MinStat.DAL.POCO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
   <xs:import schemaLocation="http://synchrophasa-pc/StatisticService/StatisticDataService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfFederalDistrict">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FederalDistrict" nillable="true" type="tns:FederalDistrict" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFederalDistrict" nillable="true" type="tns:ArrayOfFederalDistrict" />
+  <xs:complexType name="FederalDistrict">
+    <xs:sequence>
+      <xs:element name="_x003C_Id_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Title_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FederalDistrict" nillable="true" type="tns:FederalDistrict" />
+  <xs:complexType name="ArrayOfFederalSubject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FederalSubject" nillable="true" type="tns:FederalSubject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFederalSubject" nillable="true" type="tns:ArrayOfFederalSubject" />
+  <xs:complexType name="FederalSubject">
+    <xs:sequence>
+      <xs:element name="_x003C_FederalDistrictId_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Id_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Title_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FederalSubject" nillable="true" type="tns:FederalSubject" />
+  <xs:complexType name="ArrayOfEnterprise">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Enterprise" nillable="true" type="tns:Enterprise" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEnterprise" nillable="true" type="tns:ArrayOfEnterprise" />
+  <xs:complexType name="Enterprise">
+    <xs:sequence>
+      <xs:element name="_x003C_FederalSubjectId_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Id_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Title_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Enterprise" nillable="true" type="tns:Enterprise" />
   <xs:complexType name="ArrayOfActivity">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Activity" nillable="true" type="tns:Activity" />

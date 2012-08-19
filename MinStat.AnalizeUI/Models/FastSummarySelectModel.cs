@@ -8,8 +8,8 @@ namespace MinStat.AnalizeUI.Models
     public class FastSummarySelectModel
     {
         public IEnumerable<ActivityModel> Activities { get; set; }
-        public IDictionary<int, string> Enterprises { get; set; }
-        public IDictionary<int, string> FederalSubjects { get; set; }
-        public IDictionary<int, string> FederalDistricts { get; set; }
+        public IEnumerable<EnterpriseModel> Enterprises { get; set; }
+        public IEnumerable<FederalSubjectModel> FederalSubjects { get; set; }
+        public IEnumerable<FederalDistrictModel> FederalDistricts { get; set; }
     }
 }
