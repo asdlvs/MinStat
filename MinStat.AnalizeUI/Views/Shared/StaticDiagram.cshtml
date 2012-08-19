@@ -1,4 +1,5 @@
-﻿@using MinStat.AnalizeUI.Models
+﻿@using System.Text
+@using MinStat.AnalizeUI.Models
 @model StatisticDataModel
 <script type="text/javascript" src="@Url.Content("~/Scripts//plugins/jqplot.barRenderer.min.js")"></script>
 <script type="text/javascript" src="@Url.Content("~/Scripts//plugins/jqplot.categoryAxisRenderer.min.js")"></script>
@@ -8,54 +9,51 @@
 
     @helper Vars(IEnumerable<string> values)
         {
-            @Html.Raw(values.Aggregate((x, y) => String.Format("{0},{1}",x , y)))
+            @Html.Raw(values.Aggregate((x, y) => String.Format("{0},{1}", x, y)))
     }
+            @helper Series(IEnumerable<string> values)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    foreach (var value in values)
+                    {
+                        sb.Append(" { label: '" + value + "'  },");
+                    }
+            @Html.Raw(sb.ToString());
+        }
 
    @foreach (StatisticDataItemModel dataItem in Model.Values)
-        {
+   {
             @Html.Raw(String.Format("var points{0} = [];", dataItem.Id));
-            foreach (string value in dataItem.Values)
-            {
-                @Html.Raw(String.Format("points{0}.push({1});", dataItem.Id, value.Replace(",",".")));
-            }
+                                                                        foreach (string value in dataItem.Values)
+                                                                        {
+                @Html.Raw(String.Format("points{0}.push({1});", dataItem.Id, value.Replace(",", ".")));
+                                                                        }
 
-        }
-        var plot3 = $.jqplot('chart3', [@Vars(Model.Values.Select(x => "points"+x.Id))], {
+   }
+        var plot3 = $.jqplot('chart3', [@Vars(Model.Values.Select(x => "points" + x.Id))], {
             // Tell the plot to stack the bars.    
             stackSeries: false,
             captureRightClick: false,
+            series: [@Series(Model.Values.Select(x => x.Title))],
             seriesDefaults: {
                 renderer: $.jqplot.BarRenderer,
                 rendererOptions: {
-                    // Put a 30 pixel margin between bars.          
-                    barMargin: 20,
-                    barWidth:10,
-                    // Highlight bars when mouse button pressed.          
-                    // Disables default highlighting on mouse over.          
-                    highlightMouseDown: true
+                    barMargin: 10,
+                    barWidth: 15,
+                    highlightMouseDown: false
                 },
-                pointLabels: { show: true}
+                pointLabels: { show: true, location: 'n', edgeTolerance: -15 }
             },
             axes: {
-                xaxis: {
-                    renderer: $.jqplot.CategoryAxisRenderer
-                },
-                yaxis: {
-                    // Don't pad out the bottom of the data range.  By default,        
-                    // axes scaled as if data extended 10% above and below the        
-                    // actual range to prevent data points right on grid boundaries.        
-                    // Don't want to do that here.        
-                    padMin: 0
-                }
+                            xaxis: {
+            renderer: $.jqplot.CategoryAxisRenderer,               
+            ticks: [@Vars(Model.Titles.Skip(1).Select(x => string.Format("'{0}'", x.Value)))],
+            min:0
+            }
             },
 
-            legend: {
-                show: false
-            }
+           legend: {     renderer: $.jqplot.EnhancedLegendRenderer, placement: 'outsideGrid', location:'n',  show:true   }  
         });
-        // Bind a listener to the "jqplotDataClick" event.  Here, simply change  
-        // the text of the info3 element to show what series and ponit were  
-        // clicked along with the data for that point.  
         $('#chart3').bind('jqplotDataClick',
             function (ev, seriesIndex, pointIndex, data) {
                 $('#info3').html('series: ' + seriesIndex + ', point: ' + pointIndex + ', data: ' + data);
@@ -64,3 +62,5 @@
 </script>
 <div id="chart3">
 </div>
+
+

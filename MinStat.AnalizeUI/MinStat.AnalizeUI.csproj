@@ -326,6 +326,7 @@
     <Content Include="Views\Consolidate\StaticReport.cshtml" />
     <Content Include="Views\Summary\Index.cshtml" />
     <Content Include="Views\Common\Chooser.cshtml" />
+    <Content Include="Views\Shared\ReportMetaData.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

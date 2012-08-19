@@ -5,8 +5,9 @@
 }
 @foreach (StatisticDataModel m in Model)
 {
-    if (m != null && m.Values != null && m.Values.Any())
-    {
+    @Html.Partial("ReportMetaData", m)
+if (m != null && m.Values != null && m.Values.Any())
+{
     <table class="table-striped table-bordered table-condensed">
         <tr>
             @foreach (var headItem in m.Titles)
@@ -31,11 +32,15 @@
             </tr>
         }
     </table>
+    <br/><br/>
     @Html.Partial("DynamicDiagram", m)
     
-    }
-    else
-    {
-    <strong>Данные по Вашему запросу отсутствуют.</strong>
-    }
 }
+else
+{
+    <strong>Данные по Вашему запросу отсутствуют.</strong>
+}
+}
+<footer class="footer">
+            Отчет составлен Информационно-аналитической системой управления балансом трудовых
+            ресурсов отрасли связи, информационных технологий и массовых коммуникаций</footer>

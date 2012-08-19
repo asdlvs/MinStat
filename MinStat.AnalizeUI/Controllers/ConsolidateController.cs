@@ -46,6 +46,7 @@ namespace MinStat.AnalizeUI.Controllers
                     return Index();
                 }
                 IEnumerable<StatisticDataModel> statisticData = _adapter.GetStaticConsolidatedReport(model);
+                FillReportMetaData(model, statisticData);
                 return View("StaticStatisticData", statisticData);
             }
             else
@@ -57,7 +58,46 @@ namespace MinStat.AnalizeUI.Controllers
                 }
                 ViewBag.RenderGraphic = true;
                 IEnumerable<StatisticDataModel> statisticData = _adapter.GetDynamicConsolidatedReport(model);
+                FillReportMetaData(model, statisticData);
                 return View("DynamicStatisticData", statisticData);
+            }
+        }
+
+        private void FillReportMetaData(ConsolidateReportCreatorModel model, IEnumerable<StatisticDataModel> statisticData)
+        {
+            foreach (StatisticDataModel eModel in statisticData)
+            {
+                eModel.MainActivity = "Связи информационных технологий и массовых коммуникаций";
+                eModel.ReportName = "Стандартный";
+                eModel.CreatedDateTime = String.Format("{0} {1}", DateTime.Now.ToShortDateString(),
+                                                       DateTime.Now.ToShortTimeString());
+                eModel.StartDate = model.StartDate;
+                eModel.EndDate = model.EndDate;
+                eModel.FederalDistrict = model.FederalDistrictId == 0
+                                             ? "Все Федеральные Округа"
+                                             : _infoAdapter.GetFederalDistricts().Single(x => x.Id == model.FederalDistrictId)
+                                                   .Title;
+
+                if (model.FederalSubjectId == 0)
+                {
+                    eModel.FederalSubject = "Все субъекты федерации";
+                }
+                else
+                {
+                    FederalSubjectModel federalSubject =
+                        _infoAdapter.GetFederalSubjects(0).Single(x => x.Id == model.FederalSubjectId);
+                    eModel.FederalSubject = federalSubject.Title;
+                }
+
+                if (model.EnterpriseId == 0)
+                {
+                    eModel.Enterprise = "Все предприятия";
+                }
+                else
+                {
+                    EnterpriseModel enterprise = _infoAdapter.GetEnterprises(0).Single(x => x.Id == model.EnterpriseId);
+                    eModel.Enterprise = enterprise.Title;
+                }
             }
         }
 

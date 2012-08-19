@@ -51,6 +51,38 @@ namespace MinStat.AnalizeUI.Controllers
             if (!ModelState.IsValid) { return Index(); }
 
             IEnumerable<StatisticDataModel> statisticData = _summaryAdapter.GetSummaryReport(model);
+            foreach (StatisticDataModel eModel in statisticData)
+            {
+                eModel.MainActivity = "Связи информационных технологий и массовых коммуникаций";
+                eModel.ReportName = "Стандартный";
+                eModel.CreatedDateTime = String.Format("{0} {1}", DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString());
+                eModel.FederalDistrict = model.FederalDistrictId == 0
+                                            ? "Все Федеральные Округа"
+                                            : _infoAdapter.GetFederalDistricts().Single(x => x.Id == model.FederalDistrictId)
+                                                  .Title;
+
+                if (model.FederalSubjectId == 0)
+                {
+                    eModel.FederalSubject = "Все субъекты федерации";
+                }
+                else
+                {
+                    FederalSubjectModel federalSubject =
+                        _infoAdapter.GetFederalSubjects(0).Single(x => x.Id == model.FederalSubjectId);
+                    eModel.FederalSubject = federalSubject.Title;
+                }
+
+                if (model.EnterpriseId == 0)
+                {
+                    eModel.Enterprise = "Все предприятия";
+                }
+                else
+                {
+                    EnterpriseModel enterprise = _infoAdapter.GetEnterprises(0).Single(x => x.Id == model.EnterpriseId);
+                    eModel.Enterprise = enterprise.Title;
+                }
+            }
+
             return View("StaticStatisticData", statisticData);
         }
 

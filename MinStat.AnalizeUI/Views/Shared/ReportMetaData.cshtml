@@ -1,0 +1,40 @@
+﻿@model MinStat.AnalizeUI.Models.StatisticDataModel
+
+ <h1>Отчет</h1>
+    <h2>@Model.ReportName</h2>
+    <br />
+   @if (!string.IsNullOrWhiteSpace(Model.CreatedDateTime))
+   {
+         <h3>Создан: <span style="font-weight: normal">@Model.CreatedDateTime</span></h3>
+         <br />
+   }
+   @if (!string.IsNullOrWhiteSpace(Model.MainActivity))
+   {
+        <h3>Отрасль: <span style="font-weight: normal">«@Model.MainActivity»</span></h3>
+   }
+   @if (!string.IsNullOrWhiteSpace(Model.Activity))
+   {
+        <h3>Подотрасль: <span style="font-weight: normal">«@Model.Activity»</span></h3>
+   }
+   @if (!string.IsNullOrWhiteSpace(Model.FederalDistrict))
+   {
+        <h3>Федеральный округ: <span style="font-weight: normal">«@Model.FederalDistrict»</span></h3>
+   }
+   @if (!string.IsNullOrWhiteSpace(Model.FederalSubject))
+   {
+        <h3>Субъект Федерации: <span style="font-weight: normal">«@Model.FederalSubject»</span></h3>
+   }
+   @if (!string.IsNullOrWhiteSpace(Model.Enterprise))
+   {
+        <h3>Предприятие: <span style="font-weight: normal">«@Model.Enterprise»</span></h3>
+   }
+    @if (!string.IsNullOrWhiteSpace(Model.EndDate))
+    {
+        <h3>Начало отчетного периода:	<span style="font-weight: normal">«@Model.StartDate»</span></h3>
+    }
+   @if (!string.IsNullOrWhiteSpace(Model.StartDate))
+    {
+        <h3>Конец отчетного периода:	<span style="font-weight: normal">«@Model.EndDate»</span></h3>
+    }
+    <br />
+    <br />

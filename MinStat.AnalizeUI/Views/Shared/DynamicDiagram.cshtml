@@ -1,39 +1,52 @@
-﻿@using MinStat.AnalizeUI.Models
+﻿@using System.Text
+@using MinStat.AnalizeUI.Models
 @model StatisticDataModel
 <script type="text/javascript" src="@Url.Content("~/Scripts//plugins/jqplot.barRenderer.min.js")"></script>
 <script type="text/javascript" src="@Url.Content("~/Scripts//plugins/jqplot.categoryAxisRenderer.min.js")"></script>
 <script type="text/javascript" src="@Url.Content("~/Scripts//plugins/jqplot.pointLabels.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts//plugins/jqplot.enhancedLegendRenderer.min.js")"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         
         @helper Vars(IEnumerable<string> values)
-        {
+            {
             @Html.Raw(values.Aggregate((x, y) => String.Format("{0},{1}", x, y)))
         }
-        // Some simple loops to build up data arrays
+        
+        @helper Series(IEnumerable<string> values)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (var value in values)
+            {
+                sb.Append(" { label: '"+value+"'  },");
+            }
+            @Html.Raw(sb.ToString());
+        }
         @foreach (StatisticDataItemModel dataItem in Model.Values)
         {
             @Html.Raw(String.Format("var points{0} = [];", dataItem.Id));
-            foreach (string value in dataItem.Values)
-            {
-                @Html.Raw(String.Format("points{0}.push({1});", dataItem.Id, value.Replace(",",".")));
-            }
+                                                                        foreach (string value in dataItem.Values)
+                                                                        {
+                @Html.Raw(String.Format("points{0}.push({1});", dataItem.Id, value.Replace(",", ".")));
+                                                                        }
 
         }
 
-        var plot3 = $.jqplot('chart3', [@Vars(Model.Values.Select(x => "points"+x.Id))],
+        var plot3 = $.jqplot('chart3', [@Vars(Model.Values.Select(x => "points" + x.Id))],
     {
-        series: [
-          {
-              lineWidth: 2,
-              markerOptions: { style: 'dimaond' }
-          }
-      ]
-    }
+        series: [@Series(Model.Values.Select(x => x.Title))],
+         axes:
+        {
+            xaxis: {
+            renderer: $.jqplot.CategoryAxisRenderer,               
+            ticks: [@Vars(Model.Titles.Skip(1).Select(x => string.Format("'{0}'", x.Value)))]
+            }
+        },
+            legend: {   renderer: $.jqplot.EnhancedLegendRenderer, placement: 'outsideGrid', location:'n',  show:true    }  
+         }
   );
 
     });
 </script>
-
 <div id="chart3">
 </div>
