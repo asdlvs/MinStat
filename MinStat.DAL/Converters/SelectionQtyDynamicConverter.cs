@@ -23,10 +23,13 @@ namespace MinStat.DAL.Converters
             {
                 statisticData.Titles.Add(period.ToShortDateString(), period.ToShortDateString());
             }
-            var activities = resultList.Select(x => new { x.ActivityId, x.ActivityTitle }).Distinct();
+            var activities = resultList.Select(x => new { x.ActivityId, x.ActivityTitle, x.Part5 }).Distinct();
             
             foreach(var activity in activities)
             {
+                if(activity.Part5 == 0)
+                    continue;
+                
                 StatisticDataItem statisticDataItem = new StatisticDataItem();
                 statisticDataItem.Id = activity.ActivityId.ToString(CultureInfo.InvariantCulture);
                 statisticDataItem.Title = activity.ActivityTitle;
