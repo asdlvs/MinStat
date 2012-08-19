@@ -1,0 +1,12 @@
+D:\Work\Bonch\MinStat_4\MinStat.Enterprise.FillHelper\bin\Debug\MinStat.Enterprise.FillHelper.exe
+D:\Work\Bonch\MinStat_4\MinStat.Enterprise.FillHelper\bin\Debug\MinStat.Enterprise.FillHelper.pdb
+D:\Work\Bonch\MinStat_4\MinStat.Enterprise.FillHelper\bin\Debug\MinStat.DAL.dll
+D:\Work\Bonch\MinStat_4\MinStat.Enterprise.FillHelper\bin\Debug\MinStat.Enterprises.DAL.dll
+D:\Work\Bonch\MinStat_4\MinStat.Enterprise.FillHelper\bin\Debug\EntityFramework.dll
+D:\Work\Bonch\MinStat_4\MinStat.Enterprise.FillHelper\bin\Debug\MinStat.Enterprises.DAL.pdb
+D:\Work\Bonch\MinStat_4\MinStat.Enterprise.FillHelper\bin\Debug\MinStat.DAL.pdb
+D:\Work\Bonch\MinStat_4\MinStat.Enterprise.FillHelper\bin\Debug\EntityFramework.xml
+D:\Work\Bonch\MinStat_4\MinStat.Enterprise.FillHelper\obj\x86\Debug\MinStat.Enterprise.FillHelper.csprojResolveAssemblyReference.cache
+D:\Work\Bonch\MinStat_4\MinStat.Enterprise.FillHelper\obj\x86\Debug\MinStat.Enterprise.FillHelper.exe
+D:\Work\Bonch\MinStat_4\MinStat.Enterprise.FillHelper\obj\x86\Debug\MinStat.Enterprise.FillHelper.pdb
+D:\Work\Bonch\MinStat_4\MinStat.Enterprise.FillHelper\bin\Debug\MinStat.Enterprise.FillHelper.exe.config

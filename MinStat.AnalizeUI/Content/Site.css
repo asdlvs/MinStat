@@ -1,47 +1,3 @@
-body
-{
-    font-size: .85em;
-    font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
-    color: #232323;
-    background-color: #fff;
-}
-
-header, footer, nav, section
-{
-    display: block;
-}
-
-/* Styles for basic forms
------------------------------------------------------------*/
-
-fieldset
-{
-    border: 1px solid #ddd;
-    padding: 0 1.4em 1.4em 1.4em;
-    margin: 0 0 1.5em 0;
-}
-
-legend
-{
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-textarea
-{
-    min-height: 75px;
-}
-
-.editor-label
-{
-    margin: 1em 0 0 0;
-}
-
-.editor-field
-{
-    margin: 0.5em 0 0 0;
-}
-
 
 /* Styles for validation helpers
 -----------------------------------------------------------*/
@@ -88,6 +44,25 @@ textarea
     height: 200px;
     overflow: auto;
     position: relative;
+}
+.navbar-inner {
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#003333', endColorstr='#003333', GradientType=0);
+    background-color: #006666;
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#006666),to(#006666));
+    background-image: -webkit-linear-gradient(top, #006666, #006666);
+    background-image: -moz-linear-gradient(center top , #006666, #006666);
+}
+.navbar .brand 
+{
+    color: white;
+}
+.navbar .nav > li > a 
+{
+  color: white;
+}
+.navbar .nav > li > a:hover
+{
+  color: silver;
 }
 
 @media screen

@@ -122,12 +122,24 @@
         @foreach (StatisticDataItemModel bodyItem in m.Values)
         {
             <tr class="@String.Format("strong{0}", bodyItem.BoldLevel)">
-                <td>
-                    @if (bodyItem.BoldLevel == 0)
+                    @if (bodyItem.BoldLevel == 2)
                     {
-                        @Html.CheckBox(String.Format("vertical_{0}", bodyItem.Id))
+                        <td class="withcheckbox">
+                            @Html.CheckBox(String.Format("activitycheckbox_{0}", bodyItem.Id), false, new { data_checkboxlevel = "twozeros" })
+                        </td>
                     }
-                </td>
+                    else if (bodyItem.BoldLevel == 1)
+                    {
+                        <td class="withcheckbox" style="padding-left: 20px;">
+                            @Html.CheckBox(String.Format("activitycheckbox_{0}", bodyItem.Id), false, new { data_checkboxlevel = "onezero" })
+                        </td>
+                    }
+                    else
+                    {
+                        <td class="withcheckbox" style="padding-left: 33px;">
+                            @Html.CheckBox(String.Format("activitycheckbox_{0}", bodyItem.Id), new { data_checkboxlevel = "actual" })
+                        </td>
+                    }
                 <td style="font-size: smaller;">@bodyItem.Title
                 </td>
                 @foreach (var value in bodyItem.Values)

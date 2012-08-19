@@ -64,6 +64,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MinStat.DAL\MinStat.DAL.csproj">
+      <Project>{E4F51377-987F-4326-BC66-538C8D1AD2E0}</Project>
+      <Name>MinStat.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

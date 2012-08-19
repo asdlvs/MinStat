@@ -12,7 +12,7 @@ namespace MinStat.AnalizeUI.Binders
     {
         public object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
         {
-            const string verticalMark = "vertical_";
+            const string verticalMark = "activitycheckbox_";
             const string horizontalMark = "horizontal_";
             NameValueCollection form = controllerContext.HttpContext.Request.Form;
             var horizontalChecks = new List<KeyValuePair<int, int>>();

@@ -7,4 +7,5 @@
   <Module PersistentId="3EA818FA-2C5F-4004-9A61-CFA8AF02F541" ModuleId="MinStat.Enteprises.BLL" />
   <Module PersistentId="1EA803F3-E622-42E1-8ABC-280240D53B45" ModuleId="MinStat.Enterprises.BLL.IISHosting" />
   <Module PersistentId="0148C348-0379-41AE-9832-47D102AD134E" ModuleId="MinStat.Enterprises.WebUI" />
+  <Module PersistentId="CC1D8467-CC55-4C23-B525-6B6E08C1A3C9" ModuleId="MinStat.Enterprise.FillHelper" />
 </Modules>

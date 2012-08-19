@@ -235,6 +235,8 @@ namespace MinStat.DAL
                 returnDate = date.AddDays((thirdQ - date).TotalDays);
             else if (date < forthQ)
                 returnDate = date.AddDays((forthQ - date).TotalDays);
+            else
+                returnDate = firstQ.AddYears(1);
             return returnDate;
 
         }
