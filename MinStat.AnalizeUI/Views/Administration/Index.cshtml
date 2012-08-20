@@ -23,7 +23,7 @@
 }
 @using (Html.BeginForm("Create", "Administration"))
 {
-    if (Model.Enterprises.Any() || @ViewBag.SelectedFederalSubjectId != null)
+    if (@ViewBag.SelectedFederalSubjectId != null && @ViewBag.SelectedFederalSubjectId != 0)
     {
     <a class="btn btn-info" data-toggle="modal" href="#myModal">Добавить предприятие</a>
     <div class="modal hide" id="myModal">

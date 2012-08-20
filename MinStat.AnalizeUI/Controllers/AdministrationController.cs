@@ -34,7 +34,7 @@ namespace MinStat.AnalizeUI.Controllers
         {
             CreateEnterpriseModel model = new CreateEnterpriseModel();
 
-            if (federalSubjectId != null)
+            if (federalSubjectId != null && federalSubjectId != 0)
             {
                 model.FederalSubjectId = (int) federalSubjectId;
                 IEnumerable<EnterpriseModel> enterprises = _infoAdapter.GetEnterprises(model.FederalSubjectId);

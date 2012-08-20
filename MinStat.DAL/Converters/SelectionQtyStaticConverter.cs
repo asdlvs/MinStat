@@ -26,6 +26,8 @@ namespace MinStat.DAL.Converters
 
             foreach (var groupedReportItem in resultGroupedByActivity)
             {
+                if(groupedReportItem.Key.Part5 == 0)
+                    continue;
                 var item = new StatisticDataItem
                 {
                     Title = String.Format("{0}.{1}{2}.{3}{4} {5}",
@@ -48,7 +50,7 @@ namespace MinStat.DAL.Converters
                     item.Values.Add(
                         pointElement == null
                                         ? "0"
-                                        : pointElement.PeoplesCount.ToString("0.00"));
+                                        : pointElement.PeoplesCount.ToString());
                 }
                 statisticData.Lines.Add(item);
             }

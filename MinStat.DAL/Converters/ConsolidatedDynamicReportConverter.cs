@@ -101,7 +101,7 @@ namespace MinStat.DAL.Converters
                             value = periodItems.Average(x => x.MiddleSalary);
                             break;
                     }
-                    dataItem.Values.Add(value != 0 ? value.ToString("0.00") : "0");
+                    dataItem.Values.Add(value != 0 ? value.ToString() : "0");
                 }
                 statisticData.Lines.Add(dataItem);
             }

@@ -67,8 +67,8 @@ namespace MinStat.AnalizeUI.Controllers
         {
             foreach (StatisticDataModel eModel in statisticData)
             {
-                eModel.MainActivity = "Связи информационных технологий и массовых коммуникаций";
-                eModel.ReportName = "Стандартный";
+                eModel.MainActivity = "Связи, информационных технологий и массовых коммуникаций";
+                eModel.ReportName = "Сводный";
                 eModel.CreatedDateTime = String.Format("{0} {1}", DateTime.Now.ToShortDateString(),
                                                        DateTime.Now.ToShortTimeString());
                 eModel.StartDate = model.StartDate;

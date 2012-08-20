@@ -18,16 +18,16 @@ namespace MinStat.DAL.Converters
                                                          {"","Код ОКВЭД / Название"},
                                                          {"1-1","АУ_СО"},
                                                          {"1-2","АУ_СПО"},
-                                                         {"1-3","АУ_ВО"},
+                                                         {"1-3","АУ_ВПО"},
                                                          {"2-1","ИТРиС_СО"},
                                                          {"2-2","ИТРиС_СПО"},
-                                                         {"2-3","ИТРиС_ВО"},
+                                                         {"2-3","ИТРиС_ВПО"},
                                                          {"3-1","ОР_СО"},
                                                          {"3-2","ОР_СПО"},
-                                                         {"3-3","ОР_ВО"},
+                                                         {"3-3","ОР_ВПО"},
                                                          {"4-1","ВП_СО"},
                                                          {"4-2","ВП_СПО"},
-                                                         {"4-3","ВП_ВО"}
+                                                         {"4-3","ВП_ВПО"}
                                                      },
                                         Lines = new List<StatisticDataItem>()
                                     };
@@ -60,7 +60,7 @@ namespace MinStat.DAL.Converters
                         item.Values.Add(
                             pointElement == null
                                             ? "0"
-                                            : pointElement.PeoplesCount.ToString("0.00"));
+                                            : pointElement.PeoplesCount.ToString());
                     }
                 }
                 statisticData.Lines.Add(item);

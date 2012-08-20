@@ -337,6 +337,7 @@ namespace MinStat.DAL
             return _context.PostLevels;
         }
 
+        //ToDo:Заменить, чтобы везде бралось отсюда
         public IEnumerable<EducationLevel> EducationLevels()
         {
             return _context.EducationLevels;

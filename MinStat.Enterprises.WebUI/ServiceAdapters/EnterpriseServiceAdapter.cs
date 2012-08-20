@@ -132,7 +132,7 @@ namespace MinStat.Enterprises.WebUI.ServiceAdapters
                                                         {
                                                             {1, "СО"},
                                                             {2, "СПО"},
-                                                            {3, "ВО"}
+                                                            {3, "ВПО"}
                                                         };
         Dictionary<int, string> postLevels = new Dictionary<int, string>
                                                          {

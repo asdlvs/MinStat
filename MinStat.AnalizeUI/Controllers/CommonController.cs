@@ -27,10 +27,10 @@ namespace MinStat.AnalizeUI.Controllers
 
             foreach (StatisticDataModel model in statisticData)
             {
-                model.MainActivity = "Связи информационных технологий и массовых коммуникаций";
+                model.MainActivity = "Связи, информационных технологий и массовых коммуникаций";
                 model.ReportName = "Стандартный";
                 model.CreatedDateTime = String.Format("{0} {1}", DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString());
-                model.Activity = activityId == null ? "Все подотрасли" : _infoAdapter.GetActivities().Single(x => x.Id == activityId).Title;
+                model.Activity = activityId == null ? "Все виды деятельности" : _infoAdapter.GetActivities().Single(x => x.Id == activityId).Title;
                 model.FederalDistrict = federalDistrictId == null
                                             ? "Все Федеральные Округа"
                                             : _infoAdapter.GetFederalDistricts().Single(x => x.Id == federalDistrictId)

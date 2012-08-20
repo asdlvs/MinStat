@@ -101,13 +101,13 @@ namespace MinStat.AnalizeUI.Controllers
         {
             foreach (StatisticDataModel eModel in model)
             {
-                eModel.MainActivity = "Связи информационных технологий и массовых коммуникаций";
+                eModel.MainActivity = "Связи, информационных технологий и массовых коммуникаций";
                 eModel.ReportName = "Базовый";
                 eModel.CreatedDateTime = String.Format("{0} {1}", DateTime.Now.ToShortDateString(),
                                                        DateTime.Now.ToShortTimeString());
                 eModel.StartDate = (string) Session["startDate"];
                 eModel.EndDate = (string)Session["endDate"];
-                eModel.Activity = "Все подотрасли";
+                eModel.Activity = "Все виды деятельности";
                 eModel.FederalDistrict = (int) Session["federalDistrictId"] == 0
                                              ? "Все Федеральные Округа"
                                              : _infoAdapter.GetFederalDistricts().Single(
