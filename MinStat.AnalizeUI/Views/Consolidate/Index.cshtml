@@ -9,10 +9,18 @@
         <a class="close" data-dismiss="alert" href="#">×</a>
         <h4 class="alert-heading">
             Памятка!</h4>
-        Для того, чтобы отобразить таблицу укажите критерии отбора.
+        Для того, чтобы отобразить таблицу укажите условия отбора.
     </div>
     <div style="display: table; width: 100%;">
+            <div style="display: table-row; font-weight:bold;">
+            <div style="display: table-cell">Фед. округ</div>
+            <div style="display: table-cell">Субъект Фед.</div>
+            <div style="display: table-cell">Предприятие</div>
+            <div style="display: table-cell">Начальная дата</div>
+            <div style="display: table-cell">Конечная дата</div>
+        </div>
         <div style="display: table-row">
+
             <div style="display: table-cell; vertical-align: top;">
                 @Html.DropDownList("federalDistrictId", new SelectList(ViewBag.FederalDistricts, "Key", "Value"),
                          new { @class = "span2", rel = "popover", data_content = "Если хотите отфильтровать данные по федеральному округу, то укажите один из округов ниже.", data_original_title = "Федеральный округ" })
@@ -107,7 +115,7 @@
         <div class="navbar-inner">
             <div class="container" style="width: auto;">
                 <div class="brand">
-                    Выберите критерии фильтрации</div>
+                    Выберите условия фильтрации</div>
             </div>
         </div>
     </div>
@@ -149,7 +157,7 @@
         <h4 class="alert-heading">
             Памятка!</h4>
         Нажмите на эту кнопку, для того чтобы создать динамический отчет со сводными данными.
-        Для корректного отображения необхожимо указать виды деятельности и критерии фильтрации.
+        Для корректного отображения необхожимо указать виды деятельности и условия фильтрации.
     </div>
     <input type="submit" value="Динамический отчет" class="btn btn-success pull-right"
         name="report" />

@@ -336,5 +336,11 @@ namespace MinStat.Enterprises.DAL
             }
             _context.SaveChanges();
         }
+
+
+        public Enterprise GetEnteprise(int enterpriseId)
+        {
+            return _context.Enterprises.Single(x => x.Id == enterpriseId);
+        }
     }
 }

@@ -16,10 +16,19 @@ namespace MinStat.Enterprises.WebUI.Controllers
         //
         // GET: /Summaries/
         private IEnterpriseServiceAdapter _serviceAdapter;
+        private string _enterpriseName;
 
         public SummariesController(IEnterpriseServiceAdapter serviceAdapter)
         {
             _serviceAdapter = serviceAdapter;
+            //ToDo: Разобраться, почему не ловится ошибка.
+            try
+            {
+                _enterpriseName = _serviceAdapter.GetEnterpriseName();
+                ViewBag.EnterpriseName = _enterpriseName;
+            }
+            catch(Exception)
+            {}
         }
 
         public SummariesController()
@@ -31,7 +40,7 @@ namespace MinStat.Enterprises.WebUI.Controllers
         {
             IEnumerable<SummaryModel> model = _serviceAdapter.GetSummaries();
             ViewBag.Activities = _serviceAdapter.GetActivities();
-            return View("Index",model);
+            return View("Index", model);
         }
 
         [HttpPost]

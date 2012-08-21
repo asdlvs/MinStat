@@ -35,7 +35,7 @@
             @Html.ActionLink("Повышение квалификации в текущем году", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("WasQualificationIncrease{0}", Model.Direction) }, null)
         </th>
         <th>
-            @Html.ActionLink("Рабочая группа", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("PostLevelId{0}", Model.Direction) }, null)
+            @Html.ActionLink("Категория", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("PostLevelId{0}", Model.Direction) }, null)
         </th>
         <th>
             @Html.ActionLink("Аттестация в текущем году", "Index", "People", new { summaryId = Model.SummaryId, page = Model.Page, orderby = String.Format("WasValidate{0}", Model.Direction) }, null)

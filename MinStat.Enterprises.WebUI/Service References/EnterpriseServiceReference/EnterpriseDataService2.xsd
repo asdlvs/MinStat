@@ -83,4 +83,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfActivity" nillable="true" type="tns:ArrayOfActivity" />
+  <xs:complexType name="Enterprise">
+    <xs:sequence>
+      <xs:element name="_x003C_FederalSubjectId_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Id_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Title_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Enterprise" nillable="true" type="tns:Enterprise" />
 </xs:schema>

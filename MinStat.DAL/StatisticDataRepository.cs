@@ -14,7 +14,7 @@ namespace MinStat.DAL
 {
     using MinStat.DAL.HardCode;
 
-    //TODO: Говно с критериями
+    //TODO: Говно с условиями
     public class StatisticDataRepository : IStatisticDataRepository
     {
         private readonly IStatisticDataConvertersFactory _converterFactory;

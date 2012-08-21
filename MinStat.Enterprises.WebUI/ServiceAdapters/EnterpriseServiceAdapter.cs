@@ -227,5 +227,14 @@ namespace MinStat.Enterprises.WebUI.ServiceAdapters
               proxy.UploadPersons(scvFile, summaryId);
           }
       }
+
+
+      public string GetEnterpriseName()
+      {
+          using (EnterpriseDataServiceClient proxy = new EnterpriseDataServiceClient())
+          {
+              return proxy.GetCurrentEnterprise().Titlek__BackingField;
+          }
+      }
   }
 }

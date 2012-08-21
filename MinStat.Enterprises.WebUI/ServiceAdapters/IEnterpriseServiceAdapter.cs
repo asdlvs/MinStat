@@ -43,5 +43,6 @@ namespace MinStat.Enterprises.WebUI.ServiceAdapters
 
         void UploadPersons(byte[] scvFile, int summaryId);
 
+        string GetEnterpriseName();
     }
 }

@@ -150,5 +150,11 @@ namespace MinStat.Enterprises.BLL
             IEnumerable<Person> persons = _uploader.ParseFile(csvFile, summaryId);
             _enterpriseRepository.CreatePersons(persons);
         }
+
+        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
+        public Enterprise GetCurrentEnterprise()
+        {
+            return _enterpriseRepository.GetEnteprise(_enterpriseId);
+        }
     }
 }

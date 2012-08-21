@@ -274,4 +274,16 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetCurrentEnterprise">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentEnterpriseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/MinStat.Enterprises.DAL.POCO" minOccurs="0" name="GetCurrentEnterpriseResult" nillable="true" type="q10:Enterprise" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

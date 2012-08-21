@@ -23,6 +23,11 @@ namespace MinStat.AnalizeUI.Controllers
             Dictionary<int, string> federalDistricts = _infoAdapter.GetFederalDistricts().ToDictionary(x => x.Id, x => x.Title);
             federalDistricts.Add(0, "");
             ViewBag.FederalDistricts = federalDistricts.OrderBy(x => x.Key);
+            ViewBag.FullReport = "";
+            ViewBag.Consolidate = "";
+            ViewBag.Summary = "";
+            ViewBag.Help = "";
+            ViewBag.Administration = "active";
         }
 
         public AdministrationController()

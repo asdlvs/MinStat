@@ -7,6 +7,8 @@
 @Html.ValidationSummary()
 <div class="row">
     <div class="span10 offset1">
+        <h3>@ViewBag.EnterpriseName</h3>
+        <br />
         <table class="table">
             @foreach (SummaryModel summaryItem in Model)
             {
@@ -53,22 +55,25 @@
                         {
                             <a class="btn btn-primary uploadcsv">Загрузить</a>
                             using (Html.BeginForm("Upload", "Summaries", FormMethod.Post, new { enctype = "multipart/form-data" }))
-                             {
-                                <input type="hidden" name="summaryId" id="summaryId" value="@summaryItem.Id"/>
-                                 <div class="modal hide" id="uploadcsvmodal">
-                                     <div class="modal-header">
-                                         <button type="button" class="close" data-dismiss="modal">×</button>
-                                         <h3>Загрузка файла</h3>
-                                     </div>
-                                     <div class="modal-body">
-                                         <p><input type="file" name="fileUpload"  class="btn btn-primary" /></p>
-                                     </div>
-                                     <div class="modal-footer">
-                                         <a href="#" class="btn" data-dismiss="modal">Отмена</a> 
-                                         <input type="submit" class="btn btn-primary" value="Загрузить" />
-                                     </div>
-                                 </div>
-                             }
+                            {
+                            <input type="hidden" name="summaryId" id="summaryId" value="@summaryItem.Id"/>
+                            <div class="modal hide" id="uploadcsvmodal">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">
+                                        ×</button>
+                                    <h3>
+                                        Загрузка файла</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        <input type="file" name="fileUpload" class="btn btn-primary" /></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#" class="btn" data-dismiss="modal">Отмена</a>
+                                    <input type="submit" class="btn btn-primary" value="Загрузить" />
+                                </div>
+                            </div>
+                            }
                         }
                         else
                         {
@@ -154,7 +159,7 @@
                     <table class="table">
                         @foreach (ActivityModel activity in (IEnumerable<ActivityModel>)ViewBag.Activities)
                         {
-                            <tr>
+                            <tr style='@Html.Raw(activity.Part_5 == 0 ? "font-weight:bold;" : "")'>
                                 <td>
                                     @String.Format("{0}.{1}{2}.{3}{4}", activity.Part_1, activity.Part_2, activity.Part_3, activity.Part_4, activity.Part_5)
                                 </td>

@@ -60,5 +60,7 @@ namespace MinStat.Enterprises.DAL
 
         bool IsPublished(int summaryId);
 
+        Enterprise GetEnteprise(int enterpriseId);
+
     }
 }

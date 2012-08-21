@@ -24,6 +24,7 @@ namespace MinStat.Enterprises.WebUI.Controllers
         public PeopleController()
             : this(new EnterpriseServiceAdapter())
         {
+            
         }
 
         public ActionResult Index(int summaryId = 0, int page = 1, string orderby = "Title")

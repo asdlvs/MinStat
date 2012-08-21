@@ -14,7 +14,12 @@ namespace MinStat.DAL.Converters
         {
             StatisticData statisticData = new StatisticData();
             var resultList = result.ToList();
-            statisticData.Titles = new Dictionary<string, string> { { "0", "" }, { "1", "Количество" }, { "2", "Средний возраст" }, { "3", "Средний годовой доход" } };
+            statisticData.Titles = new Dictionary<string, string> { 
+            { "0", "" }, 
+            { "1", "Количество" }, 
+            { "2", "Средний возраст" }, 
+            { "3", "%"},
+            { "4", "Средний годовой доход (руб. )" } };
             statisticData.Lines = new List<StatisticDataItem>();
 
             if (resultList.Any())
@@ -28,8 +33,9 @@ namespace MinStat.DAL.Converters
                 dataItem.Values = new List<string>
                   {
                     groupedItem.Sum(x => x.Count).ToString(CultureInfo.InvariantCulture),
-                    groupedItem.Average(x => x.MiddleAge).ToString("0.00"),
-                    groupedItem.Average(x => x.MiddleSalary).ToString("0.00")
+                    groupedItem.Average(x => x.MiddleAge).ToString("0.0"),
+                    GetPersentage(groupedItem.Sum(x => x.Count), resultList.Sum(x => x.Count)),
+                    groupedItem.Average(x => x.MiddleSalary).ToString("0")
                   };
                 statisticData.Lines.Add(dataItem);
                 var groupedByGPEItem =
@@ -48,8 +54,9 @@ namespace MinStat.DAL.Converters
                   innerDataItem.Values = new List<string>
                     {
                       gpeGroupedItem.Sum(x => x.Count).ToString(CultureInfo.InvariantCulture),
-                      gpeGroupedItem.Average(x => x.MiddleAge).ToString("0.00"),
-                      gpeGroupedItem.Average(x => x.MiddleSalary).ToString("0.00")
+                      gpeGroupedItem.Average(x => x.MiddleAge).ToString("0.0"),
+                      "",
+                      gpeGroupedItem.Average(x => x.MiddleSalary).ToString("0")
                     };
                   statisticData.Lines.Add(innerDataItem);
                 }
@@ -60,13 +67,20 @@ namespace MinStat.DAL.Converters
               globalDataItem.Values = new List<string>
                 {
                   resultList.Sum(x => x.Count).ToString(CultureInfo.InvariantCulture),
-                  resultList.Average(x => x.MiddleAge).ToString("0.00"),
-                  resultList.Average(x => x.MiddleSalary).ToString("0.00")
+                  resultList.Average(x => x.MiddleAge).ToString("0.0"),
+                  "100%",
+                  resultList.Average(x => x.MiddleSalary).ToString("0")
                 };
 
               statisticData.Lines.Add(globalDataItem);
             }
           return new List<StatisticData> { statisticData };
+        }
+
+        //ToDo: remove duplicate
+        private string GetPersentage(decimal a, decimal b)
+        {
+            return string.Format("{0:N1}%", ((a / b) * 100));
         }
 
         public IEnumerable<POCO.ResultItems.StatisticData> Convert(IEnumerable<SummaryReportItem> result, List<int> criteries)

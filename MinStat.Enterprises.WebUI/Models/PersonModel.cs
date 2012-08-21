@@ -29,7 +29,7 @@ namespace MinStat.Enterprises.WebUI.Models
         public string Post { get; set; }
 
         [Required(ErrorMessage = "Необходимо указать")]
-        [Display(Name = "Рабочая группа")]
+        [Display(Name = "Категория")]
         public int PostLevelId { get; set; }
 
         public string PostLevel { get; set; }

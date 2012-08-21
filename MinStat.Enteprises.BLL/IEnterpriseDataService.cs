@@ -79,6 +79,9 @@ namespace MinStat.Enterprises.BLL
         [OperationContract]
         void UploadPersons(byte[] csvFile, int summaryId);
 
+        [OperationContract]
+        Enterprise GetCurrentEnterprise();
+
         //List<Person> FindPerson(string searchText);
     }
 }

@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="Binders\SummaryModelBinder.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HelpController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PeopleController.cs" />
     <Compile Include="Controllers\SummariesController.cs" />
@@ -104,6 +105,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -132,7 +134,6 @@
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\Bonch.Enterprises.People.js" />
     <Content Include="Scripts\Bonch.Enterprises.Summary.js" />
     <Content Include="Scripts\bootstrap-alert.js" />
@@ -170,6 +171,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\EnterpriseServiceReference\MinStat.Enterprises.WebUI.EnterpriseServiceReference.Activity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EnterpriseServiceReference\MinStat.Enterprises.WebUI.EnterpriseServiceReference.Enterprise.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\EnterpriseServiceReference\MinStat.Enterprises.WebUI.EnterpriseServiceReference.Person.datasource">
@@ -226,6 +230,7 @@
     <Content Include="Views\People\Edit.cshtml" />
     <Content Include="Views\People\Index.cshtml" />
     <Content Include="Views\People\EditorTemplates\GenderSelector.cshtml" />
+    <Content Include="Views\Help\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

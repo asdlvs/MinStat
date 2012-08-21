@@ -10,9 +10,18 @@
         <a class="close" data-dismiss="alert" href="#">×</a>
         <h4 class="alert-heading">
             Памятка!</h4>
-        Для того, чтобы отобразить таблицу укажите критерии отбора.
+        Для того, чтобы отобразить таблицу укажите условия отбора.
     </div>
     <div style="display: table; width: 100%;">
+        <div style="display: table-row; font-weight:bold;">
+            <div style="display: table-cell">Фед. округ</div>
+            <div style="display: table-cell">Субъект Фед.</div>
+            <div style="display: table-cell">Предприятие</div>
+            <div style="display: table-cell">Начальная дата</div>
+            <div style="display: table-cell">Конечная дата</div>
+            <div style="display: table-cell">
+            </div>
+        </div>
         <div style="display: table-row">
             <div style="display: table-cell; vertical-align: top;">
                 @Html.DropDownList("federalDistrictId", new SelectList(ViewBag.FederalDistricts, "Key", "Value"),
@@ -122,24 +131,24 @@
         @foreach (StatisticDataItemModel bodyItem in m.Values)
         {
             <tr class="@String.Format("strong{0}", bodyItem.BoldLevel)">
-                    @if (bodyItem.BoldLevel == 2)
-                    {
-                        <td class="withcheckbox">
-                            @Html.CheckBox(String.Format("activitycheckbox_{0}", bodyItem.Id), false, new { data_checkboxlevel = "twozeros" })
-                        </td>
-                    }
-                    else if (bodyItem.BoldLevel == 1)
-                    {
-                        <td class="withcheckbox" style="padding-left: 20px;">
-                            @Html.CheckBox(String.Format("activitycheckbox_{0}", bodyItem.Id), false, new { data_checkboxlevel = "onezero" })
-                        </td>
-                    }
-                    else
-                    {
-                        <td class="withcheckbox" style="padding-left: 33px;">
-                            @Html.CheckBox(String.Format("activitycheckbox_{0}", bodyItem.Id), new { data_checkboxlevel = "actual" })
-                        </td>
-                    }
+                @if (bodyItem.BoldLevel == 2)
+                {
+                    <td class="withcheckbox">
+                        @Html.CheckBox(String.Format("activitycheckbox_{0}", bodyItem.Id), false, new { data_checkboxlevel = "twozeros" })
+                    </td>
+                }
+                else if (bodyItem.BoldLevel == 1)
+                {
+                    <td class="withcheckbox" style="padding-left: 20px;">
+                        @Html.CheckBox(String.Format("activitycheckbox_{0}", bodyItem.Id), false, new { data_checkboxlevel = "onezero" })
+                    </td>
+                }
+                else
+                {
+                    <td class="withcheckbox" style="padding-left: 33px;">
+                        @Html.CheckBox(String.Format("activitycheckbox_{0}", bodyItem.Id), new { data_checkboxlevel = "actual" })
+                    </td>
+                }
                 <td style="font-size: smaller;">@bodyItem.Title
                 </td>
                 @foreach (var value in bodyItem.Values)

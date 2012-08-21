@@ -35,8 +35,8 @@
                 @Html.ActionLink("Кадры", "Index", "Home", null, new { @class = "brand" })
                 <div class="nav">
                     <ul class="nav">
-                        <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Стандартные
-                                                 отчеты<b class="caret"></b></a>
+                        <li class="dropdown">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">Стандартные отчеты<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a data-toggle="modal" href="#chooseEnterpriseModal">Предприятие</a></li>
                                 <li><a data-toggle="modal" href="#chooseFederalSubjectModal">Субъект Федерации</a></li>
@@ -47,17 +47,20 @@
                                 <li><a href="#">@Html.ActionLink("Отрасль в целом", "Report", "Common")</a></li>
                             </ul>
                         </li>
-                        <li class="">
+                        <li class='@ViewBag.FullReport'>
                             @Html.ActionLink("Базовый отчет", "Index", "FullReport")
                         </li>
-                        <li class="">
+                        <li class='@ViewBag.Consolidate'>
                             @Html.ActionLink("Сводный отчет", "Index", "Consolidate")
                         </li>
-                        <li class="">
+                        <li class='@ViewBag.Summary'>
                             @Html.ActionLink("Количественный отчет", "Index", "Summary")
                         </li>
-                        <li class="">
+                        <li class='@ViewBag.Administration'>
                             @Html.ActionLink("Добавить предприятие", "Index", "Administration")
+                        </li>
+                         <li class='@ViewBag.Help'>
+                            @Html.ActionLink("Справка", "Index", "Help")
                         </li>
                     </ul>
                 </div>

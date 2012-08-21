@@ -30,6 +30,11 @@ namespace MinStat.AnalizeUI.Controllers
             ViewBag.FederalDistricts = federalDistricts.OrderBy(x => x.Key);
             ViewBag.StartDate = new DateTime(DateTime.Now.Year, 1, 1).ToShortDateString();
             ViewBag.EndDate = DateTime.Now.ToShortDateString();
+            ViewBag.FullReport = "active";
+            ViewBag.Consolidate = "";
+            ViewBag.Summary = "";
+            ViewBag.Administration = "";
+            ViewBag.Help = "";
         }
 
         public ActionResult Index()

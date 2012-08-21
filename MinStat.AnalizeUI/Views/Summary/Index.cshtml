@@ -9,9 +9,15 @@
         <a class="close" data-dismiss="alert" href="#">×</a>
         <h4 class="alert-heading">
             Памятка!</h4>
-        Для того, чтобы отобразить таблицу укажите критерии отбора.
+        Для того, чтобы отобразить таблицу укажите условия отбора.
     </div>
     <div style="display: table; width: 100%;">
+            <div style="display: table-row; font-weight:bold;">
+            <div style="display: table-cell">Фед. округ</div>
+            <div style="display: table-cell">Субъект Фед.</div>
+            <div style="display: table-cell">Предприятие</div>
+            <div style="display: table-cell">Дата</div>
+        </div>
         <div style="display: table-row">
             <div style="display: table-cell; vertical-align: top;">
                 @Html.DropDownList("federalDistrictId", new SelectList(ViewBag.FederalDistricts, "Key", "Value"),
@@ -90,14 +96,14 @@
         <a class="close" data-dismiss="alert" href="#">×</a>
         <h4 class="alert-heading">
             Памятка!</h4>
-        Для отображения количественных данных укажите критерии фильтрации.<br />
-        Если не будет выбран ни один пункт, то отчет покажет данные по всем критериям.
+        Для отображения количественных данных укажите условия фильтрации.<br />
+        Если не будет выбран ни один пункт, то отчет покажет данные по всем условиям.
     </div>
     <div id="navbarExample" class="navbar navbar-static">
         <div class="navbar-inner">
             <div class="container" style="width: auto;">
                 <div class="brand">
-                    Выберите критерии фильтрации</div>
+                    Выберите условия фильтрации</div>
             </div>
         </div>
     </div>

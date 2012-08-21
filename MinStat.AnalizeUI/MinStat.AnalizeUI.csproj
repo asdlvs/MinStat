@@ -68,6 +68,7 @@
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\ConsolidateController.cs" />
     <Compile Include="Controllers\FullReportController.cs" />
+    <Compile Include="Controllers\HelpController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegionController.cs" />
     <Compile Include="Controllers\SummaryController.cs" />
@@ -324,6 +325,7 @@
     <Content Include="Views\Summary\Index.cshtml" />
     <Content Include="Views\Common\Chooser.cshtml" />
     <Content Include="Views\Shared\ReportMetaData.cshtml" />
+    <Content Include="Views\Help\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

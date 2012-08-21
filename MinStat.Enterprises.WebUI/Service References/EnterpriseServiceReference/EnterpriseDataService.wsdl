@@ -122,6 +122,12 @@
   <wsdl:message name="EnterpriseDataService_UploadPersons_OutputMessage">
     <wsdl:part name="parameters" element="tns:UploadPersonsResponse" />
   </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_GetCurrentEnterprise_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentEnterprise" />
+  </wsdl:message>
+  <wsdl:message name="EnterpriseDataService_GetCurrentEnterprise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentEnterpriseResponse" />
+  </wsdl:message>
   <wsdl:portType name="EnterpriseDataService">
     <wsdl:operation name="GetSummaries">
       <wsdl:input wsaw:Action="http://tempuri.org/EnterpriseDataService/GetSummaries" message="tns:EnterpriseDataService_GetSummaries_InputMessage" />
@@ -198,6 +204,10 @@
     <wsdl:operation name="UploadPersons">
       <wsdl:input wsaw:Action="http://tempuri.org/EnterpriseDataService/UploadPersons" message="tns:EnterpriseDataService_UploadPersons_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/EnterpriseDataService/UploadPersonsResponse" message="tns:EnterpriseDataService_UploadPersons_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentEnterprise">
+      <wsdl:input wsaw:Action="http://tempuri.org/EnterpriseDataService/GetCurrentEnterprise" message="tns:EnterpriseDataService_GetCurrentEnterprise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/EnterpriseDataService/GetCurrentEnterpriseResponse" message="tns:EnterpriseDataService_GetCurrentEnterprise_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_EnterpriseDataService" type="tns:EnterpriseDataService">
@@ -366,6 +376,15 @@
     </wsdl:operation>
     <wsdl:operation name="UploadPersons">
       <soap:operation soapAction="http://tempuri.org/EnterpriseDataService/UploadPersons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentEnterprise">
+      <soap:operation soapAction="http://tempuri.org/EnterpriseDataService/GetCurrentEnterprise" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

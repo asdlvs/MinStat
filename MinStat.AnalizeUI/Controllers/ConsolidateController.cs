@@ -25,6 +25,11 @@ namespace MinStat.AnalizeUI.Controllers
             ViewBag.FederalDistricts = federalDistricts.OrderBy(x => x.Key);
             ViewBag.StartDate = new DateTime(DateTime.Now.Year, 1, 1).ToShortDateString();
             ViewBag.EndDate = DateTime.Now.ToShortDateString();
+            ViewBag.FullReport = "";
+            ViewBag.Consolidate = "active";
+            ViewBag.Summary = "";
+            ViewBag.Administration = "";
+            ViewBag.Help = "";
         }
 
         public ActionResult Index()
@@ -53,7 +58,7 @@ namespace MinStat.AnalizeUI.Controllers
             {
                 if (!model.SelectedActivities.Any() || !model.SelectedCriteries.Any())
                 {
-                    ModelState.AddModelError("nocriteries", "Для создания статического отчета, необходимо указать виды деятельности и критерии фильтрации!");
+                    ModelState.AddModelError("nocriteries", "Для создания статического отчета, необходимо указать виды деятельности и условия фильтрации!");
                     return Index();
                 }
                 ViewBag.RenderGraphic = true;

@@ -22,6 +22,11 @@ namespace MinStat.AnalizeUI.Controllers
             federalDistricts.Add(0, "Все округа");
             ViewBag.FederalDistricts = federalDistricts.OrderBy(x => x.Key);
             ViewBag.EndDate = DateTime.Now.ToShortDateString();
+            ViewBag.FullReport = "";
+            ViewBag.Consolidate = "";
+            ViewBag.Summary = "active";
+            ViewBag.Administration = "";
+            ViewBag.Help = "";
         }
 
         public ActionResult Index()
