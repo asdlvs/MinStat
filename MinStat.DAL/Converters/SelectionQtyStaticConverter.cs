@@ -56,6 +56,36 @@ namespace MinStat.DAL.Converters
             }
             statisticData.Titles.Add("", "");
             statisticData.Titles = statisticData.Titles.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
+
+            List<int> summaryResults = new List<int>();
+
+            foreach (StatisticDataItem dataItem in statisticData.Lines)
+            {
+                int i = 0;
+                foreach (string value in dataItem.Values)
+                {
+                    if (summaryResults.Count() > i)
+                    {
+                        int currentSummaryValue = summaryResults[i];
+                        currentSummaryValue += Int32.Parse(value);
+                    }
+                    else
+                    {
+                        summaryResults.Add(Int32.Parse(value));
+                    }
+                    i++;
+                }
+            }
+
+            StatisticDataItem resultDataItem = new StatisticDataItem
+            {
+                Id = "0-0",
+                StrongLevel = 1,
+                Title = "Итого: ",
+                Values = summaryResults.Select(x => x.ToString()).ToList()
+            };
+
+            statisticData.Lines.Add(resultDataItem);
             return new List<StatisticData> { statisticData };
         }
 

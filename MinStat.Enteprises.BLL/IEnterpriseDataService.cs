@@ -82,6 +82,12 @@ namespace MinStat.Enterprises.BLL
         [OperationContract]
         Enterprise GetCurrentEnterprise();
 
+        [OperationContract]
+        FederalSubject GetCurrentFederalSubject();
+
+        [OperationContract]
+        FederalDistrict GetCurrentFederalDistrict();
+
         //List<Person> FindPerson(string searchText);
     }
 }

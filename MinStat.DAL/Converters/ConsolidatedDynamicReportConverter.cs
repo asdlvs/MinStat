@@ -43,65 +43,65 @@ namespace MinStat.DAL.Converters
                 foreach (DateTime startPeriod in periods)
                 {
                     var periodItems = resultList.Where(x => x.StartPeriodDate == startPeriod);
-                    decimal value = 0;
+                    string value = "0";
                     switch (id)
                     {
                         case 1:
-                            value = periodItems.Sum(x => x.All);
+                            value = periodItems.Sum(x => x.All).ToString();
                             break;
                         case 2:
-                            value = periodItems.Where(x => x.Gender == 1).Sum(x => x.All);
+                            value = periodItems.Where(x => x.Gender == 1).Sum(x => x.All).ToString();
                             break;
                         case 3:
-                            value = periodItems.Where(x => x.Gender == 0).Sum(x => x.All);
+                            value = periodItems.Where(x => x.Gender == 0).Sum(x => x.All).ToString();
                             break;
                         case 4:
-                            value = periodItems.Sum(x => x.Hire);
+                            value = periodItems.Sum(x => x.Hire).ToString();
                             break;
                         case 5:
-                            value = periodItems.Sum(x => x.Dismiss);
+                            value = periodItems.Sum(x => x.Dismiss).ToString();
                             break;
                         case 6:
-                            value = periodItems.Sum(x => x.QualificationIncrease);
+                            value = periodItems.Sum(x => x.QualificationIncrease).ToString();
                             break;
                         case 7:
-                            value = periodItems.Sum(x => x.Validate);
+                            value = periodItems.Sum(x => x.Validate).ToString();
                             break;
                         case 8:
-                            value = periodItems.Sum(x => x.All);
+                            value = periodItems.Sum(x => x.All).ToString();
                             break;
                         case 9:
-                            value = periodItems.Where(x => x.EducationLevelId == 3).Sum(x => x.All);
+                            value = periodItems.Where(x => x.EducationLevelId == 3).Sum(x => x.All).ToString();
                             break;
                         case 10:
-                            value = periodItems.Where(x => x.EducationLevelId == 2).Sum(x => x.All);
+                            value = periodItems.Where(x => x.EducationLevelId == 2).Sum(x => x.All).ToString();
                             break;
                         case 11:
-                            value = periodItems.Where(x => x.EducationLevelId == 1).Sum(x => x.All);
+                            value = periodItems.Where(x => x.EducationLevelId == 1).Sum(x => x.All).ToString();
                             break;
                         case 12:
-                            value = periodItems.Sum(x => x.All);
+                            value = periodItems.Sum(x => x.All).ToString();
                             break;
                         case 13:
-                            value = periodItems.Where(x => x.PostLevelId == 1).Sum(x => x.All);
+                            value = periodItems.Where(x => x.PostLevelId == 1).Sum(x => x.All).ToString();
                             break;
                         case 14:
-                            value = periodItems.Where(x => x.PostLevelId == 2).Sum(x => x.All);
+                            value = periodItems.Where(x => x.PostLevelId == 2).Sum(x => x.All).ToString();
                             break;
                         case 15:
-                            value = periodItems.Where(x => x.PostLevelId == 3).Sum(x => x.All);
+                            value = periodItems.Where(x => x.PostLevelId == 3).Sum(x => x.All).ToString();
                             break;
                         case 16:
-                            value = periodItems.Where(x => x.PostLevelId == 4).Sum(x => x.All);
+                            value = periodItems.Where(x => x.PostLevelId == 4).Sum(x => x.All).ToString();
                             break;
                         case 17:
-                            value = (decimal)periodItems.Average(x => x.MiddleAge);
+                            value = periodItems.Average(x => x.MiddleAge).ToString("0.0");
                             break;
                         case 18:
-                            value = periodItems.Average(x => x.MiddleSalary);
+                            value = periodItems.Average(x => x.MiddleSalary).ToString("0");
                             break;
                     }
-                    dataItem.Values.Add(value != 0 ? value.ToString() : "0");
+                    dataItem.Values.Add(value != "0" ? value.ToString() : "0");
                 }
                 statisticData.Lines.Add(dataItem);
             }

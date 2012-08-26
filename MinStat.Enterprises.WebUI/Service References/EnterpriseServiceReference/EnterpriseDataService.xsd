@@ -286,4 +286,28 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetCurrentFederalSubject">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentFederalSubjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/MinStat.Enterprises.DAL.POCO" minOccurs="0" name="GetCurrentFederalSubjectResult" nillable="true" type="q11:FederalSubject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentFederalDistrict">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCurrentFederalDistrictResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/MinStat.Enterprises.DAL.POCO" minOccurs="0" name="GetCurrentFederalDistrictResult" nillable="true" type="q12:FederalDistrict" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

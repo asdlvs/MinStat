@@ -26,6 +26,8 @@ namespace MinStat.Enterprises.WebUI.Controllers
             {
                 _enterpriseName = _serviceAdapter.GetEnterpriseName();
                 ViewBag.EnterpriseName = _enterpriseName;
+                ViewBag.FederalSubjectName = _serviceAdapter.GetFederalSubjectName();
+                ViewBag.FederalDistrictName = _serviceAdapter.GetFederalDistrictName();
             }
             catch(Exception)
             {}

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using MinStat.AnalizeUI.Filters;
 using MinStat.AnalizeUI.Models;
 using MinStat.AnalizeUI.ServiceAdapters;
+using System.Text;
 
 namespace MinStat.AnalizeUI.Controllers
 {
@@ -76,6 +77,18 @@ namespace MinStat.AnalizeUI.Controllers
                 eModel.ReportName = "Сводный";
                 eModel.CreatedDateTime = String.Format("{0} {1}", DateTime.Now.ToShortDateString(),
                                                        DateTime.Now.ToShortTimeString());
+                var activityTitles = _infoAdapter.GetActivities()
+                    .Where(x => model.SelectedActivities.Contains(x.Id) && x.Part_5 != 0)
+                    .Select(x => x.Title);
+
+                StringBuilder activityTitlesStringBuilder = new StringBuilder();
+
+                foreach (var activityTitle in activityTitles)
+                {
+                    activityTitlesStringBuilder.AppendFormat("<div style=\"padding-left:20px;\">{0}</div>", activityTitle);
+                }
+
+                eModel.Activity = activityTitlesStringBuilder.ToString();
                 eModel.StartDate = model.StartDate;
                 eModel.EndDate = model.EndDate;
                 eModel.FederalDistrict = model.FederalDistrictId == 0

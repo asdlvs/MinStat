@@ -34,6 +34,10 @@ namespace MinStat.Enterprises.DAL
 
         public DbSet<Enterprise> Enterprises { get; set; }
 
+        public DbSet<FederalSubject> FederalSubjects { get; set; }
+
+        public DbSet<FederalDistrict> FederalDistricts { get; set; }
+
         public DbSet<Activity> Activities { get; set; }
 
         public DbSet<EducationLevel> EducationLevels { get; set; }

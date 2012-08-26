@@ -14,8 +14,8 @@
     </div>
     <div style="display: table; width: 100%;">
         <div style="display: table-row; font-weight:bold;">
-            <div style="display: table-cell">Фед. округ</div>
-            <div style="display: table-cell">Субъект Фед.</div>
+            <div style="display: table-cell">Федеральный округ</div>
+            <div style="display: table-cell">Субъект Федерации</div>
             <div style="display: table-cell">Предприятие</div>
             <div style="display: table-cell">Начальная дата</div>
             <div style="display: table-cell">Конечная дата</div>
@@ -153,7 +153,7 @@
                 </td>
                 @foreach (var value in bodyItem.Values)
                 {
-                    @Html.Raw(value == "0" ? "<td class=\"muted\">" : "<td>")
+                    @Html.Raw(value == "0" ? "<td class=\"muted\" style=\" text-align:center;\">" : "<td style=\" text-align:center;\">")
                     @value
                     @Html.Raw("</td>")
                 }

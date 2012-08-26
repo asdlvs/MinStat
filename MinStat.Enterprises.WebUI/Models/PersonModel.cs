@@ -41,7 +41,7 @@ namespace MinStat.Enterprises.WebUI.Models
         public string EducationLevel { get; set; }
 
         [Required(ErrorMessage = "Необходимо указать")]
-        [Display(Name = "Годовой доход")]
+        [Display(Name = "Годовой доход (руб.)")]
         public decimal YearSalary { get; set; }
 
         [Display(Name = "Пол")]

@@ -55,6 +55,8 @@
     <Compile Include="POCO\Activity.cs" />
     <Compile Include="POCO\EducationLevel.cs" />
     <Compile Include="POCO\Enterprise.cs" />
+    <Compile Include="POCO\FederalDistrict.cs" />
+    <Compile Include="POCO\FederalSubject.cs" />
     <Compile Include="POCO\Person.cs" />
     <Compile Include="POCO\PostLevel.cs" />
     <Compile Include="POCO\Summary.cs" />

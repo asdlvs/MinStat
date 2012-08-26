@@ -154,9 +154,15 @@ namespace MinStat.Enterprises.DAL
             }
         }
 
-        public IEnumerable<Person> GetPeople(int summaryId, int size, int offset, string orderby)
+        //ToDo: продумать логику
+        public IEnumerable<Person> GetPeople(int enterpriseId, int summaryId, int size, int offset, string orderby)
         {
-            return _context.People.Where(x => x.SummaryId == summaryId).OrderBy(x => x.Id).OrderBy(orderby).Skip(offset).Take(size);
+            #region Pre-conditions
+            if (!_context.Summaries.Any(x => x.EnterpriseId == enterpriseId && x.Id == summaryId)) { throw new ArgumentException("There is no such summary"); }
+            #endregion
+            return _context.People
+                .Where(x => x.SummaryId == summaryId)
+                .OrderBy(x => x.Id).OrderBy(orderby).Skip(offset).Take(size);
         }
 
         public void CreatePerson(int summaryId, int activityId, string title, string post, int postLevelId, int educationLevelId, decimal yearSalary, bool gender, bool wasQualificationIncrease,
@@ -341,6 +347,20 @@ namespace MinStat.Enterprises.DAL
         public Enterprise GetEnteprise(int enterpriseId)
         {
             return _context.Enterprises.Single(x => x.Id == enterpriseId);
+        }
+
+
+        public FederalSubject GetFederalSubject(int enterpriseId)
+        {
+            int federalSubjectId = _context.Enterprises.Where(x => x.Id == enterpriseId).Single().FederalSubjectId;
+            return _context.FederalSubjects.Single(x => x.Id == federalSubjectId);
+        }
+
+        public FederalDistrict GetFederalDistrict(int enterpriseId)
+        {
+            int federalSubjectId = _context.Enterprises.Where(x => x.Id == enterpriseId).Single().FederalSubjectId;
+            int federalDistrictId = _context.FederalSubjects.Where(x => x.Id == federalSubjectId).Single().FederalDistrictId;
+            return _context.FederalDistricts.Single(x => x.Id == federalDistrictId);
         }
     }
 }

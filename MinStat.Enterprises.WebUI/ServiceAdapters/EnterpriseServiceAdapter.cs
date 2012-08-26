@@ -236,5 +236,22 @@ namespace MinStat.Enterprises.WebUI.ServiceAdapters
               return proxy.GetCurrentEnterprise().Titlek__BackingField;
           }
       }
+
+
+      public string GetFederalSubjectName()
+      {
+          using (EnterpriseDataServiceClient proxy = new EnterpriseDataServiceClient())
+          {
+              return proxy.GetCurrentFederalSubject().Title;
+          }
+      }
+
+      public string GetFederalDistrictName()
+      {
+          using (EnterpriseDataServiceClient proxy = new EnterpriseDataServiceClient())
+          {
+              return proxy.GetCurrentFederalDistrict().Title;
+          }
+      }
   }
 }

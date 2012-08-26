@@ -38,7 +38,7 @@ namespace MinStat.Enterprises.DAL
 
         void RemoveActivity(int summaryId, int activitiId);
 
-        IEnumerable<Person> GetPeople(int summaryId, int size, int offset, string orderby);
+        IEnumerable<Person> GetPeople(int enterpriseId, int summaryId, int size, int offset, string orderby);
 
         int GetPeopleArraySize(int summaryId);
 
@@ -62,5 +62,8 @@ namespace MinStat.Enterprises.DAL
 
         Enterprise GetEnteprise(int enterpriseId);
 
+        FederalSubject GetFederalSubject(int enterpriseId);
+
+        FederalDistrict GetFederalDistrict(int enterpriseId);
     }
 }

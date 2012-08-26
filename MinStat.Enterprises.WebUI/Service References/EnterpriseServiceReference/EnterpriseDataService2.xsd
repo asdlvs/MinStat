@@ -91,4 +91,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Enterprise" nillable="true" type="tns:Enterprise" />
+  <xs:complexType name="FederalSubject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FederalDistrictId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FederalSubject" nillable="true" type="tns:FederalSubject" />
+  <xs:complexType name="FederalDistrict">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FederalDistrict" nillable="true" type="tns:FederalDistrict" />
 </xs:schema>

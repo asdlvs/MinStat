@@ -22,7 +22,7 @@ if (m != null && m.Values != null && m.Values.Any())
                 </td>
                 @foreach (string value in bodyItem.Values)
                 {
-                    @Html.Raw(value == "0" ? "<td class=\"muted\">" : "<td>")
+                    @Html.Raw(value == "0" ? "<td class=\"muted\" style=\" text-align:center;\">" : "<td style=\" text-align:center;\">")
                     @value
                     @Html.Raw("</td>")
                 }
@@ -33,6 +33,7 @@ if (m != null && m.Values != null && m.Values.Any())
         {
     <br />
     <br />
+    
     @Html.Partial("StaticDiagram", m)
         }
 }

@@ -176,6 +176,12 @@
     <None Include="Service References\EnterpriseServiceReference\MinStat.Enterprises.WebUI.EnterpriseServiceReference.Enterprise.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\EnterpriseServiceReference\MinStat.Enterprises.WebUI.EnterpriseServiceReference.FederalDistrict.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\EnterpriseServiceReference\MinStat.Enterprises.WebUI.EnterpriseServiceReference.FederalSubject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\EnterpriseServiceReference\MinStat.Enterprises.WebUI.EnterpriseServiceReference.Person.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

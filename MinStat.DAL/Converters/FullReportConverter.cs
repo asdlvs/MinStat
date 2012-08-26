@@ -35,6 +35,7 @@ namespace MinStat.DAL.Converters
 
             var resultGroupedByActivity =
                 result.GroupBy(x => new { x.ActivityId, x.ActivityTitle, x.Part1, x.Part2, x.Part3, x.Part4, x.Part5 });
+
             foreach (var groupedReportItem in resultGroupedByActivity)
             {
                 var item = new StatisticDataItem
@@ -66,6 +67,7 @@ namespace MinStat.DAL.Converters
                 statisticData.Lines.Add(item);
             }
 
+           
             return new List<StatisticData> { statisticData };
         }
 

@@ -43,6 +43,11 @@ namespace MinStat.Enterprises.WebUI.ServiceAdapters
 
         void UploadPersons(byte[] scvFile, int summaryId);
 
+        //ToDo: объединить три метода в один
         string GetEnterpriseName();
+
+        string GetFederalSubjectName();
+
+        string GetFederalDistrictName();
     }
 }

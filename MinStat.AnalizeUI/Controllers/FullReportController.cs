@@ -7,6 +7,7 @@ using MinStat.AnalizeUI.Filters;
 using MinStat.AnalizeUI.O;
 using MinStat.AnalizeUI.ServiceAdapters;
 using MinStat.AnalizeUI.Models;
+using System.Text;
 
 namespace MinStat.AnalizeUI.Controllers
 {
@@ -73,7 +74,7 @@ namespace MinStat.AnalizeUI.Controllers
 
             ViewBag.RenderGraphic = true;
             IEnumerable<StatisticDataModel> model = new StatisticDataModel[0];
-            FillReportMetaData(model);
+            FillReportMetaData(model, selectionChecks.VerticalChecks);
             if (reportType.EndsWith("#static") || String.IsNullOrWhiteSpace(reportType))
             {
                 model = _selectionReport.GetQtyStaticData(
@@ -83,7 +84,7 @@ namespace MinStat.AnalizeUI.Controllers
                     (string)Session["startDate"],
                     (string)Session["endDate"],
                     selectionChecks.VerticalChecks, selectionChecks.HorizontalChecks);
-                FillReportMetaData(model);
+                FillReportMetaData(model, selectionChecks.VerticalChecks);
                 return View("StaticStatisticData", model);
             }
             if (reportType.EndsWith("#dynamic"))
@@ -95,14 +96,14 @@ namespace MinStat.AnalizeUI.Controllers
                     (string)Session["startDate"],
                     (string)Session["endDate"],
                     selectionChecks.VerticalChecks, selectionChecks.HorizontalChecks);
-                FillReportMetaData(model);
+                FillReportMetaData(model, selectionChecks.VerticalChecks);
                 return View("DynamicStatisticData", model);
             }
-            FillReportMetaData(model);
+            FillReportMetaData(model, selectionChecks.VerticalChecks);
             return View("Index", model);
         }
 
-        private void FillReportMetaData(IEnumerable<StatisticDataModel> model)
+        private void FillReportMetaData(IEnumerable<StatisticDataModel> model, List<int> selectedActivities)
         {
             foreach (StatisticDataModel eModel in model)
             {
@@ -110,9 +111,22 @@ namespace MinStat.AnalizeUI.Controllers
                 eModel.ReportName = "Базовый";
                 eModel.CreatedDateTime = String.Format("{0} {1}", DateTime.Now.ToShortDateString(),
                                                        DateTime.Now.ToShortTimeString());
+
+                var activityTitles = _infoAdapter.GetActivities()
+                   .Where(x => selectedActivities.Contains(x.Id) && x.Part_5 != 0)
+                   .Select(x => x.Title);
+
+                StringBuilder activityTitlesStringBuilder = new StringBuilder();
+
+                foreach (var activityTitle in activityTitles)
+                {
+                    activityTitlesStringBuilder.AppendFormat("<div style=\"padding-left:20px;\">{0}</div>", activityTitle);
+                }
+
+                eModel.Activity = activityTitlesStringBuilder.ToString();
+
                 eModel.StartDate = (string) Session["startDate"];
                 eModel.EndDate = (string)Session["endDate"];
-                eModel.Activity = "Все виды деятельности";
                 eModel.FederalDistrict = (int) Session["federalDistrictId"] == 0
                                              ? "Все Федеральные Округа"
                                              : _infoAdapter.GetFederalDistricts().Single(

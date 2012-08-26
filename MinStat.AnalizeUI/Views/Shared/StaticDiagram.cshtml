@@ -1,6 +1,7 @@
 ﻿@using System.Text
 @using MinStat.AnalizeUI.Models
 @model StatisticDataModel
+@{ Model.Values = Model.Values.Where(x => x.BoldLevel == 0).ToList(); }
 <script type="text/javascript" src="@Url.Content("~/Scripts//plugins/jqplot.barRenderer.min.js")"></script>
 <script type="text/javascript" src="@Url.Content("~/Scripts//plugins/jqplot.categoryAxisRenderer.min.js")"></script>
 <script type="text/javascript" src="@Url.Content("~/Scripts//plugins/jqplot.pointLabels.min.js")"></script>
@@ -62,5 +63,3 @@
 </script>
 <div id="chart3">
 </div>
-
-

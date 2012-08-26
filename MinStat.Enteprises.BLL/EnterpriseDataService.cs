@@ -117,7 +117,7 @@ namespace MinStat.Enterprises.BLL
         [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
         public IEnumerable<Person> GetPeoples(int summaryId, int size, int offset, string orderby)
         {
-            return _enterpriseRepository.GetPeople(summaryId, size, offset, orderby).ToList();
+            return _enterpriseRepository.GetPeople(_enterpriseId, summaryId, size, offset, orderby).ToList();
         }
 
         [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
@@ -155,6 +155,18 @@ namespace MinStat.Enterprises.BLL
         public Enterprise GetCurrentEnterprise()
         {
             return _enterpriseRepository.GetEnteprise(_enterpriseId);
+        }
+
+        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
+        public FederalSubject GetCurrentFederalSubject()
+        {
+            return _enterpriseRepository.GetFederalSubject(_enterpriseId);
+        }
+
+        [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
+        public FederalDistrict GetCurrentFederalDistrict()
+        {
+            return _enterpriseRepository.GetFederalDistrict(_enterpriseId);
         }
     }
 }

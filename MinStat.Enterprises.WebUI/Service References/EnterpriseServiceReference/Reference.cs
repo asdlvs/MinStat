@@ -805,6 +805,144 @@ namespace MinStat.Enterprises.WebUI.EnterpriseServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FederalSubject", Namespace="http://schemas.datacontract.org/2004/07/MinStat.Enterprises.DAL.POCO")]
+    [System.SerializableAttribute()]
+    public partial class FederalSubject : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int FederalDistrictIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TitleField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int FederalDistrictId {
+            get {
+                return this.FederalDistrictIdField;
+            }
+            set {
+                if ((this.FederalDistrictIdField.Equals(value) != true)) {
+                    this.FederalDistrictIdField = value;
+                    this.RaisePropertyChanged("FederalDistrictId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Title {
+            get {
+                return this.TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
+                    this.TitleField = value;
+                    this.RaisePropertyChanged("Title");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FederalDistrict", Namespace="http://schemas.datacontract.org/2004/07/MinStat.Enterprises.DAL.POCO")]
+    [System.SerializableAttribute()]
+    public partial class FederalDistrict : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TitleField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Title {
+            get {
+                return this.TitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TitleField, value) != true)) {
+                    this.TitleField = value;
+                    this.RaisePropertyChanged("Title");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="EnterpriseServiceReference.EnterpriseDataService")]
     public interface EnterpriseDataService {
@@ -868,6 +1006,12 @@ namespace MinStat.Enterprises.WebUI.EnterpriseServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EnterpriseDataService/GetCurrentEnterprise", ReplyAction="http://tempuri.org/EnterpriseDataService/GetCurrentEnterpriseResponse")]
         MinStat.Enterprises.WebUI.EnterpriseServiceReference.Enterprise GetCurrentEnterprise();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EnterpriseDataService/GetCurrentFederalSubject", ReplyAction="http://tempuri.org/EnterpriseDataService/GetCurrentFederalSubjectResponse")]
+        MinStat.Enterprises.WebUI.EnterpriseServiceReference.FederalSubject GetCurrentFederalSubject();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EnterpriseDataService/GetCurrentFederalDistrict", ReplyAction="http://tempuri.org/EnterpriseDataService/GetCurrentFederalDistrictResponse")]
+        MinStat.Enterprises.WebUI.EnterpriseServiceReference.FederalDistrict GetCurrentFederalDistrict();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -975,6 +1119,14 @@ namespace MinStat.Enterprises.WebUI.EnterpriseServiceReference {
         
         public MinStat.Enterprises.WebUI.EnterpriseServiceReference.Enterprise GetCurrentEnterprise() {
             return base.Channel.GetCurrentEnterprise();
+        }
+        
+        public MinStat.Enterprises.WebUI.EnterpriseServiceReference.FederalSubject GetCurrentFederalSubject() {
+            return base.Channel.GetCurrentFederalSubject();
+        }
+        
+        public MinStat.Enterprises.WebUI.EnterpriseServiceReference.FederalDistrict GetCurrentFederalDistrict() {
+            return base.Channel.GetCurrentFederalDistrict();
         }
     }
 }

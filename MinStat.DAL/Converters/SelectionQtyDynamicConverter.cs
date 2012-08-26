@@ -37,7 +37,7 @@ namespace MinStat.DAL.Converters
                 foreach(DateTime startPeriod in periods)
                 {
                     decimal value = resultList.Where(x => x.StartPeriodDate == startPeriod && x.ActivityId == activity.ActivityId).Sum(x => x.PeoplesCount);
-                    statisticDataItem.Values.Add(value != 0 ? value.ToString() : "0");
+                    statisticDataItem.Values.Add(value != 0 ? value.ToString("0.0") : "0");
                 }
                 statisticData.Lines.Add(statisticDataItem);
             }
