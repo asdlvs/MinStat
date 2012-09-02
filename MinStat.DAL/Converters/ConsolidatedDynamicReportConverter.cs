@@ -105,6 +105,37 @@ namespace MinStat.DAL.Converters
                 }
                 statisticData.Lines.Add(dataItem);
             }
+
+            List<int> summaryResults = new List<int>();
+
+            foreach (StatisticDataItem dataItem in statisticData.Lines)
+            {
+                int i = 0;
+                foreach (string value in dataItem.Values)
+                {
+                    if (summaryResults.Count() > i)
+                    {
+                        int currentSummaryValue = summaryResults[i];
+                        currentSummaryValue += Int32.Parse(value);
+                        summaryResults[i] = currentSummaryValue;
+                    }
+                    else
+                    {
+                        summaryResults.Add(Int32.Parse(value));
+                    }
+                    i++;
+                }
+            }
+
+            StatisticDataItem resultDataItem = new StatisticDataItem
+            {
+                Id = "0-0",
+                StrongLevel = 1,
+                Title = "Всего человек: ",
+                Values = summaryResults.Select(x => x.ToString()).ToList()
+            };
+            statisticData.Lines.Insert(0, resultDataItem);
+
             return new[] { statisticData };
         }
 

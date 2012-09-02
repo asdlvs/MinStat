@@ -52,7 +52,8 @@ namespace MinStat.DAL.Converters
                                         ? "0"
                                         : pointElement.PeoplesCount.ToString());
                 }
-                statisticData.Lines.Add(item);
+                
+                 statisticData.Lines.Add(item);
             }
             statisticData.Titles.Add("", "");
             statisticData.Titles = statisticData.Titles.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
@@ -68,6 +69,7 @@ namespace MinStat.DAL.Converters
                     {
                         int currentSummaryValue = summaryResults[i];
                         currentSummaryValue += Int32.Parse(value);
+                        summaryResults[i] = currentSummaryValue;
                     }
                     else
                     {

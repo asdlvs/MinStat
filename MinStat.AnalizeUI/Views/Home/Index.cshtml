@@ -19,6 +19,7 @@
     <br />
     Стандартный отчет позволяет получить последние результаты (число работников, образование, категории работников, средний возраст, среднегодовой доход) по отрасли в целом, виду деятельности, федеральному округу, субъекту федерации или предприятию без учета видов деятельности.
     <br />
+    <a href="help#standard" class="btn btn-info pull-right" style="margin-left:5px;">Справка</a>
     <div class="btn btn-primary dropdown pull-right" style="color:#FFFFFF;">
         <div class="dropdown-toggle" href="#" data-toggle="dropdown">Стандартные отчеты<b class="caret"></b></div>
         <ul class="dropdown-menu">
@@ -39,6 +40,8 @@
     <br />
     Базовый отчет позволяет получить для отрасли, федерального округа, субъекта федерации или предприятия результаты, соответствующие задаваемому условию (образование и категории работников) по видам деятельности. На конкретную дату – <strong>статический отчет</strong>. В заданном интервале дат – <strong>динамический отчет</strong>.
     <br />
+   <a href="help#base" class="btn btn-info pull-right" style="margin-left:5px;">Справка</a>
+
     @Html.ActionLink("Начать", "Index", "FullReport", null, new { @class = "btn btn-primary pull-right" })
     <br />
 </div>
@@ -47,7 +50,9 @@
     <br />
     <br />
    Сводный отчет позволяет для выбранной отрасли, федерального округа, субъекта федерации или предприятия задавать сложные условия, по любым признакам (образование и категории работников) по видам деятельности. На конкретную дату – <strong>статический отчет</strong>. В заданном интервале дат – <strong>динамический отчет</strong>. 
-    <br />@Html.ActionLink("Начать", "Index", "Consolidate", null, new { @class = "btn btn-primary pull-right" })
+   <br /><a href="help#common" class="btn btn-info pull-right" style="margin-left:5px;">Справка</a>
+
+    @Html.ActionLink("Начать", "Index", "Consolidate", null, new { @class = "btn btn-primary pull-right" })
     <br />
 </div>
 <div class="well">
@@ -55,7 +60,9 @@
     <br />
     <br />
     Количественный отчет позволяет получить для отрасли, федерального округа, субъекта федерации или предприятия результаты, соответствующие <strong>сложному условию</strong> (образование и категории работников) по видам деятельности на <strong>конкретную дату</strong>
-    <br />@Html.ActionLink("Начать", "Index", "Summary", null, new { @class = "btn btn-primary pull-right" })
+    <br />
+    <a href="help#summary" class="btn btn-info pull-right" style="margin-left:5px;">Справка</a>
+    @Html.ActionLink("Начать", "Index", "Summary", null, new { @class = "btn btn-primary pull-right" })
     <br />
 </div>
 <div class="well">
@@ -64,6 +71,7 @@
     <br />
     Для добавление нового предприятия, пройдите по следующей ссылке.
     <br />
+    <a href="help#administration" class="btn btn-info pull-right" style="margin-left:5px;">Справка</a>
     @Html.ActionLink("Начать", "Index", "Administration", null, new { @class = "btn btn-primary pull-right" })
     <br />
 </div>

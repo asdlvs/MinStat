@@ -62,7 +62,7 @@ namespace MinStat.AnalizeUI.Controllers
                 eModel.ReportName = "Количественный";
                 eModel.CreatedDateTime = String.Format("{0} {1}", DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString());
                 eModel.FederalDistrict = model.FederalDistrictId == 0
-                                            ? "Все Федеральные Округа"
+                                            ? "Все Федеральные округа"
                                             : _infoAdapter.GetFederalDistricts().Single(x => x.Id == model.FederalDistrictId)
                                                   .Title;
 

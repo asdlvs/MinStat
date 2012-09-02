@@ -74,17 +74,19 @@ namespace MinStat.AnalizeUI.Controllers
 
             ViewBag.RenderGraphic = true;
             IEnumerable<StatisticDataModel> model = new StatisticDataModel[0];
-            FillReportMetaData(model, selectionChecks.VerticalChecks);
+            FillReportMetaData(model, selectionChecks.VerticalChecks, selectionChecks.HorizontalChecks);
             if (reportType.EndsWith("#static") || String.IsNullOrWhiteSpace(reportType))
             {
+                Session["startDate"] = null;
+                DateTime startDate = new DateTime(DateTime.Parse((string)Session["endDate"]).Year, 1, 1);
                 model = _selectionReport.GetQtyStaticData(
                     (int)Session["enterpriseId"],
                     (int)Session["federalSubjectId"],
                     (int)Session["federalDistrictId"],
-                    (string)Session["startDate"],
+                    startDate.ToShortDateString(),
                     (string)Session["endDate"],
                     selectionChecks.VerticalChecks, selectionChecks.HorizontalChecks);
-                FillReportMetaData(model, selectionChecks.VerticalChecks);
+                FillReportMetaData(model, selectionChecks.VerticalChecks, selectionChecks.HorizontalChecks);
                 return View("StaticStatisticData", model);
             }
             if (reportType.EndsWith("#dynamic"))
@@ -96,14 +98,14 @@ namespace MinStat.AnalizeUI.Controllers
                     (string)Session["startDate"],
                     (string)Session["endDate"],
                     selectionChecks.VerticalChecks, selectionChecks.HorizontalChecks);
-                FillReportMetaData(model, selectionChecks.VerticalChecks);
+                FillReportMetaData(model, selectionChecks.VerticalChecks, selectionChecks.HorizontalChecks);
                 return View("DynamicStatisticData", model);
             }
-            FillReportMetaData(model, selectionChecks.VerticalChecks);
+            FillReportMetaData(model, selectionChecks.VerticalChecks, selectionChecks.HorizontalChecks);
             return View("Index", model);
         }
 
-        private void FillReportMetaData(IEnumerable<StatisticDataModel> model, List<int> selectedActivities)
+        private void FillReportMetaData(IEnumerable<StatisticDataModel> model, List<int> selectedActivities, List<KeyValuePair<int, int>> selectedGroups)
         {
             foreach (StatisticDataModel eModel in model)
             {
@@ -115,6 +117,19 @@ namespace MinStat.AnalizeUI.Controllers
                 var activityTitles = _infoAdapter.GetActivities()
                    .Where(x => selectedActivities.Contains(x.Id) && x.Part_5 != 0)
                    .Select(x => x.Title);
+
+                var educationLevels = _infoAdapter.GetEducationLevels();
+                var postLevels = _infoAdapter.GetPostLevels();
+
+                StringBuilder groupsTitlesStringBuilder = new StringBuilder();
+                foreach (KeyValuePair<int, int> group in selectedGroups)
+                {
+                    groupsTitlesStringBuilder.AppendFormat("<div style=\"padding-left:20px;\">{0}_{1}</div>", 
+                        postLevels.First(x => x.Key == group.Key).Value, 
+                        educationLevels.First(x => x.Key == group.Value).Value);
+                }
+
+                eModel.Categories = groupsTitlesStringBuilder.ToString();
 
                 StringBuilder activityTitlesStringBuilder = new StringBuilder();
 
@@ -128,7 +143,7 @@ namespace MinStat.AnalizeUI.Controllers
                 eModel.StartDate = (string) Session["startDate"];
                 eModel.EndDate = (string)Session["endDate"];
                 eModel.FederalDistrict = (int) Session["federalDistrictId"] == 0
-                                             ? "Все Федеральные Округа"
+                                             ? "Все Федеральные округа"
                                              : _infoAdapter.GetFederalDistricts().Single(
                                                  x => x.Id == (int) Session["federalDistrictId"])
                                                    .Title;

@@ -32,7 +32,7 @@ namespace MinStat.AnalizeUI.Controllers
                 model.CreatedDateTime = String.Format("{0} {1}", DateTime.Now.ToShortDateString(), DateTime.Now.ToShortTimeString());
                 model.Activity = activityId == null ? "Все виды деятельности" : _infoAdapter.GetActivities().Single(x => x.Id == activityId).Title;
                 model.FederalDistrict = federalDistrictId == null
-                                            ? "Все Федеральные Округа"
+                                            ? "Все Федеральные округа"
                                             : _infoAdapter.GetFederalDistricts().Single(x => x.Id == federalDistrictId)
                                                   .Title;
 

@@ -18,5 +18,6 @@ namespace MinStat.AnalizeUI.Models
         public string Enterprise { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }
+        public string Categories { get; set; }
     }
 }

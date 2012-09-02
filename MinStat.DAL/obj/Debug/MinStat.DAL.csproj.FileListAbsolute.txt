@@ -18,3 +18,4 @@ F:\Repository\Trash\B_2\MinStat.DAL\obj\Debug\ResolveAssemblyReference.cache
 F:\Repository\Trash\B_2\MinStat.DAL\obj\Debug\MinStat.DAL.dll
 F:\Repository\Trash\B_2\MinStat.DAL\obj\Debug\MinStat.DAL.pdb
 D:\Work\Bonch\MinStat_4\MinStat.DAL\bin\Debug\MinStat.DAL.dll.config
+D:\Work\Bonch\MinStat_4\MinStat.DAL\obj\Debug\MinStat.DAL.csprojResolveAssemblyReference.cache

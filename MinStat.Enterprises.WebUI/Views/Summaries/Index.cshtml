@@ -156,7 +156,7 @@
                             ×</button>
                         <strong>Ошибка!</strong> Укажите пожалуйста название отчета.
                     </div>
-                    <input type="text" class="input-xlarge" name="Title" id="Title" />
+                    Введите название отчета: <input type="text" class="input-xlarge" name="Title" id="Title" />
                     <input type="hidden" id="summaryId" name="summaryId" />
                     <table class="table">
                         @foreach (ActivityModel activity in (IEnumerable<ActivityModel>)ViewBag.Activities)
@@ -181,7 +181,7 @@
                 <div class="modal-footer">
                     <a href="#" class="btn" data-dismiss="modal">Отмена</a>
                     <input type="submit" id="savesummary0" name="savesummary0" class="btn btn-primary"
-                        value="Сохранить">
+                        value="Далее">
                 </div>
             </div>
         }

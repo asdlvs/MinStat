@@ -46,8 +46,14 @@
             legend: {   renderer: $.jqplot.EnhancedLegendRenderer, placement: 'outsideGrid', location:'n',  show:true    }  
          }
   );
-
+      var w = parseInt($(".jqplot-yaxis").width(), 10) + parseInt($("#chart3").width(), 10);
+var h = parseInt($(".jqplot-table-legend").height(), 10) + parseInt($(".jqplot-xaxis").height(), 10) + parseInt($("#chart3").height(), 10);
+$("#chart3").width(w).height(h);
+plot3.replot();
     });
+
+
 </script>
-<div id="chart3">
+
+<div id="chart3" style="height:300px;">
 </div>
