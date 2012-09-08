@@ -67,8 +67,8 @@ namespace MinStat.DAL.Converters
                 globalDataItem.Values = new List<string>
                 {
                   resultList.Sum(x => x.Count).ToString(CultureInfo.InvariantCulture),
-                  resultList.Average(x => x.MiddleAge).ToString("0.0"),
                   "100%",
+                  resultList.Average(x => x.MiddleAge).ToString("0.0"),
                   resultList.Average(x => x.MiddleSalary).ToString("0")
                 };
 
