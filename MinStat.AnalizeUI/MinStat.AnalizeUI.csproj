@@ -85,6 +85,7 @@
     <Compile Include="Models\FederalSubjectModel.cs" />
     <Compile Include="Models\FilterCriteryModel.cs" />
     <Compile Include="Models\FullReportModel.cs" />
+    <Compile Include="Models\NewEnterpriseModel.cs" />
     <Compile Include="Models\StatisticDataItemModel.cs" />
     <Compile Include="Models\StatisticDataModel.cs" />
     <Compile Include="Models\SummaryReportCreatorModel.cs" />

@@ -15,6 +15,7 @@ namespace MinStat.Enterprises.WebUI.Models
         [HiddenInput(DisplayValue = false)]
         public int SummaryId { get; set; }
 
+        [Required(ErrorMessage = "Необходимо указать")]
         [Display(Name = "Вид деятельности")]
         public int ActivityId { get; set; }
 

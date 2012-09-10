@@ -54,11 +54,17 @@ namespace MinStat.AnalizeUI.Controllers
             return View(model);
         }
 
-        [HttpPost]
-        public ActionResult Create(string title, int federalSubjectId, int federalDistrictId, string mail)
+        //[HttpPost]
+        //public ActionResult Create(string title, int federalSubjectId, int federalDistrictId, string mail)
+        //{
+        //    _adapter.CreateEnterpise(title, federalSubjectId, mail);
+        //    return RedirectToAction("Index", new { federalSubjectId, federalDistrictId });
+        //}
+
+        public ActionResult Create(NewEnterpriseModel model)
         {
-            _adapter.CreateEnterpise(title, federalSubjectId, mail);
-            return RedirectToAction("Index", new { federalSubjectId, federalDistrictId });
+            _adapter.CreateEnterpise(model.Title, model.FederalSubjectId, model.Mail);
+            return RedirectToAction("Index", new { model.FederalSubjectId, model.FederalDistrictId });
         }
 
         [HttpPost]

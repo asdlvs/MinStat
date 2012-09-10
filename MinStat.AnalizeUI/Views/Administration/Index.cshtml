@@ -55,10 +55,16 @@
             <p>
                 <input type="hidden" name="federalSubjectId" id="federalSubjectId" value="@ViewBag.SelectedFederalSubjectId"/>
                 <input type="hidden" name="federalDistrictId" id="federalDistrictId" value="@ViewBag.SelectedFederalDistrictId"/>
-                Название предприятия:<br />
-                <input type="text" name="title" id="title"><br />
-                Электронная почта контактного лица:<br />
-                <input type="text" name="mail" id="mail"><br />
+                <span class="field-validation-error" data-valmsg-replace="true" data-valmsg-for="title">
+                <span class="" for="title" generated="true" style="font-weight:bold;">
+                </span>
+                </span> Название предприятия:<br />
+                <input type="text" name="title" id="title" class="text-box single-line input-validation-error" data-val-required="Необходимо указать" data-val="true"><br />
+                Электронная почта контактного лица <span class="field-validation-error" data-valmsg-replace="true" data-valmsg-for="mail">
+                <span class="" for="mail" generated="true" style="font-weight:bold;">
+                </span>
+                </span>:<br />
+                <input type="text" name="mail" id="mail" class="text-box single-line input-validation-error" data-val-required="не может быть пустым" data-val="true" data-val-regex-pattern="@Html.Raw("^[a-z0-9_\\+-]+(\\.[a-z0-9_\\+-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*\\.([a-z]{2,4})$")" data-val-regex="введена неправильно" ><br />
             </p>
         </div>
         <div class="modal-footer">
