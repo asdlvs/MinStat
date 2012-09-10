@@ -12,5 +12,6 @@ namespace MinStat.DAL.POCO.ResultItems
         public string Title { get; set; }
         public List<string> Values { get; set; }
         public int StrongLevel { get; set; }
+        public bool IsCountable { get; set; }
     }
 }

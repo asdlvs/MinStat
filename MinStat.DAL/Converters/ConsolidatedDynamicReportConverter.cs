@@ -44,6 +44,7 @@ namespace MinStat.DAL.Converters
                 {
                     var periodItems = resultList.Where(x => x.StartPeriodDate == startPeriod);
                     string value = "0";
+                    bool isCountable = true;
                     switch (id)
                     {
                         case 1:
@@ -96,11 +97,14 @@ namespace MinStat.DAL.Converters
                             break;
                         case 17:
                             value = periodItems.Average(x => x.MiddleAge).ToString("0.0");
+                            isCountable = false;
                             break;
                         case 18:
                             value = periodItems.Average(x => x.MiddleSalary).ToString("0");
+                            isCountable = false;
                             break;
                     }
+                    dataItem.IsCountable = isCountable;
                     dataItem.Values.Add(value != "0" ? value.ToString() : "0");
                 }
                 statisticData.Lines.Add(dataItem);
@@ -108,7 +112,7 @@ namespace MinStat.DAL.Converters
 
             List<int> summaryResults = new List<int>();
 
-            foreach (StatisticDataItem dataItem in statisticData.Lines)
+            foreach (StatisticDataItem dataItem in statisticData.Lines.Where(x => x.IsCountable))
             {
                 int i = 0;
                 foreach (string value in dataItem.Values)
@@ -127,14 +131,17 @@ namespace MinStat.DAL.Converters
                 }
             }
 
-            StatisticDataItem resultDataItem = new StatisticDataItem
+            if (summaryResults.Any())
             {
-                Id = "0-0",
-                StrongLevel = 1,
-                Title = "Всего человек: ",
-                Values = summaryResults.Select(x => x.ToString()).ToList()
-            };
-            statisticData.Lines.Insert(0, resultDataItem);
+                StatisticDataItem resultDataItem = new StatisticDataItem
+                {
+                    Id = "0-0",
+                    StrongLevel = 1,
+                    Title = "Всего человек: ",
+                    Values = summaryResults.Select(x => x.ToString()).ToList()
+                };
+                statisticData.Lines.Insert(0, resultDataItem);
+            }
 
             return new[] { statisticData };
         }
