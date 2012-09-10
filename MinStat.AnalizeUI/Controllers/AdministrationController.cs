@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using MinStat.AnalizeUI.Filters;
 using MinStat.AnalizeUI.Models;
 using MinStat.AnalizeUI.ServiceAdapters;
+using System.Text.RegularExpressions;
 
 namespace MinStat.AnalizeUI.Controllers
 {
@@ -63,6 +64,10 @@ namespace MinStat.AnalizeUI.Controllers
 
         public ActionResult Create(NewEnterpriseModel model)
         {
+            if (string.IsNullOrWhiteSpace(model.Title)) { throw new ArgumentNullException("Title"); }
+            Regex regex = new Regex("^[a-z0-9_\\+-]+(\\.[a-z0-9_\\+-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*\\.([a-z]{2,4})$");
+            if (!regex.IsMatch(model.Mail)) { throw new ArgumentException("Mail"); }
+
             _adapter.CreateEnterpise(model.Title, model.FederalSubjectId, model.Mail);
             return RedirectToAction("Index", new { model.FederalSubjectId, model.FederalDistrictId });
         }

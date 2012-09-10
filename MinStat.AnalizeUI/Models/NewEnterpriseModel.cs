@@ -13,7 +13,7 @@ namespace MinStat.AnalizeUI.Models
         [Required(ErrorMessage = "Необходимо указать")]
         public string Title { get; set; }
         [Required(ErrorMessage = "Необходимо указать")]
-        [RegularExpression("^[a-z0-9_\\+-]+(\\.[a-z0-9_\\+-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*\\.([a-z]{2,4})$", ErrorMessage = "Invalid e-mail format.")]
+        [RegularExpression("^[a-z0-9_\\+-]+(\\.[a-z0-9_\\+-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*\\.([a-z]{2,4})$")]
         public string Mail { get; set; }
     }
 }
